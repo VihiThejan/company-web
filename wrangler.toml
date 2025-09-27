@@ -1,0 +1,23 @@
+name = "company-web"
+compatibility_date = "2024-09-25"
+
+[env.production]
+name = "company-web"
+
+# Configuration for Cloudflare Pages
+pages_build_output_dir = "out"
+
+# Environment variables (you can add these as needed)
+# [env.production.vars]
+# NEXT_PUBLIC_API_URL = "https://api.yourcompany.com"
+
+# KV Namespaces (if needed)
+# [[kv_namespaces]]
+# binding = "COMPANY_KV"
+# id = "your-kv-namespace-id"
+
+# D1 Databases (if needed)
+# [[d1_databases]]
+# binding = "COMPANY_DB"
+# database_name = "company-database"
+# database_id = "your-database-id"
