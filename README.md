@@ -1,119 +1,36 @@
-# Company Web - Modern Business Website
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A professional company website built with Next.js 15, TypeScript, and Tailwind CSS. This template provides a complete foundation for building a modern business website with responsive design and professional components.
+## Getting Started
 
-## ✨ Features
+First, run the development server:
 
-- **Modern Tech Stack**: Built with Next.js 15, TypeScript, and Tailwind CSS
-- **Responsive Design**: Mobile-first approach with responsive components
-- **Professional Layout**: Header navigation, hero section, features, and footer
-- **Multiple Pages**: Home, About, Services, Portfolio, and Contact pages
-- **Interactive Components**: Mobile-responsive navigation and contact form
-- **SEO Optimized**: Proper meta tags and semantic HTML structure
-- **Icon System**: Heroicons integration for consistent iconography
-- **Fast Performance**: Optimized with Next.js Image component and best practices
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <your-repo-url>
-cd company_web
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Run the development server:
 ```bash
 npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 📁 Project Structure
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-```
-src/
-├── app/
-│   ├── about/page.tsx          # About page
-│   ├── contact/page.tsx        # Contact page with form
-│   ├── portfolio/page.tsx      # Portfolio showcase
-│   ├── services/page.tsx       # Services listing
-│   ├── globals.css            # Global styles
-│   ├── layout.tsx             # Root layout
-│   └── page.tsx               # Home page
-├── components/
-│   ├── Header.tsx             # Navigation header
-│   ├── Footer.tsx             # Footer component
-│   ├── Hero.tsx               # Hero section
-│   └── Features.tsx           # Features section
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## 🛠 Available Scripts
+## Learn More
 
-- `npm run dev` - Start development server with Turbopack
-- `npm run build` - Build for production
-- `npm start` - Start production server
-- `npm run lint` - Run ESLint
+To learn more about Next.js, take a look at the following resources:
 
-## 🎨 Customization
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### Colors & Branding
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-The website uses Tailwind CSS with an indigo color scheme. To customize:
+## Deploy on Vercel
 
-1. **Brand Colors**: Update the color classes in components (currently using `indigo-600`, `indigo-500`, etc.)
-2. **Company Name**: Replace "Company" in `src/components/Header.tsx`
-3. **Logo**: Add your logo to replace the text-based branding
-4. **Content**: Update text content in each page component
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### Adding New Pages
-
-1. Create a new folder in `src/app/`
-2. Add a `page.tsx` file with your component
-3. Update navigation in `src/components/Header.tsx`
-
-## 📱 Responsive Design
-
-The website is fully responsive with breakpoints:
-- Mobile: < 640px
-- Tablet: 640px - 1024px  
-- Desktop: > 1024px
-
-## 🔧 Technologies Used
-
-- **Next.js 15**: React framework with App Router
-- **TypeScript**: Type-safe JavaScript
-- **Tailwind CSS**: Utility-first CSS framework
-- **Heroicons**: Beautiful hand-crafted SVG icons
-- **Turbopack**: Fast development server and build tool
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📞 Support
-
-For support, email support@yourcompany.com or create an issue on GitHub.
-
----
-
-**Happy coding!** 🚀
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
