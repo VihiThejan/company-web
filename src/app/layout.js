@@ -1,38 +1,49 @@
-import { Poppins, Inter, Roboto } from 'next/font/google';
-import ThemeRegistry from '../theme/ThemeRegistry';
+import { Inter } from 'next/font/google';
 import './globals.css';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
+import Box from '@mui/material/Box';
+// Import your new MuiThemeProvider component
+import MuiThemeProvider from '@/components/providers/MuiThemeProvider';
 
-// Load Poppins
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // choose what you need
-  variable: '--font-poppins',
-});
-
-// Load Poppins
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // choose what you need
-  variable: '--font-inter',
-});
-
-// Load Poppins
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // choose what you need
-  variable: '--font-roboto',
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Vihi IT Solution',
-  description: 'Next.js + MUI + Poppins',
+  title: 'Vihi IT Solutions',
+  description: 'Your solution for IT needs.',
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={poppins.variable}>
-      <body>
-        <ThemeRegistry>{children}</ThemeRegistry>
+    <html lang="en">
+      <body className={inter.className} style={{ margin: 0 }}>
+        {/* Wrap your entire application content with the MuiThemeProvider */}
+        <MuiThemeProvider>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: '100vh',
+              // Use theme.palette.background.default from the theme.
+              // Since layout.js is a Server Component, you can't access theme here directly for styling.
+              // You'd typically let the CssBaseline handle the root background, or
+              // if you need specific root styling, you might apply a global class
+              // or let a client component handle it. For now, let's keep it minimal here.
+              backgroundColor: '#fff', // Hardcode for now, or use a global CSS variable if you need this to match your theme background.
+            }}
+          >
+            <Header />
+            <Box
+              component="main"
+              sx={{
+                flexGrow: 1,
+              }}
+            >
+              {children}
+            </Box>
+            <Footer />
+          </Box>
+        </MuiThemeProvider>
       </body>
     </html>
   );
