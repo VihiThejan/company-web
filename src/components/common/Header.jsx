@@ -143,10 +143,10 @@ const Header = (props) => {
           sx={{ p: 0 }}
         >
           <Image
-            src="/images/logo.png" // Replace with your logo path
+            src="/images/logo-trans.png" // Replace with your logo path
             alt="Company Logo"
-            width={120}
-            height={30}
+            width={90}
+            height={90}
             style={{ cursor: 'pointer' }}
           />
         </IconButton>
@@ -241,10 +241,10 @@ const Header = (props) => {
                 sx={{ color: '#000000ff', padding: 0 }}
               >
                 <Image
-                  src="/images/logo.png" // Replace with your image path
+                  src="/images/logo-trans.png" // Replace with your image path
                   alt="Menu"
-                  width={150}
-                  height={30}
+                  width={60}
+                  height={60}
                   style={{ cursor: 'pointer' }}
                 />
               </IconButton>
@@ -276,10 +276,10 @@ const Header = (props) => {
                 sx={{ color: '#fff', padding: 0 }}
               >
                 <Image
-                  src="/images/logo.png" // Replace with your image path
+                  src="/images/logo-trans.png" // Replace with your image path
                   alt="Menu"
-                  width={150}
-                  height={30}
+                  width={80}
+                  height={75}
                   style={{ cursor: 'pointer' }}
                 />
               </IconButton>

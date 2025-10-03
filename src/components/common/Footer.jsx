@@ -64,7 +64,7 @@ const Footer = () => {
               flexDirection: { xs: 'column', sm: 'row' },
               alignItems: { xs: 'flex-start', sm: 'center' },
               px: { xs: 2, md: 8 },
-              py: 2,
+              py: 3,
               width: '100%',
               maxWidth: '1200px',
               mx: 'auto',
@@ -75,8 +75,8 @@ const Footer = () => {
             <Typography
               variant="body2"
               sx={{
-                fontWeight: 600,
-                fontSize: '18px',
+                fontWeight: 400,
+                fontSize: '20px',
                 mb: { xs: 1, sm: 0 },
                 flex: { xs: 'unset', sm: '0 0 180px' },
               }}
@@ -103,7 +103,7 @@ const Footer = () => {
                   sx={{
                     color: '#333',
                     textDecoration: 'none',
-                    fontSize: '15px',
+                    fontSize: '16px',
                     fontWeight: 400,
                     '&:hover': { color: '#000' },
                   }}
@@ -164,7 +164,7 @@ const Footer = () => {
             },
             {
               icon: <LinkedInIcon fontSize="small" />,
-              href: 'https://linkedin.com',
+              href: 'https://www.linkedin.com/company/vihi-it-solutions/',
             },
             {
               icon: <InstagramIcon fontSize="small" />,
