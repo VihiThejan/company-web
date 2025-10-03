@@ -28,7 +28,7 @@ export default function Home() {
         🚀Vihi IT Solution Under Maintenance. We will Back Soon..!
       </Typography>
       <Typography variant="h5" color="text.secondary">
-        We're working hard to bring you an improved experience.
+        We&apos;re working hard to bring you an improved experience.
       </Typography>
     </Box>
   );
