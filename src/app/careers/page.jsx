@@ -14,14 +14,25 @@ export default function Home() {
         alignItems: 'center',
       }}
     >
-      <Typography
-        variant="h2"
-        sx={{ textAlign: 'center' }}
-        color="#fff"
-        gutterBottom
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          filter: 'blur(5px)',
+          zIndex: -1,
+        }}
       >
-        🚀Vihi IT Solution Under Maintenance. We will Back Soon..!
-      </Typography>
+        <source src="/videos/home-hero.mp4" type="video/mp4" />
+      </video>
     </Box>
   );
 }

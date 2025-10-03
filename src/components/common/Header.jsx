@@ -44,7 +44,7 @@ function HideOnScroll(props) {
 
   const headerVariants = {
     visible: { y: 0, transition: { duration: 0.3, ease: 'easeOut' } },
-    hidden: { y: '-140%', transition: { duration: 0.2, ease: 'easeIn' } },
+    hidden: { y: '-140%', transition: { duration: 0.8, ease: 'easeIn' } },
   };
 
   if (!mounted) {
@@ -110,10 +110,10 @@ const Header = (props) => {
         type: 'spring',
         stiffness: 100,
         damping: 20,
-        duration: 0.6,
+        duration: 0.5,
       },
     },
-    exit: { x: '100%', opacity: 0, transition: { duration: 0.3 } },
+    exit: { x: '100%', opacity: 0, transition: { duration: 0.5 } },
   };
 
   const drawerContent = (
@@ -188,7 +188,7 @@ const Header = (props) => {
         sx={{
           backgroundColor: '#',
           color: '#1E1E1E',
-          borderRadius: '20px',
+          borderRadius: '5px',
           padding: '8px 20px',
           fontWeight: 300,
           '&:hover': {
@@ -309,7 +309,7 @@ const Header = (props) => {
                 sx={{
                   backgroundColor: '#',
                   color: '#1E1E1E',
-                  borderRadius: '20px',
+                  borderRadius: '5px',
                   padding: '8px 20px',
                   fontWeight: 600,
                   '&:hover': {
