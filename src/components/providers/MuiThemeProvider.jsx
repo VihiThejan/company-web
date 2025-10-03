@@ -4,9 +4,11 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import { Inter } from 'next/font/google';
+import { Bitcount, Inter, Poppins } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
+const bitcount = Bitcount({ subsets: ['latin'], weight: '400' });
+const poppins = Poppins({ subsets: ['latin'], weight: '400' });
 
 // Define your custom Material-UI theme here
 const darkTheme = createTheme({
@@ -25,7 +27,7 @@ const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: inter.style.fontFamily,
+    fontFamily: poppins.style.fontFamily,
   },
   components: {
     MuiButton: {

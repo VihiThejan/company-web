@@ -1,22 +1,21 @@
-import { Inter } from 'next/font/google';
+import { Inter, Poppins, Bitcount } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import Box from '@mui/material/Box';
 // Import your new MuiThemeProvider component
 import MuiThemeProvider from '@/components/providers/MuiThemeProvider';
-
-const inter = Inter({ subsets: ['latin'] });
+import localFont from 'next/font/local'
 
 export const metadata = {
-  title: 'Vihi IT Solutions',
+  title: 'VIHI IT Solutions',
   description: 'Your solution for IT needs.',
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className} style={{ margin: 0 }}>
+      <body style={{ margin: 0 }}>
         {/* Wrap your entire application content with the MuiThemeProvider */}
         <MuiThemeProvider>
           <Box
