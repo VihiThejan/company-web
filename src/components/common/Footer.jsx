@@ -140,7 +140,7 @@ const Footer = () => {
             textAlign: { xs: 'center', sm: 'left' },
           }}
         >
-          © {new Date().getFullYear()} VIHI IT Solutions (PVT) Ltd. All rights reserved.
+          © {new Date().getFullYear()} VIHI IT Solutions. All rights reserved.
         </Typography>
 
         {/* Social Icons */}
