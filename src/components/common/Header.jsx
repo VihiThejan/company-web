@@ -94,6 +94,7 @@ const Header = (props) => {
 
   const navItems = [
     { name: 'Design', href: '/design' },
+    { name: 'Products', href: '/design' },
     { name: 'Marketing', href: '/marketing' },
     { name: 'Technology', href: '/technology' },
     { name: 'Careers', href: '/careers' },
