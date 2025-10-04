@@ -94,7 +94,7 @@ const Intro = () => {
         <Grid size={{xs: 12, md: 6}}>
           <Grid container spacing={2}>
             {stats.map((stat, idx) => (
-              <Grid  size={{xs: 12, md: 6}} key={idx}>
+              <Grid  size={{xs: 6, md: 6}} key={idx}>
                 <Box
                   sx={{
                     background: '#fafafd',
@@ -104,7 +104,7 @@ const Intro = () => {
                     alignItems: 'center',
                     gap: 2,
                     boxShadow: 1,
-                    height: 150,
+                    height: 170,
                   }}
                 >
                   {stat.icon}

@@ -3,9 +3,13 @@
 import React, { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Box, Typography, Container, Grid, Paper, styled } from '@mui/material';
-import GridCard from '../other/GridCard';
+import GridCard from '../other/homeUi/GridCard';
 import theme from '@/theme/theme';
-import Intro from '../other/Intro';
+import Intro from '../other/homeUi/Intro';
+import ExpertiseCarousel from '../other/homeUi/ExpertiseCarousel';
+import ClientTestimonials from '../other/homeUi/ClientTestimonials';
+import { Call } from '@mui/icons-material';
+import CallToActionCards from '../other/homeUi/CallToActionCards';
 
 const marketingTags = [
   'Growth Strategy',
@@ -86,15 +90,24 @@ const HomePage = () => {
         </Box>
       </motion.div>
 
-      <Box sx={{mx: 3, my: 5}}>
+      <Box
+        sx={{
+          with: '100%',
+          mx: 2,
+          my: 3,
+        }}
+      >
         <Typography
           variant="h3"
           sx={{
+            px: 3,
+            py: 3,
+            background: '#e6e6e6ff',
+            borderRadius: 10,
             color: theme.palette.secondary.main,
             textAlign: 'left',
-            mt: 5,
             fontWeight: 600,
-            fontSize: { xs: '3rem', md: '7rem'}
+            fontSize: { xs: '3rem', md: '7rem' },
           }}
         >
           “Empowering Businesses with Strategic IT Solutions and Expert
@@ -103,8 +116,8 @@ const HomePage = () => {
       </Box>
 
       {/* about us section */}
-      <Box sx={{ width: '100%'}}>
-        <Intro/>
+      <Box sx={{ width: '100%' }}>
+        <Intro />
       </Box>
 
       {/* Services Grid */}
@@ -132,6 +145,33 @@ const HomePage = () => {
             />
           </Grid>
         </Grid>
+      </Box>
+
+      <Box sx={{ flexGrow: 1, mx: 2, my: 5 }}>
+        <Grid container spacing={4} alignItems="center">
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Typography variant="h3" sx={{ fontWeight: 700, ml: 2, mb: 2 }}>
+              Expensive Areas
+              <br />
+              of Expertise
+            </Typography>
+            <Typography variant="body1" sx={{ color: '#888', ml: 2, mb: 3 }}>
+              We provide customized digital solution to help you capture
+              opportunities in a variety of industries.
+            </Typography>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ borderRadius: 5 }}>
+            <ExpertiseCarousel />
+          </Grid>
+        </Grid>
+      </Box>
+
+      <Box>
+        <ClientTestimonials />
+      </Box>
+
+      <Box sx={{ mx: 2, mb: 5 }}>
+        <CallToActionCards />
       </Box>
     </Box>
   );
