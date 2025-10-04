@@ -27,29 +27,32 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Helper component for the slide animation using Framer Motion
-function HideOnScroll(props) {
-  const { children, window, isMobile } = props;
-
-  const [mounted, setMounted] = useState(false);
+function HideOnScroll({ children, isMobile }) {
+  const [show, setShow] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const trigger = useScrollTrigger({
-    target: window ? window : undefined,
-    threshold: 100,
-    disableHysteresis: true,
-  });
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY < 10) {
+        setShow(true);
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setShow(true);
+      } else {
+        // Scrolling down
+        setShow(false);
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const headerVariants = {
     visible: { y: 0, transition: { duration: 0.3, ease: 'easeOut' } },
-    hidden: { y: '-140%', transition: { duration: 0.2, ease: 'easeIn' } },
+    hidden: { y: '-140%', transition: { duration: 0.8, ease: 'easeIn' } },
   };
-
-  if (!mounted) {
-    return <>{children}</>;
-  }
 
   return (
     <Box
@@ -65,14 +68,14 @@ function HideOnScroll(props) {
     >
       <motion.header
         initial="visible"
-        animate={trigger ? 'hidden' : 'visible'}
+        animate={show ? 'visible' : 'hidden'}
         variants={headerVariants}
         style={{
           zIndex: 1100,
           backgroundColor: '#fff',
           boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
           borderRadius: '20px',
-          width: isMobile ? '90%' : '60%',
+          width: isMobile ? '90%' : '70%',
           padding: '5px 15px',
         }}
       >
@@ -93,7 +96,6 @@ const Header = (props) => {
   };
 
   const navItems = [
-    { name: 'Design', href: '/design' },
     { name: 'Products', href: '/design' },
     { name: 'Marketing', href: '/marketing' },
     { name: 'Technology', href: '/technology' },
@@ -110,10 +112,10 @@ const Header = (props) => {
         type: 'spring',
         stiffness: 100,
         damping: 20,
-        duration: 0.6,
+        duration: 0.5,
       },
     },
-    exit: { x: '100%', opacity: 0, transition: { duration: 0.3 } },
+    exit: { x: '100%', opacity: 0, transition: { duration: 0.5 } },
   };
 
   const drawerContent = (
@@ -144,7 +146,7 @@ const Header = (props) => {
           sx={{ p: 0 }}
         >
           <Image
-            src="/images/logo-trans.png" // Replace with your logo path
+            src="/images/logo-symbol.jpeg" // Replace with your logo path
             alt="Company Logo"
             width={90}
             height={90}
@@ -186,9 +188,9 @@ const Header = (props) => {
         component={Link}
         href="/contactus"
         sx={{
-          backgroundColor: '#',
+          backgroundColor: theme.palette.primary.main,
           color: '#1E1E1E',
-          borderRadius: '20px',
+          borderRadius: '5px',
           padding: '8px 20px',
           fontWeight: 300,
           '&:hover': {
@@ -242,7 +244,7 @@ const Header = (props) => {
                 sx={{ color: '#000000ff', padding: 0 }}
               >
                 <Image
-                  src="/images/logo-trans.png" // Replace with your image path
+                  src="/images/logo-symbol.jpeg" // Replace with your image path
                   alt="Menu"
                   width={60}
                   height={60}
@@ -277,14 +279,14 @@ const Header = (props) => {
                 sx={{ color: '#fff', padding: 0 }}
               >
                 <Image
-                  src="/images/logo-trans.png" // Replace with your image path
+                  src="/images/logo-symbol.jpeg" // Replace with your image path
                   alt="Menu"
-                  width={80}
-                  height={75}
+                  width={40}
+                  height={45}
                   style={{ cursor: 'pointer' }}
                 />
               </IconButton>
-              {navItems.slice(1).map((item) => (
+              {navItems.map((item) => (
                 <Typography
                   key={item.name}
                   component={Link}
@@ -307,13 +309,13 @@ const Header = (props) => {
                 component={Link}
                 href="/contactus"
                 sx={{
-                  backgroundColor: '#',
+                  backgroundColor: theme.palette.primary.main,
                   color: '#1E1E1E',
-                  borderRadius: '20px',
+                  borderRadius: '5px',
                   padding: '8px 20px',
                   fontWeight: 600,
                   '&:hover': {
-                    backgroundColor: '#e6b800',
+                    backgroundColor: '#eebf05ff',
                   },
                 }}
               >

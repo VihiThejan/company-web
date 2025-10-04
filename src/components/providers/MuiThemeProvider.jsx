@@ -22,8 +22,8 @@ const darkTheme = createTheme({
       paper: '#1E1E1E',
     },
     text: {
-      primary: '#ffffff',
-      secondary: '#cccccc',
+      primary: '#303030ff',
+      secondary: '#747373ff',
     },
   },
   typography: {

@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 // Import your new MuiThemeProvider component
 import MuiThemeProvider from '@/components/providers/MuiThemeProvider';
 import localFont from 'next/font/local'
+import ScrollToTopButton from '@/components/common/ScrollToTopButton';
 
 export const metadata = {
   title: 'VIHI IT Solutions',
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
             >
               {children}
             </Box>
+            <ScrollToTopButton />
             <Footer />
           </Box>
         </MuiThemeProvider>
