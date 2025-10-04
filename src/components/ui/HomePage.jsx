@@ -75,7 +75,7 @@ const HomePage = () => {
         />
 
         {/* Hero Text */}
-        <Box sx={{ zIndex: 2, transform: {xs: 'translateY(120%)', md:'translateY(100%)'} }}>
+        <Box sx={{ zIndex: 2, transform: {xs: 'translateY(120%)', md:'translateY(1)'} }}>
           <Typography
             variant="h1"
             sx={{
@@ -108,11 +108,10 @@ const HomePage = () => {
             color: theme.palette.secondary.main,
             textAlign: 'left',
             fontWeight: 600,
-            fontSize: { xs: '3rem', md: '7rem' },
+            fontSize: { xs: '2.5rem', md: '6rem' },
           }}
         >
-          “Empowering Businesses with Strategic IT Solutions and Expert
-          Consulting!”
+          “Engineering excellence with intelligent solutions that power your business forward”
         </Typography>
       </Box>
 
