@@ -75,17 +75,18 @@ const HomePage = () => {
         />
 
         {/* Hero Text */}
-        <Box sx={{ zIndex: 2, transform: 'translateY(120px)' }}>
+        <Box sx={{ zIndex: 2, transform: {xs: 'translateY(120%)', md:'translateY(100%)'} }}>
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '2rem', md: '4rem' },
+              fontSize: { xs: '2.5rem', md: '4rem' },
               fontWeight: 'bold',
               mb: 2,
               mx: 4,
+              textAlign: 'left',
             }}
           >
-            Best-in-class design, marketing and technology
+            Empowering Businesses with <br/>Intelligent Digital Solutions
           </Typography>
         </Box>
       </motion.div>
