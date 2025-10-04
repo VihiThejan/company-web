@@ -2,36 +2,25 @@
 
 import React, { useRef } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import { Box, Typography, Container } from '@mui/material';
+import { Box, Typography, Container, Grid, Paper, styled } from '@mui/material';
+import GridCard from '../other/GridCard';
+import theme from '@/theme/theme';
+import Intro from '../other/Intro';
 
-const sectionVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-};
+const marketingTags = [
+  'Growth Strategy',
+  'Lead Nurturing',
+  'SEO',
+  'Performance Marketing',
+  'Go To Market',
+  '+More',
+];
 
 const HomePage = () => {
-  const scrollRef = useRef(null);
-  const section1Ref = useRef(null);
-  const section2Ref = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: scrollRef,
-    offset: ['start start', 'end start'],
-  });
-
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
-  const heroY = useTransform(scrollYProgress, [0, 0.2], [0, -100]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-
-  const isSection1InView = useInView(section1Ref, { once: true, margin: '-100px' });
-  const isSection2InView = useInView(section2Ref, { once: true });
-
-
   return (
     <Box sx={{ overflowX: 'hidden', position: 'relative' }}>
       {/* Hero Section */}
       <motion.div
-        ref={scrollRef}
         style={{
           position: 'sticky',
           top: 0,
@@ -44,13 +33,8 @@ const HomePage = () => {
           textAlign: 'center',
           color: '#fff',
           overflow: 'hidden',
-          opacity: heroOpacity,
-          y: heroY,
           zIndex: 10,
         }}
-        initial={{ opacity: 1, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeInOut' }}
       >
         {/* Background Video */}
         <Box
@@ -94,7 +78,7 @@ const HomePage = () => {
               fontSize: { xs: '2rem', md: '4rem' },
               fontWeight: 'bold',
               mb: 2,
-              mx: 4
+              mx: 4,
             }}
           >
             Best-in-class design, marketing and technology
@@ -102,6 +86,53 @@ const HomePage = () => {
         </Box>
       </motion.div>
 
+      <Box sx={{mx: 3, my: 5}}>
+        <Typography
+          variant="h3"
+          sx={{
+            color: theme.palette.secondary.main,
+            textAlign: 'left',
+            mt: 5,
+            fontWeight: 600,
+            fontSize: { xs: '3rem', md: '7rem'}
+          }}
+        >
+          “Empowering Businesses with Strategic IT Solutions and Expert
+          Consulting!”
+        </Typography>
+      </Box>
+
+      {/* about us section */}
+      <Box sx={{ width: '100%'}}>
+        <Intro/>
+      </Box>
+
+      {/* Services Grid */}
+      <Box sx={{ flexGrow: 1, mx: 2, my: 5 }}>
+        <Grid container spacing={2}>
+          <Grid size={{ xs: 12, md: 12 }}>
+            <GridCard
+              title="Technology"
+              tags={['Web Apps', 'Mobile Apps', 'Cloud', 'AI', '+More']}
+              bgImage="/images/home-img/it.jpg"
+            />
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <GridCard
+              title="Marketing"
+              tags={marketingTags}
+              bgImage="/images/home-img/marketing.jpg"
+            />
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <GridCard
+              title="Design"
+              tags={['UI/UX', 'Branding', 'Prototyping', 'Web Design', '+More']}
+              bgImage="/images/home-img/design.jpg"
+            />
+          </Grid>
+        </Grid>
+      </Box>
     </Box>
   );
 };

@@ -186,7 +186,7 @@ const Header = (props) => {
         component={Link}
         href="/contactus"
         sx={{
-          backgroundColor: '#',
+          backgroundColor: theme.palette.primary.main,
           color: '#1E1E1E',
           borderRadius: '5px',
           padding: '8px 20px',
@@ -307,13 +307,13 @@ const Header = (props) => {
                 component={Link}
                 href="/contactus"
                 sx={{
-                  backgroundColor: '#',
+                  backgroundColor: theme.palette.primary.main,
                   color: '#1E1E1E',
                   borderRadius: '5px',
                   padding: '8px 20px',
                   fontWeight: 600,
                   '&:hover': {
-                    backgroundColor: '#e6b800',
+                    backgroundColor: '#eebf05ff',
                   },
                 }}
               >
