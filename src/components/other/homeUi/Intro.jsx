@@ -20,7 +20,7 @@ const stats = [
   {
     icon: <EmojiEventsIcon sx={{ fontSize: 32, color: '#222' }} />,
     value: '32+',
-    label: 'Revenue Increase Compared to the previous year.',
+    label: 'Revenue Increase',
   },
   {
     icon: <PeopleAltIcon sx={{ fontSize: 32, color: '#222' }} />,
@@ -30,7 +30,7 @@ const stats = [
 ];
 
 const Intro = () => {
-  return ( // <-- Add this return!
+  return (
     <Box
       sx={{
         background: '#ffffffff',
@@ -67,93 +67,74 @@ const Intro = () => {
         We are a dynamic team of innovators, storytellers, and visionaries
         dedicated to transforming ideas into extraordinary experiences.
       </Typography>
-      <Box sx={{flexGrow: 1}}>
-      <Grid container spacing={2}>
-        <Grid  size={{xs: 12, md: 6}}>
-          <Box
-            sx={{
-              width: '100%',
-              height: { xs: 220, md: 320 },
-              borderRadius: 3,
-              overflow: 'hidden',
-              boxShadow: 2,
-            }}
-          >
-            <img
-              src="/images/home-img/it.jpg"
-              alt="About Us"
-              style={{
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                borderRadius: '16px',
-              }}
-            />
-          </Box>
-        </Grid>
-        <Grid size={{xs: 12, md: 6}}>
-          <Grid container spacing={2}>
-            {stats.map((stat, idx) => (
-              <Grid  size={{xs: 6, md: 6}} key={idx}>
-                <Box
-                  sx={{
-                    background: '#fafafd',
-                    borderRadius: 3,
-                    p: 3,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 2,
-                    boxShadow: 1,
-                    height: 170,
-                  }}
-                >
-                  {stat.icon}
-                  <Box>
-                    <Typography
-                      variant="h5"
-                      sx={{
-                        fontWeight: 700,
-                        color: '#222',
-                        fontSize: { xs: '1.2rem', md: '1.5rem' },
-                      }}
-                    >
-                      {stat.value}
-                    </Typography>
-                    <Typography
-                      variant="body2"
-                      sx={{
-                        color: '#444',
-                        fontSize: { xs: '0.9rem', md: '1rem' },
-                      }}
-                    >
-                      {stat.label}
-                    </Typography>
-                  </Box>
-                </Box>
-              </Grid>
-            ))}
-          </Grid>
-          <Box sx={{ textAlign: 'center', mt: { xs: 3, md: 5 } }}>
-            <Button
-              variant="contained"
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Box
               sx={{
-                background: '#ffe600',
-                color: '#222',
-                fontWeight: 600,
-                borderRadius: '5px',
-                px: 5,
-                py: 1.5,
-                fontSize: { xs: '1rem', md: '1.1rem' },
+                width: '100%',
+                height: { xs: 220, md: '90%' },
+                borderRadius: 3,
+                overflow: 'hidden',
                 boxShadow: 2,
-                '&:hover': { background: '#fff200' },
               }}
-              href="/contactus"
             >
-              Contact Us
-            </Button>
-          </Box>
+              <img
+                src="/images/home-img/intro.jpg"
+                alt="About Us"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '16px',
+                }}
+              />
+            </Box>
+          </Grid>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Grid container spacing={2}>
+              {stats.map((stat, idx) => (
+                <Grid size={{ xs: 6, md: 6 }} key={idx}>
+                  <Box
+                    sx={{
+                      background: '#fafafd',
+                      borderRadius: 3,
+                      p: 3,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 2,
+                      boxShadow: 1,
+                      height: 170,
+                    }}
+                  >
+                    {stat.icon}
+                    <Box>
+                      <Typography
+                        variant="h5"
+                        sx={{
+                          fontWeight: 700,
+                          color: '#222',
+                          fontSize: { xs: '1.2rem', md: '1.5rem' },
+                        }}
+                      >
+                        {stat.value}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: '#444',
+                          fontSize: { xs: '0.9rem', md: '1rem' },
+                        }}
+                      >
+                        {stat.label}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Grid>
         </Grid>
-      </Grid>
       </Box>
     </Box>
   );

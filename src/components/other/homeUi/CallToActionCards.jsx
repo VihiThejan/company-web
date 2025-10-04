@@ -111,14 +111,14 @@ const Card = ({
 };
 
 const CallToActionCards = () => (
-  <Box sx={{ width: '100%', py:2, px: { xs: 2, md: 0 } }}>
+  <Box sx={{ width: '100%', py:2 }}>
     <Grid container spacing={3} justifyContent="center">
       <Grid size={{ xs: 12, md: 6 }}>
         <Card
           bg="#111"
           color="#fff"
           label="Careers"
-          labelBg="#222"
+          labelBg="#757575ff"
           title={
             <>
               join with our <br/> talented team ?
