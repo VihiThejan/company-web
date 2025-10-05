@@ -41,7 +41,7 @@ export default function Vacancies() {
   };
 
   return (
-    <Box sx={{ py: 10, px: { xs: 2, md: 4 }, bgcolor: '#fff', width: '100%' }}>
+    <Box sx={{ py: 0, px: { xs: 2, md: 4 }, bgcolor: '#fff', width: '100%' }}>
       {/* Header */}
       <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
@@ -52,7 +52,7 @@ export default function Vacancies() {
             color: '#111',
           }}
         >
-          We’re Hiring!
+          Our Current Opening Positions
         </Typography>
       </Box>
 
@@ -168,7 +168,7 @@ export default function Vacancies() {
                       marginLeft: '1rem',
                       border: `1px solid ${isOpen ? '#111' : '#ccc'}`,
                       backgroundColor: isOpen ? '#111' : 'transparent',
-                      transition: 'all 0.25s ease',
+                      transition: 'all 0.12s ease',
                     }}
                   >
                     <ArrowForwardIosIcon
