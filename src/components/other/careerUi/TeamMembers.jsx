@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Box, Typography, IconButton, Grid } from '@mui/material';
+import { Box, Typography, IconButton, Grid, Button } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { teamMembers } from '@/lib/teamMembers';
 import theme from '@/theme/theme';
@@ -11,7 +11,7 @@ export default function TeamMembers() {
     <Box
       sx={{
         py: { xs: 6, md: 8 },
-        px: { xs: 2, sm: 2, md: 4 },
+        px: { xs: 0, md: 4 },
         width: '100%',
         bgcolor: '#fff',
       }}
@@ -23,13 +23,13 @@ export default function TeamMembers() {
         sx={{
           fontWeight: 700,
           mb: { xs: 4, md: 6 },
-          fontSize: { xs: '2rem', md: '2.5rem' },
+          fontSize: { xs: '1.8rem', md: '2.5rem' },
         }}
       >
         Our Leaders & Experts
       </Typography>
 
-      <Grid container spacing={{ xs: 3, sm: 4, md: 5 }} justifyContent="center">
+      <Grid container spacing={{ xs: 4, md: 5 }} justifyContent="center">
         {teamMembers.map((member, index) => (
           <Grid size={{ xs: 12, md: 4 }} key={index}>
             <Box

@@ -15,6 +15,7 @@ import {
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { motion, AnimatePresence } from 'framer-motion';
 import { jobVacancies } from '@/lib/jobVacancies'; // adjust path as needed
+import theme from '@/theme/theme';
 
 export default function Vacancies() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -83,7 +84,7 @@ export default function Vacancies() {
       </Box>
 
       {/* Job List */}
-      <Box sx={{ width: '100%', mx: 'auto' }}>
+      <Box sx={{ width: '100%', px: {sx: 0, md: 6}}}>
         {filteredJobs.map((job) => {
           const isOpen = hoveredJob === job.id;
 
@@ -103,7 +104,7 @@ export default function Vacancies() {
                   mb: 0,
                   boxShadow: 'none',
                   borderRadius: 0,
-                  borderBottom: '1px solid #ddd',
+                  borderBottom: `1px solid ${theme.palette.secondary.main}`,
                   bgcolor: '#fff',
                   width: '100%',
                   py: 3
@@ -126,7 +127,7 @@ export default function Vacancies() {
                     <Typography
                       variant="h6"
                       sx={{
-                        color: '#999',
+                        color: theme.palette.secondary.main,
                         mr: 3,
                         minWidth: 35,
                         fontWeight: 500,
@@ -138,7 +139,7 @@ export default function Vacancies() {
                     <Box sx={{ flexGrow: 1 }}>
                       <Typography
                         variant="h5"
-                        sx={{ fontWeight: 600, color: '#111', fontSize: { xs: '1.3rem', md: '1.5rem' } }}
+                        sx={{ fontWeight: 500, color: '#111', fontSize: { xs: '1.3rem', md: '1.5rem' } }}
                       >
                         {job.title}
                       </Typography>
@@ -166,15 +167,15 @@ export default function Vacancies() {
                       borderRadius: '50%',
                       cursor: 'pointer',
                       marginLeft: '1rem',
-                      border: `1px solid ${isOpen ? '#111' : '#ccc'}`,
-                      backgroundColor: isOpen ? '#111' : 'transparent',
+                      border: `1px solid ${isOpen ? theme.palette.primary.main : theme.palette.secondary.main}`,
+                      backgroundColor: isOpen ? theme.palette.primary.main : 'transparent',
                       transition: 'all 0.12s ease',
                     }}
                   >
                     <ArrowForwardIosIcon
                       sx={{
                         fontSize: '1rem',
-                        color: isOpen ? '#fff' : '#666',
+                        color: theme.palette.secondary.main,
                         transition: 'color 0.2s ease',
                       }}
                     />
