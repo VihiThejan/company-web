@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { Fab, Zoom } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import theme from '@/theme/theme';
 
 const ScrollToTopButton = () => {
   const [visible, setVisible] = useState(false);
@@ -22,7 +23,6 @@ const ScrollToTopButton = () => {
   return (
     <Zoom in={visible}>
       <Fab
-        color="primary"
         size="medium"
         onClick={handleClick}
         sx={{
@@ -31,6 +31,7 @@ const ScrollToTopButton = () => {
           right: { xs: 16, md: 32 },
           zIndex: 1300,
           boxShadow: 3,
+          backgroundColor: theme.palette.primary.main,
         }}
         aria-label="Scroll to top"
       >
