@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -18,14 +18,13 @@ import {
   ListItemButton,
   ListItemText,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { motion, AnimatePresence } from 'framer-motion';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { usePathname } from 'next/navigation';
 import customTheme from '@/theme/theme';
 
-// Helper component for the slide animation using Framer Motion
 function HideOnScroll({ children, isMobile }) {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -33,23 +32,13 @@ function HideOnScroll({ children, isMobile }) {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      if (currentScrollY < 10) {
-        setShow(true);
-      } else if (currentScrollY < lastScrollY) {
-        setShow(true);
-      } else {
-        setShow(false);
-      }
+      if (currentScrollY < 10 || currentScrollY < lastScrollY) setShow(true);
+      else setShow(false);
       setLastScrollY(currentScrollY);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
-
-  const headerVariants = {
-    visible: { y: 0, transition: { duration: 0.3, ease: 'easeOut' } },
-    hidden: { y: '-140%', transition: { duration: 0.8, ease: 'easeIn' } },
-  };
 
   return (
     <Box
@@ -64,9 +53,9 @@ function HideOnScroll({ children, isMobile }) {
       }}
     >
       <motion.header
-        initial="visible"
-        animate={show ? 'visible' : 'hidden'}
-        variants={headerVariants}
+        initial={{ y: 0 }}
+        animate={show ? { y: 0 } : { y: '-140%' }}
+        transition={{ duration: 0.5, ease: 'easeInOut' }}
         style={{
           zIndex: 1100,
           backgroundColor: '#fff',
@@ -86,12 +75,11 @@ const Header = (props) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const pathname = usePathname();
-
   const [mobileOpen, setMobileOpen] = useState(false);
+  const containerRef = useRef(null);
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
+  const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
+  const handleNavClick = () => setMobileOpen(false);
 
   const navItems = [
     { name: 'Products', href: '/design' },
@@ -101,133 +89,135 @@ const Header = (props) => {
     { name: 'Expertise', href: '/expertise' },
   ];
 
-  const drawerVariants = {
-    hidden: { x: '100%', opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
+  // ===== CURVED CIRCLE REVEAL ANIMATION =====
+  const sidebarVariants = {
+    open: {
+      clipPath: 'circle(150% at 84.5% 6.5%)',
       transition: {
         type: 'spring',
-        stiffness: 100,
-        damping: 20,
-        duration: 0.5,
+        stiffness: 25,
+        restDelta: 2,
       },
     },
-    exit: { x: '100%', opacity: 0, transition: { duration: 0.5 } },
+    closed: {
+      clipPath: 'circle(0px at 84.5% 6.5%)',
+      transition: {
+        delay: 0.1,
+        type: 'spring',
+        stiffness: 400,
+        damping: 40,
+      },
+    },
   };
 
   const drawerContent = (
     <Box
       sx={{
-        width: '100vw',
-        height: '100vh',
-        backgroundColor: '#ffffffff',
-        color: '#000000ff',
-        p: 2,
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        backgroundColor: '#fff',
+        color: '#000',
+        p: 4,
         display: 'flex',
         flexDirection: 'column',
       }}
     >
+      {/* Top logo + close */}
       <Box
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          mb: 2,
+          mb: 3,
         }}
       >
         <IconButton
           component={Link}
           href="/"
           color="inherit"
-          aria-label="home"
           sx={{ p: 0 }}
+          onClick={handleNavClick}
         >
           <Image
             src="/images/logo-symbol.jpeg"
             alt="Company Logo"
-            width={90}
-            height={90}
-            style={{ cursor: 'pointer' }}
+            width={80}
+            height={80}
           />
         </IconButton>
-        <IconButton
-          color="inherit"
-          aria-label="close drawer"
-          onClick={handleDrawerToggle}
-        >
-          <CloseIcon />
+
+        <IconButton onClick={handleDrawerToggle}>
+          <CloseRoundedIcon
+            sx={{
+              fontSize: 32,
+              border: `1px solid ${customTheme.palette.secondary.main}`,
+              padding: 1.5,
+              width: 50,
+              height: 50,
+              borderRadius: '60px',
+              color: customTheme.palette.secondary.main,
+            }}
+          />
         </IconButton>
       </Box>
+
+      {/* Navigation links */}
       <List>
         {navItems.map((item) => (
           <ListItem key={item.name} disablePadding>
             <ListItemButton
               component={Link}
               href={item.href}
+              onClick={handleNavClick}
               sx={{
                 textAlign: 'left',
-                padding: '10px 20px',
-                color: pathname === item.href ? customTheme.palette.secondary.main : '#1d1d1dff',
+                py: 1.2,
+                color:
+                  pathname === item.href
+                    ? customTheme.palette.secondary.main
+                    : '#1d1d1dff',
                 fontWeight: pathname === item.href ? 700 : 500,
-                background: 'transparent',
-                display: 'flex',
-                alignItems: 'center',
                 gap: 1,
-                position: 'relative',
               }}
             >
-              <AnimatePresence>
-                {pathname === item.href && (
-                  <motion.span
-                    layoutId="drawer-dot"
-                    initial={{ opacity: 0, x: -8 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -8 }}
-                    transition={{
-                      type: 'spring',
-                      stiffness: 400,
-                      damping: 30,
-                    }}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: 4,
-                    }}
-                  >
-                    <FiberManualRecordIcon
-                      sx={{
-                        fontSize: 12,
-                        color: customTheme.palette.secondary.main,
-                        mt: 0,
-                      }}
-                    />
-                  </motion.span>
-                )}
-              </AnimatePresence>
-              <ListItemText primary={item.name} sx={{ fontSize: '40px' }} />
+              {pathname === item.href && (
+                <FiberManualRecordIcon
+                  sx={{
+                    fontSize: 10,
+                    color: customTheme.palette.primary.main,
+                  }}
+                />
+              )}
+              <ListItemText
+                primary={item.name}
+                primaryTypographyProps={{ fontSize: '1.2rem' }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
-      <Button
-        variant="contained"
-        component={Link}
-        href="/contactus"
-        sx={{
-          backgroundColor: theme.palette.primary.main,
-          color: '#1E1E1E',
-          borderRadius: '50px',
-          padding: '8px 20px',
-          fontWeight: 300,
-          '&:hover': {
-            backgroundColor: '#F5A40ECF',
-          },
-        }}
-      >
-        Contact Us
-      </Button>
+
+      {/* Contact Us below links */}
+      <Box sx={{ mt: 3 }}>
+        <Button
+          variant="contained"
+          component={Link}
+          href="/contactus"
+          onClick={handleNavClick}
+          sx={{
+            backgroundColor: theme.palette.primary.main,
+            color: '#1E1E1E',
+            borderRadius: '50px',
+            padding: '10px 25px',
+            fontWeight: 500,
+            width: '100%',
+            '&:hover': { backgroundColor: '#F5A40ECF' },
+          }}
+        >
+          Contact Us
+        </Button>
+      </Box>
     </Box>
   );
 
@@ -239,7 +229,6 @@ const Header = (props) => {
           backgroundColor: 'transparent',
           boxShadow: 'none',
           position: 'static',
-          width: '100%',
         }}
       >
         <Toolbar
@@ -249,9 +238,6 @@ const Header = (props) => {
             justifyContent: 'center',
             alignItems: 'center',
             gap: '20px',
-            [theme.breakpoints.down('md')]: {
-              padding: '10px',
-            },
           }}
         >
           {isMobile ? (
@@ -263,33 +249,35 @@ const Header = (props) => {
                 alignItems: 'center',
               }}
             >
-              <IconButton
-                component={Link}
-                href="/"
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                sx={{ color: '#000000ff', padding: 0 }}
-              >
+              <IconButton component={Link} href="/" sx={{ p: 0 }}>
                 <Image
                   src="/images/logo-symbol.jpeg"
-                  alt="Menu"
-                  width={60}
-                  height={60}
-                  style={{ cursor: 'pointer' }}
+                  alt="Logo"
+                  width={55}
+                  height={55}
                 />
               </IconButton>
+
               <IconButton
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
                 onClick={handleDrawerToggle}
-                sx={{ color: '#000000ff' }}
+                sx={{
+                  color: customTheme.palette.secondary.main,
+                  padding: 1.5,
+                  width: 50,
+                  height: 50,
+                  borderRadius: '60px',
+                  border: `1px solid ${customTheme.palette.secondary.main}`,
+                }}
               >
-                <MenuIcon />
+                {mobileOpen ? (
+                  <CloseRoundedIcon sx={{ fontSize: 30 }} />
+                ) : (
+                  <MenuRoundedIcon sx={{ fontSize: 32 }} />
+                )}
               </IconButton>
             </Box>
           ) : (
+            // Desktop layout (untouched)
             <Box
               sx={{
                 width: '100%',
@@ -298,43 +286,18 @@ const Header = (props) => {
                 alignItems: 'center',
               }}
             >
-              {/* Logo */}
-              <IconButton
-                component={Link}
-                href="/"
-                color="inherit"
-                aria-label="open drawer"
-                edge="start"
-                sx={{ color: '#fff', padding: 0 }}
-              >
+              <IconButton component={Link} href="/" sx={{ p: 0 }}>
                 <Image
                   src="/images/logo-symbol.jpeg"
-                  alt="Menu"
+                  alt="Logo"
                   width={40}
                   height={45}
-                  style={{ cursor: 'pointer' }}
                 />
               </IconButton>
-              {/* Navigation Links */}
-              <Box
-                sx={{
-                  display: 'flex',
-                  gap: 1.2,
-                  alignItems: 'center',
-                  position: 'relative',
-                }}
-              >
+
+              <Box sx={{ display: 'flex', gap: 1.2, alignItems: 'center' }}>
                 {navItems.map((item) => (
-                  <Box
-                    key={item.name}
-                    sx={{
-                      position: 'relative',
-                      px: 1,
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                    }}
-                  >
+                  <Box key={item.name} sx={{ position: 'relative', px: 1 }}>
                     <Typography
                       component={Link}
                       href={item.href}
@@ -342,16 +305,12 @@ const Header = (props) => {
                       sx={{
                         color: customTheme.palette.secondary.main,
                         textDecoration: 'none',
-                        fontWeight: pathname === item.href ? 500 : 200,
-                        background: 'transparent',
+                        fontWeight: pathname === item.href ? 500 : 300,
                         fontSize: '1rem',
-                        transition: 'color 0.2s',
-                        pb: 0.5,
                       }}
                     >
                       {item.name}
                     </Typography>
-                    {/* Animated dot below active link */}
                     <AnimatePresence>
                       {pathname === item.href && (
                         <motion.span
@@ -361,24 +320,20 @@ const Header = (props) => {
                           exit={{ opacity: 0, y: 8 }}
                           transition={{
                             type: 'spring',
-                            stiffness: 400,
-                            damping: 30,
+                            stiffness: 500,
+                            damping: 50,
                           }}
                           style={{
                             position: 'absolute',
-                            left: '50%',
+                            left: '45%',
                             transform: 'translateX(-50%)',
-                            bottom: -8,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
+                            bottom: -16,
                           }}
                         >
                           <FiberManualRecordIcon
                             sx={{
                               fontSize: 10,
-                              color: customTheme.palette.secondary.main,
-                              mt: 0,
+                              color: customTheme.palette.primary.main,
                             }}
                           />
                         </motion.span>
@@ -387,7 +342,7 @@ const Header = (props) => {
                   </Box>
                 ))}
               </Box>
-              {/* Contact Us Button */}
+
               <Button
                 variant="contained"
                 component={Link}
@@ -399,9 +354,7 @@ const Header = (props) => {
                   padding: '8px 20px',
                   fontSize: '1rem',
                   ml: 2,
-                  '&:hover': {
-                    backgroundColor: '#eebf05ff',
-                  },
+                  '&:hover': { backgroundColor: '#eebf05ff' },
                 }}
               >
                 Contact Us
@@ -410,49 +363,47 @@ const Header = (props) => {
           )}
         </Toolbar>
       </AppBar>
-      <nav>
-        <Drawer
-          container={
-            typeof window !== 'undefined' ? window.document.body : undefined
-          }
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: { xs: 'block', md: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
-              width: '100vw',
-              height: '100vh',
-            },
-          }}
-        >
-          <AnimatePresence>
-            {mobileOpen && (
-              <motion.div
-                key="drawer"
-                variants={drawerVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  backgroundColor: '#ffffffff',
-                  color: '#ffffffff',
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
-              >
-                {drawerContent}
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </Drawer>
-      </nav>
+
+      {/* Drawer with Circular ClipPath Animation */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <Drawer
+            anchor="right"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{ keepMounted: true }}
+            sx={{
+              display: { xs: 'block', md: 'none' },
+              '& .MuiDrawer-paper': {
+                width: '100vw',
+                height: '100vh',
+                backgroundColor: 'transparent',
+                boxShadow: 'none',
+                overflow: 'hidden',
+              },
+            }}
+          >
+            <motion.div
+              key="drawer-curve"
+              initial="closed"
+              animate="open"
+              exit="closed"
+              variants={sidebarVariants}
+              style={{
+                width: '100%',
+                height: '100%',
+                backgroundColor: '#fff',
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                overflow: 'hidden',
+              }}
+            >
+              {drawerContent}
+            </motion.div>
+          </Drawer>
+        )}
+      </AnimatePresence>
     </HideOnScroll>
   );
 };
