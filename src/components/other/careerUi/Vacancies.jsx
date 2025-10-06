@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Box,
   Typography,
@@ -11,16 +11,26 @@ import {
   List,
   ListItem,
   ListItemText,
+  InputAdornment,
 } from '@mui/material';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { jobVacancies } from '@/lib/jobVacancies'; // adjust path as needed
 import theme from '@/theme/theme';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Vacancies() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [hoveredJob, setHoveredJob] = useState(null);
-  const jobRefs = useRef({});
+  const [openJob, setOpenJob] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const collapseTimeout = useRef(null);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const filteredJobs = jobVacancies.filter((job) =>
     job.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -36,9 +46,22 @@ export default function Vacancies() {
     },
   };
 
-  const itemVariants = {
-    hidden: { y: 18, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.42 } },
+  const handleHover = (id) => {
+    if (isMobile) return;
+    if (collapseTimeout.current) clearTimeout(collapseTimeout.current);
+    setOpenJob(id);
+  };
+
+  const handleLeave = (id) => {
+    if (isMobile) return;
+    collapseTimeout.current = setTimeout(() => {
+      if (openJob === id) setOpenJob(null);
+    }, 300);
+  };
+
+  const handleClickMobile = (id) => {
+    if (!isMobile) return;
+    setOpenJob(openJob === id ? null : id);
   };
 
   return (
@@ -67,9 +90,17 @@ export default function Vacancies() {
           onChange={(e) => setSearchTerm(e.target.value)}
           sx={{
             '& .MuiOutlinedInput-root': {
-              borderRadius: 3,
-              backgroundColor: '#f8f8f8',
+              borderRadius: '50px',
+              backgroundColor: '#e7e7e7ff',
+              '& fieldset': { border: 'none' },
             },
+          }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon sx={{ color: 'text.secondary' }} />
+              </InputAdornment>
+            ),
           }}
         />
         {searchTerm && (
@@ -84,20 +115,20 @@ export default function Vacancies() {
       </Box>
 
       {/* Job List */}
-      <Box sx={{ width: '100%', px: {sx: 0, md: 6}}}>
+      <Box sx={{ width: '100%', px: { sx: 0, md: 6 } }}>
         {filteredJobs.map((job) => {
-          const isOpen = hoveredJob === job.id;
+          const isOpen = openJob === job.id;
 
           return (
             <motion.div
               key={job.id}
-              ref={(el) => (jobRefs.current[job.id] = el)}
-              variants={itemVariants}
-              initial="hidden"
-              animate="visible"
-              onMouseEnter={() => setHoveredJob(job.id)}
-              onMouseLeave={() => setHoveredJob(null)}
-              style={{ width: '100%' }}
+              onMouseEnter={() => handleHover(job.id)}
+              onMouseLeave={() => handleLeave(job.id)}
+              onClick={() => handleClickMobile(job.id)}
+              style={{
+                width: '100%',
+                cursor: isMobile ? 'pointer' : 'default',
+              }}
             >
               <Card
                 sx={{
@@ -107,7 +138,7 @@ export default function Vacancies() {
                   borderBottom: `1px solid ${theme.palette.secondary.main}`,
                   bgcolor: '#fff',
                   width: '100%',
-                  py: 3
+                  py: 3,
                 }}
               >
                 {/* Job Summary */}
@@ -118,7 +149,6 @@ export default function Vacancies() {
                     alignItems: 'center',
                     px: { xs: 1, sm: 3 },
                     py: 3,
-                    cursor: 'pointer',
                   }}
                 >
                   <Box
@@ -139,7 +169,11 @@ export default function Vacancies() {
                     <Box sx={{ flexGrow: 1 }}>
                       <Typography
                         variant="h5"
-                        sx={{ fontWeight: 500, color: '#111', fontSize: { xs: '1.3rem', md: '1.5rem' } }}
+                        sx={{
+                          fontWeight: 500,
+                          color: '#111',
+                          fontSize: { xs: '1.3rem', md: '1.5rem' },
+                        }}
                       >
                         {job.title}
                       </Typography>
@@ -153,10 +187,10 @@ export default function Vacancies() {
                     </Box>
                   </Box>
 
-                  {/* Animated Arrow with MUI Icon */}
+                  {/* Chevron Button */}
                   <motion.div
                     initial={false}
-                    animate={isOpen ? { rotate: 90 } : { rotate: 0 }}
+                    animate={isOpen ? { rotate: 180 } : { rotate: 0 }}
                     transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                     style={{
                       display: 'flex',
@@ -165,24 +199,29 @@ export default function Vacancies() {
                       width: 38,
                       height: 38,
                       borderRadius: '50%',
-                      cursor: 'pointer',
-                      marginLeft: '1rem',
-                      border: `1px solid ${isOpen ? theme.palette.primary.main : theme.palette.secondary.main}`,
-                      backgroundColor: isOpen ? theme.palette.primary.main : 'transparent',
+                      border: `1px solid ${
+                        isOpen
+                          ? theme.palette.primary.main
+                          : theme.palette.secondary.main
+                      }`,
+                      backgroundColor: isOpen
+                        ? theme.palette.primary.main
+                        : 'transparent',
                       transition: 'all 0.12s ease',
                     }}
                   >
-                    <ArrowForwardIosIcon
+                    <ExpandMoreIcon
                       sx={{
-                        fontSize: '1rem',
-                        color: theme.palette.secondary.main,
-                        transition: 'color 0.2s ease',
+                        fontSize: '1.2rem',
+                        color: isOpen
+                          ? theme.palette.secondary.main
+                          : theme.palette.secondary.main,
                       }}
                     />
                   </motion.div>
                 </CardContent>
 
-                {/* Expandable Details on Hover */}
+                {/* Expandable Details */}
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div

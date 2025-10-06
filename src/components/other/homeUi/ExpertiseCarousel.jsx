@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Box, Typography } from '@mui/material';
+import theme from '@/theme/theme';
 
 const expertise = [
   {
@@ -126,7 +127,7 @@ const ExpertiseCarousel = () => {
             >
               <Box
                 sx={{
-                  background: '#ffe600ff',
+                  background:theme.palette.primary.main,
                   color: '#000',
                   borderRadius: 2,
                   px: 2,
