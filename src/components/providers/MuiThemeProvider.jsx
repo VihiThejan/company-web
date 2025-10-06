@@ -12,6 +12,16 @@ const poppins = Poppins({ subsets: ['latin'], weight: '400' });
 
 // Define your custom Material-UI theme here
 const darkTheme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,      // phones portrait
+      sm: 480,    // small phones landscape
+      md: 768,    // tablets portrait
+      lg: 1024,   // tablets landscape / small laptops
+      xl: 1440,   // desktops
+      xxl: 1920,  // large wide screens
+    },
+  },
   palette: {
     mode: 'dark',
     primary: {

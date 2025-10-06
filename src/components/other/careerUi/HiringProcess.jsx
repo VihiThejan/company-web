@@ -27,7 +27,7 @@ const steps = [
   },
   {
     number: '03',
-    title: 'Technical Interview',
+    title: 'First Interview',
     description:
       'Showcase your skills and problem-solving abilities in a technical discussion.',
   },

@@ -11,11 +11,13 @@ import {
   List,
   ListItem,
   ListItemText,
+  InputAdornment,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { jobVacancies } from '@/lib/jobVacancies'; // adjust path as needed
 import theme from '@/theme/theme';
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Vacancies() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -90,7 +92,15 @@ export default function Vacancies() {
             '& .MuiOutlinedInput-root': {
               borderRadius: '50px',
               backgroundColor: '#e7e7e7ff',
+              '& fieldset': { border: 'none' },
             },
+          }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon sx={{ color: 'text.secondary' }} />
+              </InputAdornment>
+            ),
           }}
         />
         {searchTerm && (
@@ -115,7 +125,10 @@ export default function Vacancies() {
               onMouseEnter={() => handleHover(job.id)}
               onMouseLeave={() => handleLeave(job.id)}
               onClick={() => handleClickMobile(job.id)}
-              style={{ width: '100%', cursor: isMobile ? 'pointer' : 'default' }}
+              style={{
+                width: '100%',
+                cursor: isMobile ? 'pointer' : 'default',
+              }}
             >
               <Card
                 sx={{
@@ -138,7 +151,9 @@ export default function Vacancies() {
                     py: 3,
                   }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}>
+                  <Box
+                    sx={{ display: 'flex', alignItems: 'center', flexGrow: 1 }}
+                  >
                     <Typography
                       variant="h6"
                       sx={{
@@ -162,7 +177,11 @@ export default function Vacancies() {
                       >
                         {job.title}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mt: 0.5 }}
+                      >
                         {job.location} | {job.positions} Positions
                       </Typography>
                     </Box>
@@ -185,7 +204,9 @@ export default function Vacancies() {
                           ? theme.palette.primary.main
                           : theme.palette.secondary.main
                       }`,
-                      backgroundColor: isOpen ? theme.palette.primary.main : 'transparent',
+                      backgroundColor: isOpen
+                        ? theme.palette.primary.main
+                        : 'transparent',
                       transition: 'all 0.12s ease',
                     }}
                   >

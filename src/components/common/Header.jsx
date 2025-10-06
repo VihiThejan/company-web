@@ -61,7 +61,7 @@ function HideOnScroll({ children, isMobile }) {
           backgroundColor: '#fff',
           boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
           borderRadius: '50px',
-          width: isMobile ? '90%' : '70%',
+          width: isMobile ? '90%' : 'auto',
           padding: '5px 15px',
         }}
       >
@@ -73,7 +73,7 @@ function HideOnScroll({ children, isMobile }) {
 
 const Header = (props) => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const containerRef = useRef(null);
