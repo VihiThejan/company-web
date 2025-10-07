@@ -11,7 +11,7 @@ export default function TeamMembers() {
     <Box
       sx={{
         py: { xs: 6, md: 8 },
-        px: { xs: 0, md: 4 },
+        px: { xs: 4, md: 4 },
         width: '100%',
         bgcolor: '#fff',
       }}
