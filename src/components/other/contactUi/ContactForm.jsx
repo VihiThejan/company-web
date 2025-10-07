@@ -110,7 +110,7 @@ export default function ContactForm() {
           p: { xs: 3, md: 5 },
           borderRadius: 3,
           border: '1px solid #e0e0e0',
-          boxShadow: '2px 20px 20px rgba(49,49,49,0.05)',
+          boxShadow: '2px 20px 20px rgba(49, 49, 49, 0.24)',
           backgroundColor: '#fff',
         }}
       >
@@ -118,8 +118,8 @@ export default function ContactForm() {
           {[
             { label: 'First Name', name: 'firstName', md: 6 },
             { label: 'Last Name', name: 'lastName', md: 6 },
-            { label: 'Email', name: 'email', type: 'email', md: 12 },
-            { label: 'Contact Number', name: 'contactNumber', md: 12 },
+            { label: 'Email', name: 'email', type: 'email', md: 6 },
+            { label: 'Contact Number', name: 'contactNumber', md: 6 },
             { label: 'Company Website', name: 'companyWebsite', md: 12 },
           ].map((field, i) => (
             <Grid size={{ xs: 12, md: field.md }} key={i}>

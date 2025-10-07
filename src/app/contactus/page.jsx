@@ -56,7 +56,7 @@ export default function ContactUs() {
       </Box>
 
       {/* Components */}
-      <Box sx={{ width: '100%', px: { xs: 2, md: 4 } }}>
+      <Box sx={{ width: '100%', px: { xs: 2, md: 20 } }}>
         <ContactForm />
       </Box>
       <Box sx={{ width: '100%', px: { xs: 2, md: 4 } }}>
