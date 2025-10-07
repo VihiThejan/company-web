@@ -37,7 +37,7 @@ export default function Careers() {
           width: '100%',
           maxWidth: 1200,
           height: {
-            xs: '40vh',
+            xs: '45vh',
             sm: '60vh',
             md: '100vh',
             lg: '70vh',

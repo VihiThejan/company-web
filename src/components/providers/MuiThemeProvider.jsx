@@ -17,7 +17,9 @@ const darkTheme = createTheme({
       xs: 0,      // phones portrait
       sm: 480,    // small phones landscape
       md: 768,    // tablets portrait
+      mdl: 820,   // tablets landscape
       lg: 1024,   // tablets landscape / small laptops
+      lgl: 1080,  // laptops
       xl: 1440,   // desktops
       xxl: 1920,  // large wide screens
     },
