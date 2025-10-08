@@ -7,7 +7,7 @@ export const teamMembers = [
   },
   {
     name: 'Nisal Palihena',
-    role: 'Marketing Analyst',
+    role: 'Digital Strategy and Operations',
     image: '/images/career-img/team-members/nisal.webp',
     linkedin: 'https://www.linkedin.com/in/nisalpalihena/',
   },
