@@ -61,7 +61,7 @@ function MarketingPage() {
                   height="300"
                   image="/images/home-img/Rectangle 48.png"
                   alt="Business meeting"
-                  sx={{ width: '100%', height: 400, objectFit: 'cover' }}
+                  sx={{ width: 760, height: 400, objectFit: 'cover' }}
                 />
               </Card>
               <Card sx={{ borderRadius: 3, overflow: 'hidden', flex: 1, maxWidth: '48%' }}>
@@ -70,7 +70,7 @@ function MarketingPage() {
                   height="300"
                   image="/images/home-img/Rectangle 49.png"
                   alt="Team presentation"
-                  sx={{ width: '100%', height: 400, objectFit: 'cover' }}
+                  sx={{ width: 760, height: 400, objectFit: 'cover' }}
                 />
               </Card>
             </Box>
@@ -83,10 +83,10 @@ function MarketingPage() {
           <Grid item xs={12} md={6}>
             <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
               <Box sx={{ flex: 1 }}>
-                <Typography variant="h4" sx={{ fontWeight: 'bold', mb: -10 , lineHeight: 6}}>
+                <Typography variant="h4" sx={{ fontWeight: 'bold', mb: -12 , lineHeight: 8}}>
                   Go-to-market strategies
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.4 }}>
+                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
                   Our go-to-market strategies combine industry expertise, tailored workflows, and proven methodologies, ensuring each product launch reaches its intended market with precision. From strategic positioning and channel selection to targeted audience engagement, we’ve refined every step to deliver impactful, measurable results that connect with your audience.
 
                 </Typography>
@@ -97,7 +97,7 @@ function MarketingPage() {
                     component="img"
                     image="/images/home-img/Rectangle 42.png"
                     alt="Global network"
-                sx={{ width: 500, height: 400, objectFit: 'cover' }}
+                sx={{ width: 610, height: 500, objectFit: 'cover' }}
                   />
                 </Card>
               </Box>
@@ -113,7 +113,7 @@ function MarketingPage() {
                     component="img"
                     image="/images/home-img/Rectangle 41.png"
                     alt="Analytics dashboard"
-                sx={{ width: 500, height: 400, objectFit: 'cover' }}
+                sx={{ width: 610, height: 500, objectFit: 'cover' }}
                   />
                 </Card>
               </Box>
@@ -121,7 +121,7 @@ function MarketingPage() {
                 <Typography variant="h4" sx={{ fontWeight: 'bold', mb: -13 , lineHeight: 8  }}>
                   Data-based marketing
                 </Typography>
-                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.4 }}>
+                <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
                   In performance marketing, we emphasize measurable outcomes through data-driven tracking, detailed reporting, and continuous optimization. Each campaign is monitored in real-time, allowing us to maximize return on investment and gain actionable insights, building a cycle of continuous improvement and growth for our clients.
                 </Typography>
               </Box>
@@ -132,7 +132,7 @@ function MarketingPage() {
           <Grid item xs={12} md={6}>
             <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
               <Box sx={{ flex: 1 }}>
-                <Typography variant="h4" sx={{ fontWeight: 'bold', mb: -10 , lineHeight: 6}}>
+                <Typography variant="h4" sx={{ fontWeight: 'bold', mb: -13 , lineHeight: 8}}>
                   High-impact SEO content
                 </Typography>
                 <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
@@ -145,7 +145,7 @@ function MarketingPage() {
                     component="img"
                     image="/images/home-img/design.jpg"
                     alt="Content checklist"
-                sx={{ width: 500, height: 400, objectFit: 'cover' }}
+                sx={{ width: 610, height: 500, objectFit: 'cover' }}
                   />
                 </Card>
               </Box>
@@ -161,13 +161,13 @@ function MarketingPage() {
                     component="img"
                     image="/images/home-img/Rectangle 43.png"
                     alt="Marketing automation"
-                sx={{ width: 500, height: 400, objectFit: 'cover' }}
+                sx={{ width: 610, height: 500, objectFit: 'cover' }}
                   />
                 </Card>
               </Box>
               <Box sx={{ flex: 1 }}>
-                <Typography variant="h4" sx={{ fontWeight: 'bold', mb: -10 , lineHeight: 6 }}>
-                  Marketing Automation
+                <Typography variant="h4" sx={{ fontWeight: 'bold', mb: -13 , lineHeight: 8 }}>
+                  Automated Lead Engagement
                 </Typography>
                 <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.6 }}>
                   With funnel development, automation, and CRM integrations, we create a seamless journey from lead to close. We optimize every stage for engagement, incorporating automated follow-ups and tailored CRM strategies that ensure timely, personalized touch points. This approach enhances efficiency and builds strong, lasting relationships that turn leads into loyal customers.
@@ -187,8 +187,8 @@ function MarketingPage() {
               <Paper 
                 key={item}
                 sx={{ 
-                  width: 180, 
-                  height: 250, 
+                  width: 200, 
+                  height: 260, 
                   borderRadius: 3,
                   backgroundColor: '#D9D9D9',
                   display: 'flex',
@@ -420,8 +420,8 @@ function MarketingPage() {
                 Get in touch
               </Button>
             </Box>
-            <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign: 'center' }}>
-              <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2, lineHeight: 1.3 }}>
+            <Box sx={{ position: 'absolute', top: 140, left: 20 }}>
+              <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 2, lineHeight: 1.3, textAlign: 'left' }}>
                 Ready to meet your marketing team?
               </Typography>
             </Box>
