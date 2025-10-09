@@ -8,6 +8,11 @@ import TeamMembers from '@/components/other/careerUi/TeamMembers';
 import HiringProcess from '@/components/other/careerUi/HiringProcess';
 import Vacancies from '@/components/other/careerUi/Vacancies';
 import TechnologyServices from '@/components/other/technologyUi/TechnologyServices';
+import CallToActionCards from '@/components/other/homeUi/CallToActionCards';
+import Growth from '@/components/other/technologyUi/Growth';
+import { Grid } from '@mui/material';
+import ExpertiseCarousel from '@/components/other/homeUi/ExpertiseCarousel';
+import TeamCard from '@/components/common/TeamCard';
 
 export default function Technologies() {
   const handleScrollToJobs = () => {
@@ -126,6 +131,12 @@ export default function Technologies() {
       </Box>
       <Box>
         <TechnologyServices />
+      </Box>
+      <Box sx={{ width: '100%', px: { xs: 2, sm: 4 }, pt: {xs: 0, md: 10}, pb: 2}}>
+        <TeamCard/>
+      </Box>
+      <Box sx={{ width: '100%', px: { xs: 2, sm: 4 } }}>
+        <CallToActionCards />
       </Box>
     </Box>
   );
