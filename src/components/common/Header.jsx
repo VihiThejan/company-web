@@ -24,7 +24,7 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { usePathname } from 'next/navigation';
 import customTheme from '@/theme/theme';
 
-function HideOnScroll({ children, isMobile }) {
+function HideOnScroll({ children, isMobile, mobileOpen }) {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -53,13 +53,21 @@ function HideOnScroll({ children, isMobile }) {
     >
       <motion.header
         initial={{ y: 0 }}
-        animate={show ? { y: 0 } : { y: '-140%' }}
+        animate={
+          show
+            ? {
+                y: 0,
+                borderRadius: mobileOpen ? '20px' : '50px',
+                transition: { duration: 0.5, ease: 'easeInOut' },
+              }
+            : { y: '-140%' }
+        }
         transition={{ duration: 0.5, ease: 'easeInOut' }}
         style={{
           zIndex: 1100,
           backgroundColor: '#fff',
           boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
-          borderRadius: '20px',
+          borderRadius: mobileOpen ? '20px' : '50px',
           width: isMobile ? '90%' : 'auto',
           padding: '5px 15px',
         }}
@@ -102,7 +110,7 @@ const Header = (props) => {
   };
 
   return (
-    <HideOnScroll {...props} isMobile={isMobile}>
+    <HideOnScroll {...props} isMobile={isMobile} mobileOpen={mobileOpen}>
       <AppBar
         component="nav"
         sx={{
