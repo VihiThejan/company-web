@@ -36,7 +36,7 @@ export default function TechnologyServices() {
       sx={{
         width: '100%',
         backgroundColor: '#fff',
-        py: { xs: 6, sm: 8, md: 10 },
+        pt: { xs: 6, sm: 8, md: 10 },
         px: { xs: 2, sm: 4 },
         display: 'flex',
         flexDirection: 'column',
@@ -76,6 +76,9 @@ export default function TechnologyServices() {
               sx={{
                 width: { xs: '100%', md: '100%' },
                 textAlign: { xs: 'center', md: 'left' },
+                mt: {xs: '30px', md: 0},
+                mb: {xs: '50px', md: 0}
+              
               }}
             >
               <Box sx={{padding: {sx: '20px', md: '30px'}}}>
@@ -96,6 +99,7 @@ export default function TechnologyServices() {
                     fontSize: { xs: '0.95rem', sm: '1rem', md: '1.05rem' },
                     color: '#555',
                     lineHeight: 1.6,
+                    textAlign: 'justify'
                   }}
                 >
                   {service.description}
