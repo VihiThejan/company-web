@@ -17,6 +17,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { projectData } from '@/lib/projectData';
+import theme from '@/theme/theme';
 
 export default function ProjectDetails() {
   const cusTheme = useTheme();
@@ -197,7 +198,7 @@ function Section({ title, content }) {
         variant="h6"
         sx={{
           fontWeight: 700,
-          color: '#1E1E1E',
+          color: theme.palette.secondary.main,
           mb: 1,
           fontSize: { xs: '1.1rem', md: '1.25rem' },
         }}
