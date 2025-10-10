@@ -14,7 +14,7 @@ import ExpertiseCarousel from '@/components/other/homeUi/ExpertiseCarousel';
 import TeamCard from '@/components/common/TeamCard';
 import MarketingServices from '@/components/other/marketingUi/MarketingServices';
 
-export default function Technologies() {
+export default function Marketing() {
   const handleScrollToJobs = () => {
     const jobSection = document.getElementById('job-openings');
     if (jobSection) {
