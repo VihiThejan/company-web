@@ -89,7 +89,7 @@ export default function Careers() {
             maxWidth: { xs: '90%', sm: '85%', md: '70%' },
           }}
         >
-          Build the future with pixels, code, and zero corporate nonsense.
+          Join a team that transforms innovation into real-world impact
         </Typography>
 
         <Button
