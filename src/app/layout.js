@@ -11,8 +11,11 @@ import ScrollToTopButton from '@/components/common/ScrollToTopButton';
 export const metadata = {
   title: 'VIHI IT Solutions',
   description: 'Your solution for IT needs.',
-  themeColor: "#ffc720",
-  appleMobileWebAppStatusBarStyle: "#ffc720",
+};
+
+export const viewport = {
+  themeColor: '#ffc720',
+  appleMobileWebAppStatusBarStyle: '#ffc720',
 };
 
 export default function RootLayout({ children }) {
