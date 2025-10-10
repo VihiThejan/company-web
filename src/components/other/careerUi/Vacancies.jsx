@@ -13,7 +13,7 @@ import {
   ListItemText,
   InputAdornment,
 } from '@mui/material';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import { motion, AnimatePresence } from 'framer-motion';
 import { jobVacancies } from '@/lib/jobVacancies'; // adjust path as needed
 import theme from '@/theme/theme';
@@ -210,7 +210,7 @@ export default function Vacancies() {
                       transition: 'all 0.12s ease',
                     }}
                   >
-                    <ExpandMoreIcon
+                    <ArrowDownwardIcon
                       sx={{
                         fontSize: '1.2rem',
                         color: isOpen

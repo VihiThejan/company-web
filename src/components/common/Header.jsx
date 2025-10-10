@@ -88,9 +88,9 @@ const Header = (props) => {
   const handleNavClick = () => setMobileOpen(false);
 
   const navItems = [
-    { name: 'Products', href: '/design' },
-    { name: 'Marketing', href: '/marketing' },
     { name: 'Technology', href: '/technology' },
+    { name: 'Marketing', href: '/marketing' },
+    { name: 'Portfolio', href: '/portfolio' },
     { name: 'Careers', href: '/careers' },
     { name: 'Expertise', href: '/expertise' },
   ];

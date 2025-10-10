@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Fab, Zoom } from '@mui/material';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import theme from '@/theme/theme';
 
 const ScrollToTopButton = () => {
@@ -35,7 +35,7 @@ const ScrollToTopButton = () => {
         }}
         aria-label="Scroll to top"
       >
-        <KeyboardArrowUpIcon />
+        <ArrowUpwardIcon />
       </Fab>
     </Zoom>
   );

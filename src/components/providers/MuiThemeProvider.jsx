@@ -14,12 +14,15 @@ const poppins = Poppins({ subsets: ['latin'], weight: '400' });
 const darkTheme = createTheme({
   breakpoints: {
     values: {
-      xs: 0,      // phones portrait
+      xs: 0, 
+      xss: 370,     // phones portrait
       sm: 480,    // small phones landscape
       md: 768,    // tablets portrait
-      mdl: 820,   // tablets landscape
+      mdl: 820,
+      mdll: 840,   // tablets landscape
       lg: 1024,   // tablets landscape / small laptops
       lgl: 1080,  // laptops
+      lgll: 1340,
       xl: 1440,   // desktops
       xxl: 1920,  // large wide screens
     },
