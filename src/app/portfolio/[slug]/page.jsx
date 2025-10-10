@@ -1,8 +1,8 @@
-export const runtime = 'edge';
-
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
+// import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+
 import {
   Box,
   Typography,
@@ -21,12 +21,17 @@ import React from 'react';
 import { projectData } from '@/lib/projectData';
 import theme from '@/theme/theme';
 
-export default function ProjectDetails() {
+export const runtime = 'edge';
+
+
+export default function ProjectDetails({params}) {
   const cusTheme = useTheme();
   const isMobile = useMediaQuery(cusTheme.breakpoints.down('sm'));
-  const { slug } = useParams();
-  const router = useRouter();
+  // const { slug } = useParams();
+  // const router = useRouter();
+  const { slug } = params;
   const project = projectData[slug];
+  const router = useRouter();
 
   if (!project) {
     return (
@@ -147,7 +152,7 @@ export default function ProjectDetails() {
               sx={{
                 fontSize: '1rem',
                 color: '#555',
-                textAlign: 'justify'
+                textAlign: 'justify',
               }}
             >
               {project.shortDescription}
@@ -181,9 +186,7 @@ export default function ProjectDetails() {
           { title: 'Objectives', content: project.objectives },
           { title: 'Our Solution', content: project.solution },
         ].map((section, i) => (
-          <Box
-          key={i}
-          >
+          <Box key={i}>
             <Section title={section.title} content={section.content} />
           </Box>
         ))}
