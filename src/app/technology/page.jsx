@@ -129,11 +129,18 @@ export default function Technologies() {
           }}
         />
       </Box>
-      <Box>
+      <Box sx={{ pt: { xs: 6, sm: 8, md: 10 }, px: { xs: 2, sm: 4 } }}>
         <TechnologyServices />
       </Box>
-      <Box sx={{ width: '100%', px: { xs: 2, sm: 4 }, pt: {xs: 0, md: 10}, pb: 2}}>
-        <TeamCard/>
+      <Box
+        sx={{
+          width: '100%',
+          px: { xs: 2, sm: 4 },
+          pt: { xs: 0, md: 10 },
+          pb: 2,
+        }}
+      >
+        <TeamCard />
       </Box>
       <Box sx={{ width: '100%', px: { xs: 2, sm: 4 } }}>
         <CallToActionCards />

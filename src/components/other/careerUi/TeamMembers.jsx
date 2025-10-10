@@ -26,7 +26,7 @@ export default function TeamMembers() {
           fontSize: { xs: '1.8rem', md: '2.5rem' },
         }}
       >
-        Our Leaders & Experts
+        Meet the Minds Driving Our Innovation
       </Typography>
 
       <Grid container spacing={{ xs: 4, md: 5 }} justifyContent="center">
