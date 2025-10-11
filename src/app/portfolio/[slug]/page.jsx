@@ -1,14 +1,12 @@
 'use client';
 
-// import { useParams, useRouter } from 'next/navigation';
+import React from 'react';
 import { useRouter } from 'next/navigation';
-
 import {
   Box,
   Typography,
   Button,
   Divider,
-  Container,
   Breadcrumbs,
   Link as MUILink,
   useTheme,
@@ -16,22 +14,21 @@ import {
 } from '@mui/material';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { motion } from 'framer-motion';
-import React from 'react';
 import { projectData } from '@/lib/projectData';
 import theme from '@/theme/theme';
 
 export const runtime = 'edge';
 
-
-export default function ProjectDetails({params}) {
+export default function ProjectDetails({ params }) {
   const cusTheme = useTheme();
   const isMobile = useMediaQuery(cusTheme.breakpoints.down('sm'));
-  // const { slug } = useParams();
-  // const router = useRouter();
-  const { slug } = params;
-  const project = projectData[slug];
   const router = useRouter();
+
+  // ✅ Unwrap the Promise-based params
+  const unwrappedParams = React.use(params);
+  const { slug } = unwrappedParams;
+
+  const project = projectData[slug];
 
   if (!project) {
     return (
@@ -55,23 +52,13 @@ export default function ProjectDetails({params}) {
         pt: { xs: 15, sm: 10, md: 12 },
       }}
     >
+      {/* ✅ Breadcrumbs / Back Button */}
       <Box
         sx={{
           position: 'relative',
           zIndex: 2,
           width: '100%',
-          height: {
-            xs: '40vh',
-            xss: '50vh',
-            sm: '120vh',
-            md: '40vh',
-            mdl: '30vh',
-            mdll: '80vh',
-            lg: '30vh',
-            lgl: '50vh',
-            xl: '60vh',
-          },
-
+          height: { xs: '40vh', md: '40vh' },
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -80,13 +67,7 @@ export default function ProjectDetails({params}) {
         }}
       >
         {isMobile ? (
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'flex-start',
-            }}
-          >
+          <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
             <Button
               startIcon={<ArrowBackIcon />}
               onClick={() => router.back()}
@@ -121,64 +102,49 @@ export default function ProjectDetails({params}) {
           </Breadcrumbs>
         )}
 
-        {/* Project Header with Animation */}
-        <Box sx={{ width: '100%', textAlign: 'left' }}>
-          <Box sx={{ width: '100%' }} mb={5}>
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 700,
-                mb: 1.5,
-                color: '#222',
-                fontWeight: 700,
-                lineHeight: 1.2,
-                fontSize: {
-                  xs: '1.8rem', // very small phones
-                  md: '2rem', // tablets
-                  lg: '2.4rem', // laptops
-                  xl: '2.8rem', // large desktops
-                },
-              }}
-            >
-              {project.title}
-            </Typography>
+        {/* Header */}
+        <Box sx={{ textAlign: 'left' }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 700,
+              mb: 1.5,
+              color: '#222',
+              fontSize: { xs: '1.8rem', lg: '2.4rem' },
+            }}
+          >
+            {project.title}
+          </Typography>
 
-            <Typography sx={{ color: '#2c2c2cff', mb: 2 }}>
-              <strong>Client:</strong> {project.company} &nbsp;| &nbsp;
-              <strong>Industry:</strong> {project.industry}
-            </Typography>
+          <Typography sx={{ color: '#2c2c2cff', mb: 2 }}>
+            <strong>Client:</strong> {project.company} &nbsp;|&nbsp;
+            <strong>Industry:</strong> {project.industry}
+          </Typography>
 
-            <Typography
-              sx={{
-                fontSize: '1rem',
-                color: '#555',
-                textAlign: 'justify',
-              }}
-            >
-              {project.shortDescription}
-            </Typography>
-          </Box>
+          <Typography
+            sx={{ fontSize: '1rem', color: '#555', textAlign: 'justify' }}
+          >
+            {project.shortDescription}
+          </Typography>
         </Box>
       </Box>
 
       {/* Project Image */}
-      <Box>
-        <Box
-          component="img"
-          src={project.image}
-          alt={project.title}
-          sx={{
-            width: '100%',
-            height: { xs: 240, sm: 360, md: 420 },
-            objectFit: 'cover',
-            borderRadius: 3,
-            boxShadow: '0px 6px 20px rgba(0,0,0,0.1)',
-            mb: 5,
-          }}
-        />
-      </Box>
+      <Box
+        component="img"
+        src={project.image}
+        alt={project.title}
+        sx={{
+          width: '100%',
+          height: { xs: 240, sm: 360, md: 420 },
+          objectFit: 'cover',
+          borderRadius: 3,
+          boxShadow: '0px 6px 20px rgba(0,0,0,0.1)',
+          mb: 5,
+        }}
+      />
 
-      {/* Scroll Animated Sections */}
+      {/* Project Sections */}
       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
         {[
           { title: 'Introduction', content: project.introduction },
@@ -186,16 +152,13 @@ export default function ProjectDetails({params}) {
           { title: 'Objectives', content: project.objectives },
           { title: 'Our Solution', content: project.solution },
         ].map((section, i) => (
-          <Box key={i}>
-            <Section title={section.title} content={section.content} />
-          </Box>
+          <Section key={i} title={section.title} content={section.content} />
         ))}
       </Box>
     </Box>
   );
 }
 
-// ✅ Reusable content section
 function Section({ title, content }) {
   return (
     <Box>
@@ -210,14 +173,7 @@ function Section({ title, content }) {
       >
         {title}
       </Typography>
-      <Divider
-        sx={{
-          width: '100%',
-          borderBottomWidth: 1,
-          borderColor: '#0000002f',
-          mb: 2,
-        }}
-      />
+      <Divider sx={{ borderBottomWidth: 1, borderColor: '#0000002f', mb: 2 }} />
       <Typography
         sx={{
           fontSize: { xs: '0.95rem', md: '1rem' },
