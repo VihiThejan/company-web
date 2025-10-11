@@ -13,7 +13,7 @@ export const teamMembers = [
   },
   {
     name: 'Dumindu Bandara',
-    role: 'Senior Software Engineer',
+    role: 'Lead Software Engineer',
     image: '/images/career-img/team-members/dumindu.webp',
     linkedin: 'https://www.linkedin.com/in/dumindulakshanbandara/',
   },
