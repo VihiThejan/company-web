@@ -44,8 +44,9 @@ const Footer = () => {
       sx={{
         backgroundColor: '#fff',
         color: '#000',
-        mt: {xs: 1, md:6},
-        py: {xs:0, md: 6},
+        mt: { xs: 1, md: 6 },
+        pt: { xs: 0, md: 6 },
+        pb: { xs: 3, md: 6 },
         width: '100%',
       }}
     >
@@ -66,12 +67,12 @@ const Footer = () => {
       >
         {/* Company Info */}
         <Box>
-          <Box sx={{ mb: 1 }}>
+          <Box sx={{ mb: 1, display: 'flex', justifyContent: 'center' }}>
             <Image
               src="/images/logo-new.png"
               alt="VIHI IT Solutions Logo"
-              width={200}
-              height={50}
+              width={300}
+              height={70}
               style={{ objectFit: 'contain' }}
             />
           </Box>
@@ -80,8 +81,7 @@ const Footer = () => {
             sx={{
               color: '#555',
               lineHeight: 1.7,
-              maxWidth: {xs: '100%', md: 280},
-              textAlign: 'justify',
+              width: { xs: '100%', md: 400 },
             }}
           >
             We deliver innovative technology solutions that help your business
@@ -98,12 +98,18 @@ const Footer = () => {
                 fontWeight: 600,
                 fontSize: '16px',
                 mb: 1.5,
-                color: '#303030ff'
+                color: '#303030ff',
               }}
             >
               {section.title}
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: {xs: 'row', md:'column'}, gap: 2 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: { xs: 'row', md: 'column' },
+                gap: 2,
+              }}
+            >
               {section.links.map((link) => (
                 <Typography
                   key={link.name}
@@ -124,7 +130,7 @@ const Footer = () => {
         ))}
       </Box>
 
-      <Divider sx={{ my: 4, mx: {xs: 2, sm: 4}, borderColor: '#858585ff' }} />
+      <Divider sx={{ my: 4, mx: { xs: 2, sm: 4 }, borderColor: '#858585ff' }} />
 
       {/* ===== BOTTOM SECTION ===== */}
       <Box
