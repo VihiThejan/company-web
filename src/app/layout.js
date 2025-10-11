@@ -13,11 +13,6 @@ export const metadata = {
   description: 'Your solution for IT needs.',
 };
 
-export const viewport = {
-  themeColor: '#ffc720',
-  appleMobileWebAppStatusBarStyle: '#ffc720',
-};
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
