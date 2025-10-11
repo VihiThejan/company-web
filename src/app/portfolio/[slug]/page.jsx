@@ -49,7 +49,6 @@ export default function ProjectDetails({ params }) {
         overflow: 'hidden',
         background: '#fff',
         px: { xs: 2, sm: 4, md: 6, lg: 8 },
-        pt: { xs: 13, sm: 10, md: 30 },
       }}
     >
       <Box
@@ -57,10 +56,20 @@ export default function ProjectDetails({ params }) {
           position: 'relative',
           zIndex: 2,
           width: '100%',
-          height: { xs: '60vh', md: '50vh' },
+          // mt: { xs: 5, md: 5 },
+          height: {
+            xs: '28vh',
+            xss: '20vh',
+            sm: '50vh',
+            md: '25vh',
+            mdl: '15vh',
+            mdll: '35vh',
+            lg: '15vh',
+            lgl: '25vh',
+          },
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
+          alignItems: 'end',
+          justifyContent: 'flex-start',
           mx: 'auto',
           textAlign: 'center',
         }}
@@ -85,7 +94,7 @@ export default function ProjectDetails({ params }) {
           <Breadcrumbs
             separator={<NavigateNextIcon fontSize="small" />}
             aria-label="breadcrumb"
-            sx={{ mb: 6, textAlign: 'left' }}
+            sx={{ textAlign: 'left' }}
           >
             <MUILink
               underline="hover"
@@ -100,45 +109,44 @@ export default function ProjectDetails({ params }) {
             </Typography>
           </Breadcrumbs>
         )}
-
-        {/* Header */}
-        <Box sx={{ textAlign: 'left', mb: {xs: 0, md:20} }}>
-          <Box sx={{mb: 1 }}>
-            <Box
-              component="img"
-              src={project.companyLogo}
-              alt={project.title}
-              sx={{
-                width: '150px',
-                height: '150px',
-                objectFit: 'cover',
-              }}
-            />
-          </Box>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 700,
-              mb: 1.5,
-              color: '#222',
-              fontSize: { xs: '1.8rem', lg: '2.4rem' },
-            }}
-          >
-            {project.title}
-          </Typography>
-
-          <Typography sx={{ color: '#2c2c2cff', mb: 2 }}>
-            <strong>Industry:</strong> {project.industry}
-          </Typography>
-
-          <Typography
-            sx={{ fontSize: '1rem', color: '#555', textAlign: 'justify' }}
-          >
-            {project.shortDescription}
-          </Typography>
-        </Box>
       </Box>
 
+      {/* Header */}
+      <Box sx={{ textAlign: 'left', mb: { xs: 5, md: 5 } }}>
+        <Box>
+          <Box
+            component="img"
+            src={project.companyLogo}
+            alt={project.title}
+            sx={{
+              width: '150px',
+              height: '150px',
+              objectFit: 'cover',
+            }}
+          />
+        </Box>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: 700,
+            mb: 1.5,
+            color: '#222',
+            fontSize: { xs: '1.8rem', lg: '2.4rem' },
+          }}
+        >
+          {project.title}
+        </Typography>
+
+        <Typography sx={{ color: '#2c2c2cff', mb: 2 }}>
+          <strong>Industry:</strong> {project.industry}
+        </Typography>
+
+        <Typography
+          sx={{ fontSize: '1rem', color: '#555', textAlign: 'justify' }}
+        >
+          {project.shortDescription}
+        </Typography>
+      </Box>
       {/* Project Image */}
       <Box
         component="img"

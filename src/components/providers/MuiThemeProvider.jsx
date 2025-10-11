@@ -15,7 +15,7 @@ const darkTheme = createTheme({
   breakpoints: {
     values: {
       xs: 0, 
-      xss: 370,     // phones portrait
+      xss: 380,     // phones portrait
       sm: 480,    // small phones landscape
       md: 768,    // tablets portrait
       mdl: 820,
