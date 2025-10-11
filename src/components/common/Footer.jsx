@@ -44,8 +44,8 @@ const Footer = () => {
       sx={{
         backgroundColor: '#fff',
         color: '#000',
-        mt: {xs: 5, md:6},
-        py: 6,
+        mt: {xs: 1, md:6},
+        py: {xs:0, md: 6},
         width: '100%',
       }}
     >
@@ -103,7 +103,7 @@ const Footer = () => {
             >
               {section.title}
             </Typography>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+            <Box sx={{ display: 'flex', flexDirection: {xs: 'row', md:'column'}, gap: 2 }}>
               {section.links.map((link) => (
                 <Typography
                   key={link.name}
