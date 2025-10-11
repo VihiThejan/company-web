@@ -2,90 +2,36 @@
 
 import React from 'react';
 import Link from 'next/link';
-import {
-  Box,
-  Typography,
-  Divider,
-  IconButton,
-  useTheme,
-} from '@mui/material';
+import { Box, Typography, IconButton, Divider, useTheme } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import Image from 'next/image';
 
 const footerSections = [
   {
-    title: 'How-Tos',
-    links: ['Galaxy S7 | S7 edge', 'Gear 360', 'Galaxy S6 edge+', 'Galaxy Note5', 'Gear S2'],
-  },
-  {
-    title: 'Gallery',
+    title: 'Capabilities',
     links: [
-      'Galaxy S7 | S7 edge Gallery',
-      'Gear 360 VR Gallery',
-      'Galaxy Moments',
-      'Galaxy S6 edge+ Gallery',
-      'Galaxy Note5 Gallery',
-      'Galaxy S6 | S6 edge Gallery',
+      { name: 'Marketing', href: '/marketing' },
+      { name: 'Technology', href: '/technology' },
+      { name: 'Portfolio', href: '/portfolio' },
     ],
   },
   {
-    title: 'Events',
+    title: 'Company',
     links: [
-      'Olympic Games',
-      'Injustice Edition',
-      'Galaxy at E3',
-      'Unpacked 2016',
-      'S Carpet',
-      'Samsung - Surf',
-      'Samsung & Avengers',
-      'Galaxy S6 World Tour',
+      { name: 'About Us', href: '/aboutus' },
+      { name: 'Expertise', href: '/expertise' },
+      { name: 'Careers', href: '/careers' },
     ],
   },
   {
-    title: 'Apps',
+    title: 'Resources',
     links: [
-      'Theme Service',
-      'Soundcamp',
-      'Kids Mode',
-      'S Health',
-      'Galaxy Apps',
-      'Smart Call',
-      'Find My Mobile',
-      'Samsung Pay',
-      'S Note',
-      'PENUP',
-      'Smart Switch',
-      'Samsung Members',
+      { name: 'Blog', href: '/blog' },
+      { name: 'Contact Us', href: '/contactus' },
     ],
-  },
-  {
-    title: 'Galaxy Story',
-    links: ['Galaxy Story'],
-  },
-];
-
-const socialLinks = [
-  {
-    icon: <FacebookIcon fontSize="small" />,
-    href: 'https://www.facebook.com/share/17bbcRZ76e/',
-    label: 'Facebook',
-  },
-  {
-    icon: <YouTubeIcon fontSize="small" />,
-    href: 'https://youtube.com',
-    label: 'YouTube',
-  },
-  {
-    icon: <LinkedInIcon fontSize="small" />,
-    href: 'https://www.linkedin.com/company/vihi-it-solutions/',
-    label: 'LinkedIn',
-  },
-  {
-    icon: <InstagramIcon fontSize="small" />,
-    href: 'https://instagram.com',
-    label: 'Instagram',
   },
 ];
 
@@ -98,118 +44,178 @@ const Footer = () => {
       sx={{
         backgroundColor: '#fff',
         color: '#000',
-        pt: 6,
-        pb: 4,
+        mt: {xs: 5, md:6},
+        py: 6,
         width: '100%',
       }}
     >
-      {/* Main sections */}
-      {footerSections.map((section, idx) => (
-        <Box
-          key={section.title}
-          sx={{
-            maxWidth: '1200px',
-            mx: 'auto',
-            px: { xs: 2, sm: 4 },
-            py: 3,
-          }}
-        >
-          {/* Title */}
-          <Typography
-            variant="h6"
-            sx={{
-              fontWeight: 700,
-              fontSize: '18px',
-              mb: 1,
-            }}
-          >
-            {section.title}
-          </Typography>
-
-          {/* Divider directly under title */}
-          <Divider sx={{ borderColor: '#e0e0e0', mb: 2 }} />
-
-          {/* Links row (wraps responsively) */}
-          <Box
-            sx={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: { xs: 1.5, sm: 3, md: 4 },
-            }}
-          >
-            {section.links.map((linkText, i) => (
-              <Typography
-                key={i}
-                component={Link}
-                href="#"
-                variant="body2"
-                sx={{
-                  textDecoration: 'none',
-                  color: '#333',
-                  fontSize: '15px',
-                  fontWeight: 400,
-                  '&:hover': { color: '#000' },
-                }}
-              >
-                {linkText}
-              </Typography>
-            ))}
-          </Box>
-        </Box>
-      ))}
-
-      {/* Bottom row: copyright + social */}
+      {/* ===== TOP SECTION ===== */}
       <Box
         sx={{
           maxWidth: '1200px',
           mx: 'auto',
-          px: { xs: 2, sm: 4 },
-          pt: 3,
-          mt: 2,
-          display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: { xs: 1, sm: 0 },
+          px: { xs: 3, sm: 4 },
+          display: 'grid',
+          gridTemplateColumns: {
+            xs: '1fr',
+            sm: '1fr 1fr',
+            md: '2fr 1fr 1fr 1fr',
+          },
+          gap: { xs: 4, md: 6 },
         }}
       >
-        <Typography
-          variant="body2"
-          sx={{
-            color: '#666',
-            fontSize: '14px',
-            textAlign: { xs: 'center', sm: 'left' },
-            width: { xs: '100%', sm: 'auto' },
-          }}
-        >
-          © {new Date().getFullYear()} VIHI IT Solutions. All rights reserved.
-        </Typography>
+        {/* Company Info */}
+        <Box>
+          <Box sx={{ mb: 1 }}>
+            <Image
+              src="/images/logo-new.png"
+              alt="VIHI IT Solutions Logo"
+              width={200}
+              height={50}
+              style={{ objectFit: 'contain' }}
+            />
+          </Box>
+          <Typography
+            variant="body2"
+            sx={{
+              color: '#555',
+              lineHeight: 1.7,
+              maxWidth: {xs: '100%', md: 280},
+              textAlign: 'justify',
+            }}
+          >
+            We deliver innovative technology solutions that help your business
+            grow and adapt in a fast-changing digital world.
+          </Typography>
+        </Box>
 
+        {/* Section Links */}
+        {footerSections.map((section) => (
+          <Box key={section.title}>
+            <Typography
+              variant="subtitle1"
+              sx={{
+                fontWeight: 600,
+                fontSize: '16px',
+                mb: 1.5,
+                color: '#303030ff'
+              }}
+            >
+              {section.title}
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+              {section.links.map((link) => (
+                <Typography
+                  key={link.name}
+                  component={Link}
+                  href={link.href}
+                  sx={{
+                    textDecoration: 'none',
+                    color: '#555',
+                    fontSize: '14px',
+                    '&:hover': { color: '#000' },
+                  }}
+                >
+                  {link.name}
+                </Typography>
+              ))}
+            </Box>
+          </Box>
+        ))}
+      </Box>
+
+      <Divider sx={{ my: 4, mx: {xs: 2, sm: 4}, borderColor: '#858585ff' }} />
+
+      {/* ===== BOTTOM SECTION ===== */}
+      <Box
+        sx={{
+          maxWidth: '1200px',
+          mx: 'auto',
+          px: { xs: 3, sm: 4 },
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          gap: { xs: 2, sm: 0 },
+        }}
+      >
+        {/* Inline Policy Links */}
         <Box
           sx={{
             display: 'flex',
-            gap: 1.25,
-            justifyContent: { xs: 'center', sm: 'flex-end' },
-            mt: { xs: 1.5, sm: 0 },
-            width: { xs: '100%', sm: 'auto' },
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: 3,
           }}
         >
-          {socialLinks.map((s, i) => (
+          {[
+            { name: 'Privacy Policy', href: '/privacy-policy' },
+            { name: 'Terms & Conditions', href: '/terms-conditions' },
+          ].map((item, idx) => (
+            <Typography
+              key={idx}
+              component={Link}
+              href={item.href}
+              sx={{
+                textDecoration: 'none',
+                color: '#555',
+                fontSize: '14px',
+                '&:hover': { color: '#000' },
+              }}
+            >
+              {item.name}
+            </Typography>
+          ))}
+        </Box>
+
+        {/* Social Media Icons */}
+        <Box sx={{ display: 'flex', gap: 1.5 }}>
+          {[
+            {
+              icon: <FacebookIcon fontSize="medium" />,
+              href: 'https://www.facebook.com/share/17bbcRZ76e/',
+            },
+            {
+              icon: <YouTubeIcon fontSize="medium" />,
+              href: 'https://youtube.com',
+            },
+            {
+              icon: <LinkedInIcon fontSize="medium" />,
+              href: 'https://www.linkedin.com/company/vihi-it-solutions/',
+            },
+            {
+              icon: <InstagramIcon fontSize="medium" />,
+              href: 'https://instagram.com',
+            },
+          ].map((item, i) => (
             <IconButton
               key={i}
-              component="a"
-              href={s.href}
+              href={item.href}
               target="_blank"
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              sx={{ color: '#333' }}
-              size="small"
+              sx={{
+                color: '#333',
+                p: 0.8,
+                '&:hover': { color: '#ffc720' },
+              }}
             >
-              {s.icon}
+              {item.icon}
             </IconButton>
           ))}
         </Box>
       </Box>
+
+      {/* Copyright */}
+      <Typography
+        variant="body2"
+        sx={{
+          textAlign: 'center',
+          color: '#888',
+          fontSize: '13px',
+          mt: 3,
+        }}
+      >
+        © {new Date().getFullYear()} VIHI IT Solutions. All rights reserved.
+      </Typography>
     </Box>
   );
 };

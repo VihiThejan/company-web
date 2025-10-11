@@ -138,7 +138,12 @@ const Header = (props) => {
               }}
             >
               {/* Logo */}
-              <IconButton component={Link} href="/" sx={{ p: 0 }}>
+              <IconButton
+                component={Link}
+                href="/"
+                sx={{ p: 0 }}
+                onClick={() => setMobileOpen(false)}
+              >
                 <Image
                   src="/images/logo-symbol.jpeg"
                   alt="Logo"
@@ -176,7 +181,12 @@ const Header = (props) => {
                 alignItems: 'center',
               }}
             >
-              <IconButton component={Link} href="/" sx={{ p: 0 }}>
+              <IconButton
+                component={Link}
+                href="/"
+                sx={{ p: 0 }}
+                onClick={() => setMobileOpen(false)}
+              >
                 <Image
                   src="/images/logo-symbol.jpeg"
                   alt="Logo"
