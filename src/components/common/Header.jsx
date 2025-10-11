@@ -322,7 +322,7 @@ const Header = (props) => {
                     sx={{
                       backgroundColor: theme.palette.primary.main,
                       color: '#1E1E1E',
-                      borderRadius: '10px',
+                      borderRadius: '50px',
                       padding: '10px 25px',
                       fontWeight: 500,
                       width: '100%',
