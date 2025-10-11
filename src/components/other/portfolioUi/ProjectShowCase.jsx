@@ -6,8 +6,6 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import theme from '@/theme/theme';
 import { projects } from '@/lib/projectlist';
 
-
-
 function ProjectShowCase() {
   return (
     <Box
@@ -55,10 +53,22 @@ function ProjectShowCase() {
             <Box
               sx={{
                 width: { xs: '100%', md: '48%' },
-                textAlign: { xs: 'center', md: 'left' },
+                // textAlign: { xs: 'center', md: 'left' },
                 mt: { xs: 3, md: 0 },
               }}
             >
+              <Box sx={{ mb: 1 }}>
+                <Box
+                  component="img"
+                  src={project.companyLogo}
+                  alt={project.title}
+                  sx={{
+                    width: '120px',
+                    height: '120px',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
               <Typography
                 variant="h5"
                 sx={{
@@ -81,8 +91,13 @@ function ProjectShowCase() {
                 {project.description}
               </Typography>
 
-              <Typography sx={{ color: theme.palette.secondary.main, fontSize: '1rem', mb: 2 }}>
-                <strong>Client : </strong> {project.company} <br />
+              <Typography
+                sx={{
+                  color: theme.palette.secondary.main,
+                  fontSize: '1rem',
+                  mb: 2,
+                }}
+              >
                 <strong>Industry : </strong> {project.industry}
               </Typography>
 

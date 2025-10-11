@@ -49,16 +49,15 @@ export default function ProjectDetails({ params }) {
         overflow: 'hidden',
         background: '#fff',
         px: { xs: 2, sm: 4, md: 6, lg: 8 },
-        pt: { xs: 15, sm: 10, md: 12 },
+        pt: { xs: 13, sm: 10, md: 30 },
       }}
     >
-      {/* ✅ Breadcrumbs / Back Button */}
       <Box
         sx={{
           position: 'relative',
           zIndex: 2,
           width: '100%',
-          height: { xs: '40vh', md: '40vh' },
+          height: { xs: '60vh', md: '50vh' },
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
@@ -103,7 +102,19 @@ export default function ProjectDetails({ params }) {
         )}
 
         {/* Header */}
-        <Box sx={{ textAlign: 'left' }}>
+        <Box sx={{ textAlign: 'left', mb: {xs: 0, md:20} }}>
+          <Box sx={{mb: 1 }}>
+            <Box
+              component="img"
+              src={project.companyLogo}
+              alt={project.title}
+              sx={{
+                width: '150px',
+                height: '150px',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
           <Typography
             variant="h4"
             sx={{
@@ -117,7 +128,6 @@ export default function ProjectDetails({ params }) {
           </Typography>
 
           <Typography sx={{ color: '#2c2c2cff', mb: 2 }}>
-            <strong>Client:</strong> {project.company} &nbsp;|&nbsp;
             <strong>Industry:</strong> {project.industry}
           </Typography>
 

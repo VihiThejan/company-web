@@ -113,7 +113,7 @@ export default function Portfolio() {
           }}
         />
       </Box>
-      <Box>
+      <Box sx={{mb: '50px'}}>
         <ProjectShowCase />
       </Box>
       <Box

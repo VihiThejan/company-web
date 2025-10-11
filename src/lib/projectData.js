@@ -1,9 +1,9 @@
 export const projectData = {
   'ai-bicycle-tourism': {
     title: 'AI-Driven Bicycle Tourism System',
-    company: 'Sri Lanka Tourism Board',
     industry: 'Travel & Tourism',
     image: '/images/marketing-img/market-strag.webp',
+    companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'An AI-powered navigation platform for bicycle tourism that offers real-time route optimization, multilingual voice guidance, and team coordination features.',
     introduction:
@@ -17,9 +17,9 @@ export const projectData = {
   },
   'backup-tape-system': {
     title: 'Backup Tape Management Platform',
-    company: 'TechVault Data Solutions',
     industry: 'Data Infrastructure',
     image: '/images/marketing-img/market-strag.webp',
+    companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'An enterprise-grade backup tape lifecycle management platform ensuring traceability, security, and compliance.',
     introduction:

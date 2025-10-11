@@ -5,7 +5,7 @@ export const projects = [
     description:
       'An AI-powered location-based voice navigation system for sustainable bicycle tourism, offering route optimization, multilingual guidance, and team coordination features.',
     image: '/images/marketing-img/market-strag.webp',
-    company: 'Sri Lanka Tourism Board',
+    companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Travel & Tourism',
   },
   {
@@ -14,7 +14,7 @@ export const projects = [
     description:
       'An enterprise-grade backup tape tracking solution built with MERN and MySQL to streamline data archival, audit trails, and secure tape lifecycle management.',
     image: '/images/marketing-img/market-strag.webp',
-    company: 'TechVault Data Solutions',
+    companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Data Infrastructure',
   },
 ];
