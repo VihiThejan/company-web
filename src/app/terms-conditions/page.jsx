@@ -50,7 +50,7 @@ export default function TermsPage() {
   };
 
   return (
-    <Box sx={{ bgcolor: '#fff', pt: { xs: 20, md: 20 }, pb: { xs: 8, md: 12 } }}>
+    <Box sx={{ bgcolor: '#fff', pt: { xs: 20, md: 20 } }}>
       <Container maxWidth="lg">
         {/* Header */}
         <Grid container spacing={4} alignItems="flex-start">
@@ -396,7 +396,7 @@ export default function TermsPage() {
 
           <Divider sx={{ mt: 4 }} />
 
-          <Typography variant="body2" sx={{ color: '#888', mt: 3 }}>
+          <Typography variant="body2" sx={{ color: '#888'}}>
             These Terms were last updated on {LAST_UPDATED}. Please review this page periodically for updates.
           </Typography>
         </Box>
