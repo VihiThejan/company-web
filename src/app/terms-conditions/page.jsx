@@ -41,7 +41,7 @@ const sections = [
   { id: 'indemnity', title: '5. Indemnity' },
   { id: 'limitation', title: '6. Limitation of Liability' },
   { id: 'other', title: '7. Other Provisions' },
-  { id: 'contact', title: 'Contact' },
+  { id: 'contact', title: '8. Contact' },
 ];
 
 export default function TermsPage() {
