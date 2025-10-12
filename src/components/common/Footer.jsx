@@ -23,7 +23,7 @@ const footerSections = [
     links: [
       { name: 'About Us', href: '/aboutus' },
       { name: 'Expertise', href: '/expertise' },
-      { name: 'Meet Our Team', href: '/team' },
+      { name: 'Our Team', href: '/team' },
       { name: 'Careers', href: '/careers' },
     ],
   },

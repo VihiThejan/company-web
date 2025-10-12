@@ -161,7 +161,7 @@ const HomePage = () => {
             </Typography>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }} sx={{ borderRadius: 5 }}>
-            <ExpertiseCarousel />
+            <ExpertiseCarousel/>
           </Grid>
         </Grid>
       </Box>
