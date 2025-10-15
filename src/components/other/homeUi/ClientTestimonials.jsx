@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Box, Typography, Avatar, Paper, useMediaQuery } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import customTheme from '@/theme/theme';
 
 const testimonials = [
   {
@@ -107,6 +108,7 @@ const ClientTestimonials = () => {
           fontWeight: 700,
           textAlign: 'center',
           mb: 2,
+          color: customTheme.palette.secondary.main,
           fontSize: { xs: '2rem', md: '2.7rem' },
         }}
       >

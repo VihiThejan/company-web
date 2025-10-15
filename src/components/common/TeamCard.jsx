@@ -23,7 +23,7 @@ const StartTalkSection = () => {
         borderRadius: 3,
         p: { xs: 6, sm: 10 },
         minHeight: 320,
-        background: '#111',
+        bgcolor: theme.palette.secondary.main,
         color: '#fff',
         boxShadow: '0 0 40px rgba(0, 0, 0, 0.07)',
         position: 'relative',
@@ -67,19 +67,19 @@ const StartTalkSection = () => {
       </Typography>
 
       <Button
-        variant="contained"
+        variant="outlined"
         onClick={handleNavigate}
         sx={{
-          textTransform: 'none',
-          px: 4,
-          py: 1.2,
-          borderRadius: '50px',
-          backgroundColor: '#fff',
-          color: '#000',
+          color: '#fff',
+          borderColor: '#fff',
+          fontWeight: 600,
           fontSize: '1rem',
-          zIndex: 2,
+          px: 3,
+          py: 1.2,
+          borderRadius: '25px',
           '&:hover': {
-            backgroundColor: '#eaeaea',
+            backgroundColor: '#fff',
+            color: theme.palette.secondary.main,
           },
         }}
       >

@@ -3,6 +3,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link';
+import theme from '@/theme/theme';
 
 const MotionBox = motion(Box);
 
@@ -115,7 +116,7 @@ const CallToActionCards = () => (
     <Grid container spacing={3} justifyContent="center">
       <Grid size={{ xs: 12, md: 6 }}>
         <Card
-          bg="#111"
+          bg={`${theme.palette.secondary.main}`}
           color="#fff"
           label="Careers"
           labelBg="#757575ff"
