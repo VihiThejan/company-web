@@ -92,7 +92,7 @@ const Header = (props) => {
     { name: 'Marketing', href: '/marketing' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Careers', href: '/careers' },
-    { name: 'Expertise', href: '/expertise' },
+    { name: 'Industries', href: '/industries' },
   ];
 
   // Smooth expand animation (box size only matches content height)
