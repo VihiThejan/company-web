@@ -34,6 +34,8 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import IndustryCTA from '@/components/common/IndustryCTA';
 
+export const runtime = 'edge';
+
 export default function IndustryDetailPage() {
   const { slug } = useParams();
   const industry = industriesData.find((i) => i.slug === slug);
