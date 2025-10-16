@@ -98,21 +98,6 @@ const HomePage = () => {
           my: 3,
         }}
       >
-        <Typography
-          variant="h3"
-          sx={{
-            px: 3,
-            py: 3,
-            background: '#e6e6e6ff',
-            borderRadius: 10,
-            color: theme.palette.secondary.main,
-            textAlign: 'left',
-            fontWeight: 600,
-            fontSize: { xs: '2.5rem', md: '6rem' },
-          }}
-        >
-          “Engineering excellence with intelligent solutions that power your business forward”
-        </Typography>
       </Box>
 
       {/* about us section */}
@@ -150,12 +135,12 @@ const HomePage = () => {
       <Box sx={{ flexGrow: 1, mx: 2, my: 5 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid size={{ xs: 12, md: 6 }}>
-            <Typography variant="h3" sx={{ fontWeight: 700, ml: 2, mb: 2 }}>
+            <Typography variant="h2" sx={{ fontWeight: 700, ml: 2, mb: 2 }}>
               Expensive Areas
               <br />
               of Expertise
             </Typography>
-            <Typography variant="body1" sx={{ color: '#888', ml: 2, mb: 3 }}>
+            <Typography variant="body1" sx={{ ml: 2, mb: 3 }}>
               We provide customized digital solution to help you capture
               opportunities in a variety of industries.
             </Typography>

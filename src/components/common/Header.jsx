@@ -248,8 +248,8 @@ const Header = (props) => {
                 component={Link}
                 href="/contactus"
                 sx={{
-                  backgroundColor: theme.palette.primary.main,
-                  color: '#1E1E1E',
+                  background: '#ffc720',
+                  color: customTheme.palette.secondary.main,
                   borderRadius: '50px',
                   padding: '8px 20px',
                   fontSize: '1rem',
@@ -320,8 +320,8 @@ const Header = (props) => {
                     href="/contactus"
                     onClick={handleNavClick}
                     sx={{
-                      backgroundColor: theme.palette.primary.main,
-                      color: '#1E1E1E',
+                      background: '#ffc720',
+                      color: customTheme.palette.secondary.main,
                       borderRadius: '50px',
                       padding: '10px 25px',
                       fontWeight: 500,

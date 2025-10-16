@@ -128,11 +128,11 @@ const ExpertiseCarousel = () => {
               <Box
                 sx={{
                   background:theme.palette.primary.main,
-                  color: '#000',
-                  borderRadius: 2,
-                  px: 2,
+                  color: theme.palette.secondary.option,
+                  borderRadius: 50,
+                  px: 4,
                   py: 0.5,
-                  fontWeight: 400,
+                  fontWeight: 500,
                   fontSize: '2.4rem',
                   display: 'inline-block',
                   mb: 1,
@@ -142,12 +142,11 @@ const ExpertiseCarousel = () => {
                 {item.label}
               </Box>
               <Typography
-                variant="body1"
+                variant="body3"
                 sx={{
                   fontWeight: 400,
                   fontSize: { xs: '1rem', md: '1.05rem' },
                   lineHeight: 1.5,
-                  textShadow: '0 2px 8px rgba(0,0,0,0.3)',
                 }}
               >
                 {item.desc}

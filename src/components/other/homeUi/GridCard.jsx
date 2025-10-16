@@ -44,13 +44,14 @@ const GridCard = ({ title, tags, bgImage }) => (
           label={tag}
           sx={{
             background: theme.palette.primary.main,
-            color: theme.palette.secondary.main,
+            color: theme.palette.secondary.option,
             fontWeight: 500,
             fontSize: '1rem',
-            borderRadius: 2,
+            borderRadius: 50,
             px: 2,
             py: 1,
             boxShadow: 1,
+            cursor: 'pointer'
           }}
         />
       ))}
