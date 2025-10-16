@@ -104,7 +104,7 @@ const HomePage = () => {
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '3rem', mdll: '2.5rem', lg: '3.5rem' },
+              fontSize: { xs: '2.5rem', lg: '3.5rem' },
               fontWeight: '900',
               lineHeight: 1.4,
             }}
@@ -113,26 +113,20 @@ const HomePage = () => {
           </Typography>
 
           {/* Tagline */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 1.8 }}
+          <Typography
+            sx={{
+              fontSize: { xs: '1rem', md: '1.25rem' },
+              color: '#f5f5f5',
+              mt: 3,
+              mb: 5,
+              lineHeight: 1.6,
+              textShadow: '0 2px 8px rgba(0,0,0,0.5)',
+              display: { mdll: 'none', lg: 'block' },
+            }}
           >
-            <Typography
-              sx={{
-                fontSize: { xs: '1rem', md: '1.25rem' },
-                color: '#f5f5f5',
-                mt: 3,
-                mb: 5,
-                lineHeight: 1.6,
-                textShadow: '0 2px 8px rgba(0,0,0,0.5)',
-                display: { mdll: 'none', lg: 'block' },
-              }}
-            >
-              Building intelligent, scalable, and high-performing solutions that
-              redefine your digital success story.
-            </Typography>
-          </motion.div>
+            Building intelligent, scalable, and high-performing solutions that
+            redefine your digital success story.
+          </Typography>
 
           {/* CTA Button */}
           <Box>
@@ -179,10 +173,10 @@ const HomePage = () => {
             }
             style={{
               position: 'absolute',
-              // bottom: {xs:'-20%', mdll: '-40%',lg: '-30%'},
-              bottom: '-20%',
+              bottom: { xs: '-20%', mdll: '-40%', lg: '-30%' },
+              // bottom: '-10%',
               left: '48%',
-              transform: 'translateX(-50%), translateY(-50%)',
+              transform: 'translateX(-50%), translateY(50%)',
               opacity: 0.8,
             }}
           >
