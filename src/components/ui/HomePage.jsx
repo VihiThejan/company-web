@@ -10,6 +10,8 @@ import ExpertiseCarousel from '../other/homeUi/ExpertiseCarousel';
 import ClientTestimonials from '../other/homeUi/ClientTestimonials';
 import { Call } from '@mui/icons-material';
 import CallToActionCards from '../other/homeUi/CallToActionCards';
+import Link from 'next/link';
+import CallIcon from '@mui/icons-material/Call';
 
 const marketingTags = [
   'Growth Strategy',
@@ -24,20 +26,19 @@ const HomePage = () => {
   return (
     <Box sx={{ overflowX: 'hidden', position: 'relative' }}>
       {/* Hero Section */}
-      <motion.div
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, ease: 'easeOut' }}
         style={{
-          position: 'sticky',
-          top: 0,
+          position: 'relative',
           height: '100vh',
           width: '100%',
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
           alignItems: 'center',
-          textAlign: 'center',
-          color: '#fff',
+          justifyContent: 'center',
           overflow: 'hidden',
-          zIndex: 10,
+          color: '#fff',
         }}
       >
         {/* Background Video */}
@@ -56,40 +57,165 @@ const HomePage = () => {
             height: '100%',
             objectFit: 'cover',
             zIndex: 0,
+            filter: 'brightness(0.6) contrast(1.2)',
           }}
         >
           <source src="/videos/home-hero.mp4" type="video/mp4" />
         </Box>
 
+        {/* Animated Gradient Overlay */}
+        <Box
+          sx={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'radial-gradient(circle at 30% 40%, rgba(0, 230, 118, 0.2), transparent 60%), radial-gradient(circle at 70% 60%, rgba(33,150,243,0.25), transparent 60%)',
+            animation: 'gradientShift 10s ease-in-out infinite alternate',
+            zIndex: 1,
+            '@keyframes gradientShift': {
+              '0%': { transform: 'translateX(0px)' },
+              '100%': { transform: 'translateX(50px)' },
+            },
+          }}
+        />
+
         {/* Dark Overlay */}
         <Box
           sx={{
             position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.77)',
-            zIndex: 1,
+            inset: 0,
+            background:
+              'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.85) 100%)',
+            zIndex: 2,
           }}
         />
 
-        {/* Hero Text */}
-        <Box sx={{ zIndex: 2, transform: {xs: 'translateY(120%)', md:'translateY(1)'} }}>
+        {/* Content */}
+        <Box
+          sx={{
+            position: 'relative',
+            zIndex: 3,
+            px: { xs: 3, md: 6 },
+            textAlign: 'center',
+            maxWidth: '900px',
+          }}
+        >
+          {/* Headline */}
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '2.5rem', md: '4rem' },
-              fontWeight: 'bold',
-              mb: 2,
-              mx: 4,
-              textAlign: 'left',
+              fontSize: { xs: '3rem', mdll: '2.5rem', lg: '3.5rem' },
+              fontWeight: '900',
+              lineHeight: 1.4,
             }}
           >
-            Empowering Businesses with <br/>Intelligent Digital Solutions
+            Empowering Businesses with Intelligent Digital Solutions
           </Typography>
+
+          {/* Tagline */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, delay: 1.8 }}
+          >
+            <Typography
+              sx={{
+                fontSize: { xs: '1rem', md: '1.25rem' },
+                color: '#f5f5f5',
+                mt: 3,
+                mb: 5,
+                lineHeight: 1.6,
+                textShadow: '0 2px 8px rgba(0,0,0,0.5)',
+                display: { mdll: 'none', lg: 'block' },
+              }}
+            >
+              Building intelligent, scalable, and high-performing solutions that
+              redefine your digital success story.
+            </Typography>
+          </motion.div>
+
+          {/* CTA Button */}
+          <Box >
+            <Link href={`/contactus`} style={{ textDecoration: 'none' }}>
+              <Box
+                component="button"
+                sx={{
+                  background: theme.palette.primary.main,
+                  color: theme.palette.secondary.option,
+                  border: 'none',
+                  px: 5,
+                  py: 1.6,
+                  borderRadius: '50px',
+                  fontSize: '1.1rem',
+                  cursor: 'pointer',
+                  mt: {mdll: 2, lg: 0},
+                  transition: 'all 0.4s ease',
+                  '&:hover': {
+                    transform: 'scale(1.06)',
+                  },
+                }}
+              >
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: 1,
+                  }}
+                >
+                  <span>Book a Call</span>
+                  <CallIcon />
+                </Box>
+              </Box>
+            </Link>
+          </Box>
+
+          {/* Scroll Indicator */}
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            onClick={() =>
+              window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
+            }
+            style={{
+              position: 'absolute',
+              // bottom: {xs:'-20%', mdll: '-40%',lg: '-30%'},
+              bottom: '-20%',
+              left: '48%',
+              transform: 'translateX(-50%), translateY(-50%)',
+              opacity: 0.8,
+            }}
+          >
+            <Box
+              sx={{
+                width: 30,
+                height: 50,
+                border: `2px solid ${theme.palette.primary.main}`,
+                borderRadius: 12,
+                cursor: 'pointer',
+                position: 'relative',
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  top: 8,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: 6,
+                  height: 6,
+                  borderRadius: '50%',
+                  background: theme.palette.primary.main,
+                  animation: 'scrollDot 2s infinite',
+                },
+                '@keyframes scrollDot': {
+                  '0%': { opacity: 0, transform: 'translate(-50%, 0)' },
+                  '50%': { opacity: 1, transform: 'translate(-50%, 12px)' },
+                  '100%': { opacity: 0, transform: 'translate(-50%, 0)' },
+                },
+              }}
+            />
+          </motion.div>
         </Box>
-      </motion.div>
+      </motion.section>
 
       <Box
         sx={{
@@ -97,8 +223,7 @@ const HomePage = () => {
           mx: 2,
           my: 3,
         }}
-      >
-      </Box>
+      ></Box>
 
       {/* about us section */}
       <Box sx={{ width: '100%' }}>
@@ -146,7 +271,7 @@ const HomePage = () => {
             </Typography>
           </Grid>
           <Grid size={{ xs: 12, md: 6 }} sx={{ borderRadius: 5 }}>
-            <ExpertiseCarousel/>
+            <ExpertiseCarousel />
           </Grid>
         </Grid>
       </Box>

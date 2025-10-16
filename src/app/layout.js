@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import MuiThemeProvider from '@/components/providers/MuiThemeProvider';
 import localFont from 'next/font/local';
 import ScrollToTopButton from '@/components/common/ScrollToTopButton';
+import CustomCursor from '@/components/common/CustomCursor';
 
 export const metadata = {
   title: 'VIHI IT Solutions',
