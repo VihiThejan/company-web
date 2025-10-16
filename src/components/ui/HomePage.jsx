@@ -173,8 +173,8 @@ const HomePage = () => {
             }
             style={{
               position: 'absolute',
-              bottom: { xs: '-20%', mdll: '-40%', lg: '-30%' },
-              // bottom: '-10%',
+              // bottom: { xs: '-25%', mdll: '-40%', lg: '-30%' },
+              bottom: '-15%',
               left: '48%',
               transform: 'translateX(-50%), translateY(50%)',
               opacity: 0.8,
