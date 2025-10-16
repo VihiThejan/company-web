@@ -145,7 +145,7 @@ export default function Industries() {
         <ClientTestimonials />
       </Box>
 
-      <Box sx={{ width: '100%', px: { xs: 3} }}>
+      <Box sx={{ width: '100%', px: { xs: 3}, pb: 4 }}>
         <IndustryCTA />
       </Box>
     </Box>

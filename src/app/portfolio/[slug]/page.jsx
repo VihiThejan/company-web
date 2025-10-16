@@ -87,7 +87,7 @@ export default function ProjectDetails({ params }) {
                 '&:hover': { color: '#000' },
               }}
             >
-              Back to Portfolio
+              Portfolio
             </Button>
           </Box>
         ) : (
