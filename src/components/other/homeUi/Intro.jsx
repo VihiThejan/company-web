@@ -14,17 +14,27 @@ const stats = [
     label: 'We deliver great work always',
   },
   {
-    icon: <WorkspacePremiumIcon sx={{ fontSize: 32, color: theme.palette.primary.main }} />,
+    icon: (
+      <WorkspacePremiumIcon
+        sx={{ fontSize: 32, color: theme.palette.primary.main }}
+      />
+    ),
     value: 2,
     label: 'Experience you can count on',
   },
   {
-    icon: <EmojiEventsIcon sx={{ fontSize: 32, color: theme.palette.primary.main }} />,
+    icon: (
+      <EmojiEventsIcon
+        sx={{ fontSize: 32, color: theme.palette.primary.main }}
+      />
+    ),
     value: 32,
     label: 'Revenue Increase',
   },
   {
-    icon: <PeopleAltIcon sx={{ fontSize: 32, color: theme.palette.primary.main }} />,
+    icon: (
+      <PeopleAltIcon sx={{ fontSize: 32, color: theme.palette.primary.main }} />
+    ),
     value: 50,
     label: 'We have happy Clients worldwide',
   },
@@ -83,6 +93,7 @@ const Intro = () => {
           fontWeight: 700,
           textAlign: 'center',
           mb: 2,
+          fontSize: { xs: '2.5rem', md: '3rem' },
         }}
       >
         Who We Are. Learn About us
@@ -129,7 +140,7 @@ const Intro = () => {
           <Grid size={{ xs: 12, md: 6 }}>
             <Grid container spacing={2}>
               {stats.map((stat, idx) => (
-                <Grid size={{ xs: 6, md: 6 }} key={idx}>
+                <Grid size={{ xs: 12, md: 6 }} key={idx}>
                   <Box
                     sx={{
                       borderRadius: 3,
