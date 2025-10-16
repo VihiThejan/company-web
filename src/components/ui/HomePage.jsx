@@ -175,7 +175,7 @@ const HomePage = () => {
               position: 'absolute',
               // bottom: { xs: '-25%', mdll: '-40%', lg: '-30%' },
               bottom: '-15%',
-              left: '48%',
+              left: '45%',
               transform: 'translateX(-50%), translateY(50%)',
               opacity: 0.8,
             }}
