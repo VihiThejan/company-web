@@ -135,7 +135,7 @@ const HomePage = () => {
           </motion.div>
 
           {/* CTA Button */}
-          <Box >
+          <Box>
             <Link href={`/contactus`} style={{ textDecoration: 'none' }}>
               <Box
                 component="button"
@@ -148,7 +148,7 @@ const HomePage = () => {
                   borderRadius: '50px',
                   fontSize: '1.1rem',
                   cursor: 'pointer',
-                  mt: {mdll: 2, lg: 0},
+                  mt: { mdll: 2, lg: 0 },
                   transition: 'all 0.4s ease',
                   '&:hover': {
                     transform: 'scale(1.06)',
@@ -226,12 +226,12 @@ const HomePage = () => {
       ></Box>
 
       {/* about us section */}
-      <Box sx={{ width: '100%' }}>
+      <Box sx={{ width: '100%', mb: 10 }}>
         <Intro />
       </Box>
 
       {/* Services Grid */}
-      <Box sx={{ flexGrow: 1, mx: 2, my: 5 }}>
+      <Box sx={{ flexGrow: 1, mx: 2, mb: 10 }}>
         <Grid container spacing={2}>
           <Grid size={{ xs: 12, md: 12 }}>
             <GridCard
@@ -257,26 +257,33 @@ const HomePage = () => {
         </Grid>
       </Box>
 
-      <Box sx={{ flexGrow: 1, mx: 2, my: 5 }}>
+      <Box sx={{ flexGrow: 1, mx: 2 }}>
         <Grid container spacing={4} alignItems="center">
-          <Grid size={{ xs: 12, md: 6 }}>
-            <Typography variant="h2" sx={{ fontWeight: 700, ml: 2, mb: 2 }}>
-              Expensive Areas
-              <br />
-              of Expertise
+          <Grid size={{ xs: 12, md: 12 }}>
+            <Typography
+              variant="h2"
+              sx={{
+                fontWeight: 700,
+                ml: 2,
+                mb: 2,
+                textAlign: 'center',
+                fontSize: { xs: '2.5rem', md: '3rem' },
+              }}
+            >
+              Expensive Areas of Expertise
             </Typography>
-            <Typography variant="body1" sx={{ ml: 2, mb: 3 }}>
+            <Typography variant="body1" sx={{ ml: 2, textAlign: 'center' }}>
               We provide customized digital solution to help you capture
               opportunities in a variety of industries.
             </Typography>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }} sx={{ borderRadius: 5 }}>
+          <Grid size={{ xs: 12, md: 12 }} sx={{ borderRadius: 5 }}>
             <ExpertiseCarousel />
           </Grid>
         </Grid>
       </Box>
 
-      <Box>
+      <Box sx={{ flexGrow: 1, mx: 2 }}>
         <ClientTestimonials />
       </Box>
 

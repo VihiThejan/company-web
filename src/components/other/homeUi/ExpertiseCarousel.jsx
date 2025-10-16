@@ -5,7 +5,7 @@ import theme from '@/theme/theme';
 
 const expertise = [
   {
-    label: 'Education',
+    label: 'Tourism',
     desc: `Unlock your business growth potential. With over five years of experience in the education industry, we built digital strategies that connected that connect with student, parents and agents from around the world.`,
     image: '/images/home-img/education.jpg',
   },
@@ -115,27 +115,26 @@ const ExpertiseCarousel = () => {
               sx={{
                 position: 'relative',
                 zIndex: 3,
-                p: 3,
-                width: '100%',
+                py: 3,
+                px: {xs: 3, md: 5, lg: 10},
+                width: { xs: '100%', md: '75%' },
                 height: '100%',
                 color: '#fff',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
-                gap: 1.5,
               }}
             >
               <Box
                 sx={{
-                  background:theme.palette.primary.main,
-                  color: theme.palette.secondary.option,
+                  // background:theme.palette.primary.main,
+                  // color: theme.palette.primary.main,
+                  color: '#fff',
                   borderRadius: 50,
-                  px: 4,
-                  py: 0.5,
-                  fontWeight: 500,
-                  fontSize: '2.4rem',
+                  // px: 4,
+                  fontWeight: 700,
+                  fontSize: {xs: '2.5rem', md:'3.5rem'},
                   display: 'inline-block',
-                  mb: 1,
                   width: 'fit-content',
                 }}
               >
