@@ -23,6 +23,7 @@ const theme = createTheme({
     },
     secondary: {
       main: '#303030ff',
+      option: '#1b1b1bff',
     },
   },
 });

@@ -14,17 +14,17 @@ const poppins = Poppins({ subsets: ['latin'], weight: '400' });
 const darkTheme = createTheme({
   breakpoints: {
     values: {
-      xs: 0, 
-      xss: 380,     // phones portrait
-      sm: 480,    // small phones landscape
-      md: 768,    // tablets portrait
+      xs: 0,
+      xss: 380, // phones portrait
+      sm: 480, // small phones landscape
+      md: 768, // tablets portrait
       mdl: 820,
-      mdll: 840,   // tablets landscape
-      lg: 1024,   // tablets landscape / small laptops
-      lgl: 1080,  // laptops
+      mdll: 840, // tablets landscape
+      lg: 1024, // tablets landscape / small laptops
+      lgl: 1080, // laptops
       lgll: 1340,
-      xl: 1440,   // desktops
-      xxl: 1920,  // large wide screens
+      xl: 1440, // desktops
+      xxl: 1920, // large wide screens
     },
   },
   palette: {
@@ -43,6 +43,18 @@ const darkTheme = createTheme({
   },
   typography: {
     fontFamily: poppins.style.fontFamily,
+    h1: { fontSize: '3.5rem', fontWeight: 700 },
+    h2: { fontSize: '3rem', fontWeight: 700 },
+    h3: { fontSize: '2rem', fontWeight: 600 },
+    h4: { fontSize: '1.5rem', fontWeight: 600 },
+    h5: { fontSize: '1.25rem', fontWeight: 500 },
+    h6: { fontSize: '1.15rem', fontWeight: 500 },
+    subtitle1: { fontSize: '1.15rem', color: '#555' },
+    body1: { fontSize: '1rem', lineHeight: 1.7, color: '#333' },
+    body2: { fontSize: '0.9rem', lineHeight: 1.6, color: '#555' },
+    body3: { fontSize: '1rem', lineHeight: 1.7, color: '#dfdfdfff' },
+    button: { fontSize: '0.95rem', fontWeight: 500, textTransform: 'none' },
+    caption: { fontSize: '0.8rem', color: '#777' },
   },
   components: {
     MuiButton: {

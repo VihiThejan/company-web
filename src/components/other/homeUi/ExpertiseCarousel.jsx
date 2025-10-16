@@ -5,7 +5,7 @@ import theme from '@/theme/theme';
 
 const expertise = [
   {
-    label: 'Education',
+    label: 'Tourism',
     desc: `Unlock your business growth potential. With over five years of experience in the education industry, we built digital strategies that connected that connect with student, parents and agents from around the world.`,
     image: '/images/home-img/education.jpg',
   },
@@ -115,39 +115,37 @@ const ExpertiseCarousel = () => {
               sx={{
                 position: 'relative',
                 zIndex: 3,
-                p: 3,
-                width: '100%',
+                py: 3,
+                px: {xs: 3, md: 5, lg: 10},
+                width: { xs: '100%', md: '75%' },
                 height: '100%',
                 color: '#fff',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
-                gap: 1.5,
               }}
             >
               <Box
                 sx={{
-                  background:theme.palette.primary.main,
-                  color: '#000',
-                  borderRadius: 2,
-                  px: 2,
-                  py: 0.5,
-                  fontWeight: 400,
-                  fontSize: '2.4rem',
+                  // background:theme.palette.primary.main,
+                  // color: theme.palette.primary.main,
+                  color: '#fff',
+                  borderRadius: 50,
+                  // px: 4,
+                  fontWeight: 700,
+                  fontSize: {xs: '2.5rem', md:'3.5rem'},
                   display: 'inline-block',
-                  mb: 1,
                   width: 'fit-content',
                 }}
               >
                 {item.label}
               </Box>
               <Typography
-                variant="body1"
+                variant="body3"
                 sx={{
                   fontWeight: 400,
                   fontSize: { xs: '1rem', md: '1.05rem' },
                   lineHeight: 1.5,
-                  textShadow: '0 2px 8px rgba(0,0,0,0.3)',
                 }}
               >
                 {item.desc}
