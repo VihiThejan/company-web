@@ -12,14 +12,19 @@ const Card = ({
   color,
   label,
   labelBg,
+  labelClr,
   title,
   subtitle,
+  subtitleClr,
   buttonHref,
 }) => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <Link href={buttonHref} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+    <Link
+      href={buttonHref}
+      style={{ textDecoration: 'none', display: 'block', height: '100%' }}
+    >
       <MotionBox
         sx={{
           background: bg,
@@ -44,8 +49,8 @@ const Card = ({
           <Box
             sx={{
               background: labelBg,
-              color: '#fff',
-              borderRadius: 2,
+              color: labelClr,
+              borderRadius: 50,
               px: 1.5,
               py: 0.5,
               fontSize: '0.95rem',
@@ -73,6 +78,7 @@ const Card = ({
                 fontWeight: 400,
                 mb: 1,
                 fontSize: { xs: '1rem', md: '1.15rem' },
+                color: subtitleClr,
               }}
             >
               {subtitle}
@@ -112,32 +118,32 @@ const Card = ({
 };
 
 const CallToActionCards = () => (
-  <Box sx={{ width: '100%', py:2 }}>
+  <Box sx={{ width: '100%', py: 2 }}>
     <Grid container spacing={3} justifyContent="center">
       <Grid size={{ xs: 12, md: 6 }}>
         <Card
-          bg={`${theme.palette.secondary.main}`}
-          color="#fff"
           label="Careers"
-          labelBg="#757575ff"
-          title={
-            <>
-              join with our <br/> talented team ?
-            </>
-          }
-          subtitle="Explore opportunities"
+          title="Meet Your New Team"
+          subtitle="Find the next step in your professional journey and collaborate with top industry talent"
           buttonHref="/careers"
+          bg={`${theme.palette.secondary.main}`}
+          color={theme.palette.secondary.light}
+          labelBg={theme.palette.secondary.light}
+          labelClr={theme.palette.secondary.main}
+          subtitleClr={theme.palette.secondary.light}
         />
       </Grid>
       <Grid size={{ xs: 12, md: 6 }}>
         <Card
-          bg="#ffc720"
-          color="#111"
           label="Get in touch"
-          labelBg="#a88a2c"
-          title="Speak to our experts"
-          subtitle="Accelerate your growth goals"
+          title="Consult Our Specialists"
+          subtitle="Book a time to speak directly with an expert and get the guidance you need"
           buttonHref="/contactus"
+          bg={theme.palette.primary.main}
+          color={theme.palette.secondary.main}
+          labelBg={theme.palette.secondary.main}
+          labelClr={theme.palette.secondary.light}
+          subtitleClr={theme.palette.secondary.main}
         />
       </Grid>
     </Grid>

@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { Bitcount, Inter, Poppins } from 'next/font/google';
+import theme from '@/theme/theme';
 
 const inter = Inter({ subsets: ['latin'] });
 const bitcount = Bitcount({ subsets: ['latin'], weight: '400' });
@@ -49,12 +50,24 @@ const darkTheme = createTheme({
     h4: { fontSize: '1.5rem', fontWeight: 600 },
     h5: { fontSize: '1.25rem', fontWeight: 500 },
     h6: { fontSize: '1.15rem', fontWeight: 500 },
-    subtitle1: { fontSize: '1.15rem', color: '#555' },
-    body1: { fontSize: '1rem', lineHeight: 1.7, color: '#333' },
-    body2: { fontSize: '0.9rem', lineHeight: 1.6, color: '#555' },
-    body3: { fontSize: '1rem', lineHeight: 1.7, color: '#dfdfdfff' },
+    subtitle1: { fontSize: '1.15rem', color: theme.palette.secondary.main },
+    body1: {
+      fontSize: '1rem',
+      lineHeight: 1.7,
+      color: theme.palette.secondary.main,
+    },
+    body2: {
+      fontSize: '0.9rem',
+      lineHeight: 1.6,
+      color: theme.palette.secondary.option,
+    },
+    body3: {
+      fontSize: '1rem',
+      lineHeight: 1.7,
+      color: theme.palette.secondary.midLight,
+    },
     button: { fontSize: '0.95rem', fontWeight: 500, textTransform: 'none' },
-    caption: { fontSize: '0.8rem', color: '#777' },
+    caption: { fontSize: '0.8rem', color: theme.palette.secondary.lowLight },
   },
   components: {
     MuiButton: {

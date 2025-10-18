@@ -116,10 +116,10 @@ const ExpertiseCarousel = () => {
                 position: 'relative',
                 zIndex: 3,
                 py: 3,
-                px: {xs: 3, md: 5, lg: 10},
+                px: { xs: 3, md: 5, lg: 10 },
                 width: { xs: '100%', md: '75%' },
                 height: '100%',
-                color: '#fff',
+                color: theme.palette.secondary.light,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
@@ -127,13 +127,10 @@ const ExpertiseCarousel = () => {
             >
               <Box
                 sx={{
-                  // background:theme.palette.primary.main,
-                  // color: theme.palette.primary.main,
-                  color: '#fff',
+                  color: theme.palette.secondary.light,
                   borderRadius: 50,
-                  // px: 4,
                   fontWeight: 700,
-                  fontSize: {xs: '2.5rem', md:'3.5rem'},
+                  fontSize: { xs: '2.5rem', md: '3.5rem' },
                   display: 'inline-block',
                   width: 'fit-content',
                 }}
@@ -156,7 +153,6 @@ const ExpertiseCarousel = () => {
       </motion.div>
     </Box>
   );
-  // ...existing code...
 };
 
 export default ExpertiseCarousel;

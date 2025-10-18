@@ -31,7 +31,7 @@ const testimonials = [
     name: 'Daniel Thomas',
     role: 'CEO at CloudEdge',
     text: 'Professionalism and creativity at their best. We will definitely collaborate again!',
-    avatar: '/images/clients/client4.jpg',
+    avatar: '/images/clients/client3.jpg',
     rating: 5,
   },
 ];
@@ -62,14 +62,13 @@ const ClientTestimonials = () => {
       sx={{
         width: '100%',
         py: { xs: 6, md: 10 },
-        background: '#fff',
         overflow: 'hidden',
         position: 'relative',
       }}
     >
       {/* Section Title */}
       <Typography
-        variant="h3"
+        variant="h2"
         sx={{
           fontWeight: 700,
           textAlign: 'center',
@@ -81,13 +80,11 @@ const ClientTestimonials = () => {
         What Our Clients Are Saying
       </Typography>
       <Typography
-        variant="h6"
+        variant="body1"
         sx={{
           textAlign: 'center',
-          mb: { xs: 2},
-          color: '#222',
-          fontWeight: 400,
-          fontSize: { xs: '1rem', md: '1.25rem' },
+          mb: { xs: 2 },
+          color: customTheme.palette.secondary.main,
           maxWidth: 700,
           mx: 'auto',
         }}
@@ -127,7 +124,7 @@ const ClientTestimonials = () => {
                 width: '100%',
                 borderRadius: 4,
                 p: { xs: 3, md: 4 },
-                background: '#fafafd',
+                background: customTheme.palette.secondary.light,
                 height: { xs: 300, md: 250 },
                 display: 'flex',
                 flexDirection: 'column',
@@ -146,7 +143,13 @@ const ClientTestimonials = () => {
                 >
                   {Array.from({ length: testimonials[index].rating }).map(
                     (_, i) => (
-                      <span key={i} style={{ color: '#ffb400', fontSize: 18 }}>
+                      <span
+                        key={i}
+                        style={{
+                          color: customTheme.palette.primary.option,
+                          fontSize: 18,
+                        }}
+                      >
                         ★
                       </span>
                     )
@@ -154,7 +157,10 @@ const ClientTestimonials = () => {
                 </Box>
                 <Typography
                   variant="body1"
-                  sx={{ color: '#222', fontSize: '1rem' }}
+                  sx={{
+                    color: customTheme.palette.secondary.main,
+                    fontSize: '1rem',
+                  }}
                 >
                   {testimonials[index].text}
                 </Typography>
@@ -168,7 +174,10 @@ const ClientTestimonials = () => {
                   <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
                     {testimonials[index].name}
                   </Typography>
-                  <Typography variant="caption" sx={{ color: '#555' }}>
+                  <Typography
+                    variant="caption"
+                    sx={{ color: customTheme.palette.secondary.main }}
+                  >
                     {testimonials[index].role}
                   </Typography>
                 </Box>
@@ -192,11 +201,13 @@ const ClientTestimonials = () => {
             key={i}
             onClick={() => setIndex(i)}
             sx={{
-              width: 12,
-              height: 12,
+              width: '8px',
+              height: '8px',
               borderRadius: '50%',
               background:
-                index === i ? customTheme.palette.primary.main : '#ccc',
+                index === i
+                  ? customTheme.palette.primary.main
+                  : customTheme.palette.secondary.midLight,
               transition: 'all 0.3s',
               '&:hover': { background: customTheme.palette.primary.main },
             }}

@@ -115,7 +115,7 @@ const Intro = () => {
       </Typography>
 
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={5}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
               sx={{
@@ -142,7 +142,7 @@ const Intro = () => {
           <Grid size={{ xs: 12, md: 6 }} sx={{ height: '100%' }}>
             <Grid container spacing={2}>
               {stats.map((stat, idx) => (
-                <Grid size={{ xs: 12, md: 6 }} key={idx}>
+                <Grid size={{ xs: 12, md: 6 }} sx={{ width: '100%' }} key={idx}>
                   <Box
                     sx={{
                       borderRadius: 3,
@@ -152,6 +152,7 @@ const Intro = () => {
                       gap: 2,
                       boxShadow: 2,
                       height: 170,
+                      width: '100%',
                     }}
                   >
                     {stat.icon}
@@ -167,22 +168,27 @@ const Intro = () => {
               sx={{
                 mt: { xs: 5, lg: 3 },
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'flex-start',
+                alignItems: 'center',
               }}
             >
               <Button
-                variant="contained"
+                variant="outlined"
                 component={Link}
                 href="/aboutus"
                 // onClick={handleNavClick}
                 sx={{
-                  background: '#ffc720',
                   color: theme.palette.secondary.main,
+                  border: `1px solid ${theme.palette.secondary.main}`,
                   borderRadius: '50px',
                   padding: '10px 25px',
                   fontWeight: 500,
                   width: '165px',
-                  '&:hover': { backgroundColor: '#fac014ff' },
+                  transition: 'all 0.4s ease',
+                  '&:hover': {
+                    backgroundColor: theme.palette.primary.main,
+                    border: `1px solid ${theme.palette.primary.main}`,
+                  },
                 }}
               >
                 Learn More
