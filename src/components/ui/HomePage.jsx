@@ -96,8 +96,13 @@ const HomePage = () => {
             position: 'relative',
             zIndex: 3,
             px: { xs: 3, md: 6 },
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
             textAlign: 'center',
             maxWidth: '900px',
+            height: '100vh'
           }}
         >
           {/* Headline */}
@@ -107,6 +112,7 @@ const HomePage = () => {
               fontSize: { xs: '2.5rem', lg: '3.5rem' },
               fontWeight: '900',
               lineHeight: 1.4,
+              mt: {mdll:10}
             }}
           >
             Empowering Businesses with Intelligent Digital Solutions
@@ -163,7 +169,6 @@ const HomePage = () => {
               </Box>
             </Link>
           </Box>
-
           {/* Scroll Indicator */}
           <motion.div
             animate={{ y: [0, 10, 0] }}
@@ -172,11 +177,7 @@ const HomePage = () => {
               window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
             }
             style={{
-              position: 'absolute',
-              // bottom: { xs: '-25%', mdll: '-40%', lg: '-30%' },
-              bottom: '-15%',
-              left: '45%',
-              transform: 'translateX(-50%), translateY(50%)',
+              mt: 10,
               opacity: 0.8,
             }}
           >
@@ -187,11 +188,12 @@ const HomePage = () => {
                 border: `2px solid ${theme.palette.primary.main}`,
                 borderRadius: 12,
                 cursor: 'pointer',
+                mt: 2,
                 position: 'relative',
                 '&::after': {
                   content: '""',
                   position: 'absolute',
-                  top: 8,
+                  top: 10,
                   left: '50%',
                   transform: 'translateX(-50%)',
                   width: 6,

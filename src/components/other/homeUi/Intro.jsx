@@ -1,11 +1,13 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import WorkIcon from '@mui/icons-material/Work';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import theme from '@/theme/theme';
+import Link from 'next/link';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const stats = [
   {
@@ -118,7 +120,7 @@ const Intro = () => {
             <Box
               sx={{
                 width: '100%',
-                height: { xs: 220, md: '90%' },
+                height: { xs: 220, md: '100%' },
                 borderRadius: 3,
                 overflow: 'hidden',
                 boxShadow: 2,
@@ -137,7 +139,7 @@ const Intro = () => {
             </Box>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 6 }}>
+          <Grid size={{ xs: 12, md: 6 }} sx={{ height: '100%' }}>
             <Grid container spacing={2}>
               {stats.map((stat, idx) => (
                 <Grid size={{ xs: 12, md: 6 }} key={idx}>
@@ -161,6 +163,32 @@ const Intro = () => {
                 </Grid>
               ))}
             </Grid>
+            <Box
+              sx={{
+                mt: { xs: 5, lg: 3 },
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <Button
+                variant="contained"
+                component={Link}
+                href="/aboutus"
+                // onClick={handleNavClick}
+                sx={{
+                  background: '#ffc720',
+                  color: theme.palette.secondary.main,
+                  borderRadius: '50px',
+                  padding: '10px 25px',
+                  fontWeight: 500,
+                  width: '165px',
+                  '&:hover': { backgroundColor: '#fac014ff' },
+                }}
+              >
+                Learn More
+                <ArrowRightAltIcon sx={{ ml: 0.5 }} />
+              </Button>
+            </Box>
           </Grid>
         </Grid>
       </Box>
