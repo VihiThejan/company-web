@@ -85,7 +85,7 @@ const HomePage = () => {
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(180deg, rgba(0, 0, 0, 0.69) 0%, rgba(0,0,0,0.85) 100%)',
+              'linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.37) 100%)',
             zIndex: 2,
           }}
         />

@@ -61,7 +61,7 @@ const GridCard = ({ title, tags, bgImage }) => (
       sx={{
         position: 'absolute',
         inset: 0,
-        background: 'rgba(0, 0, 0, 0.8)',
+        background: 'rgba(0, 0, 0, 0.54)',
         zIndex: 1,
         pointerEvents: 'none',
       }}

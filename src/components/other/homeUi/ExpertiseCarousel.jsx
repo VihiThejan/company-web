@@ -107,7 +107,7 @@ const ExpertiseCarousel = () => {
                 position: 'absolute',
                 inset: 0,
                 background:
-                  'linear-gradient(180deg, rgba(0, 0, 0, 0.71) 60%, rgba(0, 0, 0, 0.74) 100%)',
+                  'linear-gradient(180deg, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.6) 100%)',
                 zIndex: 2,
               }}
             />
@@ -143,6 +143,7 @@ const ExpertiseCarousel = () => {
                   fontWeight: 400,
                   fontSize: { xs: '1rem', md: '1.05rem' },
                   lineHeight: 1.5,
+                  color: theme.palette.secondary.light
                 }}
               >
                 {item.desc}
