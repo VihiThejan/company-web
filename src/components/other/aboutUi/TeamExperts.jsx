@@ -24,10 +24,10 @@ export default function TeamExperts() {
   return (
     <Box
       sx={{
-        py: { xs: 8, md: 10 },
+        py: { xs: 4},
         px: { xs: 3 },
-        bgcolor: '#fff',
-        color: '#111',
+        bgcolor: theme.palette.secondary.light,
+        color: theme.palette.secondary.main,
         textAlign: 'center',
       }}
     >
@@ -39,6 +39,7 @@ export default function TeamExperts() {
           alignItems: 'center',
           flexWrap: 'wrap',
           mb: 5,
+          mx: { xs: 0, md: 3 },
         }}
       >
         <Box textAlign="left">
@@ -46,21 +47,16 @@ export default function TeamExperts() {
             variant="h3"
             sx={{
               fontWeight: 700,
-              fontSize: { xs: '1.8rem', md: '2.5rem' },
-              color: '#111',
+              fontSize: { xs: '2.5rem', md: '3rem' },
+              color: theme.palette.secondary.main,
             }}
           >
-            OUR{' '}
-            <Box component="span" sx={{ color: theme.palette.primary.main }}>
-              TEAM
-            </Box>{' '}
-            EXPERTS
+            Our Team Experts
           </Typography>
           <Typography
+            variant="body1"
             sx={{
               mt: 1,
-              color: '#666',
-              fontSize: { xs: '0.95rem', md: '1rem' },
             }}
           >
             Meet the creative professionals powering our software and marketing
@@ -75,7 +71,7 @@ export default function TeamExperts() {
           href="/team"
           sx={{
             backgroundColor: theme.palette.primary.main,
-            color: '#1E1E1E',
+            color: theme.palette.secondary.main,
             borderRadius: '50px',
             textTransform: 'none',
             padding: '8px 20px',
@@ -91,7 +87,7 @@ export default function TeamExperts() {
       <Box
         sx={{
           width: '100%',
-          bgcolor: '#fff',
+          bgcolor: theme.palette.secondary.light,
         }}
       >
         <Grid container spacing={{ xs: 4, md: 5 }} justifyContent="center">
@@ -102,7 +98,7 @@ export default function TeamExperts() {
                   borderRadius: 3,
                   overflow: 'hidden',
                   boxShadow: 3,
-                  bgcolor: '#fafafa',
+                  bgcolor: theme.palette.secondary.light,
                   display: 'flex',
                   flexDirection: 'column',
                   height: '100%',
@@ -118,9 +114,9 @@ export default function TeamExperts() {
                   sx={{
                     width: '100%',
                     position: 'relative',
-                    aspectRatio: '4 / 5', // maintains portrait ratio consistently
+                    aspectRatio: '4/4', // maintains portrait ratio consistently
                     overflow: 'hidden',
-                    backgroundColor: '#f5f5f5',
+                    backgroundColor: theme.palette.secondary.light,
                   }}
                 >
                   <Box
@@ -157,7 +153,7 @@ export default function TeamExperts() {
                         variant="h6"
                         sx={{
                           fontWeight: 600,
-                          color: '#222',
+                          color: theme.palette.secondary.main,
                           fontSize: { xs: '1rem', md: '1rem' },
                           textAlign: 'left',
                         }}

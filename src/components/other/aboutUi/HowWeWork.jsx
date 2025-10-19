@@ -18,7 +18,7 @@ export default function HowWeWork() {
         'We begin by understanding your goals, brand identity, and audience. Through data-driven insights and collaborative planning, we define a clear roadmap that aligns technology with marketing impact.',
       icon: (
         <LightbulbIcon
-          sx={{ fontSize: 50, color: theme.palette.secondary.main }}
+          sx={{ fontSize: 30, color: theme.palette.secondary.main }}
         />
       ),
       step: 'Step 1',
@@ -28,7 +28,7 @@ export default function HowWeWork() {
       description:
         'Our engineers and creative strategists work hand-in-hand to craft robust digital solutions. From scalable full-stack platforms to compelling marketing campaigns, we ensure every detail delivers measurable value.',
       icon: (
-        <CodeIcon sx={{ fontSize: 50, color: theme.palette.secondary.main }} />
+        <CodeIcon sx={{ fontSize: 30, color: theme.palette.secondary.main }} />
       ),
       step: 'Step 2',
     },
@@ -38,7 +38,7 @@ export default function HowWeWork() {
         'We go beyond launch — analyzing performance, optimizing user experience, and scaling your presence across platforms. Our continuous innovation keeps your business ahead in a fast-changing digital world.',
       icon: (
         <TrendingUpIcon
-          sx={{ fontSize: 50, color: theme.palette.secondary.main }}
+          sx={{ fontSize: 30, color: theme.palette.secondary.main }}
         />
       ),
       step: 'Step 3',
@@ -48,34 +48,34 @@ export default function HowWeWork() {
   return (
     <Box
       sx={{
-        py: { xs: 8, md: 10 },
-        px: { xs: 3},
+        py: { xs: 4 },
+        px: { xs: 3 },
         textAlign: 'center',
-        bgcolor: '#fff',
+        bgcolor: theme.palette.secondary.light,
       }}
     >
       {/* Section Title */}
       <Typography
-        variant="h3"
+        variant="h2"
         sx={{
+          color: theme.palette.secondary.main,
           fontWeight: 700,
-          mb: { xs: 2, md: 3 },
-          fontSize: { xs: '1.9rem', md: '2.6rem' },
-          color: '#111',
+          textAlign: 'center',
+          mb: 2,
+          mt: 8,
+          fontSize: { xs: '2.5rem', md: '3rem' },
         }}
       >
         How We Work: Strategic, Scalable, Seamless
       </Typography>
       <Typography
-        variant="subtitle1"
+        variant="body1"
         sx={{
-          maxWidth: 750,
+          textAlign: 'center',
+          mb: { xs: 2 },
+          color: theme.palette.secondary.main,
+          maxWidth: 700,
           mx: 'auto',
-          mb: { xs: 6, md: 8 },
-          color: '#555',
-          fontSize: { xs: '1rem', md: '1.1rem' },
-          lineHeight: 1.7,
-          textAlign: 'justify'
         }}
       >
         From idea to impact — our integrated process bridges innovation, design,
@@ -83,22 +83,22 @@ export default function HowWeWork() {
       </Typography>
 
       {/* Steps Grid */}
-      <Grid container spacing={{ xs: 4, md: 6 }} justifyContent="center">
+      <Grid
+        container
+        spacing={{ xs: 4 }}
+        sx={{ mt: 4 }}
+        justifyContent="center"
+      >
         {steps.map((step, index) => (
           <Grid key={index} size={{ xs: 12, lgl: 4 }}>
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
+            <Box>
               <Box
                 sx={{
                   borderRadius: 4,
                   p: 4,
-                  bgcolor: '#fff',
+                  bgcolor: theme.palette.secondary.light,
                   boxShadow: 3,
-                  height: '500px',
+                  height: '450px',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
@@ -112,8 +112,8 @@ export default function HowWeWork() {
               >
                 <Box
                   sx={{
-                    width: 80,
-                    height: 80,
+                    width: 50,
+                    height: 50,
                     borderRadius: '50%',
                     bgcolor: theme.palette.primary.main,
                     display: 'flex',
@@ -129,7 +129,7 @@ export default function HowWeWork() {
                   variant="h6"
                   sx={{
                     fontWeight: 700,
-                    color: '#111',
+                    color: theme.palette.secondary.main,
                     mb: 2,
                     fontSize: { xs: '1.1rem', md: '1.3rem' },
                   }}
@@ -139,7 +139,7 @@ export default function HowWeWork() {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: '#555',
+                    color: theme.palette.secondary.main,
                     mb: 3,
                     fontSize: { xs: '0.95rem', md: '1rem' },
                     lineHeight: 1.7,
@@ -159,19 +159,20 @@ export default function HowWeWork() {
                   }}
                 >
                   <Typography
+                    variant="body2"
                     sx={{
                       background: theme.palette.primary.main,
                       px: 3,
                       py: 2,
                       borderRadius: 50,
-                      fontWeight: 600
+                      fontWeight: 600,
                     }}
                   >
                     {index + 1}
                   </Typography>
                 </Box>
               </Box>
-            </motion.div>
+            </Box>
           </Grid>
         ))}
       </Grid>

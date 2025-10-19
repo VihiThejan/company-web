@@ -19,13 +19,6 @@ import TeamExperts from '@/components/other/aboutUi/TeamExperts';
 import ClientTestimonials from '@/components/other/homeUi/ClientTestimonials';
 
 export default function Technologies() {
-  const handleScrollToJobs = () => {
-    const jobSection = document.getElementById('job-openings');
-    if (jobSection) {
-      jobSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
     <Box
       sx={{
@@ -36,7 +29,7 @@ export default function Technologies() {
         justifyContent: 'center',
         alignItems: 'center',
         overflow: 'hidden',
-        background: '#fff',
+        background: theme.palette.secondary.light,
       }}
     >
       {/* Headline and subtext */}
@@ -70,6 +63,7 @@ export default function Technologies() {
           sx={{
             fontWeight: 700,
             lineHeight: 1.2,
+            color: theme.palette.secondary.main,
             fontSize: {
               xs: '1.8rem', // very small phones
               sm: '2.2rem', // normal phones
@@ -81,7 +75,7 @@ export default function Technologies() {
             px: { xs: 1, sm: 0 },
           }}
         >
-          About VIHI IT Solutions
+          Your Trusted Partner in Digital Innovation
         </Typography>
 
         <Typography
@@ -96,12 +90,13 @@ export default function Technologies() {
               lg: '1.25rem',
               xl: '1.35rem',
             },
-            color: '#222',
+            color: theme.palette.secondary.main,
             mb: { xs: 2.5, sm: 3 },
             maxWidth: { xs: '90%', sm: '85%', md: '70%' },
           }}
         >
-          Journey of VIHI IT Solutions
+          We empower brands to achieve more with tailor-made software solutions
+          built for performance, scalability, and success.
         </Typography>
       </Box>
 
@@ -132,7 +127,7 @@ export default function Technologies() {
           }}
         />
       </Box>
-      <Box>
+      <Box sx={{ width: '100%' }}>
         <HowWeWork />
       </Box>
       <Box sx={{ width: '100%' }}>
@@ -145,7 +140,7 @@ export default function Technologies() {
         <ClientTestimonials />
       </Box>
 
-      <Box sx={{ width: '100%', px: { xs: 3} }}>
+      <Box sx={{ width: '100%', px: { xs: 3 } }}>
         <CallToActionCards />
       </Box>
     </Box>
