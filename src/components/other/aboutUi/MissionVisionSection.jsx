@@ -12,7 +12,7 @@ const MissionVisionSection = () => {
     <Box
       sx={{
         width: '100%',
-        py: 5,
+        py: 8,
         px: 3,
         color: theme.palette.secondary.main,
       }}
@@ -35,7 +35,7 @@ const MissionVisionSection = () => {
               borderRadius: '10px',
               overflow: 'hidden',
               boxShadow: 4,
-              backgroundColor: '#f5f5f5',
+              backgroundColor: theme.palette.secondary.light,
             }}
           >
             <Box
@@ -68,6 +68,7 @@ const MissionVisionSection = () => {
                 Our Mission
               </Typography>
               <Typography
+                variant="body1"
                 sx={{
                   color: theme.palette.secondary.main,
                   lineHeight: 1.8,
@@ -83,9 +84,9 @@ const MissionVisionSection = () => {
             {/* Connecting Line */}
             <Box
               sx={{
-                width: {xs: '100%', md:'70%'},
+                width: { xs: '100%', md: '70%' },
                 height: '2px',
-                backgroundColor: '#555',
+                backgroundColor: theme.palette.secondary.main,
                 mb: 6,
                 position: 'relative',
               }}
