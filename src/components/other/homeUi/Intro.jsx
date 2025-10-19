@@ -11,14 +11,14 @@ import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const stats = [
   {
-    icon: <WorkIcon sx={{ fontSize: 32, color: theme.palette.primary.main }} />,
+    icon: <WorkIcon sx={{ fontSize: 32, color: theme.palette.secondary.main }} />,
     value: 50,
     label: 'We deliver great work always',
   },
   {
     icon: (
       <WorkspacePremiumIcon
-        sx={{ fontSize: 32, color: theme.palette.primary.main }}
+        sx={{ fontSize: 32, color: theme.palette.secondary.main }}
       />
     ),
     value: 2,
@@ -27,7 +27,7 @@ const stats = [
   {
     icon: (
       <EmojiEventsIcon
-        sx={{ fontSize: 32, color: theme.palette.primary.main }}
+        sx={{ fontSize: 32, color: theme.palette.secondary.main }}
       />
     ),
     value: 32,
@@ -35,7 +35,7 @@ const stats = [
   },
   {
     icon: (
-      <PeopleAltIcon sx={{ fontSize: 32, color: theme.palette.primary.main }} />
+      <PeopleAltIcon sx={{ fontSize: 32, color: theme.palette.secondary.main }} />
     ),
     value: 50,
     label: 'We have happy Clients worldwide',
@@ -81,7 +81,7 @@ const Intro = () => {
   return (
     <Box
       sx={{
-        background: '#ffffffff',
+        background: theme.palette.secondary.light,
         maxWidth: '1200px',
         px: { xs: 2, md: 2 },
         mx: 'auto',
@@ -104,8 +104,8 @@ const Intro = () => {
         variant="body1"
         sx={{
           textAlign: 'center',
-          mb: { xs: 4, md: 6 },
-          color: '#222',
+          mb: { xs: 2 },
+          color: theme.palette.secondary.main,
           maxWidth: 700,
           mx: 'auto',
         }}
@@ -168,7 +168,7 @@ const Intro = () => {
               sx={{
                 mt: { xs: 5, lg: 3 },
                 display: 'flex',
-                justifyContent: 'flex-start',
+                justifyContent: {xs:'center', md: 'flex-start'},
                 alignItems: 'center',
               }}
             >
