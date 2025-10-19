@@ -260,7 +260,6 @@ const HomePage = () => {
               variant="h2"
               sx={{
                 fontWeight: 700,
-                ml: 2,
                 mb: 2,
                 textAlign: 'center',
                 fontSize: { xs: '2.5rem', md: '3rem' },
