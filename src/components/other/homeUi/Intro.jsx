@@ -120,14 +120,14 @@ const Intro = () => {
             <Box
               sx={{
                 width: '100%',
-                height: { xs: 220, md: '100%' },
+                height: { xs: 220, md: '450px' },
                 borderRadius: 3,
                 overflow: 'hidden',
                 boxShadow: 2,
               }}
             >
               <img
-                src="/images/home-img/intro.jpg"
+                src="/images/home-img/home-about.webp"
                 alt="About Us"
                 style={{
                   width: '100%',
@@ -151,7 +151,7 @@ const Intro = () => {
                       alignItems: 'center',
                       gap: 2,
                       boxShadow: 2,
-                      height: 170,
+                      height: {xs:120, md:170},
                       width: '100%',
                     }}
                   >
@@ -166,7 +166,7 @@ const Intro = () => {
             </Grid>
             <Box
               sx={{
-                mt: { xs: 5, lg: 3 },
+                mt: { xs: 5, lg: 5 },
                 display: 'flex',
                 justifyContent: {xs:'center', md: 'flex-start'},
                 alignItems: 'center',

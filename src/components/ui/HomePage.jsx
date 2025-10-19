@@ -63,22 +63,6 @@ const HomePage = () => {
           <source src="/videos/home-hero.mp4" type="video/mp4" />
         </Box>
 
-        {/* <Box
-          component="img"
-          src="/images/home-img/homeintro1.gif"
-          alt="gif"
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            zIndex: 0,
-            filter: 'brightness(0.6) contrast(1.2)',
-          }}
-        /> */}
-
         {/* Animated Gradient Overlay */}
         <Box
           sx={{
@@ -249,21 +233,21 @@ const HomePage = () => {
             <GridCard
               title="Technology"
               tags={['Web Apps', 'Mobile Apps', 'Cloud', 'AI', '+More']}
-              bgImage="/images/home-img/it.jpg"
+              bgImage="/images/home-img/home-tech.webp"
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <GridCard
               title="Marketing"
               tags={marketingTags}
-              bgImage="/images/home-img/marketing.jpg"
+              bgImage="/images/home-img/home-marketing.webp"
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <GridCard
               title="Design"
               tags={['UI/UX', 'Branding', 'Prototyping', 'Web Design', '+More']}
-              bgImage="/images/home-img/design.jpg"
+              bgImage="/images/home-img/home-design.webp"
             />
           </Grid>
         </Grid>

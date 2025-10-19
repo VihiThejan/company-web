@@ -80,7 +80,8 @@ function HideOnScroll({ children, isMobile, mobileOpen }) {
 
 const Header = (props) => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'), { noSsr: true });
+  const [hydrated, setHydrated] = useState(false);
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -94,6 +95,12 @@ const Header = (props) => {
     { name: 'Careers', href: '/careers' },
     { name: 'Industries', href: '/industries' },
   ];
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null;
 
   // Smooth expand animation (box size only matches content height)
   const boxVariants = {
