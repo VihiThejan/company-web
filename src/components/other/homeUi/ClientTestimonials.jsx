@@ -84,7 +84,6 @@ const ClientTestimonials = () => {
         sx={{
           textAlign: 'center',
           mb: { xs: 2 },
-          color: customTheme.palette.secondary.main,
           maxWidth: 700,
           mx: 'auto',
         }}

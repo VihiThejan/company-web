@@ -38,7 +38,7 @@ const HomePage = () => {
           alignItems: 'center',
           justifyContent: 'center',
           overflow: 'hidden',
-          color: '#fff',
+          color: theme.palette.secondary.light,
         }}
       >
         {/* Background Video */}
@@ -85,7 +85,7 @@ const HomePage = () => {
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.85) 100%)',
+              'linear-gradient(180deg, rgba(0, 0, 0, 0.69) 0%, rgba(0,0,0,0.85) 100%)',
             zIndex: 2,
           }}
         />
@@ -102,7 +102,7 @@ const HomePage = () => {
             alignItems: 'center',
             textAlign: 'center',
             maxWidth: '900px',
-            height: '100vh'
+            height: '100vh',
           }}
         >
           {/* Headline */}
@@ -112,7 +112,7 @@ const HomePage = () => {
               fontSize: { xs: '2.5rem', lg: '3.5rem' },
               fontWeight: '900',
               lineHeight: 1.4,
-              mt: {mdll:10}
+              mt: { xs: 10, sm: 0, smm: 13, mdll: 10 },
             }}
           >
             Empowering Businesses with Intelligent Digital Solutions
@@ -122,12 +122,12 @@ const HomePage = () => {
           <Typography
             sx={{
               fontSize: { xs: '1rem', md: '1.25rem' },
-              color: '#f5f5f5',
+              color: theme.palette.secondary.light,
               mt: 3,
               mb: 5,
               lineHeight: 1.6,
               textShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              display: { mdll: 'none', lg: 'block' },
+              display: { smm: 'none', lg: 'block' },
             }}
           >
             Building intelligent, scalable, and high-performing solutions that
@@ -233,21 +233,21 @@ const HomePage = () => {
             <GridCard
               title="Technology"
               tags={['Web Apps', 'Mobile Apps', 'Cloud', 'AI', '+More']}
-              bgImage="/images/home-img/it.jpg"
+              bgImage="/images/home-img/home-tech.webp"
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <GridCard
               title="Marketing"
               tags={marketingTags}
-              bgImage="/images/home-img/marketing.jpg"
+              bgImage="/images/home-img/home-marketing.webp"
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
             <GridCard
               title="Design"
               tags={['UI/UX', 'Branding', 'Prototyping', 'Web Design', '+More']}
-              bgImage="/images/home-img/design.jpg"
+              bgImage="/images/home-img/home-design.webp"
             />
           </Grid>
         </Grid>
@@ -268,7 +268,15 @@ const HomePage = () => {
             >
               Expensive Areas of Expertise
             </Typography>
-            <Typography variant="body1" sx={{ ml: 2, textAlign: 'center' }}>
+            <Typography
+              variant="body1"
+              sx={{
+                textAlign: 'center',
+                mb: { xs: 2 },
+                maxWidth: 700,
+                mx: 'auto',
+              }}
+            >
               We provide customized digital solution to help you capture
               opportunities in a variety of industries.
             </Typography>

@@ -1,5 +1,5 @@
-import theme from "@/theme/theme";
-import { Box, Chip, Typography } from "@mui/material";
+import theme from '@/theme/theme';
+import { Box, Chip, Typography } from '@mui/material';
 
 const GridCard = ({ title, tags, bgImage }) => (
   <Box
@@ -10,7 +10,7 @@ const GridCard = ({ title, tags, bgImage }) => (
       borderRadius: 3,
       p: 3,
       minHeight: 460,
-      color: '#fff',
+      color: theme.palette.secondary.light,
       boxShadow: 3,
       position: 'relative',
       overflow: 'hidden',
@@ -24,7 +24,7 @@ const GridCard = ({ title, tags, bgImage }) => (
       sx={{
         fontWeight: 700,
         mb: 2,
-        color: '#fff',
+        color: theme.palette.secondary.light,
         zIndex: 2,
       }}
     >
@@ -51,7 +51,7 @@ const GridCard = ({ title, tags, bgImage }) => (
             px: 2,
             py: 1,
             boxShadow: 1,
-            cursor: 'pointer'
+            cursor: 'pointer',
           }}
         />
       ))}
@@ -61,7 +61,7 @@ const GridCard = ({ title, tags, bgImage }) => (
       sx={{
         position: 'absolute',
         inset: 0,
-        background: 'rgba(0, 0, 0, 0.62)',
+        background: 'rgba(0, 0, 0, 0.8)',
         zIndex: 1,
         pointerEvents: 'none',
       }}

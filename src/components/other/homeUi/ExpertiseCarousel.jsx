@@ -7,17 +7,17 @@ const expertise = [
   {
     label: 'Tourism',
     desc: `Unlock your business growth potential. With over five years of experience in the education industry, we built digital strategies that connected that connect with student, parents and agents from around the world.`,
-    image: '/images/home-img/education.jpg',
+    image: '/images/home-img/home-tourism.webp',
   },
   {
     label: 'Government',
     desc: `We support government and agencies with redesigning product services and digital engagement to deliver solutions that drive positive change across the economy.`,
-    image: '/images/home-img/government.jpg',
+    image: '/images/home-img/home-govenment.webp',
   },
   {
     label: 'Finance',
     desc: `We support government and agencies with redesigning product services and digital engagement to deliver solutions that drive positive change across the economy.`,
-    image: '/images/home-img/finance.jpg',
+    image: '/images/home-img/home-finance.webp',
   },
 ];
 
