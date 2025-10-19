@@ -191,7 +191,7 @@ const ClientTestimonials = () => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          mt: 4,
+          mt: 1,
           gap: 1.5,
         }}
       >
