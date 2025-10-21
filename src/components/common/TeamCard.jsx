@@ -55,12 +55,13 @@ const StartTalkSection = () => {
 
       {/* Content */}
       <Typography
-        variant="subtitle1"
+        variant="body1"
         sx={{
           fontWeight: 500,
           mb: 2,
           position: 'relative',
           zIndex: 2,
+          color: theme.palette.secondary.light
         }}
       >
         The talent behind our breakthrough innovations

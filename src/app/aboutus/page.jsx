@@ -18,7 +18,7 @@ import MissionVisionSection from '@/components/other/aboutUi/MissionVisionSectio
 import TeamExperts from '@/components/other/aboutUi/TeamExperts';
 import ClientTestimonials from '@/components/other/homeUi/ClientTestimonials';
 
-export default function Technologies() {
+export default function AboutUs() {
   return (
     <Box
       sx={{
