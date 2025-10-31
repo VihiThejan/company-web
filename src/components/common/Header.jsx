@@ -202,7 +202,7 @@ const Header = (props) => {
                 />
               </IconButton>
 
-              <Box sx={{ display: 'flex', gap: 1.2, alignItems: 'center' }}>
+              <Box sx={{ display: 'flex', gap: {xs: 3, xl: 5}, alignItems: 'center' }}>
                 {navItems.map((item) => (
                   <Box key={item.name} sx={{ position: 'relative', px: 1 }}>
                     <Typography
