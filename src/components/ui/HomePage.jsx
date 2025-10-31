@@ -234,6 +234,7 @@ const HomePage = () => {
               title="Technology"
               tags={['Web Apps', 'Mobile Apps', 'Cloud', 'AI', '+More']}
               bgImage="/images/home-img/home-tech.webp"
+              LinkTo="/technology"
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -241,6 +242,7 @@ const HomePage = () => {
               title="Marketing"
               tags={marketingTags}
               bgImage="/images/home-img/home-marketing.webp"
+              LinkTo="/marketing"
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -248,6 +250,7 @@ const HomePage = () => {
               title="Design"
               tags={['UI/UX', 'Branding', 'Prototyping', 'Web Design', '+More']}
               bgImage="/images/home-img/home-design.webp"
+              LinkTo="/design"
             />
           </Grid>
         </Grid>
