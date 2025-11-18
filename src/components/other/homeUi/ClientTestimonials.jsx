@@ -83,7 +83,7 @@ const ClientTestimonials = () => {
         variant="body1"
         sx={{
           textAlign: 'center',
-          mb: { xs: 2 },
+          mb: { xs: 5 },
           maxWidth: 700,
           mx: 'auto',
         }}
@@ -97,7 +97,7 @@ const ClientTestimonials = () => {
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         sx={{
-          width: '100%',
+          minWidth: '100%',
           maxWidth: 1000,
           mx: 'auto',
           position: 'relative',
@@ -124,7 +124,7 @@ const ClientTestimonials = () => {
                 borderRadius: 4,
                 p: { xs: 3, md: 4 },
                 background: customTheme.palette.secondary.light,
-                height: { xs: 300, md: 250 },
+                height: { xs: 300, md: 350 },
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
@@ -191,7 +191,7 @@ const ClientTestimonials = () => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          mt: 1,
+          mt: 10,
           gap: 1.5,
         }}
       >

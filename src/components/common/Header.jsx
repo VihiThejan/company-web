@@ -69,7 +69,7 @@ function HideOnScroll({ children, isMobile, mobileOpen }) {
           boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
           borderRadius: mobileOpen ? '20px' : '50px',
           width: isMobile ? '90%' : 'auto',
-          padding: '5px 15px',
+          padding: isMobile ? '0px 15px' : '5px 15px',
         }}
       >
         {children}
@@ -80,7 +80,7 @@ function HideOnScroll({ children, isMobile, mobileOpen }) {
 
 const Header = (props) => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'), { noSsr: true });
+  const isMobile = useMediaQuery(theme.breakpoints.down('mdll'), { noSsr: true });
   const [hydrated, setHydrated] = useState(false);
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -152,10 +152,10 @@ const Header = (props) => {
                 onClick={() => setMobileOpen(false)}
               >
                 <Image
-                  src="/images/logo-symbol.jpeg"
+                  src="/images/logo-new.png"
                   alt="Logo"
-                  width={55}
-                  height={55}
+                  width={135}
+                  height={40}
                 />
               </IconButton>
 
@@ -164,9 +164,9 @@ const Header = (props) => {
                 onClick={handleDrawerToggle}
                 sx={{
                   color: customTheme.palette.secondary.main,
-                  padding: 1.5,
-                  width: 50,
-                  height: 50,
+                  padding: 2,
+                  width: 45,
+                  height: 45,
                   borderRadius: '60px',
                   border: `1px solid ${customTheme.palette.secondary.main}`,
                 }}
@@ -183,9 +183,11 @@ const Header = (props) => {
             <Box
               sx={{
                 width: '100%',
+                // height: '75',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
+                gap: {xs: 3, xl: 5}
               }}
             >
               <IconButton
@@ -195,14 +197,14 @@ const Header = (props) => {
                 onClick={() => setMobileOpen(false)}
               >
                 <Image
-                  src="/images/logo-symbol.jpeg"
+                  src="/images/logo-new.png"
                   alt="Logo"
-                  width={40}
+                  width={135}
                   height={45}
                 />
               </IconButton>
 
-              <Box sx={{ display: 'flex', gap: 1.2, alignItems: 'center' }}>
+              <Box sx={{ display: 'flex', gap: {xs: 3, xl: 5}, alignItems: 'center' }}>
                 {navItems.map((item) => (
                   <Box key={item.name} sx={{ position: 'relative', px: 1 }}>
                     <Typography

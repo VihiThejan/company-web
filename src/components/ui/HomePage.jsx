@@ -95,13 +95,13 @@ const HomePage = () => {
           sx={{
             position: 'relative',
             zIndex: 3,
-            px: { xs: 3, md: 6 },
+            px: { xs: 3, md: 6, xl: 2 },
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             textAlign: 'center',
-            maxWidth: '900px',
+            maxWidth: { xs: '900px', xl: '1200px' },
             height: '100vh',
           }}
         >
@@ -109,7 +109,7 @@ const HomePage = () => {
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '2.5rem', lg: '3.5rem' },
+              fontSize: { xs: '2.5rem', lg: '3.5rem', xl: '6rem' },
               fontWeight: '900',
               lineHeight: 1.4,
               mt: { xs: 10, sm: 0, smm: 13, mdll: 10 },
@@ -121,7 +121,7 @@ const HomePage = () => {
           {/* Tagline */}
           <Typography
             sx={{
-              fontSize: { xs: '1rem', md: '1.25rem' },
+              fontSize: { xs: '1rem', md: '1.25rem', lg: '1.5rem' },
               color: theme.palette.secondary.light,
               mt: 3,
               mb: 5,
@@ -222,18 +222,19 @@ const HomePage = () => {
       ></Box>
 
       {/* about us section */}
-      <Box sx={{ width: '100%', mb: 10 }}>
+      <Box sx={{ flexGrow: 1, mx: { xs: 2, md: 4, lg: 8 }, mb: 10 }}>
         <Intro />
       </Box>
 
       {/* Services Grid */}
-      <Box sx={{ flexGrow: 1, mx: 2, mb: 10 }}>
+      <Box sx={{ flexGrow: 1, mx: { xs: 2, md: 4, lg: 8 }, mb: 10 }}>
         <Grid container spacing={2}>
           <Grid size={{ xs: 12, md: 12 }}>
             <GridCard
               title="Technology"
               tags={['Web Apps', 'Mobile Apps', 'Cloud', 'AI', '+More']}
               bgImage="/images/home-img/home-tech.webp"
+              LinkTo="/technology"
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -241,6 +242,7 @@ const HomePage = () => {
               title="Marketing"
               tags={marketingTags}
               bgImage="/images/home-img/home-marketing.webp"
+              LinkTo="/marketing"
             />
           </Grid>
           <Grid size={{ xs: 12, md: 6 }}>
@@ -248,12 +250,13 @@ const HomePage = () => {
               title="Design"
               tags={['UI/UX', 'Branding', 'Prototyping', 'Web Design', '+More']}
               bgImage="/images/home-img/home-design.webp"
+              LinkTo="/design"
             />
           </Grid>
         </Grid>
       </Box>
 
-      <Box sx={{ flexGrow: 1, mx: 2 }}>
+      <Box sx={{ flexGrow: 1, mx: { xs: 2, md: 4, lg: 8 } }}>
         <Grid container spacing={4} alignItems="center">
           <Grid size={{ xs: 12, md: 12 }}>
             <Typography
@@ -286,11 +289,11 @@ const HomePage = () => {
         </Grid>
       </Box>
 
-      <Box sx={{ flexGrow: 1, mx: 2 }}>
+      <Box sx={{ flexGrow: 1, mx: { xs: 2, md: 4, lg: 8 } }}>
         <ClientTestimonials />
       </Box>
 
-      <Box sx={{ mx: 2, mb: 5 }}>
+      <Box sx={{ flexGrow: 1, mx: { xs: 2, md: 4, lg: 8 } }}>
         <CallToActionCards />
       </Box>
     </Box>

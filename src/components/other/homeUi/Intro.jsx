@@ -83,8 +83,8 @@ const Intro = () => {
       sx={{
         background: theme.palette.secondary.light,
         maxWidth: '1200px',
+        minWidth: '100%',
         px: { xs: 2, md: 2 },
-        mx: 'auto',
         my: { xs: 4, md: 8 },
       }}
     >
@@ -104,7 +104,7 @@ const Intro = () => {
         variant="body1"
         sx={{
           textAlign: 'center',
-          mb: { xs: 2 },
+          mb: { xs: 4 },
           color: theme.palette.secondary.main,
           maxWidth: 700,
           mx: 'auto',

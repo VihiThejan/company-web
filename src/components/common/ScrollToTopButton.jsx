@@ -27,7 +27,7 @@ const ScrollToTopButton = () => {
         onClick={handleClick}
         sx={{
           position: 'fixed',
-          bottom: { xs: 24, md: 32 },
+          bottom: { xs: 30, md: 140 },
           right: { xs: 16, md: 32 },
           zIndex: 1300,
           boxShadow: 3,
