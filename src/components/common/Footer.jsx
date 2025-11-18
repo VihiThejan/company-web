@@ -61,7 +61,7 @@ export default function Footer() {
         color: "#000",
         py: 6,
         flexGrow: 1,
-        mx: { xs: 2, md: 4 },
+        mx: { xs: 2, md: 4, lg: 8 },
       }}
     >
       {/* ================= OUTER GRID ================= */}
