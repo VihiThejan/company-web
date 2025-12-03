@@ -85,7 +85,7 @@ const ExpertiseCarousel = () => {
               width: '100%',
               display: 'flex',
               alignItems: 'flex-end',
-              justifyContent: 'flex-start',
+              justifyContent: 'center',
               overflow: 'hidden',
               // borderRadius: 3,
             }}
@@ -126,6 +126,8 @@ const ExpertiseCarousel = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
+                alignItems: 'center',
+                textAlign: 'center',
               }}
             >
               <Box

@@ -1,30 +1,44 @@
 'use client';
 
 import React from 'react';
-import { Box, Grid, Typography, Card, CardContent, Icon } from '@mui/material';
+import { Box, Grid, Typography, Card, CardContent, Icon, Snackbar } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import theme from '@/theme/theme';
 
 export default function ContactInfoCards() {
+  const [snackbarOpen, setSnackbarOpen] = React.useState(false);
+
   const info = [
     {
       icon: <EmailIcon fontSize="large" color="primary" />,
       title: 'Email Us',
       detail: 'info@vihiitsolutions.com',
+      action: 'email',
     },
     {
       icon: <PhoneIcon fontSize="large" color="primary" />,
       title: 'Call Us',
       detail: '+94 72 444 4082 | +94 70 112 9478',
+      action: 'copy',
     },
     {
       icon: <LocationOnIcon fontSize="large" color="primary" />,
       title: 'Address',
       detail: '239/9, Uduwana Temple road, Uduwana, Homagama, Sri Lanka',
+      action: 'none',
     },
   ];
+
+  const handleCardClick = (item) => {
+    if (item.action === 'email') {
+      window.location.href = `mailto:${item.detail}`;
+    } else if (item.action === 'copy') {
+      navigator.clipboard.writeText(item.detail);
+      setSnackbarOpen(true);
+    }
+  };
 
   return (
     <Box sx={{ mt: 8, width: '100%', mx: 'auto' }}>
@@ -32,6 +46,7 @@ export default function ContactInfoCards() {
         {info.map((item, i) => (
           <Grid size={{ xs: 12, md: 4 }} key={i}>
             <Card
+              onClick={() => handleCardClick(item)}
               sx={{
                 textAlign: 'center',
                 p: 3,
@@ -40,13 +55,14 @@ export default function ContactInfoCards() {
                 background: theme.palette.primary.main,
                 color: theme.palette.secondary.main,
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.22)',
+                cursor: item.action !== 'none' ? 'pointer' : 'default',
                 '&:hover': {
-                  transform: 'translateY(-5px)',
+                  transform: item.action !== 'none' ? 'translateY(-5px)' : 'none',
                   transition: '0.3s',
                 },
               }}
             >
-              <CardContent sx={{color: theme.palette.secondary.main}}>
+              <CardContent sx={{ color: theme.palette.secondary.main }}>
                 <Box
                   sx={{
                     width: '100%',
@@ -79,6 +95,21 @@ export default function ContactInfoCards() {
           </Grid>
         ))}
       </Grid>
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={3000}
+        onClose={() => setSnackbarOpen(false)}
+        message="Phone number copied to clipboard!"
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        ContentProps={{
+          sx: {
+            backgroundColor: '#333',
+            color: '#fff',
+            borderRadius: 2,
+            fontWeight: 500,
+          },
+        }}
+      />
     </Box>
   );
 }

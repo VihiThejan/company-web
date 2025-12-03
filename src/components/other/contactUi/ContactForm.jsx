@@ -29,6 +29,32 @@ export default function ContactForm() {
 
   const [popup, setPopup] = useState(null);
 
+  const [errors, setErrors] = useState({});
+
+  // ✅ Validate Form
+  const validateForm = () => {
+    let newErrors = {};
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/; // Basic phone validation
+
+    if (!formData.firstName.trim()) newErrors.firstName = 'First Name is required';
+    if (!formData.lastName.trim()) newErrors.lastName = 'Last Name is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = 'Invalid email address';
+    }
+    if (!formData.contactNumber.trim()) {
+      newErrors.contactNumber = 'Contact Number is required';
+    } else if (!phoneRegex.test(formData.contactNumber)) {
+      newErrors.contactNumber = 'Invalid contact number';
+    }
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   // ✅ Handle Input
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -36,11 +62,20 @@ export default function ContactForm() {
       ...formData,
       [name]: type === 'checkbox' ? checked : value,
     });
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: '' });
+    }
   };
 
   // ✅ Handle Form Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      showPopup('error', 'Please fix the errors in the form.');
+      return;
+    }
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -71,6 +106,7 @@ export default function ContactForm() {
           message: '',
           agree: false,
         });
+        setErrors({});
       } else throw new Error();
     } catch {
       showPopup(
@@ -106,6 +142,7 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         sx={{
           width: '100%',
+          maxWidth: '900px',
           mx: 'auto',
           p: { xs: 3, md: 5 },
           borderRadius: 3,
@@ -114,7 +151,7 @@ export default function ContactForm() {
           backgroundColor: '#fff',
         }}
       >
-        <Grid container spacing={7}>
+        <Grid container spacing={4}>
           {[
             { label: 'First Name', name: 'firstName', md: 6 },
             { label: 'Last Name', name: 'lastName', md: 6 },
@@ -132,6 +169,8 @@ export default function ContactForm() {
                 required={field.name !== 'companyWebsite'}
                 value={formData[field.name]}
                 onChange={handleChange}
+                error={!!errors[field.name]}
+                helperText={errors[field.name]}
                 InputProps={{ style: { color: 'black' } }}
                 InputLabelProps={{
                   sx: {
@@ -159,10 +198,13 @@ export default function ContactForm() {
               name="message"
               fullWidth
               multiline
-              rows={6}
+              minRows={1}
+              maxRows={6}
               required
               value={formData.message}
               onChange={handleChange}
+              error={!!errors.message}
+              helperText={errors.message}
               InputProps={{ style: { color: 'black' } }}
               InputLabelProps={{
                 sx: {

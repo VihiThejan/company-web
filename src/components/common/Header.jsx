@@ -24,7 +24,7 @@ import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { usePathname } from 'next/navigation';
 import customTheme from '@/theme/theme';
 
-function HideOnScroll({ children, isMobile, mobileOpen }) {
+function HideOnScroll({ children, isMobile }) {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -49,6 +49,7 @@ function HideOnScroll({ children, isMobile, mobileOpen }) {
         top: 20,
         left: 0,
         zIndex: 1100,
+        pointerEvents: 'none',
       }}
     >
       <motion.header
@@ -57,7 +58,6 @@ function HideOnScroll({ children, isMobile, mobileOpen }) {
           show
             ? {
               y: 0,
-              borderRadius: mobileOpen ? '20px' : '50px',
               transition: { duration: 0.5, ease: 'easeInOut' },
             }
             : { y: '-140%' }
@@ -65,11 +65,12 @@ function HideOnScroll({ children, isMobile, mobileOpen }) {
         transition={{ duration: 0.5, ease: 'easeInOut' }}
         style={{
           zIndex: 1100,
-          backgroundColor: '#fff',
-          boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
-          borderRadius: mobileOpen ? '20px' : '50px',
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+          gap: isMobile ? '0' : '15px',
           width: isMobile ? '90%' : 'auto',
-          padding: isMobile ? '0px 15px' : '5px 15px',
+          pointerEvents: 'auto',
         }}
       >
         {children}
@@ -90,6 +91,7 @@ const Header = (props) => {
 
   const navItems = [
     { name: 'Technology', href: '/technology' },
+    { name: 'QA Services', href: '/qa-services' },
     { name: 'Marketing', href: '/marketing' },
     { name: 'Design', href: '/design' },
     { name: 'Portfolio', href: '/portfolio' },
@@ -118,235 +120,257 @@ const Header = (props) => {
   };
 
   return (
-    <HideOnScroll {...props} isMobile={isMobile} mobileOpen={mobileOpen}>
-      <AppBar
-        component="nav"
-        sx={{
-          backgroundColor: 'transparent',
-          boxShadow: 'none',
-          position: 'static',
-        }}
-      >
-        <Toolbar
+    <HideOnScroll {...props} isMobile={isMobile}>
+      {/* Desktop: Separate Logo Section */}
+      {!isMobile && (
+        <Box
           sx={{
-            padding: '10px',
+            backgroundColor: '#fff',
+            boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
+            borderRadius: '50px',
+            padding: '15px 25px',
             display: 'flex',
-            justifyContent: 'center',
             alignItems: 'center',
-            gap: '20px',
+            height: 'fit-content',
           }}
         >
-          {isMobile ? (
-            <Box
-              sx={{
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}
-            >
-              {/* Logo */}
-              <IconButton
-                component={Link}
-                href="/"
-                sx={{ p: 0 }}
-                onClick={() => setMobileOpen(false)}
-              >
-                <Image
-                  src="/images/logo-new.png"
-                  alt="Logo"
-                  width={135}
-                  height={40}
-                />
-              </IconButton>
+          <Link href="/" onClick={() => setMobileOpen(false)}>
+            <Image
+              src="/images/logo-new.png"
+              alt="Logo"
+              width={135}
+              height={40}
+              style={{ objectFit: 'contain' }}
+            />
+          </Link>
+        </Box>
+      )}
 
-              {/* Toggle Button */}
-              <IconButton
-                onClick={handleDrawerToggle}
+      {/* Navigation Section */}
+      <Box
+        sx={{
+          backgroundColor: '#fff',
+          boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
+          borderRadius: mobileOpen ? '20px' : '50px',
+          padding: isMobile ? '0px 15px' : '5px 15px',
+          transition: 'border-radius 0.3s ease',
+          width: isMobile ? '100%' : 'auto',
+        }}
+      >
+        <AppBar
+          component="nav"
+          sx={{
+            backgroundColor: 'transparent',
+            boxShadow: 'none',
+            position: 'static',
+          }}
+        >
+          <Toolbar
+            sx={{
+              padding: '10px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              gap: '20px',
+            }}
+          >
+            {isMobile ? (
+              <Box
                 sx={{
-                  color: customTheme.palette.secondary.main,
-                  padding: 2,
-                  width: 45,
-                  height: 45,
-                  borderRadius: '60px',
-                  border: `1px solid ${customTheme.palette.secondary.main}`,
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
                 }}
               >
-                {mobileOpen ? (
-                  <CloseRoundedIcon sx={{ fontSize: 30 }} />
-                ) : (
-                  <MenuRoundedIcon sx={{ fontSize: 32 }} />
-                )}
-              </IconButton>
-            </Box>
-          ) : (
-            // Desktop layout (unchanged)
-            <Box
-              sx={{
-                width: '100%',
-                // height: '75',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                gap: { xs: 3, xl: 5 }
-              }}
-            >
-              <IconButton
-                component={Link}
-                href="/"
-                sx={{ p: 0 }}
-                onClick={() => setMobileOpen(false)}
-              >
-                <Image
-                  src="/images/logo-new.png"
-                  alt="Logo"
-                  width={135}
-                  height={45}
-                />
-              </IconButton>
+                {/* Logo (Mobile Only) */}
+                <IconButton
+                  component={Link}
+                  href="/"
+                  sx={{ p: 0 }}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <Image
+                    src="/images/logo-new.png"
+                    alt="Logo"
+                    width={135}
+                    height={40}
+                  />
+                </IconButton>
 
-              <Box sx={{ display: 'flex', gap: { xs: 3, xl: 5 }, alignItems: 'center' }}>
-                {navItems.map((item) => (
-                  <Box key={item.name} sx={{ position: 'relative', px: 1 }}>
-                    <Typography
-                      component={Link}
-                      href={item.href}
-                      variant="body1"
-                      sx={{
-                        color: customTheme.palette.secondary.main,
-                        textDecoration: 'none',
-                        fontWeight: pathname === item.href ? 500 : 300,
-                        fontSize: '1rem',
-                      }}
-                    >
-                      {item.name}
-                    </Typography>
-                    <AnimatePresence>
-                      {pathname === item.href && (
-                        <motion.span
-                          layoutId="nav-dot"
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 8 }}
-                          transition={{
-                            type: 'spring',
-                            stiffness: 500,
-                            damping: 50,
-                          }}
-                          style={{
-                            position: 'absolute',
-                            left: '45%',
-                            transform: 'translateX(-50%)',
-                            bottom: -16,
-                          }}
-                        >
-                          <FiberManualRecordIcon
-                            sx={{
-                              fontSize: 10,
-                              color: customTheme.palette.primary.main,
-                            }}
-                          />
-                        </motion.span>
-                      )}
-                    </AnimatePresence>
-                  </Box>
-                ))}
+                {/* Toggle Button */}
+                <IconButton
+                  onClick={handleDrawerToggle}
+                  sx={{
+                    color: customTheme.palette.secondary.main,
+                    padding: 2,
+                    width: 45,
+                    height: 45,
+                    borderRadius: '60px',
+                    border: `1px solid ${customTheme.palette.secondary.main}`,
+                  }}
+                >
+                  {mobileOpen ? (
+                    <CloseRoundedIcon sx={{ fontSize: 30 }} />
+                  ) : (
+                    <MenuRoundedIcon sx={{ fontSize: 32 }} />
+                  )}
+                </IconButton>
               </Box>
-
-              <Button
-                variant="contained"
-                component={Link}
-                href="/contactus"
+            ) : (
+              // Desktop layout (No Logo here)
+              <Box
                 sx={{
-                  background: '#ffc720',
-                  color: customTheme.palette.secondary.main,
-                  borderRadius: '50px',
-                  padding: '8px 20px',
-                  fontSize: '1rem',
-                  ml: 2,
-                  '&:hover': { backgroundColor: '#eebf05ff' },
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'center',
+                  gap: { xs: 3, xl: 5 },
                 }}
               >
-                Contact Us
-              </Button>
-            </Box>
-          )}
-        </Toolbar>
-
-        {/* Mobile Expanding Box Navigation */}
-        <AnimatePresence>
-          {mobileOpen && (
-            <motion.div
-              key="mobile-box"
-              initial="hidden"
-              animate="visible"
-              exit="hidden"
-              variants={boxVariants}
-              style={{
-                backgroundColor: '#fff',
-                overflow: 'hidden',
-              }}
-            >
-              <Box sx={{ py: 3 }}>
-                <List>
+                <Box sx={{ display: 'flex', gap: { xs: 3, xl: 5 }, alignItems: 'center' }}>
                   {navItems.map((item) => (
-                    <ListItem key={item.name} disablePadding>
-                      <ListItemButton
+                    <Box key={item.name} sx={{ position: 'relative', px: 1 }}>
+                      <Typography
                         component={Link}
                         href={item.href}
-                        onClick={handleNavClick}
+                        variant="body1"
                         sx={{
-                          textAlign: 'left',
-                          py: 1.2,
-                          color:
-                            pathname === item.href
-                              ? customTheme.palette.secondary.main
-                              : '#1d1d1dff',
-                          fontWeight: pathname === item.href ? 700 : 500,
-                          gap: 1,
+                          color: customTheme.palette.secondary.main,
+                          textDecoration: 'none',
+                          fontWeight: pathname === item.href ? 500 : 300,
+                          fontSize: '1rem',
                         }}
                       >
+                        {item.name}
+                      </Typography>
+                      <AnimatePresence>
                         {pathname === item.href && (
-                          <FiberManualRecordIcon
-                            sx={{
-                              fontSize: 10,
-                              color: customTheme.palette.primary.main,
+                          <motion.span
+                            layoutId="nav-dot"
+                            initial={{ opacity: 0, y: 8 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: 8 }}
+                            transition={{
+                              type: 'spring',
+                              stiffness: 500,
+                              damping: 50,
                             }}
-                          />
+                            style={{
+                              position: 'absolute',
+                              left: '45%',
+                              transform: 'translateX(-50%)',
+                              bottom: -16,
+                            }}
+                          >
+                            <FiberManualRecordIcon
+                              sx={{
+                                fontSize: 10,
+                                color: customTheme.palette.primary.main,
+                              }}
+                            />
+                          </motion.span>
                         )}
-                        <ListItemText
-                          primary={item.name}
-                          primaryTypographyProps={{ fontSize: '1.1rem' }}
-                        />
-                      </ListItemButton>
-                    </ListItem>
+                      </AnimatePresence>
+                    </Box>
                   ))}
-                </List>
-
-                <Box sx={{ mt: 2 }}>
-                  <Button
-                    variant="contained"
-                    component={Link}
-                    href="/contactus"
-                    onClick={handleNavClick}
-                    sx={{
-                      background: '#ffc720',
-                      color: customTheme.palette.secondary.main,
-                      borderRadius: '50px',
-                      padding: '10px 25px',
-                      fontWeight: 500,
-                      width: '100%',
-                      '&:hover': { backgroundColor: '#F5A40ECF' },
-                    }}
-                  >
-                    Contact Us
-                  </Button>
                 </Box>
+
+                <Button
+                  variant="contained"
+                  component={Link}
+                  href="/contactus"
+                  sx={{
+                    background: '#ffc720',
+                    color: customTheme.palette.secondary.main,
+                    borderRadius: '50px',
+                    padding: '8px 20px',
+                    fontSize: '1rem',
+                    ml: 2,
+                    '&:hover': { backgroundColor: '#eebf05ff' },
+                  }}
+                >
+                  Contact Us
+                </Button>
               </Box>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </AppBar>
+            )}
+          </Toolbar>
+
+          {/* Mobile Expanding Box Navigation */}
+          <AnimatePresence>
+            {mobileOpen && (
+              <motion.div
+                key="mobile-box"
+                initial="hidden"
+                animate="visible"
+                exit="hidden"
+                variants={boxVariants}
+                style={{
+                  backgroundColor: '#fff',
+                  overflow: 'hidden',
+                }}
+              >
+                <Box sx={{ py: 3 }}>
+                  <List>
+                    {navItems.map((item) => (
+                      <ListItem key={item.name} disablePadding>
+                        <ListItemButton
+                          component={Link}
+                          href={item.href}
+                          onClick={handleNavClick}
+                          sx={{
+                            textAlign: 'left',
+                            py: 1.2,
+                            color:
+                              pathname === item.href
+                                ? customTheme.palette.secondary.main
+                                : '#1d1d1dff',
+                            fontWeight: pathname === item.href ? 700 : 500,
+                            gap: 1,
+                          }}
+                        >
+                          {pathname === item.href && (
+                            <FiberManualRecordIcon
+                              sx={{
+                                fontSize: 10,
+                                color: customTheme.palette.primary.main,
+                              }}
+                            />
+                          )}
+                          <ListItemText
+                            primary={item.name}
+                            primaryTypographyProps={{ fontSize: '1.1rem' }}
+                          />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                  </List>
+
+                  <Box sx={{ mt: 2 }}>
+                    <Button
+                      variant="contained"
+                      component={Link}
+                      href="/contactus"
+                      onClick={handleNavClick}
+                      sx={{
+                        background: '#ffc720',
+                        color: customTheme.palette.secondary.main,
+                        borderRadius: '50px',
+                        padding: '10px 25px',
+                        fontWeight: 500,
+                        width: '100%',
+                        '&:hover': { backgroundColor: '#F5A40ECF' },
+                      }}
+                    >
+                      Contact Us
+                    </Button>
+                  </Box>
+                </Box>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </AppBar>
+      </Box>
     </HideOnScroll>
   );
 };

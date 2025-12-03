@@ -21,18 +21,9 @@ export default function ContactUs() {
       <Box
         sx={{
           textAlign: 'center',
-          mb: 6,
-          height: {
-            xs: '30vh',
-            sm: '20vh',
-            md: '30vh',
-            mdl: '20vh',
-            lg: '20vh',
-            lgl: '40vh',
-            xl: '50vh',
-          },
+          mb: 4,
           px: { xs: 2, sm: 4, md: 6, lg: 8 },
-          pt: { xs: 15, sm: 10, md: 12 },
+          pt: { xs: 8, sm: 6, md: 8 },
         }}
       >
         <Typography
@@ -51,7 +42,7 @@ export default function ContactUs() {
           mx="auto"
         >
           Have questions or want to learn more about our services? Fill out the
-          form below — we’ll get back to you within 24 hours. 
+          form below — we’ll get back to you within 24 hours.
         </Typography>
       </Box>
 
