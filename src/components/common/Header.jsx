@@ -56,10 +56,10 @@ function HideOnScroll({ children, isMobile, mobileOpen }) {
         animate={
           show
             ? {
-                y: 0,
-                borderRadius: mobileOpen ? '20px' : '50px',
-                transition: { duration: 0.5, ease: 'easeInOut' },
-              }
+              y: 0,
+              borderRadius: mobileOpen ? '20px' : '50px',
+              transition: { duration: 0.5, ease: 'easeInOut' },
+            }
             : { y: '-140%' }
         }
         transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -91,6 +91,7 @@ const Header = (props) => {
   const navItems = [
     { name: 'Technology', href: '/technology' },
     { name: 'Marketing', href: '/marketing' },
+    { name: 'Design', href: '/design' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Careers', href: '/careers' },
     { name: 'Industries', href: '/industries' },
@@ -187,7 +188,7 @@ const Header = (props) => {
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
-                gap: {xs: 3, xl: 5}
+                gap: { xs: 3, xl: 5 }
               }}
             >
               <IconButton
@@ -204,7 +205,7 @@ const Header = (props) => {
                 />
               </IconButton>
 
-              <Box sx={{ display: 'flex', gap: {xs: 3, xl: 5}, alignItems: 'center' }}>
+              <Box sx={{ display: 'flex', gap: { xs: 3, xl: 5 }, alignItems: 'center' }}>
                 {navItems.map((item) => (
                   <Box key={item.name} sx={{ position: 'relative', px: 1 }}>
                     <Typography

@@ -121,7 +121,7 @@ export default function Marketing() {
         <Box
           component="img"
           className="hover-image"
-          src="/images/marketing-img/mar-hero.webp"
+          src="/images/marketing-img/mar-hero.png"
           alt="Team collaborating"
           sx={{
             width: '100%',

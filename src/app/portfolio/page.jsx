@@ -105,7 +105,7 @@ export default function Portfolio() {
         <Box
           component="img"
           className="hover-image"
-          src="/images/marketing-img/mar-hero.webp"
+          src="/images/marketing-img/portfoliomain.png"
           alt="Team collaborating"
           sx={{
             width: '100%',

@@ -57,14 +57,14 @@ const HomePage = () => {
             height: '100%',
             objectFit: 'cover',
             zIndex: 0,
-            filter: 'brightness(0.6) contrast(1.2)',
+            // filter: 'brightness(0.6) contrast(1.2)', // Removed for clarity
           }}
         >
           <source src="/videos/home-hero.mp4" type="video/mp4" />
         </Box>
 
-        {/* Animated Gradient Overlay */}
-        <Box
+        {/* Animated Gradient Overlay - Removed for clarity */}
+        {/* <Box
           sx={{
             position: 'absolute',
             inset: 0,
@@ -77,15 +77,15 @@ const HomePage = () => {
               '100%': { transform: 'translateX(50px)' },
             },
           }}
-        />
+        /> */}
 
-        {/* Dark Overlay */}
+        {/* Dark Overlay - Reduced opacity */}
         <Box
           sx={{
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(180deg, rgba(0, 0, 0, 0.26) 0%, rgba(0, 0, 0, 0.37) 100%)',
+              'linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%)',
             zIndex: 2,
           }}
         />
@@ -109,11 +109,12 @@ const HomePage = () => {
           <Typography
             variant="h1"
             sx={{
-              fontSize: { xs: '2.5rem', lg: '3.5rem', xl: '6rem' },
+              fontSize: { xs: '2rem', lg: '2.8rem', xl: '4.5rem' },
               fontWeight: '900',
               lineHeight: 1.4,
               mt: { xs: 10, sm: 0, smm: 13, mdll: 10 },
               color: '#fff',
+              textShadow: '0 2px 10px rgba(0,0,0,0.3)', // Added for readability
             }}
           >
             Empowering Businesses with Intelligent Digital Solutions

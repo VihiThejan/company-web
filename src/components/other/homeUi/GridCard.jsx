@@ -64,7 +64,7 @@ const GridCard = ({ title, tags, bgImage, LinkTo }) => {
         sx={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)', // Neutral overlay
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%)', // Neutral overlay
           zIndex: 1,
           pointerEvents: 'none',
         }}

@@ -8,25 +8,25 @@ const services = [
     title: 'Full Stack Development',
     description:
       'Our full stack engineering team combines expertise across front-end, back-end, and mobile development. We design scalable applications, from concept to deployment, with strong emphasis on performance, maintainability, and cutting-edge user experiences.',
-    image: '/images/marketing-img/market-strag.webp',
+    image: '/images/marketing-img/market-strag.jpg',
   },
   {
     title: 'Cloud Computing',
     description:
       'We design, implement, and manage cloud infrastructure that enhances scalability and security. Our solutions integrate seamlessly with your existing systems, ensuring optimized performance, cost-efficiency, and business continuity.',
-    image: '/images/marketing-img/data-driven-perform.webp',
+    image: '/images/marketing-img/data-driven-perform.png',
   },
   {
     title: 'Data Engineering and BI',
     description:
       'Our data engineering and business intelligence specialists build pipelines, manage data warehouses, and develop analytics solutions that empower data-driven decision-making, helping businesses gain actionable insights for growth.',
-    image: '/images/marketing-img/rank&resonates.webp',
+    image: '/images/marketing-img/rank&resonates.jpg',
   },
   {
     title: 'AI/ML Data Science',
     description:
       'Our data engineering and business intelligence specialists build pipelines, manage data warehouses, and develop analytics solutions that empower data-driven decision-making, helping businesses gain actionable insights for growth.',
-    image: '/images/marketing-img/marketing-automation.webp',
+    image: '/images/marketing-img/marketing-automation.jpg',
   },
 ];
 

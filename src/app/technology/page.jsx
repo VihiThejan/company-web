@@ -121,7 +121,7 @@ export default function Technologies() {
         <Box
           component="img"
           className="hover-image"
-          src="/images/technology-img/tech-hero.webp"
+          src="/images/technology-img/tech-hero.png"
           alt="Team collaborating"
           sx={{
             width: '100%',

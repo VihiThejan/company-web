@@ -8,25 +8,25 @@ const services = [
     title: 'Custom End-to-End Software Development',
     description:
       'We deliver full-cycle software development solutions designed to meet the evolving needs of modern businesses. Our dedicated team specializes in building scalable web and mobile applications that integrate seamlessly across platforms. From UX strategy and system architecture to development, testing, and deployment, we handle every phase with precision. Each solution is tailored for security, maintainability, and performance—ensuring your business stays ahead in a competitive digital landscape. Our approach combines innovative design with robust engineering to create reliable, user-focused digital products that drive measurable growth.',
-    image: '/images/technology-img/tech-services/fullstack.webp',
+    image: '/images/technology-img/tech-services/fullstack.jpg',
   },
   {
     title: 'Enterprise Cloud Architecture & Optimization',
     description:
       'Our cloud experts help organizations harness the full potential of cloud computing through scalable, secure, and optimized cloud infrastructure. We architect, deploy, and manage solutions on leading platforms like AWS, Microsoft Azure, and Google Cloud, ensuring maximum uptime and operational efficiency. From migration of legacy systems to building cloud-native applications, we help businesses achieve greater agility and cost savings. With strong focus on automation, performance monitoring, and security compliance, our cloud consulting services enable long-term digital resilience and scalability.',
-    image: '/images/technology-img/tech-services/cloud.webp',
+    image: '/images/technology-img/tech-services/cloud.jpg',
   },
   {
     title: 'Data Engineering, Analytics & Business Intelligence',
     description:
       'We empower organizations to turn complex data into actionable insights with our end-to-end data engineering and business intelligence services. Our experts design robust ETL pipelines, implement cloud-based data warehouses, and develop intuitive dashboards using leading BI tools. We focus on data accuracy, visualization clarity, and real-time decision support—helping enterprises identify trends, optimize performance, and predict opportunities. Whether it’s customer analytics, KPI reporting, or predictive modeling, our data-driven solutions ensure your business decisions are backed by intelligence and precision.',
-    image: '/images/technology-img/tech-services/data-bi.webp',
+    image: '/images/technology-img/tech-services/data-bi.jpg',
   },
   {
     title: 'AI & Machine Learning Integration',
     description:
       'We help businesses unlock innovation through artificial intelligence and machine learning solutions that enhance productivity, efficiency, and customer engagement. Our AI development services include predictive analytics, intelligent automation, natural language processing, and computer vision. By integrating AI into your existing ecosystem, we enable data-driven decision-making and smarter workflows. From building custom ML models to implementing real-time analytics, our solutions are designed to adapt, learn, and evolve—empowering organizations to scale intelligently and achieve sustainable digital transformation.',
-    image: '/images/technology-img/tech-services/ai-ml.webp',
+    image: '/images/technology-img/tech-services/ai-ml.jpg',
   },
 ];
 
