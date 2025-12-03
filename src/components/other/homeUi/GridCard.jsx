@@ -12,10 +12,12 @@ const GridCard = ({ title, tags, bgImage, LinkTo }) => {
 
   const card = (
     <Box
+      className="hover-lift-shadow hover-image-container"
       sx={{
-        background: bgImage
-          ? `url(${bgImage}) center/cover, linear-gradient(135deg, #1a237e 60%, #0d133d 100%)`
-          : 'linear-gradient(135deg, #1a237e 60%, #0d133d 100%)',
+        // background: bgImage
+        //   ? `url(${bgImage}) center/cover, linear-gradient(135deg, #1a237e 60%, #0d133d 100%)`
+        //   : 'linear-gradient(135deg, #1a237e 60%, #0d133d 100%)',
+        background: 'linear-gradient(135deg, #1a1a1a 60%, #000000 100%)', // Fallback/Base
         borderRadius: 3,
         p: 3,
         minHeight: { xs: 320, sm: 380, md: 460 },
@@ -38,6 +40,36 @@ const GridCard = ({ title, tags, bgImage, LinkTo }) => {
         }
       }}
     >
+      {/* Background Image with Hover Effect */}
+      {bgImage && (
+        <Box
+          component="img"
+          src={bgImage}
+          alt={title}
+          className="hover-image"
+          sx={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            zIndex: 0,
+          }}
+        />
+      )}
+
+      {/* Overlay to ensure text readability */}
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%)', // Neutral overlay
+          zIndex: 1,
+          pointerEvents: 'none',
+        }}
+      />
+
       <Typography
         variant="h3"
         sx={{
@@ -45,6 +77,7 @@ const GridCard = ({ title, tags, bgImage, LinkTo }) => {
           mb: 2,
           color: theme.palette.secondary.light,
           zIndex: 2,
+          position: 'relative',
         }}
       >
         {title}
@@ -55,6 +88,7 @@ const GridCard = ({ title, tags, bgImage, LinkTo }) => {
           flexWrap: 'wrap',
           gap: 1.5,
           zIndex: 2,
+          position: 'relative',
         }}
       >
         {tags.map((tag, idx) => (
@@ -75,8 +109,8 @@ const GridCard = ({ title, tags, bgImage, LinkTo }) => {
           />
         ))}
       </Box>
-      {/* Optional: Overlay for effect */}
-      <Box
+      {/* Optional: Overlay for effect - Removed as we have a better one above */}
+      {/* <Box
         sx={{
           position: 'absolute',
           inset: 0,
@@ -84,7 +118,7 @@ const GridCard = ({ title, tags, bgImage, LinkTo }) => {
           zIndex: 1,
           pointerEvents: 'none',
         }}
-      />
+      /> */}
     </Box>
   );
 

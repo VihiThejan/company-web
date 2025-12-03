@@ -104,6 +104,7 @@ export default function Technologies() {
 
       {/* Hero image */}
       <Box
+        className="hover-image-container"
         sx={{
           position: 'relative',
           width: '100%',
@@ -119,6 +120,7 @@ export default function Technologies() {
       >
         <Box
           component="img"
+          className="hover-image"
           src="/images/technology-img/tech-hero.webp"
           alt="Team collaborating"
           sx={{
@@ -129,10 +131,11 @@ export default function Technologies() {
           }}
         />
       </Box>
-      <Box sx={{ pt: { xs: 6, sm: 8, md: 10 }, px: { xs: 2, sm: 4 } }}>
+      <Box className="hover-section" sx={{ pt: { xs: 6, sm: 8, md: 10 }, px: { xs: 2, sm: 4 } }}>
         <TechnologyServices />
       </Box>
       <Box
+        className="hover-section"
         sx={{
           width: '100%',
           px: { xs: 2, sm: 4 },
@@ -142,7 +145,7 @@ export default function Technologies() {
       >
         <TeamCard />
       </Box>
-      <Box sx={{ width: '100%', px: { xs: 2, sm: 4 } }}>
+      <Box className="hover-section" sx={{ width: '100%', px: { xs: 2, sm: 4 } }}>
         <CallToActionCards />
       </Box>
     </Box>

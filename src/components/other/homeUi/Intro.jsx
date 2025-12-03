@@ -118,6 +118,7 @@ const Intro = () => {
         <Grid container spacing={5}>
           <Grid size={{ xs: 12, md: 6 }}>
             <Box
+              className="hover-image-container"
               sx={{
                 width: '100%',
                 height: { xs: 220, md: '450px' },
@@ -127,6 +128,7 @@ const Intro = () => {
               }}
             >
               <img
+                className="hover-image"
                 src="/images/home-img/home-about.webp"
                 alt="About Us"
                 style={{
@@ -144,6 +146,7 @@ const Intro = () => {
               {stats.map((stat, idx) => (
                 <Grid size={{ xs: 12, md: 6 }} sx={{ width: '100%' }} key={idx}>
                   <Box
+                    className="hover-lift-shadow"
                     sx={{
                       borderRadius: 3,
                       p: 3,
@@ -151,8 +154,9 @@ const Intro = () => {
                       alignItems: 'center',
                       gap: 2,
                       boxShadow: 2,
-                      height: {xs:120, md:170},
+                      height: { xs: 120, md: 170 },
                       width: '100%',
+                      bgcolor: '#fff', // Ensure background is white for shadow effect
                     }}
                   >
                     {stat.icon}
@@ -168,7 +172,7 @@ const Intro = () => {
               sx={{
                 mt: { xs: 5, lg: 5 },
                 display: 'flex',
-                justifyContent: {xs:'center', md: 'flex-start'},
+                justifyContent: { xs: 'center', md: 'flex-start' },
                 alignItems: 'center',
               }}
             >
@@ -176,6 +180,7 @@ const Intro = () => {
                 variant="outlined"
                 component={Link}
                 href="/aboutus"
+                className="hover-btn"
                 // onClick={handleNavClick}
                 sx={{
                   color: theme.palette.secondary.main,

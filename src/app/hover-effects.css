@@ -1,0 +1,180 @@
+/* =========================================
+   Advanced Modern Hover Effects
+   ========================================= */
+
+:root {
+    /* Core Colors - Neutral & Professional */
+    --hover-primary: #ffc720;
+    /* Matching brand primary */
+    --hover-dark: #303030;
+    /* Matching brand secondary */
+    --hover-light: #ffffff;
+    --hover-border: rgba(0, 0, 0, 0.08);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+    --shadow-neon: 0 0 20px rgba(255, 199, 32, 0.4);
+
+    /* Transitions */
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --duration-fast: 250ms;
+    --duration-normal: 350ms;
+}
+
+/* =========================================
+   1. Card Hover Effects
+   ========================================= */
+.hover-card {
+    transition: transform var(--duration-normal) var(--ease-smooth),
+        box-shadow var(--duration-normal) var(--ease-smooth),
+        border-color var(--duration-normal) var(--ease-smooth);
+    border: 1px solid var(--hover-border);
+    background: var(--hover-light);
+    box-shadow: var(--shadow-sm);
+    will-change: transform, box-shadow;
+}
+
+.hover-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(0, 0, 0, 0.0);
+    /* Border disappears into shadow or glows */
+}
+
+/* Variant: Card with Border Glow */
+.hover-card-glow {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-card-glow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 0px var(--hover-primary);
+    transition: box-shadow var(--duration-normal) var(--ease-smooth);
+    pointer-events: none;
+}
+
+.hover-card-glow:hover::after {
+    box-shadow: inset 0 0 0 2px var(--hover-primary);
+}
+
+/* =========================================
+   2. Section Hover Effects
+   ========================================= */
+.hover-section {
+    transition: background-color var(--duration-normal) var(--ease-smooth);
+}
+
+/* Background hover effect removed as per user request */
+
+/* =========================================
+   3. Image Hover Effects
+   ========================================= */
+.hover-image-container {
+    overflow: hidden;
+    display: block;
+    /* Ensure it wraps image correctly */
+}
+
+.hover-image {
+    transition: transform var(--duration-normal) var(--ease-smooth),
+        filter var(--duration-normal) var(--ease-smooth);
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.hover-image-container:hover .hover-image {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* =========================================
+   4. Button Hover Effects
+   ========================================= */
+.hover-btn {
+    position: relative;
+    transition: all var(--duration-fast) var(--ease-smooth);
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hover-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Slide effect for buttons */
+.hover-btn-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: width var(--duration-fast) var(--ease-smooth);
+    z-index: -1;
+}
+
+.hover-btn-slide:hover::before {
+    width: 100%;
+}
+
+/* =========================================
+   5. Premium Effects
+   ========================================= */
+
+/* Glassmorphism Glow */
+.hover-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all var(--duration-normal) var(--ease-smooth);
+}
+
+.hover-glass:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transform: translateY(-4px);
+}
+
+/* Soft Neon Shadow */
+.hover-neon {
+    transition: box-shadow var(--duration-normal) var(--ease-smooth),
+        transform var(--duration-normal) var(--ease-smooth);
+}
+
+.hover-neon:hover {
+    box-shadow: var(--shadow-neon);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   Utility Classes
+   ========================================= */
+.hover-trigger-parent:hover .hover-target-child {
+    /* Use this pattern for parent-child hover interactions */
+    transform: translateX(5px);
+}
+
+/* Lift and Shadow only (preserves background) */
+.hover-lift-shadow {
+    transition: transform var(--duration-normal) var(--ease-smooth),
+        box-shadow var(--duration-normal) var(--ease-smooth);
+    will-change: transform, box-shadow;
+}
+
+.hover-lift-shadow:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: var(--shadow-lg);
+}

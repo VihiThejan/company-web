@@ -113,6 +113,7 @@ const HomePage = () => {
               fontWeight: '900',
               lineHeight: 1.4,
               mt: { xs: 10, sm: 0, smm: 13, mdll: 10 },
+              color: '#fff',
             }}
           >
             Empowering Businesses with Intelligent Digital Solutions
@@ -139,6 +140,7 @@ const HomePage = () => {
             <Link href={`/contactus`} style={{ textDecoration: 'none' }}>
               <Box
                 component="button"
+                className="hover-btn"
                 sx={{
                   background: theme.palette.primary.main,
                   color: theme.palette.secondary.option,

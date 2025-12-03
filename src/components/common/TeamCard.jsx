@@ -14,6 +14,7 @@ const StartTalkSection = () => {
 
   return (
     <Box
+      className="hover-lift-shadow"
       sx={{
         display: 'flex',
         flexDirection: 'column',
@@ -48,6 +49,7 @@ const StartTalkSection = () => {
           mb: 2,
           position: 'relative',
           zIndex: 2,
+          color: 'inherit',
         }}
       >
         People Behind the Progress
@@ -70,6 +72,7 @@ const StartTalkSection = () => {
       <Button
         variant="outlined"
         onClick={handleNavigate}
+        className="hover-btn"
         sx={{
           color: '#fff',
           borderColor: '#fff',

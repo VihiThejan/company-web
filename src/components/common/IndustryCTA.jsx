@@ -38,6 +38,7 @@ export default function IndustryCTA() {
           fontWeight: 700,
           mb: 2,
           fontSize: { xs: '1.8rem', md: '2.3rem' },
+          color: '#fff',
         }}
       >
         Ready for an IT Partner Who Speaks Your Industry’s Language?
@@ -50,7 +51,7 @@ export default function IndustryCTA() {
           mb: 5,
           maxWidth: 800,
           mx: 'auto',
-          color: 'rgba(255,255,255,0.85)',
+          color: '#fff',
           lineHeight: 1.7,
           fontSize: { xs: '1rem', md: '1.1rem' },
         }}

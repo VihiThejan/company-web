@@ -1,5 +1,6 @@
 import { Inter, Poppins, Bitcount } from 'next/font/google';
 import './globals.css';
+import './hover-effects.css';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import Box from '@mui/material/Box';
@@ -17,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0 }}>
+      <body style={{ margin: 0 }} suppressHydrationWarning={true}>
         {/* Wrap your entire application content with the MuiThemeProvider */}
         <MuiThemeProvider>
           <Box

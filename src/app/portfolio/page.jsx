@@ -88,6 +88,7 @@ export default function Portfolio() {
 
       {/* Hero image */}
       <Box
+        className="hover-image-container"
         sx={{
           position: 'relative',
           width: '100%',
@@ -103,6 +104,7 @@ export default function Portfolio() {
       >
         <Box
           component="img"
+          className="hover-image"
           src="/images/marketing-img/mar-hero.webp"
           alt="Team collaborating"
           sx={{
@@ -113,10 +115,11 @@ export default function Portfolio() {
           }}
         />
       </Box>
-      <Box sx={{mb: '50px'}}>
+      <Box className="hover-section" sx={{ mb: '50px' }}>
         <ProjectShowCase />
       </Box>
       <Box
+        className="hover-section"
         sx={{
           width: '100%',
           px: { xs: 2, sm: 4 },
@@ -126,7 +129,7 @@ export default function Portfolio() {
       >
         <TeamCard />
       </Box>
-      <Box sx={{ width: '100%', px: { xs: 2, sm: 4 } }}>
+      <Box className="hover-section" sx={{ width: '100%', px: { xs: 2, sm: 4 } }}>
         <CallToActionCards />
       </Box>
     </Box>

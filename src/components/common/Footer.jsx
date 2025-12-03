@@ -109,13 +109,16 @@ export default function Footer() {
               textAlign: "justify",
             }}
           >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis
-            consequatur tempora, laboriosam voluptatum mollitia provident optio
-            expedita qui quisquam fugit dicta? Repellat cupiditate cumque
-            commodi numquam natus laudantium nostrum molestiae soluta omnis
-            beatae eaque molestias quas dignissimos explicabo, aliquam dolor
-            asperiores ratione et vero quia voluptas! Assumenda deserunt ea
-            necessitatibus!
+            Started as a passionate tech initiative in Sri Lanka back in 2023, Vihi IT Solutions
+            emerged with a vision to deliver high-quality, innovative software solutions tailored to
+            real-world needs. What began as a small team with big ideas quickly evolved into a
+            dynamic company offering services to reputable clients like the Bank of Ceylon.
+            Driven by creativity, commitment, and client success, Vihi IT Solutions has grown by
+            building systems that are not only powerful but also practical. From inventory
+            management and AI-driven tourism innovations to full-stack web and mobile apps, we
+            strive to create meaningful technology.
+            Today, Vihi IT Solutions continues to expand, aiming to make a lasting impact on the
+            local and international tech landscape.
           </Typography>
         </Box>
 

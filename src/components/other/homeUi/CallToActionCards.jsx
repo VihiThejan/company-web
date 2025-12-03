@@ -26,6 +26,7 @@ const Card = ({
       style={{ textDecoration: 'none', display: 'block', height: '100%' }}
     >
       <MotionBox
+        className="hover-lift-shadow"
         sx={{
           background: bg,
           color: color,
@@ -35,12 +36,9 @@ const Card = ({
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-between',
-          boxShadow: 2,
           position: 'relative',
           cursor: 'pointer',
           overflow: 'hidden',
-          transition: 'box-shadow 0.2s',
-          '&:hover': { boxShadow: 6 },
         }}
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
@@ -67,6 +65,7 @@ const Card = ({
               fontWeight: 700,
               mb: subtitle ? 1 : 2,
               fontSize: { xs: '1.3rem', md: '2rem' },
+              color: 'inherit',
             }}
           >
             {title}

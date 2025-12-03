@@ -102,7 +102,9 @@ export default function Marketing() {
       </Box>
 
       {/* Hero image */}
+      {/* Hero image */}
       <Box
+        className="hover-image-container"
         sx={{
           position: 'relative',
           width: '100%',
@@ -118,6 +120,7 @@ export default function Marketing() {
       >
         <Box
           component="img"
+          className="hover-image"
           src="/images/marketing-img/mar-hero.webp"
           alt="Team collaborating"
           sx={{
@@ -128,13 +131,13 @@ export default function Marketing() {
           }}
         />
       </Box>
-      <Box>
+      <Box className="hover-section">
         <MarketingServices />
       </Box>
-      <Box sx={{ width: '100%', px: { xs: 2, sm: 4 }, pt: {xs: 0, md: 10}, pb: 2}}>
-        <TeamCard/>
+      <Box className="hover-section" sx={{ width: '100%', px: { xs: 2, sm: 4 }, pt: { xs: 0, md: 10 }, pb: 2 }}>
+        <TeamCard />
       </Box>
-      <Box sx={{ width: '100%', px: { xs: 2, sm: 4 } }}>
+      <Box className="hover-section" sx={{ width: '100%', px: { xs: 2, sm: 4 } }}>
         <CallToActionCards />
       </Box>
     </Box>

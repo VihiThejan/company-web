@@ -58,6 +58,7 @@ const ExpertiseCarousel = () => {
   // ...existing code...
   return (
     <Box
+      className="hover-lift-shadow"
       sx={{
         width: '100%',
         height: `${cardHeight}px`,
@@ -76,6 +77,7 @@ const ExpertiseCarousel = () => {
         {expertiseLoop.map((item, idx) => (
           <Box
             key={idx}
+            className="hover-image-container"
             sx={{
               position: 'relative',
               minHeight: `${cardHeight}px`,
@@ -90,6 +92,7 @@ const ExpertiseCarousel = () => {
           >
             <Box
               component="img"
+              className="hover-image"
               src={item.image}
               alt={item.label}
               sx={{
