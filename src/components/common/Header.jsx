@@ -91,12 +91,12 @@ const Header = (props) => {
 
   const navItems = [
     { name: 'Technology', href: '/technology' },
-    { name: 'QA Services', href: '/qa-services' },
     { name: 'Marketing', href: '/marketing' },
     { name: 'Design', href: '/design' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'Careers', href: '/careers' },
     { name: 'Industries', href: '/industries' },
+    { name: 'QA Services', href: '/qa-services' },
   ];
 
   useEffect(() => {
