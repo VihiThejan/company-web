@@ -15,6 +15,26 @@ const theme = createTheme({
     fontFamily: 'var(--font-poppins), sans-serif',
     fontFamilySecondary: 'var(--font-inter), sans-serif',
     fontFamilyThird: 'var(--font-roboto), sans-serif',
+    body1: {
+      fontSize: '1.5rem',
+      fontWeight: 700,
+    },
+    body2: {
+      fontSize: '2.5rem',
+      fontWeight: 600,
+    },
+    button: {
+      fontSize: '2.5rem',
+      fontWeight: 600,
+    },
+    subtitle1: {
+      fontSize: '2.5rem',
+      fontWeight: 600,
+    },
+    subtitle2: {
+      fontSize: '2.5rem',
+      fontWeight: 600,
+    },
   },
   palette: {
     primary: {

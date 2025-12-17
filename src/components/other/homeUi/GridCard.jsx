@@ -1,10 +1,10 @@
 'use client';
 
 import theme from '@/theme/theme';
-import { Box, Chip, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
 
-const GridCard = ({ title, tags, bgImage, LinkTo }) => {
+const GridCard = ({ title, bgImage, LinkTo }) => {
   const router = useRouter();
   const handleNavigate = () => {
     if (LinkTo) router.push(LinkTo);
@@ -82,33 +82,7 @@ const GridCard = ({ title, tags, bgImage, LinkTo }) => {
       >
         {title}
       </Typography>
-      <Box
-        sx={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          gap: 1.5,
-          zIndex: 2,
-          position: 'relative',
-        }}
-      >
-        {tags.map((tag, idx) => (
-          <Chip
-            key={idx}
-            label={tag}
-            sx={{
-              background: theme.palette.primary.main,
-              color: theme.palette.secondary.option,
-              fontWeight: 500,
-              fontSize: '1rem',
-              borderRadius: 50,
-              px: 2,
-              py: 1,
-              boxShadow: 1,
-              cursor: 'pointer',
-            }}
-          />
-        ))}
-      </Box>
+
       {/* Optional: Overlay for effect - Removed as we have a better one above */}
       {/* <Box
         sx={{

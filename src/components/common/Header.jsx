@@ -125,10 +125,6 @@ const Header = (props) => {
       {!isMobile && (
         <Box
           sx={{
-            backgroundColor: '#fff',
-            boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
-            borderRadius: '50px',
-            padding: '15px 25px',
             display: 'flex',
             alignItems: 'center',
             height: 'fit-content',

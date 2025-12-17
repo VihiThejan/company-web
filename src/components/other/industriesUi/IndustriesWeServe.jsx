@@ -113,7 +113,7 @@ export default function IndustriesWeServe() {
                         {item.title}
                       </Typography>
                       <Typography
-                        sx={{ color: '#555', mb: 3}}
+                        sx={{ color: '#000', mb: 3 }}
                       >
                         {item.description}
                       </Typography>

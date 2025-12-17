@@ -11,16 +11,11 @@ import ClientTestimonials from '../other/homeUi/ClientTestimonials';
 import { Call } from '@mui/icons-material';
 import CallToActionCards from '../other/homeUi/CallToActionCards';
 import Link from 'next/link';
-import CallIcon from '@mui/icons-material/Call';
 
-const marketingTags = [
-  'Growth Strategy',
-  'Lead Nurturing',
-  'SEO',
-  'Performance Marketing',
-  'Go To Market',
-  '+More',
-];
+import CallIcon from '@mui/icons-material/Call';
+import MomentumSection from '../other/homeUi/MomentumSection';
+
+
 
 const HomePage = () => {
   return (
@@ -216,6 +211,8 @@ const HomePage = () => {
         </Box>
       </motion.section>
 
+      <MomentumSection />
+
       <Box
         sx={{
           with: '100%',
@@ -235,7 +232,7 @@ const HomePage = () => {
           <Grid size={{ xs: 12, md: 12 }}>
             <GridCard
               title="Technology"
-              tags={['Web Apps', 'Mobile Apps', 'Cloud', 'AI', '+More']}
+
               bgImage="/images/home-img/home-tech.webp"
               LinkTo="/technology"
             />
@@ -243,7 +240,7 @@ const HomePage = () => {
           <Grid size={{ xs: 12, md: 6 }}>
             <GridCard
               title="Marketing"
-              tags={marketingTags}
+
               bgImage="/images/home-img/home-marketing.webp"
               LinkTo="/marketing"
             />
@@ -251,7 +248,7 @@ const HomePage = () => {
           <Grid size={{ xs: 12, md: 6 }}>
             <GridCard
               title="Design"
-              tags={['UI/UX', 'Branding', 'Prototyping', 'Web Design', '+More']}
+
               bgImage="/images/home-img/home-design.webp"
               LinkTo="/design"
             />

@@ -20,7 +20,7 @@ import theme from '@/theme/theme';
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function Vacancies() {
-  const [searchTerm, setSearchTerm] = useState('');
+
   const [openJob, setOpenJob] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const collapseTimeout = useRef(null);
@@ -32,9 +32,7 @@ export default function Vacancies() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const filteredJobs = jobVacancies.filter((job) =>
-    job.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+
 
   const expandVariants = {
     closed: { height: 0, opacity: 0, overflow: 'hidden' },
@@ -80,43 +78,11 @@ export default function Vacancies() {
         </Typography>
       </Box>
 
-      {/* Search */}
-      <Box sx={{ mb: 2, maxWidth: 600, mx: 'auto', width: '100%' }}>
-        <TextField
-          fullWidth
-          variant="outlined"
-          placeholder="Search job vacancies..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          sx={{
-            '& .MuiOutlinedInput-root': {
-              borderRadius: '50px',
-              backgroundColor: '#e7e7e7ff',
-              '& fieldset': { border: 'none' },
-            },
-          }}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchIcon sx={{ color: 'text.secondary' }} />
-              </InputAdornment>
-            ),
-          }}
-        />
-        {searchTerm && (
-          <Typography
-            variant="caption"
-            color="text.secondary"
-            sx={{ mt: 1, display: 'block', textAlign: 'center' }}
-          >
-            Showing {filteredJobs.length} of {jobVacancies.length} vacancies
-          </Typography>
-        )}
-      </Box>
+
 
       {/* Job List */}
       <Box sx={{ width: '100%', px: { sx: 0, md: 6 } }}>
-        {filteredJobs.map((job) => {
+        {jobVacancies.map((job) => {
           const isOpen = openJob === job.id;
 
           return (
@@ -135,7 +101,7 @@ export default function Vacancies() {
                   mb: 0,
                   boxShadow: 'none',
                   borderRadius: 0,
-                  borderBottom: `1px solid ${theme.palette.secondary.main}`,
+
                   bgcolor: '#fff',
                   width: '100%',
                   py: 3,
@@ -199,11 +165,10 @@ export default function Vacancies() {
                       width: 38,
                       height: 38,
                       borderRadius: '50%',
-                      border: `1px solid ${
-                        isOpen
-                          ? theme.palette.primary.main
-                          : theme.palette.secondary.main
-                      }`,
+                      border: `1px solid ${isOpen
+                        ? theme.palette.primary.main
+                        : theme.palette.secondary.main
+                        }`,
                       backgroundColor: isOpen
                         ? theme.palette.primary.main
                         : 'transparent',
@@ -299,13 +264,7 @@ export default function Vacancies() {
       </Box>
 
       {/* No Results */}
-      {filteredJobs.length === 0 && (
-        <Box sx={{ textAlign: 'center', mt: 4 }}>
-          <Typography variant="h6" color="text.secondary">
-            No jobs found matching “{searchTerm}”
-          </Typography>
-        </Box>
-      )}
+
     </Box>
   );
 }

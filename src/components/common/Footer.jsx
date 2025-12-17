@@ -64,6 +64,17 @@ export default function Footer() {
         mx: { xs: 2, md: 4, lg: 8 },
       }}
     >
+      {/* ================= LOGO SECTION ================= */}
+      <Box sx={{ mb: 2, textAlign: { xs: "center", lg: "left" } }}>
+        <Image
+          src="/images/logo-new.png"
+          alt="VIHI IT Solutions Logo"
+          width={220}
+          height={60}
+          style={{ objectFit: "contain" }}
+        />
+      </Box>
+
       {/* ================= OUTER GRID ================= */}
       <Box
         sx={{
@@ -79,34 +90,25 @@ export default function Footer() {
           },
         }}
       >
-        {/* ================= LOGO & CONTENT ================= */}
+        {/* ================= CONTENT (PARAGRAPH) ================= */}
         <Box
           sx={{
             gridColumn: {
               xs: "1 / -1",
               sm: "1 / -1",
-              md: "1 / -1", // tablet: full width at top
-              lg: "span 2", // desktop: 2 column width for logo section
+              md: "1 / -1",
+              lg: "span 2",
             },
-            textAlign: { xs: "center", lg: "left" },
+            textAlign: { xs: "center", lg: "justify" },
           }}
         >
-          <Image
-            src="/images/logo-new.png"
-            alt="VIHI IT Solutions Logo"
-            width={220}
-            height={60}
-            style={{ objectFit: "contain", marginBottom: 12 }}
-          />
-
           <Typography
             sx={{
               fontSize: "14px",
               color: "#555",
               lineHeight: 1.6,
-              maxWidth: { lg: "90%" },
+              maxWidth: { lg: "90%" }, // careful with width constraint
               mx: { xs: "auto", lg: 0 },
-              textAlign: "justify",
             }}
           >
             Started as a passionate tech initiative in Sri Lanka back in 2023, Vihi IT Solutions
@@ -129,7 +131,7 @@ export default function Footer() {
             gridTemplateColumns: {
               sm: "1fr 1fr",
               md: "1fr 1fr",
-              lgl: "repeat(4, 1fr)",
+              lg: "repeat(4, 1fr)",
             },
             gridColumn: {
               sm: "1 / -2",
@@ -155,7 +157,7 @@ export default function Footer() {
                 sx={{
                   width: "100%",
                   display: { xs: "flex" },
-                  flexDirection: { xs: "row", mdll: "column" },
+                  flexDirection: { xs: "column" }, // Cleaned up invalid breakpoint
                   gap: 3,
                 }}
               >

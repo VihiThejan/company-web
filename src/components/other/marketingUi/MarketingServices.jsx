@@ -139,7 +139,7 @@ export default function MarketingServices() {
                     sx={{
                       display: { xs: 'none', md: 'block' },
                       fontSize: { xs: '0.95rem', sm: '1rem', md: '1rem' },
-                      color: '#555',
+                      color: '#000',
                       lineHeight: 1.6,
                       textAlign: 'justify',
                     }}
@@ -153,7 +153,7 @@ export default function MarketingServices() {
                       variant="body1"
                       sx={{
                         fontSize: { xs: '0.95rem', sm: '1rem' },
-                        color: '#555',
+                        color: '#000',
                         lineHeight: 1.6,
                         textAlign: 'justify',
                         mb: 1,
