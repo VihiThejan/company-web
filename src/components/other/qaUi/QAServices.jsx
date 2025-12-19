@@ -20,7 +20,7 @@ const services = [
             'Improved accuracy',
             'Faster time-to-market'
         ],
-        image: '/images/qapage-img/test_automation-image.webp',
+        image: '/images/qapage-img/test-automation.webp',
     },
     {
         title: 'Manual & Functional Testing',
@@ -37,7 +37,7 @@ const services = [
             'Improved usability',
             'High customer satisfaction'
         ],
-        image: '/images/qapage-img/Manual and Functional Testing - image.png',
+        image: '/images/qapage-img/manual-functional.png',
     },
     {
         title: 'Performance & Load Testing',
@@ -54,7 +54,7 @@ const services = [
             'Faster response times',
             'Reliable system behavior'
         ],
-        image: '/images/qapage-img/Performance & Load Testing-image.png',
+        image: '/images/qapage-img/performance-load.png',
     },
     {
         title: 'Security & Penetration Testing',
@@ -71,7 +71,7 @@ const services = [
             'Improved compliance',
             'Stronger application protection'
         ],
-        image: '/images/qapage-img/Security & Penetration Testing - imge.webp',
+        image: '/images/qapage-img/security-pen.webp',
     },
 ];
 
