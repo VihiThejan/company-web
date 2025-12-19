@@ -20,41 +20,6 @@ export default function QAServicesPage() {
                 background: '#fff',
             }}
         >
-            {/* Logo and Branded Text Section */}
-            <Box
-                sx={{
-                    pt: { xs: 15, sm: 12, md: 15 },
-                    display: 'flex',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: 2,
-                    width: '100%',
-                }}
-            >
-                <Box
-                    component="img"
-                    src="/images/Vihi.png"
-                    alt="Vihi Logo"
-                    sx={{
-                        height: { xs: 40, md: 60 },
-                        width: 'auto',
-                        objectFit: 'contain',
-                    }}
-                />
-                <Typography
-                    sx={{
-                        fontFamily: 'var(--font-bitcount)',
-                        fontSize: { xs: '1.5rem', md: '2.5rem' },
-                        fontWeight: 400,
-                        color: '#000',
-                        lineHeight: 1,
-                    }}
-                >
-                    QA IT Services
-                </Typography>
-            </Box>
-
             {/* Headline and subtext */}
             <Box
                 sx={{
@@ -62,8 +27,17 @@ export default function QAServicesPage() {
                     zIndex: 2,
                     width: '100%',
                     maxWidth: 1200,
+                    height: {
+                        xs: '40vh',
+                        sm: '20vh',
+                        md: '30vh',
+                        mdl: '40vh',
+                        lg: '20vh',
+                        lgl: '70vh',
+                        xl: '50vh',
+                    },
                     px: { xs: 2, sm: 4, md: 6, lg: 8 },
-                    pt: { xs: 4, sm: 5, md: 6 },
+                    pt: { xs: 15, sm: 10, md: 12 },
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
@@ -78,11 +52,11 @@ export default function QAServicesPage() {
                         fontWeight: 700,
                         lineHeight: 1.2,
                         fontSize: {
-                            xs: '1.8rem',
-                            sm: '2.2rem',
-                            md: '2.8rem',
-                            lg: '3.2rem',
-                            xl: '3.6rem',
+                            xs: '1.8rem', // very small phones
+                            sm: '2.2rem', // normal phones
+                            md: '2.8rem', // tablets
+                            lg: '3.2rem', // laptops
+                            xl: '3.6rem', // large desktops
                         },
                         mb: { xs: 1.5, sm: 2 },
                         px: { xs: 1, sm: 0 },

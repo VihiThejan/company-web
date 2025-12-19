@@ -67,7 +67,7 @@ export default function Footer() {
       {/* ================= LOGO SECTION ================= */}
       <Box sx={{ mb: 2, textAlign: { xs: "center", lg: "left" } }}>
         <Image
-          src="/images/logo-new.png"
+          src="/images/Vihi.png"
           alt="VIHI IT Solutions Logo"
           width={220}
           height={60}

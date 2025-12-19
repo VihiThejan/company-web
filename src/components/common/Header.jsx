@@ -132,7 +132,7 @@ const Header = (props) => {
         >
           <Link href="/" onClick={() => setMobileOpen(false)}>
             <Image
-              src="/images/logo-new.png"
+              src="/images/Vihi.png"
               alt="Logo"
               width={135}
               height={40}
@@ -187,7 +187,7 @@ const Header = (props) => {
                   onClick={() => setMobileOpen(false)}
                 >
                   <Image
-                    src="/images/logo-new.png"
+                    src="/images/Vihi.png"
                     alt="Logo"
                     width={135}
                     height={40}

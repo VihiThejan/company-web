@@ -1,25 +1,14 @@
-import { Inter, Poppins } from 'next/font/google';
+import { Inter, Poppins, Bitcount } from 'next/font/google';
 import './globals.css';
 import './hover-effects.css';
 import Header from '@/components/common/Header';
 import Footer from '@/components/common/Footer';
 import Box from '@mui/material/Box';
+// Import your new MuiThemeProvider component
 import MuiThemeProvider from '@/components/providers/MuiThemeProvider';
 import localFont from 'next/font/local';
 import ScrollToTopButton from '@/components/common/ScrollToTopButton';
 import CustomCursor from '@/components/common/CustomCursor';
-
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-poppins'
-});
-
-const bitcount = localFont({
-  src: '../../public/fonts/BitcountSingleInk-VariableFont_CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght.ttf',
-  variable: '--font-bitcount',
-});
 
 export const metadata = {
   title: 'VIHI IT Solutions',
@@ -28,7 +17,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} ${bitcount.variable}`}>
+    <html lang="en">
       <body style={{ margin: 0 }} suppressHydrationWarning={true}>
         {/* Wrap your entire application content with the MuiThemeProvider */}
         <MuiThemeProvider>
