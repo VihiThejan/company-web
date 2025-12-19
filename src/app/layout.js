@@ -1,4 +1,4 @@
-import { Inter, Poppins, Bitcount } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import './hover-effects.css';
 import Header from '@/components/common/Header';
@@ -10,6 +10,11 @@ import localFont from 'next/font/local';
 import ScrollToTopButton from '@/components/common/ScrollToTopButton';
 import CustomCursor from '@/components/common/CustomCursor';
 
+const bitcount = localFont({
+  src: '../../public/fonts/BitcountSingleInk-VariableFont_CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght.ttf',
+  variable: '--font-bitcount',
+});
+
 export const metadata = {
   title: 'VIHI IT Solutions',
   description: 'Your solution for IT needs.',
@@ -18,7 +23,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ margin: 0 }} suppressHydrationWarning={true}>
+      <body className={`${bitcount.variable}`} style={{ margin: 0 }} suppressHydrationWarning={true}>
         {/* Wrap your entire application content with the MuiThemeProvider */}
         <MuiThemeProvider>
           <Box

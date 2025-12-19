@@ -27,14 +27,12 @@ export default function QAServicesPage() {
                     zIndex: 2,
                     width: '100%',
                     maxWidth: 1200,
-                    height: {
-                        xs: '40vh',
-                        sm: '20vh',
-                        md: '30vh',
-                        mdl: '40vh',
-                        lg: '20vh',
-                        lgl: '70vh',
-                        xl: '50vh',
+                    minHeight: {
+                        xs: '50vh',
+                        sm: '40vh',
+                        md: '45vh',
+                        lg: '50vh',
+                        xl: '60vh',
                     },
                     px: { xs: 2, sm: 4, md: 6, lg: 8 },
                     pt: { xs: 15, sm: 10, md: 12 },
@@ -46,6 +44,56 @@ export default function QAServicesPage() {
                     textAlign: 'center',
                 }}
             >
+                {/* Branding Section */}
+                <Box
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mb: 4,
+                        gap: 2,
+                    }}
+                >
+                    <Box
+                        component="img"
+                        src="/images/Vihi.png"
+                        alt="Vihi Logo"
+                        sx={{
+                            height: { xs: 50, md: 70 },
+                            width: 'auto',
+                            objectFit: 'contain',
+                        }}
+                    />
+                    <Box sx={{ textAlign: 'left' }}>
+                        <Typography
+                            sx={{
+                                fontFamily: 'var(--font-bitcount)',
+                                fontSize: { xs: '1.8rem', md: '2.4rem' },
+                                fontWeight: 800,
+                                lineHeight: 1,
+                                color: '#1a1a1a',
+                                textTransform: 'uppercase',
+                                letterSpacing: '1px',
+                            }}
+                        >
+                            Vihi IT
+                        </Typography>
+                        <Typography
+                            sx={{
+                                fontFamily: 'var(--font-bitcount)',
+                                fontSize: { xs: '1.2rem', md: '1.6rem' },
+                                fontWeight: 600,
+                                lineHeight: 1,
+                                color: '#444',
+                                textTransform: 'uppercase',
+                                mt: 0.5,
+                                letterSpacing: '4px',
+                            }}
+                        >
+                            Solutions
+                        </Typography>
+                    </Box>
+                </Box>
                 <Typography
                     variant="h2"
                     sx={{
