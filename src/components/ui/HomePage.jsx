@@ -18,6 +18,16 @@ import MomentumSection from '../other/homeUi/MomentumSection';
 
 
 const HomePage = () => {
+  const videoRef = useRef(null);
+  const { scrollY } = useScroll();
+  const videoY = useTransform(scrollY, [0, 1000], [0, 400]);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.4; // Set to 40% speed for super-smooth, high-end cinematic feel
+    }
+  }, []);
+
   return (
     <Box sx={{ overflowX: 'hidden', position: 'relative' }}>
       {/* Hero Section */}
@@ -36,27 +46,55 @@ const HomePage = () => {
           color: theme.palette.secondary.light,
         }}
       >
-        {/* Background Video */}
-        <Box
-          component="video"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          sx={{
+        {/* Background Video with subtle zoom and parallax animation */}
+        <motion.div
+          style={{
             position: 'absolute',
             top: 0,
             left: 0,
             width: '100%',
-            height: '100%',
-            objectFit: 'cover',
+            height: '120%', // Extra height for parallax
             zIndex: 0,
-            // filter: 'brightness(0.6) contrast(1.2)', // Removed for clarity
+            y: videoY,
           }}
         >
-          <source src="/videos/home-hero.mp4" type="video/mp4" />
-        </Box>
+          <motion.div
+            animate={{
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
+          >
+            <Box
+              component="video"
+              ref={videoRef}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              sx={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                // High-quality rendering properties
+                imageRendering: 'auto',
+                WebkitFontSmoothing: 'antialiased',
+                // Advanced filters for clarity: slightly more contrast, adjusted brightness, and subtle saturation
+                filter: 'brightness(0.8) contrast(1.15) saturate(1.1) drop-shadow(0 0 10px rgba(0,0,0,0.3))',
+              }}
+            >
+              <source src="/videos/home-hero.mp4" type="video/mp4" />
+            </Box>
+          </motion.div>
+        </motion.div>
 
         {/* Animated Gradient Overlay - Removed for clarity */}
         {/* <Box
@@ -74,13 +112,13 @@ const HomePage = () => {
           }}
         /> */}
 
-        {/* Dark Overlay - Reduced opacity */}
+        {/* Elegant Gradient Overlay - Fades to white at bottom */}
         <Box
           sx={{
             position: 'absolute',
             inset: 0,
             background:
-              'linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 100%)',
+              'linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 50%, #ffffff 100%)',
             zIndex: 2,
           }}
         />
