@@ -22,7 +22,7 @@ const services = [
       'Scalable and secure architecture',
       'Faster time-to-market',
     ],
-    image: '/images/technology-img/tech-services/Custom End to End Software Development - image.jpg',
+    image: '/images/technology-img/tech-services/custom-software.jpg',
   },
   {
     title: 'Enterprise Cloud Architecture & Optimization',
@@ -41,7 +41,7 @@ const services = [
       'Reduced operational costs',
       'Enhanced scalability and reliability',
     ],
-    image: '/images/technology-img/tech-services/Enterprise Cloud Architecture & Optimization - image.avif',
+    image: '/images/technology-img/tech-services/cloud-optimization.avif',
   },
   {
     title: 'Data Engineering, Analytics & Business Intelligence',
@@ -60,7 +60,7 @@ const services = [
       'Improved business decision-making',
       'Enhanced operational efficiency',
     ],
-    image: '/images/technology-img/tech-services/Data Engineering, Analytics & Business Intelligence - Image.jfif',
+    image: '/images/technology-img/tech-services/data-analytics.jfif',
   },
   {
     title: 'AI & Machine Learning Integration',
@@ -79,7 +79,7 @@ const services = [
       'Innovation-driven solutions',
       'Competitive business advantage',
     ],
-    image: '/images/technology-img/tech-services/AI & Machine Learning Integration - Image.jpg',
+    image: '/images/technology-img/tech-services/ai-ml-integration.jpg',
   },
 ];
 

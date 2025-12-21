@@ -21,7 +21,7 @@ const services = [
             'Seamless user experiences',
             'Higher customer satisfaction'
         ],
-        image: '/images/design-img/Ui Ux -image.webp',
+        image: '/images/design-img/ui-ux-design.webp',
     },
     {
         title: 'Brand Identity',
@@ -39,7 +39,7 @@ const services = [
             'Professional visual consistency',
             'Increased customer trust'
         ],
-        image: '/images/design-img/brand-image.avif',
+        image: '/images/design-img/brand-identity.avif',
     },
     {
         title: 'Web & Mobile Design',
@@ -57,7 +57,7 @@ const services = [
             'Optimized user experiences',
             'Consistent look across platforms'
         ],
-        image: '/images/design-img/Web & Mobile Design- image.webp',
+        image: '/images/design-img/web-mobile-design.webp',
     },
     {
         title: 'Prototyping & Wireframing',
@@ -75,7 +75,7 @@ const services = [
             'Faster development cycles',
             'Reduced rework and cost'
         ],
-        image: '/images/design-img/Prototyping & Wireframing-image.jfif',
+        image: '/images/design-img/prototyping.jfif',
     },
 ];
 

@@ -2,7 +2,7 @@ export const projectData = {
   'ai-bicycle-tourism': {
     title: 'AI-Driven Bicycle Tourism System',
     industry: 'Travel & Tourism',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'An AI-powered navigation platform for bicycle tourism that offers real-time route optimization, multilingual voice guidance, and team coordination features.',
@@ -18,7 +18,7 @@ export const projectData = {
   'boc-data-center-inventory': {
     title: 'BOC Data Center Inventory Management System',
     industry: 'Enterprise Solutions',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       "Comprehensive LTO (Linear Tape-Open) tape inventory management system for BOC's data center that replaced manual handwritten processes with a digital centralized solution.",
@@ -34,7 +34,7 @@ export const projectData = {
   'network-tower-management': {
     title: 'Network Tower (Site) Management System',
     industry: 'Enterprise Solutions',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'End-to-end solution for managing telecom infrastructure with eight integrated modules ensuring efficient resource management, regulatory compliance, and financial tracking.',
@@ -50,7 +50,7 @@ export const projectData = {
   'medicine-management-system': {
     title: 'Medicine Management System',
     industry: 'Enterprise Solutions',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Comprehensive healthcare platform managing patients, inventory, doctors, and drug importers with secure record-keeping and real-time inventory tracking.',
@@ -66,7 +66,7 @@ export const projectData = {
   'cricket-tournament-management': {
     title: 'Cricket Tournament Management System',
     industry: 'Enterprise Solutions',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Complete sports management platform for organizing cricket tournaments, tracking players, teams, and matches with real-time statistics and budgeting.',
@@ -82,7 +82,7 @@ export const projectData = {
   'yan-lanka-mobile-app': {
     title: 'Yan Lanka Mobile App',
     industry: 'Mobile Applications',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Transport management solution with bus tracking, school service management, and real-time location tracking for authorized users.',
@@ -98,7 +98,7 @@ export const projectData = {
   'construction-app': {
     title: 'Construction App',
     industry: 'Mobile Applications',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Mobile solution for construction project management, resource tracking, and on-site coordination with real-time updates and material management.',
@@ -114,7 +114,7 @@ export const projectData = {
   'medicine-app': {
     title: 'Medicine App',
     industry: 'Mobile Applications',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Personal medication management application with prescription tracking, dose reminders, and healthcare provider communication.',
@@ -130,7 +130,7 @@ export const projectData = {
   'sample-ecommerce-apps': {
     title: 'Sample E-commerce Apps',
     industry: 'Mobile Applications',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Customizable e-commerce mobile application templates with product catalog, cart management, and secure payment processing for various retail needs.',
@@ -146,7 +146,7 @@ export const projectData = {
   'leisure-world-resort': {
     title: 'Leisure World Resort',
     industry: 'Web UI Projects',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Elegant hospitality website showcasing resort amenities, booking capabilities, and immersive visual content for tourists with seamless reservation system.',
@@ -162,7 +162,7 @@ export const projectData = {
   'startup-company': {
     title: 'Startup Company Website',
     industry: 'Web UI Projects',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Modern business website with dynamic content presentation, service showcase, and professional corporate branding for technology startups.',
@@ -178,7 +178,7 @@ export const projectData = {
   'real-estate-platform': {
     title: 'Real Estate Platform',
     industry: 'Web UI Projects',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Property listing website with advanced search functionality, detailed property information, and agent contact integration for seamless real estate transactions.',
@@ -194,7 +194,7 @@ export const projectData = {
   'professional-photography-studio': {
     title: 'Professional Photography Studio',
     industry: 'Web UI Projects',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Portfolio website for photographers with gallery showcase, booking system, and visual storytelling capabilities for professional photography services.',
@@ -210,7 +210,7 @@ export const projectData = {
   'pixel-pioneer-design': {
     title: 'Pixel Pioneer Design',
     industry: 'Web UI Projects',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Creative agency website highlighting design services, portfolio showcase, and client testimonials with modern aesthetics and interactive elements.',
@@ -226,7 +226,7 @@ export const projectData = {
   'guardian-nest-security': {
     title: 'Guardian Nest Security Services',
     industry: 'Web UI Projects',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Security services website featuring protection offerings, professional security team profiles, and emergency contact information with service request system.',
@@ -242,7 +242,7 @@ export const projectData = {
   'zoe-fashion': {
     title: 'Zoe Fashion',
     industry: 'Web UI Projects',
-    image: '/images/marketing-img/market-strag.jpg',
+    image: '/images/marketing-img/mar-hero.png',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     shortDescription:
       'Fashion e-commerce website with product catalog, seasonal collections, and streamlined shopping experience with modern design and secure checkout.',
