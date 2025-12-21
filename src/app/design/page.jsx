@@ -104,7 +104,7 @@ export default function Design() {
             >
                 <Box
                     component="img"
-                    src="/images/design-img/Ui Ux -image.webp"
+                    src="/images/design-img/portfoliomain.png"
                     alt="Design Team Collaborating"
                     sx={{
                         width: '100%',
