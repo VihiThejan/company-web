@@ -3,16 +3,16 @@
 const industriesData = [
   {
     slug: 'finance',
-    title: 'Finance Services',
+    title: 'Financial Services',
     shortDescription:
-      'We deliver secure, reliable, and compliant digital solutions tailored for the financial sector. Our services help financial institutions enhance operational efficiency while protecting sensitive data.',
+      'Secure, scalable, and intelligent solutions that power financial transformation and trust.',
     longDescription: `
 We help financial institutions embrace digital innovation with secure and compliant technologies. 
 Our solutions empower banks, fintech startups, and insurance companies to deliver seamless customer experiences while maintaining the highest data protection standards. 
 From AI-driven risk analysis to secure payment integrations and customer engagement platforms, we ensure every digital interaction builds transparency and trust. 
 We also provide real-time analytics dashboards and process automation systems that enhance efficiency, reduce manual effort, and strengthen compliance with global financial regulations (PCI DSS, ISO 27001).
     `,
-    image: '/images/Industries-Content/Finance Services- image.jpg',
+    image: '/images/technology-img/tech-hero.webp',
     services: [
       'FinTech Platform Development',
       'Secure Payment Gateway Integration',
@@ -24,16 +24,16 @@ We also provide real-time analytics dashboards and process automation systems th
 
   {
     slug: 'tourism',
-    title: 'Tourism Services',
+    title: 'Tourism & Hospitality',
     shortDescription:
-      'We build engaging and user-friendly digital solutions that elevate the travel and tourism experience. Our services help tourism businesses attract, engage, and retain customers.',
+      'Empowering the travel industry with digital experiences that inspire exploration and sustainability.',
     longDescription: `
 We transform the tourism and hospitality sector through intelligent digital ecosystems that connect travelers, destinations, and service providers seamlessly. 
 Our solutions include dynamic booking engines, AI-driven route recommendations, and multilingual content platforms designed to enhance travel experiences while promoting sustainable tourism. 
 For local agencies and hotels, we offer data analytics dashboards, CRM integrations, and automated marketing tools that boost visibility and bookings. 
 We also specialize in geolocation-based systems, such as route navigation and attraction discovery apps, designed for both domestic and international travelers.
     `,
-    image: '/images/Industries-Content/tourism services- image.jpg',
+    image: '/images/technology-img/tech-hero.webp',
     services: [
       'Tourism & Hospitality Management Systems',
       'AI-powered Route & Destination Discovery',
@@ -45,9 +45,9 @@ We also specialize in geolocation-based systems, such as route navigation and at
 
   {
     slug: 'government',
-    title: 'Government Services',
+    title: 'Government & Public Sector',
     shortDescription:
-      'We provide scalable and secure digital solutions that support efficient and transparent government operations. Our services align with regulatory standards and public sector requirements.',
+      'Driving digital transformation across public services with secure and transparent technology.',
     longDescription: `
 We partner with government institutions to build reliable, efficient, and citizen-centric digital platforms. 
 Our solutions modernize administrative processes, enhance public transparency, and improve service delivery through data-driven systems. 
@@ -55,7 +55,7 @@ From e-Governance portals to agricultural management systems and digital citizen
 Security and accessibility remain central to our approach, ensuring all platforms meet national data protection and accessibility standards. 
 Through AI integration and automation, we help governments achieve operational efficiency and foster digital trust among citizens.
     `,
-    image: '/images/Industries-Content/Government Services- image.jpg',
+    image: '/images/technology-img/tech-hero.webp',
     services: [
       'e-Governance Platforms & Citizen Portals',
       'Agriculture & Resource Management Systems',
