@@ -6,7 +6,9 @@ const theme = createTheme({
       xs: 0, // phones portrait
       sm: 480, // small phones landscape
       md: 768, // tablets portrait
+      mdll: 960, // custom medium-large
       lg: 1024, // tablets landscape / small laptops
+      lgl: 1200, // custom large
       xl: 1440, // desktops
       xxl: 1920, // large wide screens
     },

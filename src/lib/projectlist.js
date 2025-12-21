@@ -3,7 +3,7 @@ export const projects = [
     title: 'AI-Driven Bicycle Tourism System',
     slug: 'ai-bicycle-tourism',
     description:
-      'An AI-powered location-based voice navigation system for sustainable bicycle tourism, offering route optimization, multilingual guidance, and team coordination features.',
+      'The AI-Driven Bicycle Tourism System is an intelligent navigation platform designed to promote sustainable tourism. It guides cyclists through safe and scenic routes while showcasing nearby attractions and enhancing the overall riding experience.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Travel & Tourism',
@@ -12,7 +12,7 @@ export const projects = [
     title: 'BOC Data Center Inventory Management System',
     slug: 'boc-data-center-inventory',
     description:
-      'Comprehensive LTO (Linear Tape-Open) tape inventory management system for BOC\'s data center that replaced manual handwritten processes with a digital centralized solution.',
+      'The BOC Data Center Inventory Management System is a centralized digital solution designed to efficiently manage LTO (Linear Tape-Open) tape inventory. Built using React, Node.js, Express, and SQL, the system modernized data center operations by replacing manual, handwritten processes with a reliable and scalable digital platform.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Enterprise Solutions',
@@ -21,7 +21,7 @@ export const projects = [
     title: 'Network Tower (Site) Management System',
     slug: 'network-tower-management',
     description:
-      'End-to-end solution for managing telecom infrastructure with eight integrated modules ensuring efficient resource management, regulatory compliance, and financial tracking.',
+      'The Network Tower (Site) Management System is an end-to-end platform developed for Engenuity Telco Pvt Ltd to efficiently manage telecom infrastructure across multiple sites. Built using the MERN stack (MongoDB, Express, React, Node.js), the system centralizes operations, ensuring effective resource utilization, regulatory compliance, and financial control.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Enterprise Solutions',
@@ -30,7 +30,7 @@ export const projects = [
     title: 'Medicine Management System',
     slug: 'medicine-management-system',
     description:
-      'Comprehensive healthcare platform managing patients, inventory, doctors, and drug importers with secure record-keeping and real-time inventory tracking.',
+      'The Medicine Management System is a comprehensive healthcare platform designed to efficiently manage patients, medication inventory, doctors, and drug importers. Built using Next.js and Spring Boot, the system ensures secure record-keeping, real-time inventory tracking, and streamlined healthcare operations.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Enterprise Solutions',
@@ -39,7 +39,7 @@ export const projects = [
     title: 'Cricket Tournament Management System',
     slug: 'cricket-tournament-management',
     description:
-      'Complete sports management platform for organizing cricket tournaments, tracking players, teams, and matches with real-time statistics and budgeting.',
+      'The Cricket Tournament Management System is a complete sports management platform designed to simplify the organization and execution of cricket tournaments. Built using Next.js and Node.js, the system enables efficient tournament planning, real-time match tracking, and comprehensive performance analytics.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Enterprise Solutions',
@@ -48,7 +48,7 @@ export const projects = [
     title: 'Yan Lanka Mobile App',
     slug: 'yan-lanka-mobile-app',
     description:
-      'Transport management solution with bus tracking, school service management, and real-time location tracking for authorized users.',
+      'The Yan Lanka Mobile App is a comprehensive transport management solution designed to support company bus operations and school transportation services. Built using Flutter and Laravel, the application provides real-time vehicle tracking, efficient route management, and secure access for authorized users.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Mobile Applications',
@@ -57,7 +57,7 @@ export const projects = [
     title: 'Construction App',
     slug: 'construction-app',
     description:
-      'Mobile solution for construction project management, resource tracking, and on-site coordination with real-time updates and material management.',
+      'The Construction App is a mobile-first solution designed to streamline construction project management and enhance on-site coordination. Built using Flutter and Spring Boot, the application enables real-time collaboration, efficient resource tracking, and centralized project oversight.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Mobile Applications',
@@ -66,7 +66,7 @@ export const projects = [
     title: 'Medicine App',
     slug: 'medicine-app',
     description:
-      'Personal medication management application with prescription tracking, dose reminders, and healthcare provider communication.',
+      'The Medicine App is a personal medication management application designed to help patients manage prescriptions and maintain adherence to treatment plans. Built using Flutter, the app acts as a digital health assistant, supporting users with medication tracking, reminders, and communication with healthcare providers.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Mobile Applications',
@@ -75,7 +75,7 @@ export const projects = [
     title: 'Sample E-commerce Apps',
     slug: 'sample-ecommerce-apps',
     description:
-      'Customizable e-commerce mobile application templates with product catalog, cart management, and secure payment processing for various retail needs.',
+      'Sample E-commerce Apps are customizable mobile application templates designed to help retailers quickly launch feature-rich e-commerce platforms. Built using React Native and Flutter, these templates support a wide range of retail needs with scalable and secure mobile commerce functionality.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Mobile Applications',
@@ -84,16 +84,7 @@ export const projects = [
     title: 'Leisure World Resort',
     slug: 'leisure-world-resort',
     description:
-      'Elegant hospitality website showcasing resort amenities, booking capabilities, and immersive visual content for tourists with seamless reservation system.',
-    image: '/images/marketing-img/market-strag.jpg',
-    companyLogo: '/images/project-img/company-logos/boc-logo.webp',
-    industry: 'Web UI Projects',
-  },
-  {
-    title: 'Startup Company',
-    slug: 'startup-company',
-    description:
-      'Modern business website with dynamic content presentation, service showcase, and professional corporate branding for technology startups.',
+      'Leisure World Resort is an elegant hospitality website designed to showcase resort amenities, experiences, and accommodation options through immersive visuals and a modern user interface. Built using Next.js and Tailwind CSS, the website delivers a seamless and engaging browsing experience for tourists.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Web UI Projects',
@@ -102,7 +93,16 @@ export const projects = [
     title: 'Real Estate Platform',
     slug: 'real-estate-platform',
     description:
-      'Property listing website with advanced search functionality, detailed property information, and agent contact integration for seamless real estate transactions.',
+      'The Real Estate Platform is a modern property listing website designed to simplify real estate discovery and transactions. Built using Next.js and Tailwind CSS, the platform delivers intuitive user experience with advanced search capabilities and detailed property presentations.',
+    image: '/images/marketing-img/market-strag.jpg',
+    companyLogo: '/images/project-img/company-logos/boc-logo.webp',
+    industry: 'Web UI Projects',
+  },
+  {
+    title: 'Startup Company Website',
+    slug: 'startup-company',
+    description:
+      'The Startup Company Website is a modern business web solution designed to help technology startups establish a strong and professional online presence. Built using Next.js and Tailwind CSS, the website showcases services, brand identity, and business value through clean design and dynamic content presentation.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Web UI Projects',
@@ -111,7 +111,7 @@ export const projects = [
     title: 'Professional Photography Studio',
     slug: 'professional-photography-studio',
     description:
-      'Portfolio website for photographers with gallery showcase, booking system, and visual storytelling capabilities for professional photography services.',
+      'The Professional Photography Studio website is a visually rich portfolio platform designed to showcase photographic work through immersive galleries and compelling visual storytelling. Built using Next.js and Tailwind CSS, the website helps professional photographers present their services and manage client bookings effectively.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Web UI Projects',
@@ -120,7 +120,7 @@ export const projects = [
     title: 'Pixel Pioneer Design',
     slug: 'pixel-pioneer-design',
     description:
-      'Creative agency website highlighting design services, portfolio showcase, and client testimonials with modern aesthetics and interactive elements.',
+      'Pixel Pioneer Design is a creative agency website crafted to showcase design expertise through modern aesthetics, interactive elements, and compelling visual storytelling. Built using Next.js and Tailwind CSS, the platform highlights agency services, portfolio work, and client success stories.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Web UI Projects',
@@ -129,7 +129,7 @@ export const projects = [
     title: 'Guardian Nest Security Services',
     slug: 'guardian-nest-security',
     description:
-      'Security services website featuring protection offerings, professional security team profiles, and emergency contact information with service request system.',
+      'Guardian Nest Security Services is a professional security services website designed to showcase protection offerings, experienced security personnel, and rapid response capabilities. Built using Next.js and Tailwind CSS, the platform emphasizes trust, reliability, and ease of service requests.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Web UI Projects',
@@ -138,7 +138,7 @@ export const projects = [
     title: 'Zoe Fashion',
     slug: 'zoe-fashion',
     description:
-      'Fashion e-commerce website with product catalog, seasonal collections, and streamlined shopping experience with modern design and secure checkout.',
+      'Zoe Fashion is a modern fashion e-commerce website designed to showcase seasonal collections and provide a seamless shopping experience. Built using Next.js and Tailwind CSS, the platform combines elegant design with secure checkout functionality to enhance customer engagement and sales.',
     image: '/images/marketing-img/market-strag.jpg',
     companyLogo: '/images/project-img/company-logos/boc-logo.webp',
     industry: 'Web UI Projects',

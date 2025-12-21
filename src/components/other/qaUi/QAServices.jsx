@@ -130,7 +130,7 @@ export default function QAServices() {
                                 },
                                 alignItems: 'center',
                                 justifyContent: 'space-between',
-                                p: { xs: 4, md: 8 },
+                                p: { xs: 2.5, sm: 4, md: 8 },
                                 borderRadius: 4,
                                 transition: 'all 0.3s ease',
                                 mb: 4,
@@ -140,8 +140,8 @@ export default function QAServices() {
                             <Box
                                 className="hover-image-container"
                                 sx={{
-                                    width: { xs: '100%', sm: '90%', md: '100%' },
-                                    height: { xs: 220, sm: 250, md: 400 },
+                                    width: { xs: '100%', sm: '95%', md: '100%' },
+                                    height: { xs: 240, sm: 300, md: 450 },
                                     borderRadius: 4,
                                     overflow: 'hidden',
                                     flex: 1,
@@ -166,19 +166,19 @@ export default function QAServices() {
                                 sx={{
                                     width: { xs: '100%', md: '100%' },
                                     textAlign: 'left',
-                                    mt: { xs: '20px', md: 0 },
-                                    mb: { xs: '30px', md: 0 },
+                                    mt: { xs: 3, md: 0 },
+                                    mb: { xs: 2, md: 0 },
                                     flex: 1.2,
                                     pl: index % 2 === 1 ? { md: 8 } : 0,
                                     pr: index % 2 === 0 ? { md: 8 } : 0,
                                 }}
                             >
-                                <Box>
+                                <Box sx={{ p: { xs: 1, sm: 2, md: 0 } }}>
                                     <Typography
                                         variant="h4"
                                         sx={{
                                             fontWeight: 800,
-                                            fontSize: { xs: '1.6rem', sm: '2rem', md: '2.6rem' },
+                                            fontSize: { xs: '1.5rem', sm: '1.8rem', md: '2.6rem' },
                                             mb: 2,
                                             color: '#1a1a1a',
                                             letterSpacing: '-0.5px',
@@ -190,11 +190,12 @@ export default function QAServices() {
                                     <Typography
                                         variant="body1"
                                         sx={{
-                                            fontSize: { xs: '1rem', md: '1.15rem' },
+                                            fontSize: { xs: '0.95rem', md: '1.15rem' },
                                             color: '#555',
-                                            lineHeight: 1.8,
+                                            lineHeight: 1.7,
                                             mb: 4,
                                             maxWidth: '95%',
+                                            textAlign: 'justify'
                                         }}
                                     >
                                         {service.description}
@@ -208,15 +209,15 @@ export default function QAServices() {
                                                 sx={{
                                                     display: 'flex',
                                                     alignItems: 'flex-start',
-                                                    mb: 1.8,
+                                                    mb: 1.5,
                                                 }}
                                             >
                                                 <Typography
                                                     sx={{
                                                         color: '#ffc107',
                                                         fontWeight: 'bold',
-                                                        mr: 2,
-                                                        fontSize: '1.4rem',
+                                                        mr: 1.5,
+                                                        fontSize: '1.2rem',
                                                         lineHeight: 1,
                                                     }}
                                                 >
@@ -224,7 +225,7 @@ export default function QAServices() {
                                                 </Typography>
                                                 <Typography
                                                     sx={{
-                                                        fontSize: '1.05rem',
+                                                        fontSize: { xs: '0.9rem', md: '1.05rem' },
                                                         color: '#333',
                                                         fontWeight: 500,
                                                     }}
@@ -239,7 +240,7 @@ export default function QAServices() {
                                     <Box
                                         sx={{
                                             backgroundColor: '#f9f9f9',
-                                            p: 4,
+                                            p: { xs: 3, md: 4 },
                                             borderRadius: 3,
                                             borderLeft: '5px solid #ffc107',
                                             boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
@@ -248,36 +249,36 @@ export default function QAServices() {
                                         <Typography
                                             sx={{
                                                 fontWeight: 800,
-                                                fontSize: '0.9rem',
-                                                mb: 3,
+                                                fontSize: '0.85rem',
+                                                mb: 2,
                                                 color: '#1a1a1a',
                                                 textTransform: 'uppercase',
-                                                letterSpacing: '1.5px',
+                                                letterSpacing: '1px',
                                             }}
                                         >
                                             {service.footerTitle}
                                         </Typography>
-                                        <Grid container spacing={3}>
+                                        <Grid container spacing={2}>
                                             {service.footerItems.map((item, iIndex) => (
                                                 <Grid size={{ xs: 12, sm: 6 }} key={iIndex}>
                                                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                                         <Box
                                                             sx={{
-                                                                width: 20,
-                                                                height: 20,
+                                                                width: 18,
+                                                                height: 18,
                                                                 borderRadius: '50%',
                                                                 backgroundColor: 'rgba(40, 167, 69, 0.1)',
                                                                 display: 'flex',
                                                                 alignItems: 'center',
                                                                 justifyContent: 'center',
-                                                                mr: 1.5,
+                                                                mr: 1.2,
                                                             }}
                                                         >
                                                             <Typography
                                                                 sx={{
                                                                     color: '#28a745',
                                                                     fontWeight: 'bold',
-                                                                    fontSize: '0.8rem',
+                                                                    fontSize: '0.75rem',
                                                                 }}
                                                             >
                                                                 ✔
@@ -285,7 +286,7 @@ export default function QAServices() {
                                                         </Box>
                                                         <Typography
                                                             sx={{
-                                                                fontSize: '1rem',
+                                                                fontSize: { xs: '0.9rem', md: '1rem' },
                                                                 color: '#444',
                                                                 fontWeight: 600,
                                                             }}

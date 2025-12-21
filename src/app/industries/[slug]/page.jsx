@@ -3,16 +3,16 @@ import React from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import {
-  Box,
-  Typography,
-  Breadcrumbs,
-  Grid,
-  Button,
-  Card,
-  CardContent,
-  Divider,
-  useTheme,
-  useMediaQuery,
+    Box,
+    Typography,
+    Breadcrumbs,
+    Grid,
+    Button,
+    Card,
+    CardContent,
+    Divider,
+    useTheme,
+    useMediaQuery,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import theme from '@/theme/theme';
@@ -37,304 +37,304 @@ import IndustryCTA from '@/components/common/IndustryCTA';
 export const runtime = 'edge';
 
 export default function IndustryDetailPage() {
-  const { slug } = useParams();
-  const industry = industriesData.find((i) => i.slug === slug);
-  const cusTheme = useTheme();
-  const isMobile = useMediaQuery(cusTheme.breakpoints.down('sm'));
-  const router = useRouter();
+    const { slug } = useParams();
+    const industry = industriesData.find((i) => i.slug === slug);
+    const cusTheme = useTheme();
+    const isMobile = useMediaQuery(cusTheme.breakpoints.down('sm'));
+    const router = useRouter();
 
-  if (!industry) {
+    if (!industry) {
+        return (
+            <Box sx={{ py: 10, textAlign: 'center' }}>
+                <Typography variant="h5">Industry not found</Typography>
+            </Box>
+        );
+    }
+
+    // Industry-specific icon sets
+    const industryIcons = {
+        finance: {
+            challenges: [<GavelIcon />, <SecurityIcon />, <SyncLockIcon />],
+            services: [
+                <AccountBalanceIcon />,
+                <PaymentsIcon />,
+                <CurrencyExchangeIcon />,
+            ],
+        },
+        tourism: {
+            challenges: [<TravelExploreIcon />, <HotelIcon />, <LandscapeIcon />],
+            services: [<TravelExploreIcon />, <HotelIcon />, <PublicIcon />],
+        },
+        government: {
+            challenges: [<PolicyIcon />, <PublicIcon />, <SecurityIcon />],
+            services: [<AccountBalanceIcon />, <CloudIcon />, <GavelIcon />],
+        },
+    };
+
+    const selectedIcons = industryIcons[slug] || industryIcons.finance;
+
     return (
-      <Box sx={{ py: 10, textAlign: 'center' }}>
-        <Typography variant="h5">Industry not found</Typography>
-      </Box>
-    );
-  }
-
-  // Industry-specific icon sets
-  const industryIcons = {
-    finance: {
-      challenges: [<GavelIcon />, <SecurityIcon />, <SyncLockIcon />],
-      services: [
-        <AccountBalanceIcon />,
-        <PaymentsIcon />,
-        <CurrencyExchangeIcon />,
-      ],
-    },
-    tourism: {
-      challenges: [<TravelExploreIcon />, <HotelIcon />, <LandscapeIcon />],
-      services: [<TravelExploreIcon />, <HotelIcon />, <PublicIcon />],
-    },
-    government: {
-      challenges: [<PolicyIcon />, <PublicIcon />, <SecurityIcon />],
-      services: [<AccountBalanceIcon />, <CloudIcon />, <GavelIcon />],
-    },
-  };
-
-  const selectedIcons = industryIcons[slug] || industryIcons.finance;
-
-  return (
-    <Box
-      sx={{
-        bgcolor: '#ffffffff',
-        minHeight: '100vh',
-        pt: { xs: 18, md: 15, lg: 18 },
-        pb: 4,
-      }}
-    >
-      {isMobile ? (
-        <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
-          <Button
-            startIcon={<ArrowBackIcon />}
-            onClick={() => router.back()}
+        <Box
             sx={{
-              my: 3,
-              px: { xs: 3, md: 10 },
-              mb: 3,
-              color: '#333',
-              textTransform: 'none',
-              fontWeight: 600,
-              fontSize: '1.3rem',
-              '&:hover': { color: '#000' },
+                bgcolor: '#ffffffff',
+                minHeight: '100vh',
+                pt: { xs: 18, md: 15, lg: 18 },
+                pb: 4,
             }}
-          >
-            Industries
-          </Button>
-        </Box>
-      ) : (
-        <Box sx={{ px: { xs: 3, md: 10 }, mb: 3 }}>
-          <Breadcrumbs aria-label="breadcrumb" separator="›">
-            <Link
-              href="/industries"
-              style={{ textDecoration: 'none', color: '#555' }}
+        >
+            {isMobile ? (
+                <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
+                    <Button
+                        startIcon={<ArrowBackIcon />}
+                        onClick={() => router.back()}
+                        sx={{
+                            my: 3,
+                            px: { xs: 3, md: 10 },
+                            mb: 3,
+                            color: '#333',
+                            textTransform: 'none',
+                            fontWeight: 600,
+                            fontSize: '1.3rem',
+                            '&:hover': { color: '#000' },
+                        }}
+                    >
+                        Industries
+                    </Button>
+                </Box>
+            ) : (
+                <Box sx={{ px: { xs: 3, md: 10 }, mb: 3 }}>
+                    <Breadcrumbs aria-label="breadcrumb" separator="›">
+                        <Link
+                            href="/industries"
+                            style={{ textDecoration: 'none', color: '#555' }}
+                        >
+                            Industries
+                        </Link>
+                        <Typography color="text.primary" sx={{ fontWeight: 600 }}>
+                            {industry.title}
+                        </Typography>
+                    </Breadcrumbs>
+                </Box>
+            )}
+
+            {/* Hero Section */}
+            <Box
+                sx={{
+                    px: { xs: 3, md: 10 },
+                    textAlign: 'center',
+                    mb: 6,
+                }}
             >
-              Industries
-            </Link>
-            <Typography color="text.primary" sx={{ fontWeight: 600 }}>
-              {industry.title}
-            </Typography>
-          </Breadcrumbs>
+                <Typography
+                    variant="h3"
+                    sx={{
+                        fontWeight: 700,
+                        color: theme.palette.secondary.main,
+                        mb: 2,
+                        fontSize: { xs: '2rem', md: '2.7rem' },
+                    }}
+                >
+                    {industry.title} Services
+                </Typography>
+
+                <Typography
+                    variant="subtitle1"
+                    sx={{
+                        maxWidth: 1000,
+                        mx: 'auto',
+                        color: '#555',
+                        lineHeight: 1.8,
+                        mb: 4,
+                        textAlign: { xs: 'justify', lg: 'center' },
+                    }}
+                >
+                    {industry.longDescription}
+                </Typography>
+            </Box>
+
+            {/* Industry Image */}
+            <Box sx={{ px: { xs: 3, md: 10 }, mb: 8 }}>
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                >
+                    <Box
+                        component="img"
+                        src={industry.image}
+                        alt={industry.title}
+                        sx={{
+                            width: '100%',
+                            height: { xs: 240, md: 420 },
+                            objectFit: 'cover',
+                            borderRadius: 4,
+                            boxShadow: 4,
+                        }}
+                    />
+                </motion.div>
+            </Box>
+
+            {/* Main Content */}
+            <Box sx={{ px: { xs: 3, md: 10 } }}>
+                {/* Key Challenges Section */}
+                <Typography
+                    variant="h5"
+                    sx={{
+                        fontWeight: 700,
+                        color: theme.palette.secondary.main,
+                        mb: 3,
+                    }}
+                >
+                    Key Challenges We Tackle in {industry.title}
+                </Typography>
+
+                <Grid container spacing={3} sx={{ mb: 6 }}>
+                    {[
+                        'Regulatory Compliance',
+                        'Cybersecurity Threats',
+                        'Legacy Systems Modernization',
+                    ].map((challenge, index) => (
+                        <Grid key={index} size={{ xs: 12, sm: 6, lgl: 4 }}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                            >
+                                <Card
+                                    sx={{
+                                        p: 3,
+                                        borderRadius: 3,
+                                        boxShadow: 3,
+                                        display: 'flex',
+                                        height: { xs: '250px', md: '320px', lg: '250px' },
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        background: '#fff',
+                                        textAlign: 'center',
+                                        gap: 1.5,
+                                        '&:hover': {
+                                            boxShadow: 6,
+                                            transform: 'translateY(-5px)',
+                                        },
+                                        transition: '0.3s',
+                                    }}
+                                >
+                                    <Box
+                                        sx={{
+                                            width: 60,
+                                            height: 60,
+                                            borderRadius: '50%',
+                                            bgcolor: theme.palette.primary.main,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            mb: 3,
+                                        }}
+                                    >
+                                        {selectedIcons.challenges[index]}
+                                    </Box>
+                                    <Typography
+                                        sx={{
+                                            fontWeight: 600,
+                                            color: theme.palette.secondary.main,
+                                            fontSize: '1.1rem',
+                                        }}
+                                    >
+                                        {challenge}
+                                    </Typography>
+                                    <Typography sx={{ color: '#555', fontSize: '0.95rem' }}>
+                                        We address complex {challenge.toLowerCase()} challenges with
+                                        tailored, secure, and efficient solutions.
+                                    </Typography>
+                                </Card>
+                            </motion.div>
+                        </Grid>
+                    ))}
+                </Grid>
+
+                {/* Solutions & Services Section */}
+                <Typography
+                    variant="h5"
+                    sx={{
+                        fontWeight: 700,
+                        color: theme.palette.secondary.main,
+                        mb: 3,
+                    }}
+                >
+                    Our Tailored Solutions & Services
+                </Typography>
+
+                <Grid container spacing={3}>
+                    {industry.services.map((service, index) => (
+                        <Grid size={{ xs: 12, sm: 6, lgl: 4 }} key={index}>
+                            <motion.div
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                viewport={{ once: true }}
+                            >
+                                <Card
+                                    sx={{
+                                        p: 3,
+                                        borderRadius: 3,
+                                        height: { xs: '280px', md: '350px', lg: '280px' },
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        alignItems: 'center',
+                                        textAlign: 'center',
+                                        gap: 1.5,
+                                        boxShadow: 2,
+                                        background: '#fff',
+                                        '&:hover': {
+                                            boxShadow: 5,
+                                            transform: 'translateY(-5px)',
+                                        },
+                                        transition: '0.3s',
+                                    }}
+                                >
+                                    <Box
+                                        sx={{
+                                            width: 60,
+                                            height: 60,
+                                            borderRadius: '50%',
+                                            bgcolor: theme.palette.primary.main,
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            mb: 3,
+                                        }}
+                                    >
+                                        {
+                                            selectedIcons.services[
+                                            index % selectedIcons.services.length
+                                            ]
+                                        }
+                                    </Box>
+                                    <Typography
+                                        sx={{
+                                            fontWeight: 600,
+                                            color: theme.palette.secondary.main,
+                                            fontSize: '1.05rem',
+                                        }}
+                                    >
+                                        {service}
+                                    </Typography>
+                                    <Typography sx={{ color: '#555', fontSize: '0.95rem' }}>
+                                        Learn how our {service.toLowerCase()} drives innovation,
+                                        efficiency, and compliance.
+                                    </Typography>
+                                </Card>
+                            </motion.div>
+                        </Grid>
+                    ))}
+                </Grid>
+
+                <Divider sx={{ my: 5 }} />
+
+                <IndustryCTA />
+            </Box>
         </Box>
-      )}
-
-      {/* Hero Section */}
-      <Box
-        sx={{
-          px: { xs: 3, md: 10 },
-          textAlign: 'center',
-          mb: 6,
-        }}
-      >
-        <Typography
-          variant="h3"
-          sx={{
-            fontWeight: 700,
-            color: theme.palette.secondary.main,
-            mb: 2,
-            fontSize: { xs: '2rem', md: '2.7rem' },
-          }}
-        >
-          {industry.title} Services
-        </Typography>
-
-        <Typography
-          variant="subtitle1"
-          sx={{
-            maxWidth: 1000,
-            mx: 'auto',
-            color: '#555',
-            lineHeight: 1.8,
-            mb: 4,
-            textAlign: { xs: 'justify', lg: 'center' },
-          }}
-        >
-          {industry.longDescription}
-        </Typography>
-      </Box>
-
-      {/* Industry Image */}
-      <Box sx={{ px: { xs: 3, md: 10 }, mb: 8 }}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <Box
-            component="img"
-            src={industry.image}
-            alt={industry.title}
-            sx={{
-              width: '100%',
-              height: { xs: 240, md: 420 },
-              objectFit: 'cover',
-              borderRadius: 4,
-              boxShadow: 4,
-            }}
-          />
-        </motion.div>
-      </Box>
-
-      {/* Main Content */}
-      <Box sx={{ px: { xs: 3, md: 10 } }}>
-        {/* Key Challenges Section */}
-        <Typography
-          variant="h5"
-          sx={{
-            fontWeight: 700,
-            color: theme.palette.secondary.main,
-            mb: 3,
-          }}
-        >
-          Key Challenges We Tackle in {industry.title}
-        </Typography>
-
-        <Grid container spacing={3} sx={{ mb: 6 }}>
-          {[
-            'Regulatory Compliance',
-            'Cybersecurity Threats',
-            'Legacy Systems Modernization',
-          ].map((challenge, index) => (
-            <Grid key={index} size={{ xs: 12, sm: 6, lgl: 4 }}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card
-                  sx={{
-                    p: 3,
-                    borderRadius: 3,
-                    boxShadow: 3,
-                    display: 'flex',
-                    height: { xs: '250px', md: '320px', lg: '250px' },
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    background: '#fff',
-                    textAlign: 'center',
-                    gap: 1.5,
-                    '&:hover': {
-                      boxShadow: 6,
-                      transform: 'translateY(-5px)',
-                    },
-                    transition: '0.3s',
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: '50%',
-                      bgcolor: theme.palette.primary.main,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      mb: 3,
-                    }}
-                  >
-                    {selectedIcons.challenges[index]}
-                  </Box>
-                  <Typography
-                    sx={{
-                      fontWeight: 600,
-                      color: theme.palette.secondary.main,
-                      fontSize: '1.1rem',
-                    }}
-                  >
-                    {challenge}
-                  </Typography>
-                  <Typography sx={{ color: '#555', fontSize: '0.95rem' }}>
-                    We address complex {challenge.toLowerCase()} challenges with
-                    tailored, secure, and efficient solutions.
-                  </Typography>
-                </Card>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-
-        {/* Solutions & Services Section */}
-        <Typography
-          variant="h5"
-          sx={{
-            fontWeight: 700,
-            color: theme.palette.secondary.main,
-            mb: 3,
-          }}
-        >
-          Our Tailored Solutions & Services
-        </Typography>
-
-        <Grid container spacing={3}>
-          {industry.services.map((service, index) => (
-            <Grid size={{ xs: 12, sm: 6, lgl: 4 }} key={index}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card
-                  sx={{
-                    p: 3,
-                    borderRadius: 3,
-                    height: { xs: '280px', md: '350px', lg: '280px' },
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    textAlign: 'center',
-                    gap: 1.5,
-                    boxShadow: 2,
-                    background: '#fff',
-                    '&:hover': {
-                      boxShadow: 5,
-                      transform: 'translateY(-5px)',
-                    },
-                    transition: '0.3s',
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: 60,
-                      height: 60,
-                      borderRadius: '50%',
-                      bgcolor: theme.palette.primary.main,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      mb: 3,
-                    }}
-                  >
-                    {
-                      selectedIcons.services[
-                        index % selectedIcons.services.length
-                      ]
-                    }
-                  </Box>
-                  <Typography
-                    sx={{
-                      fontWeight: 600,
-                      color: theme.palette.secondary.main,
-                      fontSize: '1.05rem',
-                    }}
-                  >
-                    {service}
-                  </Typography>
-                  <Typography sx={{ color: '#555', fontSize: '0.95rem' }}>
-                    Learn how our {service.toLowerCase()} drives innovation,
-                    efficiency, and compliance.
-                  </Typography>
-                </Card>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-
-        <Divider sx={{ my: 5 }} />
-
-        <IndustryCTA />
-      </Box>
-    </Box>
-  );
+    );
 }

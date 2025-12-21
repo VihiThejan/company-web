@@ -18,9 +18,9 @@ export default function IndustriesWeServe() {
           sx={{ fontSize: 45, color: theme.palette.primary.main }}
         />
       ),
-      title: 'Financial Services',
+      title: 'Finance Services',
       description:
-        'Secure compliance & digital banking transformation solutions for modern financial institutions.',
+        'We deliver secure, reliable, and compliant digital solutions tailored for the financial sector. Our services help financial institutions enhance operational efficiency while protecting sensitive data.',
       button: 'Explore Finance Solutions',
       slug: 'finance',
     },
@@ -28,9 +28,9 @@ export default function IndustriesWeServe() {
       icon: (
         <HikingIcon sx={{ fontSize: 45, color: theme.palette.primary.main }} />
       ),
-      title: 'Tourism & Hospitality',
+      title: 'Tourism Services',
       description:
-        'Enhancing guest experiences and operational efficiency through digital transformation.',
+        'We build engaging and user-friendly digital solutions that elevate the travel and tourism experience. Our services help tourism businesses attract, engage, and retain customers.',
       button: 'Explore Tourism Solutions',
       slug: 'tourism',
     },
@@ -40,9 +40,9 @@ export default function IndustriesWeServe() {
           sx={{ fontSize: 45, color: theme.palette.primary.main }}
         />
       ),
-      title: 'Government & Public Sector',
+      title: 'Government Services',
       description:
-        'Driving e-Governance, digital inclusion, and data-driven decision-making.',
+        'We provide scalable and secure digital solutions that support efficient and transparent government operations. Our services align with regulatory standards and public sector requirements.',
       button: 'Explore Government Solutions',
       slug: 'government',
     },
@@ -82,7 +82,7 @@ export default function IndustriesWeServe() {
                     p: 4,
                     borderRadius: 4,
                     boxShadow: 3,
-                    height: { xs: '300px', md: '250px' },
+                    height: { xs: '380px', sm: '320px', md: '360px', lg: '320px' },
                     width: '100%',
                     display: 'flex',
                     justifyContent: 'space-between',

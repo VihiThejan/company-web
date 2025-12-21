@@ -2,51 +2,116 @@
 
 import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
 
 const services = [
   {
     title: 'Full Stack Development',
-    description:
-      'Our full stack engineering team combines expertise across front-end, back-end, and mobile development. We design scalable applications, from concept to deployment, with strong emphasis on performance, maintainability, and cutting-edge user experiences.',
-    image: '/images/marketing-img/market-strag.jpg',
+    description: 'We build scalable, secure, and high-performance applications using modern frontend and backend technologies. Our full stack solutions deliver seamless user experiences and robust system architecture.',
+    highlightTitle: 'Key highlights:',
+    highlights: [
+      'Frontend: React, Angular, Vue',
+      'Backend: Node.js, Java, Python, .NET',
+      'RESTful & GraphQL APIs',
+      'Database design and integration'
+    ],
+    footerTitle: 'Value delivered:',
+    footerItems: [
+      'End-to-end development',
+      'Scalable architecture',
+      'High-quality, maintainable code'
+    ],
+    image: '/images/marketing-img/full stack web development- image.png',
   },
   {
     title: 'Cloud Computing',
-    description:
-      'We design, implement, and manage cloud infrastructure that enhances scalability and security. Our solutions integrate seamlessly with your existing systems, ensuring optimized performance, cost-efficiency, and business continuity.',
-    image: '/images/marketing-img/data-driven-perform.png',
+    description: 'Leverage the power of the cloud to improve scalability, security, and operational efficiency. We design and manage cloud solutions tailored to your business needs.',
+    highlightTitle: 'What we offer:',
+    highlights: [
+      'Cloud migration and deployment',
+      'Infrastructure design and optimization',
+      'AWS, Azure, and Google Cloud services',
+      'DevOps and CI/CD integration'
+    ],
+    footerTitle: 'Benefits:',
+    footerItems: [
+      'Improved scalability',
+      'Reduced infrastructure costs',
+      'High availability and reliability'
+    ],
+    image: '/images/marketing-img/cloud computing- image.webp',
   },
   {
-    title: 'Data Engineering and BI',
-    description:
-      'Our data engineering and business intelligence specialists build pipelines, manage data warehouses, and develop analytics solutions that empower data-driven decision-making, helping businesses gain actionable insights for growth.',
-    image: '/images/marketing-img/rank&resonates.jpg',
+    title: 'Data Engineering & Business Intelligence',
+    description: 'Transform raw data into actionable insights with our data engineering and BI solutions. We help organizations make data-driven decisions with confidence.',
+    highlightTitle: 'Our services include:',
+    highlights: [
+      'Data pipeline and ETL development',
+      'Data warehousing solutions',
+      'BI dashboards and reporting',
+      'Tools: Power BI, Tableau, SQL'
+    ],
+    footerTitle: 'Outcome:',
+    footerItems: [
+      'Accurate, real-time insights',
+      'Improved decision-making',
+      'Optimized business performance'
+    ],
+    image: '/images/marketing-img/Data engineer BI- image.jpg',
   },
   {
-    title: 'AI/ML Data Science',
-    description:
-      'Our data engineering and business intelligence specialists build pipelines, manage data warehouses, and develop analytics solutions that empower data-driven decision-making, helping businesses gain actionable insights for growth.',
-    image: '/images/marketing-img/marketing-automation.jpg',
+    title: 'AI / ML & Data Science',
+    description: 'Unlock the value of your data with intelligent AI and machine learning solutions. We develop models that drive automation, prediction, and innovation.',
+    highlightTitle: 'Our capabilities:',
+    highlights: [
+      'Predictive analytics and forecasting',
+      'Machine learning model development',
+      'Natural Language Processing (NLP)',
+      'Computer vision and automation'
+    ],
+    footerTitle: 'Results:',
+    footerItems: [
+      'Smarter business processes',
+      'Data-driven innovation',
+      'Competitive advantage'
+    ],
+    image: '/images/marketing-img/Ai BI- image.jfif',
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  }
+};
+
 export default function MarketingServices() {
-  const [expanded, setExpanded] = React.useState({});
-
-  const toggleExpand = (index) => {
-    setExpanded((prev) => ({
-      ...prev,
-      [index]: !prev[index],
-    }));
-  };
-
   return (
     <Box
+      component={motion.div}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      variants={containerVariants}
       sx={{
         width: '100%',
         backgroundColor: '#fff',
-        pt: { xs: 6, sm: 8, md: 10 },
-        px: { xs: 2, sm: 4 },
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -54,20 +119,12 @@ export default function MarketingServices() {
     >
       <Grid container sx={{ width: '100%' }}>
         {services.map((service, index) => {
-          const isExpanded = expanded[index];
-          const text = service.description;
-          // Show first 150 chars if not expanded, otherwise full text
-          // Only truncate if text is longer than 150 chars
-          const shouldTruncate = text.length > 150;
-          const displayText =
-            !isExpanded && shouldTruncate
-              ? text.slice(0, 150) + '...'
-              : text;
-
           return (
             <Grid
               size={{ xs: 12, md: 12 }}
               key={index}
+              component={motion.div}
+              variants={itemVariants}
               className="hover-lift-shadow"
               sx={{
                 display: 'flex',
@@ -77,23 +134,22 @@ export default function MarketingServices() {
                 },
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                p: { xs: 4, md: 8 },
+                p: { xs: 2.5, sm: 4, md: 8 },
                 borderRadius: 4,
-                transition: 'background-color 0.3s',
-                '&:hover': {
-                  // bgcolor: 'rgba(0,0,0,0.02)' // Removed as per user request
-                },
+                transition: 'all 0.3s ease',
+                mb: 4,
               }}
             >
               {/* Image */}
               <Box
                 className="hover-image-container"
                 sx={{
-                  width: { xs: '100%', sm: '90%', md: '100%' },
-                  height: { xs: 220, sm: 250, md: 350 },
-                  borderRadius: 3,
-                  overflow: 'hidden', // Required for zoom effect
+                  width: { xs: '100%', sm: '95%', md: '100%' },
+                  height: { xs: 240, sm: 300, md: 450 },
+                  borderRadius: 4,
+                  overflow: 'hidden',
                   flex: 1,
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
                 }}
               >
                 <Box
@@ -113,72 +169,148 @@ export default function MarketingServices() {
               <Box
                 sx={{
                   width: { xs: '100%', md: '100%' },
-                  textAlign: { xs: 'center', md: 'left' },
-                  mt: { xs: '20px', md: 0 },
-                  mb: { xs: '30px', md: 0 },
-                  flex: 1,
-                  pl: index % 2 === 1 ? { md: 6 } : 0,
-                  pr: index % 2 === 0 ? { md: 6 } : 0,
+                  textAlign: 'left',
+                  mt: { xs: 3, md: 0 },
+                  mb: { xs: 2, md: 0 },
+                  flex: 1.2,
+                  pl: index % 2 === 1 ? { md: 8 } : 0,
+                  pr: index % 2 === 0 ? { md: 8 } : 0,
                 }}
               >
-                <Box sx={{ padding: { sx: '20px', md: '30px' } }}>
+                <Box sx={{ p: { xs: 1, sm: 2, md: 0 } }}>
                   <Typography
-                    variant="h5"
+                    variant="h4"
                     sx={{
-                      fontWeight: 700,
-                      fontSize: { xs: '1.25rem', sm: '1.4rem', md: '1.8rem' },
+                      fontWeight: 800,
+                      fontSize: { xs: '1.5rem', sm: '1.8rem', md: '2.6rem' },
                       mb: 2,
+                      color: '#1a1a1a',
+                      letterSpacing: '-0.5px',
                     }}
                   >
                     {service.title}
                   </Typography>
 
-                  {/* Desktop View: Always show full text */}
                   <Typography
                     variant="body1"
                     sx={{
-                      display: { xs: 'none', md: 'block' },
-                      fontSize: { xs: '0.95rem', sm: '1rem', md: '1rem' },
-                      color: '#000',
-                      lineHeight: 1.6,
-                      textAlign: 'justify',
+                      fontSize: { xs: '0.95rem', md: '1.15rem' },
+                      color: '#555',
+                      lineHeight: 1.7,
+                      mb: 4,
+                      maxWidth: '95%',
+                      textAlign: 'justify'
                     }}
                   >
                     {service.description}
                   </Typography>
 
-                  {/* Mobile View: Show truncated text with See More button */}
-                  <Box sx={{ display: { xs: 'block', md: 'none' } }}>
+                  {/* Highlights */}
+                  <Box sx={{ mb: 4 }}>
                     <Typography
-                      variant="body1"
                       sx={{
-                        fontSize: { xs: '0.95rem', sm: '1rem' },
-                        color: '#000',
-                        lineHeight: 1.6,
-                        textAlign: 'justify',
-                        mb: 1,
+                        fontWeight: 700,
+                        fontSize: { xs: '1rem', md: '1.1rem' },
+                        mb: 2,
+                        color: '#1a1a1a',
                       }}
                     >
-                      {displayText}
+                      {service.highlightTitle}
                     </Typography>
-                    {shouldTruncate && (
-                      <Typography
-                        component="span"
-                        onClick={() => toggleExpand(index)}
+                    {service.highlights.map((highlight, hIndex) => (
+                      <Box
+                        key={hIndex}
                         sx={{
-                          color: 'primary.main',
-                          fontWeight: 600,
-                          cursor: 'pointer',
-                          textDecoration: 'underline',
-                          fontSize: '0.9rem',
-                          '&:hover': {
-                            color: 'primary.dark',
-                          },
+                          display: 'flex',
+                          alignItems: 'flex-start',
+                          mb: 1.5,
                         }}
                       >
-                        {isExpanded ? 'See Less' : 'See More'}
-                      </Typography>
-                    )}
+                        <Typography
+                          sx={{
+                            color: '#ffc107',
+                            fontWeight: 'bold',
+                            mr: 1.5,
+                            fontSize: '1.2rem',
+                            lineHeight: 1,
+                          }}
+                        >
+                          •
+                        </Typography>
+                        <Typography
+                          sx={{
+                            fontSize: { xs: '0.9rem', md: '1.05rem' },
+                            color: '#333',
+                            fontWeight: 500,
+                          }}
+                        >
+                          {highlight}
+                        </Typography>
+                      </Box>
+                    ))}
+                  </Box>
+
+                  {/* Footer Section (Outcome/Value) */}
+                  <Box
+                    sx={{
+                      backgroundColor: '#f9f9f9',
+                      p: { xs: 3, md: 4 },
+                      borderRadius: 3,
+                      borderLeft: '5px solid #ffc107',
+                      boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontWeight: 800,
+                        fontSize: '0.85rem',
+                        mb: 2,
+                        color: '#1a1a1a',
+                        textTransform: 'uppercase',
+                        letterSpacing: '1px',
+                      }}
+                    >
+                      {service.footerTitle}
+                    </Typography>
+                    <Grid container spacing={2}>
+                      {service.footerItems.map((item, iIndex) => (
+                        <Grid size={{ xs: 12, sm: 6 }} key={iIndex}>
+                          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                            <Box
+                              sx={{
+                                width: 18,
+                                height: 18,
+                                borderRadius: '50%',
+                                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                mr: 1.2,
+                              }}
+                            >
+                              <Typography
+                                sx={{
+                                  color: '#28a745',
+                                  fontWeight: 'bold',
+                                  fontSize: '0.75rem',
+                                }}
+                              >
+                                ✔
+                              </Typography>
+                            </Box>
+                            <Typography
+                              sx={{
+                                fontSize: { xs: '0.9rem', md: '1rem' },
+                                color: '#444',
+                                fontWeight: 600,
+                              }}
+                            >
+                              {item}
+                            </Typography>
+                          </Box>
+                        </Grid>
+                      ))}
+                    </Grid>
                   </Box>
                 </Box>
               </Box>
