@@ -6,18 +6,18 @@ import theme from '@/theme/theme';
 const expertise = [
   {
     label: 'Tourism',
-    desc: `Unlock your business growth potential. With over five years of experience in the education industry, we built digital strategies that connected that connect with student, parents and agents from around the world.`,
-    image: '/images/home-img/home-tourism.webp',
+    desc: `We build engaging and user-friendly digital solutions that elevate the travel and tourism experience. Our services help tourism businesses attract, engage, and retain customers.`,
+    image: '/images/Industries-Content/tourism services- image.jpg',
   },
   {
     label: 'Government',
-    desc: `We support government and agencies with redesigning product services and digital engagement to deliver solutions that drive positive change across the economy.`,
-    image: '/images/home-img/home-govenment.webp',
+    desc: `We provide scalable and secure digital solutions that support efficient and transparent government operations. Our services align with regulatory standards and public sector requirements.`,
+    image: '/images/Industries-Content/Government Services- image.jpg',
   },
   {
     label: 'Finance',
-    desc: `We support government and agencies with redesigning product services and digital engagement to deliver solutions that drive positive change across the economy.`,
-    image: '/images/home-img/home-finance.webp',
+    desc: `We deliver secure, reliable, and compliant digital solutions tailored for the financial sector. Our services help financial institutions enhance operational efficiency while protecting sensitive data.`,
+    image: '/images/Industries-Content/Finance Services- image.jpg',
   },
 ];
 

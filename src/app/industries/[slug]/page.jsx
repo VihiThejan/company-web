@@ -265,8 +265,7 @@ export default function IndustryDetailPage() {
                 >
                     Our Tailored Solutions & Services
                 </Typography>
-
-                <Grid container spacing={3}>
+                <Grid container spacing={3} sx={{ mb: 6 }}>
                     {industry.services.map((service, index) => (
                         <Grid size={{ xs: 12, sm: 6, lgl: 4 }} key={index}>
                             <motion.div
@@ -329,6 +328,118 @@ export default function IndustryDetailPage() {
                             </motion.div>
                         </Grid>
                     ))}
+                </Grid>
+
+                {/* Highlights & Outcomes Section */}
+                <Grid container spacing={5} sx={{ mt: 4, mb: 10 }}>
+                    <Grid size={{ xs: 12, md: 6 }}>
+                        <Typography
+                            variant="h5"
+                            sx={{
+                                fontWeight: 700,
+                                color: theme.palette.secondary.main,
+                                mb: 3,
+                            }}
+                        >
+                            Key Highlights
+                        </Typography>
+                        <Box>
+                            {industry.highlights?.map((highlight, hIndex) => (
+                                <Box
+                                    key={hIndex}
+                                    sx={{
+                                        display: 'flex',
+                                        alignItems: 'flex-start',
+                                        mb: 2,
+                                    }}
+                                >
+                                    <Typography
+                                        sx={{
+                                            color: theme.palette.primary.main,
+                                            fontWeight: 'bold',
+                                            mr: 1.5,
+                                            fontSize: '1.2rem',
+                                            lineHeight: 1,
+                                        }}
+                                    >
+                                        •
+                                    </Typography>
+                                    <Typography
+                                        sx={{
+                                            fontSize: '1.05rem',
+                                            color: '#333',
+                                            fontWeight: 500,
+                                        }}
+                                    >
+                                        {highlight}
+                                    </Typography>
+                                </Box>
+                            ))}
+                        </Box>
+                    </Grid>
+
+                    <Grid size={{ xs: 12, md: 6 }}>
+                        <Box
+                            sx={{
+                                backgroundColor: '#f9f9f9',
+                                p: { xs: 3, md: 4 },
+                                borderRadius: 3,
+                                borderLeft: `6px solid ${theme.palette.primary.main}`,
+                                boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+                                height: '100%',
+                            }}
+                        >
+                            <Typography
+                                sx={{
+                                    fontWeight: 800,
+                                    fontSize: '0.85rem',
+                                    mb: 3,
+                                    color: '#1a1a1a',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '1px',
+                                }}
+                            >
+                                Value Delivered / Outcome
+                            </Typography>
+                            <Box>
+                                {industry.outcomes?.map((outcome, oIndex) => (
+                                    <Box key={oIndex} sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                                        <Box
+                                            sx={{
+                                                width: 22,
+                                                height: 22,
+                                                borderRadius: '50%',
+                                                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                mr: 1.5,
+                                            }}
+                                        >
+                                            <Typography
+                                                sx={{
+                                                    color: '#28a745',
+                                                    fontWeight: 'bold',
+                                                    fontSize: '0.8rem',
+                                                }}
+                                            >
+                                                ✔
+                                            </Typography>
+                                        </Box>
+                                        <Typography
+                                            sx={{
+                                                fontSize: '1.05rem',
+                                                color: '#1a1a1a',
+                                                fontWeight: 600,
+                                            }}
+                                        >
+                                            {outcome}
+                                        </Typography>
+                                    </Box>
+                                ))}
+                            </Box>
+                        </Box>
+                    </Grid>
                 </Grid>
 
                 <Divider sx={{ my: 5 }} />
