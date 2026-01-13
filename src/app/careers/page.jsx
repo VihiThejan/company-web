@@ -8,6 +8,7 @@ import TeamMembers from '@/components/other/careerUi/TeamMembers';
 import HiringProcess from '@/components/other/careerUi/HiringProcess';
 import Vacancies from '@/components/other/careerUi/Vacancies';
 import CareerBenefits from '@/components/other/careerUi/CareerBenefits';
+import InternshipSection from '@/components/other/careerUi/InternshipSection';
 
 export default function Careers() {
   const handleScrollToJobs = () => {
@@ -142,7 +143,7 @@ export default function Careers() {
 
       {/* Subsections */}
       <Box sx={{ width: '100%', mx: { xs: 2, md: 4 }, my: { xs: 2, md: 3 } }}>
-        <CareerBenefits/>
+        <CareerBenefits />
       </Box>
       <Box sx={{ width: '100%', mx: { xs: 2, md: 4 }, my: { xs: 2, md: 3 } }}>
         <HiringProcess />
@@ -152,6 +153,9 @@ export default function Careers() {
         sx={{ width: '100%', mx: { xs: 2, md: 4 }, my: { xs: 2, md: 3 } }}
       >
         <Vacancies />
+      </Box>
+      <Box sx={{ width: '100%', mx: { xs: 2, md: 4 }, my: { xs: 2, md: 3 } }}>
+        <InternshipSection />
       </Box>
     </Box>
   );
