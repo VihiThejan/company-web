@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { Box, Button, Grid, Typography, Container } from '@mui/material';
+import { Box, Button, Grid, Typography, Container, useMediaQuery } from '@mui/material';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import WorkIcon from '@mui/icons-material/Work';
@@ -73,7 +73,7 @@ const AnimatedNumber = ({ targetValue, suffix = '+' }) => {
       variant="h3"
       sx={{
         fontWeight: 800,
-        fontSize: { xs: '2rem', md: '2.5rem' },
+        fontSize: { xs: '1.8rem', md: '2.5rem' },
         color: theme.palette.secondary.main,
         lineHeight: 1,
       }}
@@ -82,6 +82,103 @@ const AnimatedNumber = ({ targetValue, suffix = '+' }) => {
     </Typography>
   );
 };
+
+const StatCard = ({ stat, idx, isMobileMarquee = false }) => (
+  <Box
+    sx={{
+      position: 'relative',
+      p: { xs: 3, md: 5 },
+      height: '100%',
+      minHeight: { xs: '280px', md: '340px' },
+      width: isMobileMarquee ? { xs: '280px', sm: '320px' } : '100%',
+      borderRadius: '32px',
+      background: 'rgba(255, 255, 255, 0.8)',
+      backdropFilter: 'blur(10px)',
+      border: '1px solid rgba(0,0,0,0.05)',
+      textAlign: 'center',
+      transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      cursor: 'default',
+      mx: isMobileMarquee ? 2 : 0,
+      '&:hover': {
+        transform: 'translateY(-15px)',
+        borderColor: theme.palette.primary.main,
+        background: '#fff',
+        boxShadow: `0 30px 60px -12px rgba(255, 199, 32, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.1)`,
+        '& .stat-icon-box': {
+          background: theme.palette.primary.main,
+          color: theme.palette.secondary.main,
+          transform: 'rotate(360deg)',
+        },
+        '& .stat-line': {
+          width: '60px',
+          background: theme.palette.primary.main,
+        }
+      },
+    }}
+  >
+    <Box
+      className="stat-icon-box"
+      sx={{
+        width: 60,
+        height: 60,
+        borderRadius: '18px',
+        background: `${theme.palette.secondary.main}08`,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: theme.palette.secondary.main,
+        mb: 2,
+        transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+      }}
+    >
+      {stat.icon}
+    </Box>
+
+    <AnimatedNumber targetValue={stat.value} suffix={stat.suffix} />
+
+    <Typography
+      variant="h6"
+      sx={{
+        fontWeight: 700,
+        mt: 1,
+        mb: 1,
+        color: theme.palette.secondary.main,
+        fontSize: { xs: '1.1rem', md: '1.25rem' }
+      }}
+    >
+      {stat.label}
+    </Typography>
+
+    <Box
+      className="stat-line"
+      sx={{
+        width: '30px',
+        height: '3px',
+        background: '#eee',
+        borderRadius: '2px',
+        transition: 'all 0.4s ease',
+        mb: 2
+      }}
+    />
+
+    <Typography
+      variant="body2"
+      sx={{
+        color: '#777',
+        fontSize: '0.9rem',
+        lineHeight: 1.5,
+        fontWeight: 500,
+        maxWidth: '220px'
+      }}
+    >
+      {stat.desc}
+    </Typography>
+  </Box>
+);
 
 const ContentSection = () => (
   <motion.div
@@ -109,7 +206,7 @@ const ContentSection = () => (
       sx={{
         color: theme.palette.secondary.main,
         fontWeight: 900,
-        fontSize: { xs: '2.5rem', md: '4rem' },
+        fontSize: { xs: '2.2rem', md: '4rem' },
         lineHeight: 1.1,
         mb: 3
       }}
@@ -121,7 +218,7 @@ const ContentSection = () => (
       variant="body1"
       sx={{
         color: '#666',
-        fontSize: '1.2rem',
+        fontSize: { xs: '1rem', md: '1.2rem' },
         lineHeight: 1.8,
         maxWidth: '700px',
         mx: 'auto',
@@ -135,15 +232,18 @@ const ContentSection = () => (
 );
 
 const Intro = () => {
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Box
       component="section"
       sx={{
         position: 'relative',
         background: '#fff',
-        pt: { xs: 2, md: 4 }, // Reduced top padding
-        pb: { xs: 8, md: 15 }, // Keep bottom padding
+        pt: { xs: 2, md: 4 },
+        pb: { xs: 6, md: 10 },
         overflow: 'hidden',
+        zIndex: 2,
       }}
     >
       {/* Decorative Orbs */}
@@ -177,113 +277,49 @@ const Intro = () => {
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
         <ContentSection />
 
-        <Grid container spacing={3}>
-          {stats.map((stat, idx) => (
-            <Grid item xs={12} sm={6} md={3} key={idx}>
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.7,
-                  delay: idx * 0.15,
-                  type: "spring",
-                  stiffness: 100
-                }}
-              >
-                <Box
-                  sx={{
-                    position: 'relative',
-                    p: 5,
-                    height: '100%',
-                    borderRadius: '32px',
-                    background: 'rgba(255, 255, 255, 0.8)',
-                    backdropFilter: 'blur(10px)',
-                    border: '1px solid rgba(0,0,0,0.05)',
-                    textAlign: 'center',
-                    transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    cursor: 'default',
-                    '&:hover': {
-                      transform: 'translateY(-15px)',
-                      borderColor: theme.palette.primary.main,
-                      background: '#fff',
-                      boxShadow: `0 30px 60px -12px rgba(255, 199, 32, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.1)`,
-                      '& .stat-icon-box': {
-                        background: theme.palette.primary.main,
-                        color: theme.palette.secondary.main,
-                        transform: 'rotate(360deg)',
-                      },
-                      '& .stat-line': {
-                        width: '60px',
-                        background: theme.palette.primary.main,
-                      }
-                    },
+        {!isMobile ? (
+          <Grid container spacing={4} justifyContent="center" alignItems="stretch">
+            {stats.map((stat, idx) => (
+              <Grid item xs={12} sm={6} md={3} key={idx} sx={{ display: 'flex' }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.7,
+                    delay: idx * 0.15,
+                    type: "spring",
+                    stiffness: 100
                   }}
+                  style={{ width: '100%', display: 'flex' }}
                 >
-                  <Box
-                    className="stat-icon-box"
-                    sx={{
-                      width: 70,
-                      height: 70,
-                      borderRadius: '20px',
-                      background: `${theme.palette.secondary.main}08`,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      color: theme.palette.secondary.main,
-                      mb: 3,
-                      transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-                    }}
-                  >
-                    {stat.icon}
-                  </Box>
-
-                  <AnimatedNumber targetValue={stat.value} suffix={stat.suffix} />
-
-                  <Typography
-                    variant="h6"
-                    sx={{
-                      fontWeight: 700,
-                      mt: 1,
-                      mb: 1,
-                      color: theme.palette.secondary.main,
-                      fontSize: '1.25rem'
-                    }}
-                  >
-                    {stat.label}
-                  </Typography>
-
-                  <Box
-                    className="stat-line"
-                    sx={{
-                      width: '30px',
-                      height: '3px',
-                      background: '#eee',
-                      borderRadius: '2px',
-                      transition: 'all 0.4s ease',
-                      mb: 2
-                    }}
-                  />
-
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: '#777',
-                      fontSize: '0.9rem',
-                      lineHeight: 1.5,
-                      fontWeight: 500
-                    }}
-                  >
-                    {stat.desc}
-                  </Typography>
-                </Box>
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
+                  <StatCard stat={stat} idx={idx} />
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        ) : (
+          <Box sx={{ overflow: 'hidden', width: '100vw', ml: 'calc(-50vw + 50%)', py: 4 }}>
+            <motion.div
+              animate={{
+                x: [0, -1450],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 25,
+                  ease: "linear",
+                },
+              }}
+              style={{ display: 'flex', width: 'fit-content' }}
+            >
+              {[...stats, ...stats, ...stats].map((stat, idx) => (
+                <StatCard key={idx} stat={stat} idx={idx} isMobileMarquee={true} />
+              ))}
+            </motion.div>
+          </Box>
+        )}
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -300,9 +336,9 @@ const Intro = () => {
               bgcolor: theme.palette.secondary.main,
               color: '#fff',
               borderRadius: '50px',
-              px: 6,
-              py: 2.2,
-              fontSize: '1.1rem',
+              px: { xs: 4, md: 6 },
+              py: { xs: 1.8, md: 2.2 },
+              fontSize: { xs: '1rem', md: '1.1rem' },
               fontWeight: 700,
               textTransform: 'none',
               boxShadow: '0 20px 40px rgba(0,0,0,0.1)',

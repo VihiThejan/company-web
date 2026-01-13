@@ -299,9 +299,25 @@ const HomePage = () => {
         <Intro />
       </Box>
 
-      {/* Animated Hair-line Waves Decorative Section */}
-      <Box sx={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: '#fff', mt: -12, mb: -1, position: 'relative', height: '250px', zIndex: 1 }}>
-        <svg viewBox="0 0 1440 250" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', bottom: 0, left: 0 }}>
+      {/* Specializations Section with Integrated Waves and Title */}
+      <Box sx={{ width: '100%', overflow: 'hidden', lineHeight: 0, background: '#fff', mt: -10, mb: -1, position: 'relative', height: '300px', zIndex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {/* The Title moved lower and Container removed for full-width feel */}
+        <Box sx={{ position: 'absolute', zIndex: 10, textAlign: 'center', width: '100%', top: '55%' }}>
+          <Typography
+            variant="h2"
+            sx={{
+              fontWeight: 900,
+              fontSize: { xs: '2.5rem', md: '3.5rem' },
+              color: theme.palette.secondary.main,
+              textShadow: '0 0 20px rgba(255,255,255,0.8)',
+              px: { xs: 2, md: 0 } // Add slight padding for mobile if needed, but remove large side spaces
+            }}
+          >
+            Our Core <Box component="span" sx={{ color: theme.palette.primary.main }}>Specializations</Box>
+          </Typography>
+        </Box>
+
+        <svg viewBox="0 0 1440 250" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: '100%' }}>
           {/* Wave Line 1 */}
           <motion.path
             animate={{
@@ -354,42 +370,57 @@ const HomePage = () => {
       {/* New Services Grid - Modern Style */}
       <Box sx={{ py: 10, px: { xs: 2, md: 4, lg: 8 }, background: '#fafafa', mt: -1 }}>
         <Container maxWidth="lg">
-          <Typography
-            variant="h2"
+          <Grid
+            container
+            spacing={3}
+            justifyContent={{ xs: 'flex-start', sm: 'center' }}
             sx={{
-              textAlign: 'center',
-              fontWeight: 900,
-              fontSize: { xs: '2.5rem', md: '3.5rem' },
-              mb: 8,
-              color: theme.palette.secondary.main
+              flexWrap: 'nowrap', // Force single line on all screen sizes
+              overflowX: { xs: 'auto', sm: 'visible' }, // Scroll only on mobile
+              pb: { xs: 2, sm: 0 },
+              // Hide scrollbar but keep functionality
+              '&::-webkit-scrollbar': { display: 'none' },
+              msOverflowStyle: 'none',
+              scrollbarWidth: 'none',
             }}
           >
-            Our Core <Box component="span" sx={{ color: theme.palette.primary.main }}>Specializations</Box>
-          </Typography>
-
-          <Grid container spacing={3} justifyContent="center" sx={{ flexWrap: 'nowrap', overflowX: { xs: 'auto', md: 'visible' }, pb: { xs: 2, md: 0 } }}>
             {[
               { title: 'Technology', icon: '💻', link: '/technology', desc: 'Cutting-edge software solutions' },
               { title: 'Marketing', icon: '📈', link: '/marketing', desc: 'Data-driven growth strategies' },
               { title: 'Design', icon: '🎨', link: '/design', desc: 'Human-centric digital experiences' }
             ].map((service, index) => (
-              <Grid item xs={10} sm={4} md={4} key={index} sx={{ minWidth: { xs: '280px', sm: 'auto' } }}>
+              <Grid
+                item
+                xs={10}
+                sm={4}
+                md={4}
+                key={index}
+                sx={{
+                  minWidth: { xs: '300px', sm: 'auto' },
+                  display: 'flex',
+                }}
+              >
                 <motion.div
                   whileHover={{ y: -10 }}
                   transition={{ type: 'spring', stiffness: 300 }}
+                  style={{ width: '100%', display: 'flex' }}
                 >
-                  <Link href={service.link} style={{ textDecoration: 'none' }}>
+                  <Link href={service.link} style={{ textDecoration: 'none', width: '100%', display: 'flex' }}>
                     <Box
                       sx={{
                         background: '#fff',
                         borderRadius: '24px',
                         p: 5,
+                        width: '100%',
                         textAlign: 'center',
                         boxShadow: '0 10px 40px rgba(0,0,0,0.05)',
                         border: '1px solid rgba(0,0,0,0.03)',
                         transition: 'all 0.3s ease',
                         position: 'relative',
                         overflow: 'hidden',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
                         '&:hover': {
                           borderColor: theme.palette.primary.main,
                           boxShadow: `0 20px 50px ${theme.palette.primary.main}20`,
@@ -427,7 +458,8 @@ const HomePage = () => {
                         sx={{
                           fontWeight: 800,
                           color: theme.palette.secondary.main,
-                          mb: 1.5
+                          mb: 1.5,
+                          fontSize: { xs: '1.8rem', sm: '2rem', md: '2.2rem' }
                         }}
                       >
                         {service.title}

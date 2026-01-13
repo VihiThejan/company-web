@@ -5,7 +5,7 @@ const industriesData = [
     slug: 'finance',
     title: 'Finance Services',
     shortDescription:
-      'We deliver secure, reliable, and compliant digital solutions tailored for the financial sector.',
+      'We deliver secure, reliable, and compliant digital solutions tailored for the financial sector. Our services help financial institutions enhance operational efficiency while protecting sensitive data.',
     longDescription: `
       We deliver secure, reliable, and compliant digital solutions tailored for the financial sector. Our services help financial institutions enhance operational efficiency while protecting sensitive data.
     `,
@@ -33,7 +33,7 @@ const industriesData = [
     slug: 'tourism',
     title: 'Tourism Services',
     shortDescription:
-      'We build engaging and user-friendly digital solutions that elevate the travel and tourism experience.',
+      'We build engaging and user-friendly digital solutions that elevate the travel and tourism experience. Our services help tourism businesses attract, engage, and retain customers.',
     longDescription: `
       We build engaging and user-friendly digital solutions that elevate the travel and tourism experience. Our services help tourism businesses attract, engage, and retain customers.
     `,
@@ -61,7 +61,7 @@ const industriesData = [
     slug: 'government',
     title: 'Government Services',
     shortDescription:
-      'We provide scalable and secure digital solutions that support efficient and transparent government operations.',
+      'We provide scalable and secure digital solutions that support efficient and transparent government operations. Our services align with regulatory standards and public sector requirements.',
     longDescription: `
       We provide scalable and secure digital solutions that support efficient and transparent government operations. Our services align with regulatory standards and public sector requirements.
     `,
