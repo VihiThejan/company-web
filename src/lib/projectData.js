@@ -1,4 +1,38 @@
 export const projectData = {
+  'insurance-data-automation': {
+    title: 'Insurance Data Automation & Risk Assessment Management System',
+    industry: 'Insurance & Financial Services',
+    image: '/images/portfolio-img/Risk Assessment Management System.png',
+    shortDescription:
+      'A comprehensive web platform that digitizes the complete RAQ and quotation lifecycle, enhancing efficiency and accuracy through automation and real-time MIS reporting.',
+    introduction:
+      'The Insurance Data Automation & Risk Assessment Management System is a web-based digital platform designed to modernize and streamline insurance data handling processes. The system replaces manual, paper-based workflows with a centralized, automated solution for managing Risk Assessment Questionnaires (RAQs), quotations, and insurance-related documentation. By leveraging automation, data validation, and real-time reporting, the platform improves efficiency, accuracy, and decision-making for insurance brokers, client companies, and insurance providers.',
+    problem:
+      'Insurance brokers and organizations currently rely on manual methods to collect, validate, and process RAQ data from a large number of companies and locations. This process is time-consuming, error-prone, and difficult to manage at scale. The lack of centralized data storage and automated reporting makes it challenging to generate accurate MIS reports, track quotation updates, and support timely decision-making. These inefficiencies result in delays, data inconsistencies, and increased operational costs.',
+    objectives:
+      'Primary Objectives:\n• To automate the RAQ data collection and management process\n• To centralize insurance-related data across multiple companies and locations\n• To reduce manual effort and human errors in insurance data processing\n\nSecondary Objectives:\n• To improve quotation management and renewal efficiency\n• To enable real-time MIS reporting and data-driven decision-making\n• To enhance collaboration between insurance brokers, companies, and insurers',
+    solution:
+      'The proposed solution is a secure, web-based insurance data automation platform that digitizes the complete RAQ and quotation lifecycle. The system enables online RAQ submissions, automated data validation, and centralized storage for insurance-related information. Integrated dashboards and reporting tools provide real-time insights into risks, coverage gaps, and insurer-wise summaries. Geographic risk visualization and structured asset management further support accurate risk analysis, while role-based access ensures data security and controlled collaboration among stakeholders.',
+    keyComponents:
+      '1. Online RAQ Management\n• Digital RAQ forms with predefined templates\n• Autosave and progress tracking features\n• Centralized submission and monitoring system\n\n2. Data Validation & Standardization\n• Automated checks to minimize human errors\n• Standardized data formats for consistency\n• Improved reliability of insurance information\n\n3. Quotation & Renewal Management\n• Structured quotation submission and comparison\n• Efficient handling of renewals and endorsements\n• Faster decision-making for insurer selection\n\n4. MIS Reporting & Dashboards\n• Real-time MIS dashboards\n• Exportable reports (Excel, PDF, Power BI)\n• Clear insights into risk exposure and coverage\n\n5. Security & Access Control\n• Role-based user access (Admin, Company, Insurer)\n• Secure authentication and encrypted data storage\n• Confidential handling of sensitive insurance data',
+  },
+  'uni-hub': {
+    title: 'UniHub – University E-Learning & Academic Marketplace Platform',
+    industry: 'Education Technology (EdTech)',
+    image: '/images/portfolio-img/UniHub.png',
+    shortDescription:
+      'A multi-phase digital platform combining peer-to-peer e-learning with a dedicated academic marketplace for university students.',
+    introduction:
+      'UniHub is a modern, web-based e-learning and academic marketplace platform designed specifically for university students. The platform enables students to create, publish, and monetize peer-led video-based learning content known as “kuppi sessions,” which help simplify complex university subjects. In addition to learning content delivery, UniHub integrates a dedicated academic marketplace where students can buy and sell university-related products and services. The platform aims to support collaborative learning, knowledge sharing, and student-driven entrepreneurship within the university ecosystem.',
+    problem:
+      'University students often struggle to understand complex academic subjects using traditional learning methods alone. While peer-led learning is common, there is no centralized, structured digital platform to host, manage, and monetize such content securely. Additionally, students face difficulties in finding reliable channels to buy or sell academic-related items such as calculators, instruments, and electronic equipment. The absence of an integrated solution limits accessibility, learning efficiency, and economic opportunities for students.',
+    objectives:
+      'Primary Objectives:\n• To develop a scalable e-learning platform for peer-to-peer university education\n• To enable students to publish and sell video-based kuppi sessions\n• To provide learners with easy access to affordable, student-created academic content\n\nSecondary Objectives:\n• To introduce an academic marketplace for buying and selling university-related products\n• To support monetization opportunities for student content creators and sellers\n• To build a future-ready platform that can scale with user growth',
+    solution:
+      'UniHub is designed as a multi-phase digital platform combining e-learning and marketplace functionalities. The system allows tutors (students) to upload video courses, manage content, and earn income, while learners can browse, enroll, and track their learning progress through a user-friendly interface. The integrated marketplace module enables users to list and trade academic products and services securely. With modern technologies, cloud hosting, and modular development, UniHub ensures performance, reliability, and long-term scalability.',
+    keyComponents:
+      '1. E-Learning Module\n• Tutor onboarding and course creation\n• Video hosting, playback, and material downloads\n• Learner enrollment and progress tracking\n• Course browsing, search, ratings, and reviews\n\n2. Analytics & Automation Features\n• Course insights and performance analytics\n• Automated tutor review and approval workflows\n• Enhanced dashboards for tutors, learners, and admins\n\n3. Payment & Monetization System\n• Secure payment gateway integration\n• Tutor earnings tracking and payouts\n• Platform commission handling\n\n4. Academic Marketplace Module\n• Product and service listings by users\n• Advanced search, filters, and item details\n• User-to-user communication and transactions\n• Basic store management linked to user profiles\n\n5. Admin Control & Security\n• Admin dashboard for user and content management\n• Course and marketplace listing approvals\n• Platform analytics, issue handling, and reporting\n• Secure authentication and role-based access control',
+  },
   'ai-bicycle-tourism': {
     title: 'AI-Driven Bicycle Tourism System',
     industry: 'Travel & Tourism',

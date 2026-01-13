@@ -1,5 +1,21 @@
 export const projects = [
   {
+    title: 'Insurance Data Automation & Risk Assessment Management System',
+    slug: 'insurance-data-automation',
+    description:
+      'A web-based digital platform designed to modernize and streamline insurance data handling, replacing manual workflows with automated Risk Assessment Questionnaires (RAQs) and real-time reporting.',
+    image: '/images/portfolio-img/Risk Assessment Management System.png',
+    industry: 'Insurance & Financial Services',
+  },
+  {
+    title: 'UniHub – University E-Learning & Academic Marketplace Platform',
+    slug: 'uni-hub',
+    description:
+      'A modern e-learning and academic marketplace platform specifically for university students to publish peer-led "kuppi sessions" and trade academic products.',
+    image: '/images/portfolio-img/UniHub.png',
+    industry: 'Education Technology (EdTech)',
+  },
+  {
     title: 'AI-Driven Bicycle Tourism System',
     slug: 'ai-bicycle-tourism',
     description:

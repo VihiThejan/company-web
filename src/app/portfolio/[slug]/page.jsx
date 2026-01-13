@@ -171,9 +171,15 @@ export default function ProjectDetails({ params }) {
           { title: 'Problem Statement', content: project.problem },
           { title: 'Objectives', content: project.objectives },
           { title: 'Our Solution', content: project.solution },
-        ].map((section, i) => (
-          <Section key={i} title={section.title} content={section.content} />
-        ))}
+          project.keyComponents && {
+            title: 'Key Supporting Components',
+            content: project.keyComponents,
+          },
+        ]
+          .filter(Boolean)
+          .map((section, i) => (
+            <Section key={i} title={section.title} content={section.content} />
+          ))}
       </Box>
     </Box>
   );
@@ -200,6 +206,7 @@ function Section({ title, content }) {
           color: '#555',
           lineHeight: 1.7,
           textAlign: 'justify',
+          whiteSpace: 'pre-line',
         }}
       >
         {content}
