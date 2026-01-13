@@ -113,18 +113,20 @@ export default function ProjectDetails({ params }) {
 
       {/* Header */}
       <Box sx={{ textAlign: 'left', mb: { xs: 5, md: 5 } }}>
-        <Box>
-          <Box
-            component="img"
-            src={project.companyLogo}
-            alt={project.title}
-            sx={{
-              width: '150px',
-              height: '150px',
-              objectFit: 'cover',
-            }}
-          />
-        </Box>
+        {project.companyLogo && (
+          <Box>
+            <Box
+              component="img"
+              src={project.companyLogo}
+              alt={project.title}
+              sx={{
+                width: '150px',
+                height: '150px',
+                objectFit: 'cover',
+              }}
+            />
+          </Box>
+        )}
         <Typography
           variant="h4"
           sx={{

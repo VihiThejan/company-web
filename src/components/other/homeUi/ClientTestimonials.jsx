@@ -12,14 +12,14 @@ const testimonials = [
     {
         name: 'Alisa Olivia',
         role: 'CTO at Ritovex',
-        text: 'The Arimac team worked closely with us and leveraged their out-of-the-box creativity and unique design thinking skill to bring to life a solution.',
+        text: 'The Vihi team worked closely with us and leveraged their out-of-the-box creativity and unique design thinking skill to bring to life a solution.',
         avatar: '/images/clients/client1.jpg',
         rating: 5,
     },
     {
         name: 'Michael Davis',
         role: 'Founder at TechCraft',
-        text: 'Joining forces with Arimac, we’re revolutionizing digital experiences via Softlogic One Super App. We’re delighted to announce Arimac as our new digital partner.',
+        text: 'Joining forces with Vihi, we’re revolutionizing digital experiences via Softlogic One Super App. We’re delighted to announce Vihi as our new digital partner.',
         avatar: '/images/clients/client2.jpg',
         rating: 5,
     },

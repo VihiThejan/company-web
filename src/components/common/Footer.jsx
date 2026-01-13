@@ -114,7 +114,7 @@ export default function Footer() {
             Started as a passionate tech initiative in Sri Lanka back in 2023, Vihi IT Solutions
             emerged with a vision to deliver high-quality, innovative software solutions tailored to
             real-world needs. What began as a small team with big ideas quickly evolved into a
-            dynamic company offering services to reputable clients like the Bank of Ceylon.
+            dynamic company offering high-end software services.
             Driven by creativity, commitment, and client success, Vihi IT Solutions has grown by
             building systems that are not only powerful but also practical. From inventory
             management and AI-driven tourism innovations to full-stack web and mobile apps, we

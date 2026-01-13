@@ -90,18 +90,20 @@ function ProjectShowCase() {
                   mt: { xs: 3, md: 0 },
                 }}
               >
-                <Box sx={{ mb: 1 }}>
-                  <Box
-                    component="img"
-                    src={project.companyLogo}
-                    alt={project.title}
-                    sx={{
-                      width: '120px',
-                      height: '120px',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </Box>
+                {project.companyLogo && (
+                  <Box sx={{ mb: 1 }}>
+                    <Box
+                      component="img"
+                      src={project.companyLogo}
+                      alt={project.title}
+                      sx={{
+                        width: '120px',
+                        height: '120px',
+                        objectFit: 'cover',
+                      }}
+                    />
+                  </Box>
+                )}
                 <Typography
                   variant="h5"
                   sx={{
