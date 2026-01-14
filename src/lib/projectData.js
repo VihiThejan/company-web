@@ -2,7 +2,7 @@ export const projectData = {
   'insurance-data-automation': {
     title: 'Insurance Data Automation & Risk Assessment Management System',
     industry: 'Insurance & Financial Services',
-    image: '/images/portfolio-img/Risk Assessment Management System.png',
+    image: '/images/portfolio-img/Risk Assessment Management System1.png',
     shortDescription:
       'A comprehensive web platform that digitizes the complete RAQ and quotation lifecycle, enhancing efficiency and accuracy through automation and real-time MIS reporting.',
     introduction:
