@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Fab, Zoom } from '@mui/material';
-import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import theme from '@/theme/theme';
 
 const ScrollToTopButton = () => {
@@ -27,7 +27,7 @@ const ScrollToTopButton = () => {
         onClick={handleClick}
         sx={{
           position: 'fixed',
-          bottom: { xs: 24, md: 32 },
+          bottom: { xs: 30, md: 140 },
           right: { xs: 16, md: 32 },
           zIndex: 1300,
           boxShadow: 3,
@@ -35,7 +35,7 @@ const ScrollToTopButton = () => {
         }}
         aria-label="Scroll to top"
       >
-        <KeyboardArrowUpIcon />
+        <ArrowUpwardIcon />
       </Fab>
     </Zoom>
   );

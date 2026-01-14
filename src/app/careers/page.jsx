@@ -7,6 +7,8 @@ import theme from '@/theme/theme';
 import TeamMembers from '@/components/other/careerUi/TeamMembers';
 import HiringProcess from '@/components/other/careerUi/HiringProcess';
 import Vacancies from '@/components/other/careerUi/Vacancies';
+import CareerBenefits from '@/components/other/careerUi/CareerBenefits';
+import InternshipSection from '@/components/other/careerUi/InternshipSection';
 
 export default function Careers() {
   const handleScrollToJobs = () => {
@@ -36,13 +38,20 @@ export default function Careers() {
           zIndex: 2,
           width: '100%',
           maxWidth: 1200,
-          height: { xs: '60vh', md: '70vh' },
+          height: {
+            xs: '45vh',
+            sm: '60vh',
+            md: '100vh',
+            lg: '70vh',
+            xl: '70vh',
+          },
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
           mx: 'auto',
-          pt: { xs: 6, md: 10 },
+          px: { xs: 2, sm: 4, md: 6, lg: 8 },
+          pt: { xs: 8, sm: 10, md: 12 },
           textAlign: 'center',
         }}
       >
@@ -50,46 +59,72 @@ export default function Careers() {
           variant="h2"
           sx={{
             fontWeight: 700,
-            fontSize: { xs: '2rem', md: '3rem' },
-            mb: 2,
+            lineHeight: 1.2,
+            fontSize: {
+              xs: '1.8rem', // very small phones
+              sm: '2.2rem', // normal phones
+              md: '2.8rem', // tablets
+              lg: '3.2rem', // laptops
+              xl: '3.6rem', // large desktops
+            },
+            mb: { xs: 1.5, sm: 2 },
+            px: { xs: 1, sm: 0 },
           }}
         >
           Careers @ Vihi IT Solutions
         </Typography>
+
         <Typography
           variant="h6"
           sx={{
             fontWeight: 400,
-            fontSize: { xs: '1rem', md: '1.25rem' },
+            lineHeight: 1.4,
+            fontSize: {
+              xs: '0.95rem',
+              sm: '1.05rem',
+              md: '1.15rem',
+              lg: '1.25rem',
+              xl: '1.35rem',
+            },
             color: '#222',
-            mb: 3,
+            mb: { xs: 2.5, sm: 3 },
+            maxWidth: { xs: '90%', sm: '85%', md: '70%' },
           }}
         >
-          Build the future with pixels, code, and zero corporate nonsense.
+          Join a team that transforms innovation into real-world impact
         </Typography>
+
         <Button
           variant="contained"
           size="large"
           onClick={handleScrollToJobs}
           sx={{
-            mt: 2,
-            px: 4,
-            py: 1.5,
+            mt: { xs: 1.5, sm: 2 },
+            px: { xs: 3.5, sm: 4.5, md: 5 },
+            py: { xs: 1.2, sm: 1.4 },
             backgroundColor: theme.palette.primary.main,
-            fontSize: { xs: '0.9rem', md: '1rem' },
+            fontSize: { xs: '0.85rem', sm: '0.9rem', md: '1rem' },
             borderRadius: '50px',
             textTransform: 'none',
+            '&:hover': { backgroundColor: theme.palette.primary.option },
           }}
         >
           View Job Openings
         </Button>
       </Box>
+
       {/* Hero image */}
       <Box
         sx={{
           position: 'relative',
           width: '100%',
-          height: { xs: '220px', md: '450px' },
+          height: {
+            xs: '220px', // phones
+            sm: '280px', // small tablets
+            md: '380px', // tablets landscape
+            lg: '450px', // desktops
+            xl: '520px', // large monitors
+          },
           overflow: 'hidden',
         }}
       >
@@ -105,33 +140,22 @@ export default function Careers() {
           }}
         />
       </Box>
-      <Box
-        sx={{
-          with: '100%',
-          mx: 4,
-          my: 3,
-        }}
-      >
-        <TeamMembers />
+
+      {/* Subsections */}
+      <Box sx={{ width: '100%', mx: { xs: 2, md: 4 }, my: { xs: 2, md: 3 } }}>
+        <CareerBenefits />
       </Box>
-      <Box
-        sx={{
-          with: '100%',
-          mx: 4,
-          my: 3,
-        }}
-      >
+      <Box sx={{ width: '100%', mx: { xs: 2, md: 4 }, my: { xs: 2, md: 3 } }}>
         <HiringProcess />
       </Box>
       <Box
         id="job-openings"
-        sx={{
-          width: '100%',
-          mx: 4,
-          my: 3,
-        }}
+        sx={{ width: '100%', mx: { xs: 2, md: 4 }, my: { xs: 2, md: 3 } }}
       >
         <Vacancies />
+      </Box>
+      <Box sx={{ width: '100%', mx: { xs: 2, md: 4 }, my: { xs: 2, md: 3 } }}>
+        <InternshipSection />
       </Box>
     </Box>
   );

@@ -27,7 +27,7 @@ const steps = [
   },
   {
     number: '03',
-    title: 'Technical Interview',
+    title: 'First Interview',
     description:
       'Showcase your skills and problem-solving abilities in a technical discussion.',
   },
@@ -88,7 +88,8 @@ export default function HiringProcessAligned() {
               variant="body1"
               sx={{
                 color: 'text.secondary',
-                mx: { xs: 0, md: 0 },
+                mx: { xs: 2, md: 0 },
+                textAlign: 'justify'
               }}
             >
               From initial application to onboarding, our hiring process is

@@ -1,22 +1,23 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Box, Typography } from '@mui/material';
+import theme from '@/theme/theme';
 
 const expertise = [
   {
-    label: 'Education',
-    desc: `Unlock your business growth potential. With over five years of experience in the education industry, we built digital strategies that connected that connect with student, parents and agents from around the world.`,
-    image: '/images/home-img/education.jpg',
+    label: 'Tourism',
+    desc: `We build engaging and user-friendly digital solutions that elevate the travel and tourism experience. Our services help tourism businesses attract, engage, and retain customers.`,
+    image: '/images/home-img/home-tourism.webp',
   },
   {
     label: 'Government',
-    desc: `We support government and agencies with redesigning product services and digital engagement to deliver solutions that drive positive change across the economy.`,
-    image: '/images/home-img/government.jpg',
+    desc: `We provide scalable and secure digital solutions that support efficient and transparent government operations. Our services align with regulatory standards and public sector requirements.`,
+    image: '/images/home-img/home-govenment.webp',
   },
   {
     label: 'Finance',
-    desc: `We support government and agencies with redesigning product services and digital engagement to deliver solutions that drive positive change across the economy.`,
-    image: '/images/home-img/finance.jpg',
+    desc: `We deliver secure, reliable, and compliant digital solutions tailored for the financial sector. Our services help financial institutions enhance operational efficiency while protecting sensitive data.`,
+    image: '/images/home-img/home-finance.webp',
   },
 ];
 
@@ -57,6 +58,7 @@ const ExpertiseCarousel = () => {
   // ...existing code...
   return (
     <Box
+      className="hover-lift-shadow"
       sx={{
         width: '100%',
         height: `${cardHeight}px`,
@@ -75,6 +77,7 @@ const ExpertiseCarousel = () => {
         {expertiseLoop.map((item, idx) => (
           <Box
             key={idx}
+            className="hover-image-container"
             sx={{
               position: 'relative',
               minHeight: `${cardHeight}px`,
@@ -82,13 +85,14 @@ const ExpertiseCarousel = () => {
               width: '100%',
               display: 'flex',
               alignItems: 'flex-end',
-              justifyContent: 'flex-start',
+              justifyContent: 'center',
               overflow: 'hidden',
               // borderRadius: 3,
             }}
           >
             <Box
               component="img"
+              className="hover-image"
               src={item.image}
               alt={item.label}
               sx={{
@@ -106,7 +110,7 @@ const ExpertiseCarousel = () => {
                 position: 'absolute',
                 inset: 0,
                 background:
-                  'linear-gradient(180deg, rgba(0, 0, 0, 0.71) 60%, rgba(0, 0, 0, 0.74) 100%)',
+                  'linear-gradient(180deg, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.6) 100%)',
                 zIndex: 2,
               }}
             />
@@ -114,39 +118,37 @@ const ExpertiseCarousel = () => {
               sx={{
                 position: 'relative',
                 zIndex: 3,
-                p: 3,
-                width: '100%',
+                py: 3,
+                px: { xs: 3, md: 5, lg: 10 },
+                width: { xs: '100%', md: '75%' },
                 height: '100%',
-                color: '#fff',
+                color: theme.palette.secondary.light,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-end',
-                gap: 1.5,
+                alignItems: 'center',
+                textAlign: 'center',
               }}
             >
               <Box
                 sx={{
-                  background: '#ffe600ff',
-                  color: '#000',
-                  borderRadius: 2,
-                  px: 2,
-                  py: 0.5,
-                  fontWeight: 400,
-                  fontSize: '2.4rem',
+                  color: theme.palette.secondary.light,
+                  borderRadius: 50,
+                  fontWeight: 700,
+                  fontSize: { xs: '2.5rem', md: '3.5rem' },
                   display: 'inline-block',
-                  mb: 1,
                   width: 'fit-content',
                 }}
               >
                 {item.label}
               </Box>
               <Typography
-                variant="body1"
+                variant="body3"
                 sx={{
                   fontWeight: 400,
                   fontSize: { xs: '1rem', md: '1.05rem' },
                   lineHeight: 1.5,
-                  textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                  color: theme.palette.secondary.light
                 }}
               >
                 {item.desc}
@@ -157,7 +159,6 @@ const ExpertiseCarousel = () => {
       </motion.div>
     </Box>
   );
-  // ...existing code...
 };
 
 export default ExpertiseCarousel;

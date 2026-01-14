@@ -1,191 +1,262 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { Box, Typography, IconButton, Divider, useTheme } from '@mui/material';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
+import React from "react";
+import Link from "next/link";
+import {
+  Box,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  IconButton,
+} from "@mui/material";
+
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import Image from "next/image";
 
 const footerSections = [
   {
-    title: 'Capabilities',
+    title: "Capabilities",
     links: [
-      { name: 'Services', href: '/services' },
-      { name: 'Marketing', href: '/marketing' },
-      { name: 'Technology', href: '/technology' },
+      { name: "Marketing", href: "/marketing" },
+      { name: "Technology", href: "/technology" },
+      { name: "Portfolio", href: "/portfolio" },
     ],
   },
   {
-    title: 'Company',
+    title: "Company",
     links: [
-      { name: 'About Us', href: '/aboutus' },
-      { name: 'Expertise', href: '/expertise' },
-      { name: 'Careers', href: '/careers' },
+      { name: "About Us", href: "/aboutus" },
+      { name: "Industries", href: "/industries" },
+      { name: "Our Team", href: "/team" },
+      { name: "Careers", href: "/careers" },
     ],
   },
   {
-    title: 'Resources',
+    title: "Resources",
     links: [
-      { name: 'Blog', href: '/blog' },
-      { name: 'Contact Us', href: '/contactus' },
+      { name: "Blog", href: "/blog" },
+      { name: "Contact Us", href: "/contactus" },
     ],
   },
   {
-    title: 'Legal',
+    title: "Legal",
     links: [
-      { name: 'Privacy policy', href: '/privacy-policy' },
-      { name: 'Terms & Conditions', href: '/terms-conditions' },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms & Conditions", href: "/terms-conditions" },
     ],
   },
 ];
 
-const Footer = () => {
-  const theme = useTheme();
-
+export default function Footer() {
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: '#fff',
-        color: '#333',
-        pt: 4,
-        pb: 2,
-        width: '100%',
+        backgroundColor: "#fff",
+        color: "#000",
+        py: 6,
+        flexGrow: 1,
+        mx: { xs: 2, md: 4, lg: 8 },
       }}
     >
-      {/* Section links */}
-      {footerSections.map((section) => (
-        <React.Fragment key={section.title}>
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
-              alignItems: { xs: 'flex-start', sm: 'center' },
-              px: { xs: 2, md: 8 },
-              py: 3,
-              width: '100%',
-              maxWidth: '1200px',
-              mx: 'auto',
-              gap: { xs: 1.5, sm: 0 },
-            }}
-          >
-            {/* Section title */}
-            <Typography
-              variant="body2"
-              sx={{
-                fontWeight: 400,
-                fontSize: '20px',
-                mb: { xs: 1, sm: 0 },
-                flex: { xs: 'unset', sm: '0 0 180px' },
-              }}
-            >
-              {section.title}
-            </Typography>
+      {/* ================= LOGO SECTION ================= */}
+      <Box sx={{ mb: 2, textAlign: { xs: "center", lg: "left" } }}>
+        <Image
+          src="/images/Vihi.png"
+          alt="VIHI IT Solutions Logo"
+          width={220}
+          height={60}
+          style={{ objectFit: "contain" }}
+        />
+      </Box>
 
-            {/* Section links */}
-            <Box
-              sx={{
-                flex: 1,
-                display: 'flex',
-                flexWrap: 'wrap',
-                justifyContent: { xs: 'flex-start', sm: 'flex-end' },
-                gap: { xs: 2, sm: 4 },
-              }}
-            >
-              {section.links.map((link, linkIdx) => (
-                <Typography
-                  key={linkIdx}
-                  component={Link}
-                  href={link.href}
-                  variant="body2"
-                  sx={{
-                    color: '#333',
-                    textDecoration: 'none',
-                    fontSize: '16px',
-                    fontWeight: 400,
-                    '&:hover': { color: '#000' },
-                  }}
-                >
-                  {link.name}
-                </Typography>
-              ))}
-            </Box>
-          </Box>
-          <Divider sx={{ borderColor: '#e0e0e0', my: 0 }} />
-        </React.Fragment>
-      ))}
-
-      {/* Bottom Row - Copyright + Social */}
+      {/* ================= OUTER GRID ================= */}
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', sm: 'row' },
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          px: { xs: 2, md: 8 },
-          maxWidth: '1200px',
-          mx: 'auto',
-          pt: 2,
-          gap: { xs: 1.5, sm: 0 },
+          maxWidth: "100%",
+          mx: "auto",
+          display: "grid",
+          gap: 4,
+          gridTemplateColumns: {
+            xs: "1fr",
+            sm: "1fr",
+            md: "1fr",
+            lg: "repeat(5, 1fr)", // 5 columns + social icons column
+          },
         }}
       >
-        {/* Copyright */}
-        <Typography
-          variant="body2"
+        {/* ================= CONTENT (PARAGRAPH) ================= */}
+        <Box
           sx={{
-            fontSize: '14px',
-            color: '#666',
-            textAlign: { xs: 'center', sm: 'left' },
+            gridColumn: {
+              xs: "1 / -1",
+              sm: "1 / -1",
+              md: "1 / -1",
+              lg: "span 2",
+            },
+            textAlign: { xs: "center", lg: "justify" },
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: "14px",
+              color: "#555",
+              lineHeight: 1.6,
+              maxWidth: { lg: "90%" }, // careful with width constraint
+              mx: { xs: "auto", lg: 0 },
+            }}
+          >
+            Started as a passionate tech initiative in Sri Lanka back in 2023, Vihi IT Solutions
+            emerged with a vision to deliver high-quality, innovative software solutions tailored to
+            real-world needs. What began as a small team with big ideas quickly evolved into a
+            dynamic company offering high-end software services.
+            Driven by creativity, commitment, and client success, Vihi IT Solutions has grown by
+            building systems that are not only powerful but also practical. From inventory
+            management and AI-driven tourism innovations to full-stack web and mobile apps, we
+            strive to create meaningful technology.
+            Today, Vihi IT Solutions continues to expand, aiming to make a lasting impact on the
+            local and international tech landscape.
+          </Typography>
+        </Box>
+
+        {/* ================= LINK GROUPS (TABLET + DESKTOP) ================= */}
+        <Box
+          sx={{
+            display: { xs: "grid", sm: "grid" },
+            gridTemplateColumns: {
+              sm: "1fr 1fr",
+              md: "1fr 1fr",
+              lg: "repeat(4, 1fr)",
+            },
+            gridColumn: {
+              sm: "1 / -2",
+              lg: "span 3",
+            },
+            gap: 4,
+          }}
+        >
+          {footerSections.map((section) => (
+            <Box key={section.title}>
+              <Typography
+                sx={{
+                  fontWeight: 600,
+                  fontSize: "15px",
+                  mb: 1.5,
+                  color: "#303030",
+                }}
+              >
+                {section.title}
+              </Typography>
+
+              <Box
+                sx={{
+                  width: "100%",
+                  display: { xs: "flex" },
+                  flexDirection: { xs: "column" }, // Cleaned up invalid breakpoint
+                  gap: 3,
+                }}
+              >
+                {section.links.map((link) => (
+                  <Typography
+                    key={link.name}
+                    component={Link}
+                    href={link.href}
+                    sx={{
+                      textDecoration: "none",
+                      fontSize: "14px",
+                      color: "#555",
+                      "&:hover": { color: "#000" },
+                    }}
+                  >
+                    {link.name}
+                  </Typography>
+                ))}
+              </Box>
+            </Box>
+          ))}
+        </Box>
+      </Box>
+
+      <Box
+        sx={{
+          width: "100%",
+          display: { xs: "block", lg: "flex" },
+          justifyContent: "center",
+          justifyContent: "space-between",
+          alignItems: "center",
+          mt: 4,
+          borderTop: "2px solid #c3c3c3",
+          pt: 4,
+        }}
+      >
+        {/* ================= COPYRIGHT ================= */}
+        <Typography
+          sx={{
+            fontSize: "14px",
+            color: "#828282",
+            textAlign: "center",
           }}
         >
           © {new Date().getFullYear()} VIHI IT Solutions. All rights reserved.
         </Typography>
-
-        {/* Social Icons */}
+        {/* ================= SOCIAL ICONS ================= */}
         <Box
           sx={{
-            display: 'flex',
-            justifyContent: { xs: 'center', sm: 'flex-end' },
-            alignItems: 'center',
-            gap: 1.5,
-            mt: { xs: 1, sm: 0 },
+            gridColumn: {
+              xs: "1 / -1",
+              sm: "1 / -1",
+              lg: "auto", // desktop: right side column
+            },
+            textAlign: { xs: "center", lg: "right" },
+            mt: { xs: 2, lg: 0 },
           }}
         >
-          {[
-            {
-              icon: <FacebookIcon fontSize="small" />,
-              href: 'https://www.facebook.com/share/17bbcRZ76e/',
-            },
-            {
-              icon: <YouTubeIcon fontSize="small" />,
-              href: 'https://youtube.com',
-            },
-            {
-              icon: <LinkedInIcon fontSize="small" />,
-              href: 'https://www.linkedin.com/company/vihi-it-solutions/',
-            },
-            {
-              icon: <InstagramIcon fontSize="small" />,
-              href: 'https://instagram.com',
-            },
-          ].map((item, idx) => (
-            <IconButton
-              key={idx}
-              aria-label="social"
-              color="inherit"
-              href={item.href}
-              target="_blank"
-              sx={{ color: '#333' }}
-            >
-              {item.icon}
-            </IconButton>
-          ))}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: { xs: "center", lg: "flex-end" },
+              gap: 1.5,
+            }}
+          >
+            {[
+              {
+                icon: <FacebookIcon fontSize="medium" />,
+                href: "https://www.facebook.com",
+              },
+              {
+                icon: <YouTubeIcon fontSize="medium" />,
+                href: "https://youtube.com",
+              },
+              {
+                icon: <LinkedInIcon fontSize="medium" />,
+                href: "https://www.linkedin.com/company/vihi-it-solutions/",
+              },
+              {
+                icon: <InstagramIcon fontSize="medium" />,
+                href: "https://instagram.com",
+              },
+            ].map((item, i) => (
+              <IconButton
+                key={i}
+                href={item.href}
+                target="_blank"
+                sx={{
+                  color: "#333",
+                  p: 0.7,
+                  "&:hover": { color: "#ffc720" },
+                }}
+              >
+                {item.icon}
+              </IconButton>
+            ))}
+          </Box>
         </Box>
       </Box>
     </Box>
   );
-};
-
-export default Footer;
+}

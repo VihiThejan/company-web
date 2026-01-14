@@ -10,25 +10,10 @@ export default function TeamMembers() {
   return (
     <Box
       sx={{
-        py: { xs: 6, md: 8 },
-        px: { xs: 0, md: 4 },
         width: '100%',
         bgcolor: '#fff',
       }}
     >
-      <Typography
-        variant="h3"
-        align="center"
-        gutterBottom
-        sx={{
-          fontWeight: 700,
-          mb: { xs: 4, md: 6 },
-          fontSize: { xs: '1.8rem', md: '2.5rem' },
-        }}
-      >
-        Our Leaders & Experts
-      </Typography>
-
       <Grid container spacing={{ xs: 4, md: 5 }} justifyContent="center">
         {teamMembers.map((member, index) => (
           <Grid size={{ xs: 12, md: 4 }} key={index}>
@@ -53,7 +38,7 @@ export default function TeamMembers() {
                 sx={{
                   width: '100%',
                   position: 'relative',
-                  aspectRatio: '4 / 5', // maintains portrait ratio consistently
+                  aspectRatio: '4 / 4', // maintains portrait ratio consistently
                   overflow: 'hidden',
                   backgroundColor: '#f5f5f5',
                 }}
@@ -94,6 +79,7 @@ export default function TeamMembers() {
                         fontWeight: 600,
                         color: '#222',
                         fontSize: { xs: '1rem', md: '1rem' },
+                        textAlign: 'left'
                       }}
                     >
                       {member.name}
@@ -103,6 +89,7 @@ export default function TeamMembers() {
                       sx={{
                         color: 'theme.palette.text.secondary',
                         fontSize: { xs: '0.85rem', md: '0.9rem' },
+                        textAlign: 'left'
                       }}
                     >
                       {member.role}
