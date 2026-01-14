@@ -20,7 +20,7 @@ export default function ContactInfoCards() {
     {
       icon: <PhoneIcon fontSize="large" color="primary" />,
       title: 'Call Us',
-      detail: '+94 72 444 4082 | +94 70 112 9478',
+      detail: '+94 72 444 4082 | +94 77 129 5767',
       action: 'copy',
     },
     {
