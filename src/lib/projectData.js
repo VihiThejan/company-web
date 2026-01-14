@@ -19,7 +19,7 @@ export const projectData = {
   'uni-hub': {
     title: 'UniHub – University E-Learning & Academic Marketplace Platform',
     industry: 'Education Technology (EdTech)',
-    image: '/images/portfolio-img/UniHub.webp',
+    image: '/images/portfolio-img/Unihub.webp',
     shortDescription:
       'A multi-phase digital platform combining peer-to-peer e-learning with a dedicated academic marketplace for university students.',
     introduction:
