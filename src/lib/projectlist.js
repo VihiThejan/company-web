@@ -4,7 +4,7 @@ export const projects = [
     slug: 'insurance-data-automation',
     description:
       'A web-based digital platform designed to modernize and streamline insurance data handling, replacing manual workflows with automated Risk Assessment Questionnaires (RAQs) and real-time reporting.',
-    image: '/images/portfolio-img/Risk Assessment Management System.png',
+    image: '/images/portfolio-img/Risk Assessment Management System1.png',
     industry: 'Insurance & Financial Services',
   },
   {
@@ -12,7 +12,7 @@ export const projects = [
     slug: 'uni-hub',
     description:
       'A modern e-learning and academic marketplace platform specifically for university students to publish peer-led "kuppi sessions" and trade academic products.',
-    image: '/images/portfolio-img/UniHub.png',
+    image: '/images/portfolio-img/Unihub.webp',
     industry: 'Education Technology (EdTech)',
   },
   {
