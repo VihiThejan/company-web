@@ -2,7 +2,7 @@ export const projectData = {
   'insurance-data-automation': {
     title: 'Insurance Data Automation & Risk Assessment Management System',
     industry: 'Insurance & Financial Services',
-    image: '/images/portfolio-img/Risk Assessment Management System.png',
+    image: '/images/portfolio-img/Risk Assessment Management System1.png',
     shortDescription:
       'A comprehensive web platform that digitizes the complete RAQ and quotation lifecycle, enhancing efficiency and accuracy through automation and real-time MIS reporting.',
     introduction:
@@ -19,7 +19,7 @@ export const projectData = {
   'uni-hub': {
     title: 'UniHub – University E-Learning & Academic Marketplace Platform',
     industry: 'Education Technology (EdTech)',
-    image: '/images/portfolio-img/UniHub.png',
+    image: '/images/portfolio-img/Unihub.webp',
     shortDescription:
       'A multi-phase digital platform combining peer-to-peer e-learning with a dedicated academic marketplace for university students.',
     introduction:

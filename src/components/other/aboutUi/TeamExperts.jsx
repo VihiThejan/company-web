@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import {
   Box,
   Typography,
@@ -8,36 +8,36 @@ import {
   Button,
   useTheme,
   Grid,
-} from '@mui/material';
-import { teamMembers } from '@/lib/teamMembers';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, A11y } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import Link from 'next/link';
-import theme from '@/theme/theme';
+} from "@mui/material";
+import { teamMembers } from "@/lib/teamMembers";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Link from "next/link";
+import theme from "@/theme/theme";
 
 export default function TeamExperts() {
   return (
     <Box
       sx={{
-        py: { xs: 4},
+        py: { xs: 4 },
         px: { xs: 3 },
         bgcolor: theme.palette.secondary.light,
         color: theme.palette.secondary.main,
-        textAlign: 'center',
+        textAlign: "center",
       }}
     >
       {/* Section Header */}
       <Box
         sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          flexWrap: 'wrap',
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
           mb: 5,
           mx: { xs: 0, md: 3 },
         }}
@@ -47,7 +47,7 @@ export default function TeamExperts() {
             variant="h3"
             sx={{
               fontWeight: 700,
-              fontSize: { xs: '2.5rem', md: '3rem' },
+              fontSize: { xs: "2.5rem", md: "3rem" },
               color: theme.palette.secondary.main,
             }}
           >
@@ -72,12 +72,12 @@ export default function TeamExperts() {
           sx={{
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.secondary.main,
-            borderRadius: '50px',
-            textTransform: 'none',
-            padding: '8px 20px',
+            borderRadius: "50px",
+            textTransform: "none",
+            padding: "8px 20px",
             fontWeight: 400,
             mt: { xs: 3, lg: 0 },
-            '&:hover': { backgroundColor: theme.palette.primary.option },
+            "&:hover": { backgroundColor: theme.palette.primary.option },
           }}
         >
           View All Teams
@@ -86,25 +86,25 @@ export default function TeamExperts() {
 
       <Box
         sx={{
-          width: '100%',
+          width: "100%",
           bgcolor: theme.palette.secondary.light,
         }}
       >
-        <Grid container spacing={{ xs: 4, md: 5 }} justifyContent="center">
+        <Grid container spacing={{ xs: 3, md: 3 }} justifyContent="center">
           {teamMembers.map((member, index) => (
-            <Grid size={{ xs: 12, md: 6, lgl: 4 }} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3, lgl: 2.4 }} key={index}>
               <Box
                 sx={{
                   borderRadius: 3,
-                  overflow: 'hidden',
+                  overflow: "hidden",
                   boxShadow: 3,
                   bgcolor: theme.palette.secondary.light,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100%',
-                  transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                  '&:hover': {
-                    transform: 'translateY(-5px)',
+                  display: "flex",
+                  flexDirection: "column",
+                  height: "100%",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  "&:hover": {
+                    transform: "translateY(-5px)",
                     boxShadow: 6,
                   },
                 }}
@@ -112,10 +112,10 @@ export default function TeamExperts() {
                 {/* Image wrapper with fixed aspect ratio */}
                 <Box
                   sx={{
-                    width: '100%',
-                    position: 'relative',
-                    aspectRatio: '4/4', // maintains portrait ratio consistently
-                    overflow: 'hidden',
+                    width: "100%",
+                    position: "relative",
+                    aspectRatio: "3/3", // maintains portrait ratio consistently
+                    overflow: "hidden",
                     backgroundColor: theme.palette.secondary.light,
                   }}
                 >
@@ -124,28 +124,28 @@ export default function TeamExperts() {
                     src={member.image}
                     alt={member.name}
                     sx={{
-                      position: 'absolute',
+                      position: "absolute",
                       top: 0,
                       left: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'center top', // keeps face/head consistent
-                      transition: 'transform 0.4s ease',
-                      '&:hover': { transform: 'scale(1.05)' },
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      objectPosition: "center top", // keeps face/head consistent
+                      transition: "transform 0.4s ease",
+                      "&:hover": { transform: "scale(1.05)" },
                     }}
                   />
                 </Box>
 
                 {/* Text + LinkedIn */}
-                <Box sx={{ px: 2, py: 2, flexGrow: 1 }}>
+                <Box sx={{ px: 1.5, py: 1.5, flexGrow: 1 }}>
                   <Box
                     sx={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
                       gap: 2,
-                      flexWrap: 'wrap',
+                      flexWrap: "wrap",
                     }}
                   >
                     <Box>
@@ -154,8 +154,8 @@ export default function TeamExperts() {
                         sx={{
                           fontWeight: 600,
                           color: theme.palette.secondary.main,
-                          fontSize: { xs: '1rem', md: '1rem' },
-                          textAlign: 'left',
+                          fontSize: { xs: "0.9rem", md: "0.95rem" },
+                          textAlign: "left",
                         }}
                       >
                         {member.name}
@@ -163,9 +163,9 @@ export default function TeamExperts() {
                       <Typography
                         variant="subtitle2"
                         sx={{
-                          color: 'theme.palette.text.secondary',
-                          fontSize: { xs: '0.85rem', md: '0.9rem' },
-                          textAlign: 'left',
+                          color: "theme.palette.text.secondary",
+                          fontSize: { xs: "0.75rem", md: "0.8rem" },
+                          textAlign: "left",
                         }}
                       >
                         {member.role}
@@ -178,11 +178,11 @@ export default function TeamExperts() {
                         rel="noopener noreferrer"
                         sx={{
                           color: theme.palette.primary.option,
-                          p: 1,
-                          '&:hover': { color: theme.palette.secondary.main },
+                          p: 0.5,
+                          "&:hover": { color: theme.palette.secondary.main },
                         }}
                       >
-                        <LinkedInIcon fontSize="large" />
+                        <LinkedInIcon fontSize="medium" />
                       </IconButton>
                     )}
                   </Box>
