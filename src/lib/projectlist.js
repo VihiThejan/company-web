@@ -12,7 +12,7 @@ export const projects = [
     slug: 'uni-hub',
     description:
       'A modern e-learning and academic marketplace platform specifically for university students to publish peer-led "kuppi sessions" and trade academic products.',
-    image: '/images/portfolio-img/unihub.webp',
+    image: '/images/portfolio-img/unihub1.webp',
     industry: 'Education Technology (EdTech)',
   },
   {
