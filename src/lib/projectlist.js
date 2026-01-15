@@ -4,7 +4,7 @@ export const projects = [
     slug: 'insurance-data-automation',
     description:
       'A web-based digital platform designed to modernize and streamline insurance data handling, replacing manual workflows with automated Risk Assessment Questionnaires (RAQs) and real-time reporting.',
-    image: '/images/portfolio-img/riskassessmentmanagementsystem1.webp',
+    image: '/images/portfolio-img/riskassessmentmanagementsystem.webp',
     industry: 'Insurance & Financial Services',
   },
   {
@@ -12,7 +12,7 @@ export const projects = [
     slug: 'uni-hub',
     description:
       'A modern e-learning and academic marketplace platform specifically for university students to publish peer-led "kuppi sessions" and trade academic products.',
-    image: '/images/portfolio-img/unihub1.webp',
+    image: '/images/portfolio-img/unihub.webp',
     industry: 'Education Technology (EdTech)',
   },
   {
@@ -36,7 +36,7 @@ export const projects = [
     slug: 'network-tower-management',
     description:
       'The Network Tower (Site) Management System is an end-to-end platform developed for Engenuity Telco Pvt Ltd to efficiently manage telecom infrastructure across multiple sites. Built using the MERN stack (MongoDB, Express, React, Node.js), the system centralizes operations, ensuring effective resource utilization, regulatory compliance, and financial control.',
-    image: '/images/portfolio-img/networktower(site)managementsystem.webp',
+    image: '/images/portfolio-img/networktowermanagementsystem.webp',
     industry: 'Enterprise Solutions',
   },
   {
