@@ -26,7 +26,7 @@ export const teamMembers = [
   {
     name: 'Gayan Pathirage',
     role: 'Senior Platform Engineer',
-    image: '/images/career-img/team-members/gayan.PNG',
+    image: '/images/career-img/team-members/gayan.png',
     linkedin: 'https://www.linkedin.com/in/gayan98/',
   },
   {
