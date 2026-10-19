@@ -23,12 +23,7 @@ export const teamMembers = [
     image: '/images/career-img/team-members/pasan.webp',
     linkedin: 'https://www.linkedin.com/in/pasan-bhathiya/',
   },
-  {
-    name: 'Gayan Pathirage',
-    role: 'Senior Platform Engineer',
-    image: '/images/career-img/team-members/gayan.png',
-    linkedin: 'https://www.linkedin.com/in/gayan98/',
-  },
+
   {
     name: 'Kavindu Kaveesha',
     role: 'Marketing Director',
