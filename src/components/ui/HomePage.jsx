@@ -96,7 +96,7 @@ const HomePage = () => {
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                filter: 'grayscale(1) contrast(1.25) brightness(1.15)',
+                filter: 'contrast(1.05) saturate(1.05)',
                 display: 'block',
               }}
             >

@@ -131,14 +131,13 @@ export default function Careers() {
       >
         <Box
           component="img"
-          className="mono"
           src="/images/career-img/careerHero.webp"
           alt="Team collaborating"
           sx={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            filter: 'grayscale(1) contrast(1.06) brightness(0.8)',
+            filter: 'brightness(0.7)',
           }}
         />
       </Box>

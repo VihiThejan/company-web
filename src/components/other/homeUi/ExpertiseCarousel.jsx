@@ -91,7 +91,7 @@ const ExpertiseCarousel = () => {
           >
             <Box
               component="img"
-              className="hover-image mono"
+              className="hover-image"
               src={item.image}
               alt={item.label}
               sx={{

@@ -46,7 +46,7 @@ const GridCard = ({ title, bgImage, LinkTo }) => {
           component="img"
           src={bgImage}
           alt={title}
-          className="hover-image mono"
+          className="hover-image"
           sx={{
             position: 'absolute',
             top: 0,

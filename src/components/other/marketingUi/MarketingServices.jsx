@@ -154,7 +154,7 @@ export default function MarketingServices() {
               >
                 <Box
                   component="img"
-                  className="hover-image mono"
+                  className="hover-image"
                   src={service.image}
                   alt={service.title}
                   sx={{

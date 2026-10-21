@@ -40,7 +40,6 @@ const MissionVisionSection = () => {
           >
             <Box
               component="img"
-              className="mono"
               src="/images/about-img/aboutVM.webp"
               alt="our team"
               sx={{

@@ -47,7 +47,6 @@ export default function TeamMembers() {
               >
                 <Box
                   component="img"
-                  className="mono"
                   src={member.image}
                   alt={member.name}
                   sx={{

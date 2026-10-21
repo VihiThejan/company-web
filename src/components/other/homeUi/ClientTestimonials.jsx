@@ -258,7 +258,6 @@ const ClientTestimonials = () => {
                                                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                                                     <Avatar
                                                         src={testimonial.avatar}
-                                                        className="mono"
                                                         sx={{ width: 50, height: 50, border: `2px solid ${brand.paper}` }}
                                                     />
                                                     <Box>

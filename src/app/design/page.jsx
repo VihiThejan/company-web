@@ -104,14 +104,13 @@ export default function Design() {
             >
                 <Box
                     component="img"
-                    className="mono"
                     src="/images/design-img/portfoliomain.png"
                     alt="Design Team Collaborating"
                     sx={{
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover',
-                        filter: 'grayscale(1) contrast(1.06) brightness(0.85)',
+                        filter: 'brightness(0.8)',
                     }}
                 />
             </Box>

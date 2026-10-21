@@ -42,7 +42,6 @@ export default function TeamList() {
         >
           <Box
             component="img"
-            className="mono"
             src={founder.image}
             alt={founder.name}
             sx={{
@@ -168,7 +167,6 @@ export default function TeamList() {
               >
                 <Box
                   component="img"
-                  className="mono"
                   src={member.image}
                   alt={member.name}
                   sx={{

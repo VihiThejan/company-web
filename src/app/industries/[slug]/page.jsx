@@ -162,7 +162,6 @@ export default function IndustryDetailPage() {
                 >
                     <Box
                         component="img"
-                        className="mono"
                         src={industry.image}
                         alt={industry.title}
                         sx={{

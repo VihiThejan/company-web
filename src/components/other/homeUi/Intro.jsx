@@ -133,7 +133,7 @@ const Intro = () => {
               }}
             >
               <img
-                className="hover-image mono"
+                className="hover-image"
                 src="/images/home-img/home-about.webp"
                 alt="About Us"
                 style={{

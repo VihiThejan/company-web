@@ -117,14 +117,13 @@ export default function AboutUs() {
       >
         <Box
           component="img"
-          className="mono"
           src="/images/technology-img/tech-hero.webp"
           alt="Team collaborating"
           sx={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            filter: 'grayscale(1) contrast(1.06) brightness(0.8)',
+            filter: 'brightness(0.7)',
           }}
         />
       </Box>

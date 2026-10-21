@@ -52,12 +52,6 @@ a {
   outline-offset: 3px;
 }
 
-/* Photography is shown in black and white so it sits with the monochrome
-   logo. Remove the `mono` class from an image to show it in colour. */
-.mono {
-  filter: grayscale(1) contrast(1.06);
-}
-
 /* Display type: Archivo at its widest, matching the logo wordmark. */
 .display {
   font-family: var(--font-brand);
