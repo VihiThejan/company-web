@@ -1,71 +1,46 @@
 import React from 'react';
-import { Box, Typography, Container, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
+import { Box, Typography } from '@mui/material';
+import { brand, fonts } from '@/theme/theme';
 
 const MomentumSection = () => {
-    const theme = useTheme();
-
     return (
         <Box
             id="momentum-section"
             component="section"
             sx={{
-                py: { xs: 8, md: 12 },
-                // Background: Gold/Yellow mix White combination
-                background: 'linear-gradient(180deg, #FFFFFF 0%, #FFF8E1 100%)',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center',
+                px: { xs: 3, md: 6, lg: 8 },
+                py: { xs: 9, md: 14 },
+                backgroundColor: brand.paper,
+                borderBottom: `1px solid ${brand.line}`,
             }}
         >
-            <Container maxWidth="lg">
-                <motion.div
-                    initial={{ opacity: 0, x: 100 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false, amount: 0.3 }}
-                    transition={{ duration: 1.5, ease: "easeOut" }}
-                >
-                    <Typography
-                        variant="h2"
-                        sx={{
-                            fontWeight: 700,
-                            fontSize: { xs: '2rem', md: '3.5rem', lg: '4rem' },
-                            lineHeight: 1.2,
-                            color: '#000', // Dark text for contrast on light background
-                            mb: 2,
-                        }}
-                    >
-                        Engineering enterprise momentum across{' '}
-                        <Box
-                            component="span"
-                            sx={{
-                                background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, #eebb00 40%, #000000 100%)`,
-                                backgroundClip: 'text',
-                                textFillColor: 'transparent',
-                                WebkitBackgroundClip: 'text',
-                                WebkitTextFillColor: 'transparent',
-                                display: 'inline-block',
-                                paddingRight: '5px', // Ensure black text doesn't get cut off
-                            }}
-                        >
-                            every platform, industry and challenge.
-                        </Box>
-                    </Typography>
+            <Typography
+                variant="h2"
+                sx={{
+                    fontWeight: 800,
+                    fontStretch: fonts.displayStretch,
+                    fontSize: { xs: '1.9rem', md: '3rem', xl: '3.75rem' },
+                    lineHeight: 1.08,
+                    letterSpacing: '-0.025em',
+                    color: brand.ink,
+                    maxWidth: '22ch',
+                }}
+            >
+                Engineering enterprise momentum across every platform, industry
+                and challenge.
+            </Typography>
 
-                    <Typography
-                        variant="h5"
-                        sx={{
-                            fontSize: { xs: '1.2rem', md: '1.5rem' },
-                            color: '#555', // Grey subtext
-                            fontWeight: 500,
-                            mt: 3,
-                        }}
-                    >
-                        Keeping your core secure, seamless and scalable
-                    </Typography>
-                </motion.div>
-            </Container>
+            <Typography
+                sx={{
+                    fontSize: { xs: '1.05rem', md: '1.25rem' },
+                    color: brand.steel,
+                    fontWeight: 500,
+                    mt: { xs: 3, md: 4 },
+                    maxWidth: '40ch',
+                }}
+            >
+                Keeping your core secure, seamless and scalable.
+            </Typography>
         </Box>
     );
 };

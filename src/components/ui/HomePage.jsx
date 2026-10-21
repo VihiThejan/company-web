@@ -1,263 +1,182 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import { Box, Typography, Container, Grid, Paper, styled } from '@mui/material';
+import { motion, useReducedMotion } from 'framer-motion';
+import { Box, Typography, Grid } from '@mui/material';
+import Link from 'next/link';
+import CallIcon from '@mui/icons-material/Call';
 import GridCard from '../other/homeUi/GridCard';
-import theme from '@/theme/theme';
 import Intro from '../other/homeUi/Intro';
 import ExpertiseCarousel from '../other/homeUi/ExpertiseCarousel';
 import ClientTestimonials from '../other/homeUi/ClientTestimonials';
-import { Call } from '@mui/icons-material';
 import CallToActionCards from '../other/homeUi/CallToActionCards';
-import Link from 'next/link';
-
-import CallIcon from '@mui/icons-material/Call';
 import MomentumSection from '../other/homeUi/MomentumSection';
+import { brand, fonts } from '@/theme/theme';
 
-
+const pillButton = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: 1,
+  px: 3.5,
+  py: 1.6,
+  borderRadius: '999px',
+  fontSize: '1rem',
+  fontWeight: 600,
+  whiteSpace: 'nowrap',
+  transition: 'background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease',
+};
 
 const HomePage = () => {
   const videoRef = useRef(null);
-  const { scrollY } = useScroll();
-  const videoY = useTransform(scrollY, [0, 1000], [0, 400]);
+  const reduceMotion = useReducedMotion();
 
   React.useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.4; // Set to 40% speed for super-smooth, high-end cinematic feel
+      videoRef.current.playbackRate = 0.4; // slow, cinematic
     }
   }, []);
 
+  const ease = [0.22, 1, 0.36, 1];
+
   return (
     <Box sx={{ overflowX: 'hidden', position: 'relative' }}>
-      {/* Hero Section */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.4, ease: 'easeOut' }}
-        style={{
+      {/* Hero: the logo's mark, filled with the studio at work */}
+      <Box
+        component="section"
+        aria-label="Introduction"
+        sx={{
           position: 'relative',
-          height: '100vh',
-          width: '100%',
-          display: 'flex',
+          minHeight: { xs: 'auto', lg: '100vh' },
+          backgroundColor: brand.ink,
+          color: brand.paper,
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', lg: 'minmax(0, 7fr) minmax(0, 5fr)' },
           alignItems: 'center',
-          justifyContent: 'center',
+          columnGap: { lg: 6 },
+          px: { xs: 3, md: 6, lg: 8 },
+          pt: { xs: 14, md: 18, lg: 14 },
+          pb: { xs: 8, md: 10, lg: 8 },
           overflow: 'hidden',
-          color: theme.palette.secondary.light,
         }}
       >
-        {/* Background Video with subtle zoom and parallax animation */}
+        {/* The mark, used as a window onto the hero video */}
         <motion.div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '120%', // Extra height for parallax
-            zIndex: 0,
-            y: videoY,
-          }}
+          initial={reduceMotion ? false : { opacity: 0, scale: 0.92, rotate: -8 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          transition={{ duration: 1.4, ease }}
+          style={{ display: 'flex', justifyContent: 'center' }}
         >
-          <motion.div
-            animate={{
-              scale: [1, 1.05, 1],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-            style={{
-              width: '100%',
-              height: '100%',
+          <Box
+            aria-hidden="true"
+            sx={{
+              width: { xs: '72vw', md: '52vw', lg: '100%' },
+              maxWidth: { xs: 420, md: 520, lg: 640 },
+              aspectRatio: '620 / 593',
+              backgroundColor: brand.paper,
+              WebkitMaskImage: 'url(/brand/vihi-mark.svg)',
+              maskImage: 'url(/brand/vihi-mark.svg)',
+              WebkitMaskRepeat: 'no-repeat',
+              maskRepeat: 'no-repeat',
+              WebkitMaskSize: 'contain',
+              maskSize: 'contain',
+              WebkitMaskPosition: 'center',
+              maskPosition: 'center',
             }}
           >
             <Box
               component="video"
               ref={videoRef}
-              autoPlay
+              autoPlay={!reduceMotion}
               muted
               loop
               playsInline
               preload="auto"
+              poster="/images/home-img/home-about.webp"
               sx={{
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                // High-quality rendering properties
-                imageRendering: 'auto',
-                WebkitFontSmoothing: 'antialiased',
-                // Advanced filters for clarity: slightly more contrast, adjusted brightness, and subtle saturation
-                filter: 'brightness(0.8) contrast(1.15) saturate(1.1) drop-shadow(0 0 10px rgba(0,0,0,0.3))',
+                filter: 'contrast(1.05) saturate(1.05)',
+                display: 'block',
               }}
             >
               <source src="/videos/home-hero.mp4" type="video/mp4" />
             </Box>
-          </motion.div>
+          </Box>
         </motion.div>
 
-        {/* Animated Gradient Overlay - Removed for clarity */}
-        {/* <Box
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            background:
-              'radial-gradient(circle at 30% 40%, rgba(0, 230, 118, 0.2), transparent 60%), radial-gradient(circle at 70% 60%, rgba(33,150,243,0.25), transparent 60%)',
-            animation: 'gradientShift 10s ease-in-out infinite alternate',
-            zIndex: 1,
-            '@keyframes gradientShift': {
-              '0%': { transform: 'translateX(0px)' },
-              '100%': { transform: 'translateX(50px)' },
-            },
-          }}
-        /> */}
-
-        {/* Elegant Gradient Overlay - Fades to white at bottom */}
-        <Box
-          sx={{
-            position: 'absolute',
-            inset: 0,
-            background:
-              'linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 50%, #ffffff 100%)',
-            zIndex: 2,
-          }}
-        />
-
-        {/* Content */}
-        <Box
-          sx={{
-            position: 'relative',
-            zIndex: 3,
-            px: { xs: 3, md: 6, xl: 2 },
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center',
-            maxWidth: { xs: '900px', xl: '1200px' },
-            height: '100vh',
-          }}
-        >
-          {/* Headline */}
-          <Typography
-            variant="h1"
-            sx={{
-              fontSize: { xs: '2rem', lg: '2.8rem', xl: '4.5rem' },
-              fontWeight: '900',
-              lineHeight: 1.4,
-              mt: { xs: 10, sm: 0, smm: 13, mdll: 10 },
-              color: '#fff',
-              textShadow: '0 2px 10px rgba(0,0,0,0.3)', // Added for readability
-            }}
+        {/* Copy */}
+        <Box sx={{ order: { lg: -1 }, mt: { xs: 6, lg: 0 }, maxWidth: 820 }}>
+          <motion.div
+            initial={reduceMotion ? false : { opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.25, ease }}
           >
-            Empowering Businesses with Intelligent Digital Solutions
-          </Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                color: brand.paper,
+                fontSize: { xs: '2.35rem', sm: '2.8rem', md: '3.6rem', xl: '4.6rem' },
+                fontWeight: 800,
+                fontStretch: fonts.displayStretch,
+                lineHeight: 1.02,
+                letterSpacing: '-0.025em',
+              }}
+            >
+              Empowering businesses with intelligent digital solutions
+            </Typography>
+          </motion.div>
 
-          {/* Tagline */}
-          <Typography
-            sx={{
-              fontSize: { xs: '1rem', md: '1.25rem', lg: '1.5rem' },
-              color: theme.palette.secondary.light,
-              mt: 3,
-              mb: 5,
-              lineHeight: 1.6,
-              textShadow: '0 2px 8px rgba(0,0,0,0.5)',
-              display: { smm: 'none', lg: 'block' },
-            }}
+          <motion.div
+            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, delay: 0.45, ease }}
           >
-            Building intelligent, scalable, and high-performing solutions that
-            redefine your digital success story.
-          </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: '1.05rem', md: '1.25rem' },
+                color: brand.ash,
+                mt: { xs: 3, md: 4 },
+                lineHeight: 1.6,
+                maxWidth: '46ch',
+              }}
+            >
+              Building intelligent, scalable, and high-performing solutions that
+              redefine your digital success story.
+            </Typography>
 
-          {/* CTA Button */}
-          <Box>
-            <Link href={`/contactus`} style={{ textDecoration: 'none' }}>
+            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1.5, mt: { xs: 4, md: 5 } }}>
               <Box
-                component="button"
-                className="hover-btn"
+                component={Link}
+                href="/contactus"
                 sx={{
-                  background: theme.palette.primary.main,
-                  color: theme.palette.secondary.option,
-                  border: 'none',
-                  px: 5,
-                  py: 1.6,
-                  borderRadius: '50px',
-                  fontSize: '1.1rem',
-                  cursor: 'pointer',
-                  mt: { mdll: 2, lg: 0 },
-                  transition: 'all 0.4s ease',
-                  '&:hover': {
-                    transform: 'scale(1.06)',
-                  },
+                  ...pillButton,
+                  backgroundColor: brand.paper,
+                  color: brand.ink,
+                  '&:hover': { backgroundColor: brand.stone },
                 }}
               >
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    gap: 1,
-                  }}
-                >
-                  <span>Book a Call</span>
-                  <CallIcon />
-                </Box>
+                <CallIcon sx={{ fontSize: 20 }} />
+                Book a call
               </Box>
-            </Link>
-          </Box>
-          {/* Scroll Indicator */}
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            onClick={() =>
-              window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })
-            }
-            style={{
-              mt: 10,
-              opacity: 0.8,
-            }}
-          >
-            <Box
-              sx={{
-                width: 30,
-                height: 50,
-                border: `2px solid ${theme.palette.primary.main}`,
-                borderRadius: 12,
-                cursor: 'pointer',
-                mt: 2,
-                position: 'relative',
-                '&::after': {
-                  content: '""',
-                  position: 'absolute',
-                  top: 10,
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  width: 6,
-                  height: 6,
-                  borderRadius: '50%',
-                  background: theme.palette.primary.main,
-                  animation: 'scrollDot 2s infinite',
-                },
-                '@keyframes scrollDot': {
-                  '0%': { opacity: 0, transform: 'translate(-50%, 0)' },
-                  '50%': { opacity: 1, transform: 'translate(-50%, 12px)' },
-                  '100%': { opacity: 0, transform: 'translate(-50%, 0)' },
-                },
-              }}
-            />
+              <Box
+                component={Link}
+                href="/portfolio"
+                sx={{
+                  ...pillButton,
+                  border: `1px solid ${brand.lineDark}`,
+                  color: brand.paper,
+                  '&:hover': { borderColor: brand.paper },
+                }}
+              >
+                See our work
+              </Box>
+            </Box>
           </motion.div>
         </Box>
-      </motion.section>
+      </Box>
 
       <MomentumSection />
-
-      <Box
-        sx={{
-          with: '100%',
-          mx: 2,
-          my: 3,
-        }}
-      ></Box>
 
       {/* about us section */}
       <Box sx={{ flexGrow: 1, mx: { xs: 2, md: 4, lg: 8 }, mb: 10 }}>
@@ -301,24 +220,23 @@ const HomePage = () => {
             <Typography
               variant="h2"
               sx={{
-                fontWeight: 700,
+                fontWeight: 800,
                 mb: 2,
-                textAlign: 'center',
-                fontSize: { xs: '2.5rem', md: '3rem' },
+                fontSize: { xs: '2.2rem', md: '3rem' },
               }}
             >
-              Expensive Areas of Expertise
+              Areas of expertise
             </Typography>
             <Typography
               variant="body1"
               sx={{
-                textAlign: 'center',
-                mb: { xs: 2 },
-                maxWidth: 700,
-                mx: 'auto',
+                mb: { xs: 2, md: 3 },
+                maxWidth: '52ch',
+                color: brand.steel,
+                fontSize: { xs: '1.05rem', md: '1.15rem' },
               }}
             >
-              We provide customized digital solution to help you capture
+              We provide customized digital solutions to help you capture
               opportunities in a variety of industries.
             </Typography>
           </Grid>

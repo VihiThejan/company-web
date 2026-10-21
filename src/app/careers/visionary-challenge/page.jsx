@@ -80,7 +80,7 @@ export default function VisionaryChallengePage() {
                     <Box sx={{ textAlign: 'center', mb: 8 }}>
                         <Typography
                             variant="overline"
-                            sx={{ color: theme.palette.primary.main, fontWeight: 700, letterSpacing: 2 }}
+                            sx={{ color: '#5E5E5E', fontWeight: 600, letterSpacing: 0, fontSize: '1rem' }}
                         >
                             Internship Program 2026
                         </Typography>
@@ -117,7 +117,7 @@ export default function VisionaryChallengePage() {
 
                 {/* About the Program */}
                 <motion.div {...fadeInUp}>
-                    <Paper elevation={0} sx={{ p: { xs: 3, md: 6 }, bgcolor: '#f9f9f9', borderRadius: 4, mb: 8 }}>
+                    <Paper elevation={0} sx={{ p: { xs: 3, md: 6 }, bgcolor: '#F1F1EF', borderRadius: 4, mb: 8 }}>
                         <Typography variant="h4" sx={{ mb: 3, fontWeight: 700 }}>About the Program</Typography>
                         <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.8, color: '#444' }}>
                             Welcome to The Vihi Visionary Challenge—an internship program unlike any other. At Vihi IT
@@ -153,7 +153,7 @@ export default function VisionaryChallengePage() {
                                                 height: '100%',
                                                 '&:hover': {
                                                     borderColor: theme.palette.primary.main,
-                                                    boxShadow: '0 12px 30px rgba(255, 199, 32, 0.12)',
+                                                    boxShadow: '0 12px 30px rgba(0, 0, 0, 0.08)',
                                                     transform: 'translateY(-8px)'
                                                 }
                                             }}
@@ -229,7 +229,7 @@ export default function VisionaryChallengePage() {
                                                 alignItems: 'center',
                                                 justifyContent: 'center',
                                                 mr: 4,
-                                                boxShadow: '0 8px 16px rgba(255, 199, 32, 0.2)',
+                                                boxShadow: '0 8px 16px rgba(0, 0, 0, 0.08)',
                                                 bgcolor: '#fff',
                                                 transition: '0.3s',
                                                 '&:hover': {
@@ -262,10 +262,8 @@ export default function VisionaryChallengePage() {
                                             <Typography
                                                 variant="caption"
                                                 sx={{
-                                                    fontWeight: 900,
-                                                    color: theme.palette.primary.main,
-                                                    textTransform: 'uppercase',
-                                                    letterSpacing: 1.5,
+                                                    fontWeight: 700,
+                                                    color: '#5E5E5E',
                                                     display: 'block',
                                                     mb: 0.5
                                                 }}
@@ -295,7 +293,7 @@ export default function VisionaryChallengePage() {
                                 <Paper sx={{ p: 4, borderRadius: 4, height: '100%', bgcolor: '#fff', border: `2px solid ${theme.palette.primary.main}33`, transition: '0.3s', '&:hover': { borderColor: theme.palette.primary.main, boxShadow: '0 10px 30px rgba(0,0,0,0.05)' } }} elevation={0}>
                                     <Typography variant="h6" sx={{ mb: 1, fontWeight: 700, color: theme.palette.primary.main }}>Step 1</Typography>
                                     <Typography variant="h5" sx={{ mb: 1, fontWeight: 700 }}>The Brand Ambassador Task</Typography>
-                                    <Typography variant="caption" sx={{ display: 'block', mb: 2, color: 'error.main', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1 }}>Mandatory</Typography>
+                                    <Typography variant="caption" sx={{ display: 'block', mb: 2, color: '#000', fontWeight: 700 }}>Mandatory</Typography>
                                     <Typography variant="body2" sx={{ mb: 2, color: '#666' }}>Before you apply, show us your engagement:</Typography>
                                     <List dense sx={{ mb: 3 }}>
                                         {[
@@ -327,7 +325,7 @@ export default function VisionaryChallengePage() {
                                     <Typography variant="body2" sx={{ mb: 2, color: '#444' }}>
                                         Create a Project Plan for an innovative business idea or IT product that you believe Vihi IT Solutions<br></br>  should build.
                                     </Typography>
-                                    <Box sx={{ p: 2, bgcolor: '#f9f9f9', borderRadius: 2, mb: 2 }}>
+                                    <Box sx={{ p: 2, bgcolor: '#F1F1EF', borderRadius: 2, mb: 2 }}>
                                         <Typography variant="body2" sx={{ fontWeight: 700, color: '#111' }}>Format: PDF or Word Document</Typography>
                                     </Box>
                                     <Typography variant="body2" sx={{ mb: 1, fontWeight: 700, color: '#111' }}>What to include:</Typography>
@@ -349,12 +347,12 @@ export default function VisionaryChallengePage() {
                                 <Paper sx={{ p: 4, borderRadius: 4, height: '100%', bgcolor: '#fff', border: `2px solid ${theme.palette.primary.main}33`, transition: '0.3s', '&:hover': { borderColor: theme.palette.primary.main, boxShadow: '0 10px 30px rgba(0,0,0,0.05)' } }} elevation={0}>
                                     <Typography variant="h6" sx={{ mb: 1, fontWeight: 700, color: theme.palette.primary.main }}>Step 3</Typography>
                                     <Typography variant="h5" sx={{ mb: 1, fontWeight: 700 }}>The "Visionary" Bonus</Typography>
-                                    <Typography variant="caption" sx={{ display: 'block', mb: 2, color: theme.palette.primary.main, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1 }}>Optional</Typography>
+                                    <Typography variant="caption" sx={{ display: 'block', mb: 2, color: '#5E5E5E', fontWeight: 700 }}>Optional</Typography>
                                     <Typography variant="body2" sx={{ mb: 3, color: '#444' }}>
                                         Record a short video (1–2 minutes) introducing yourself and explaining your idea.
                                     </Typography>
-                                    <Box sx={{ p: 2, bgcolor: '#fff8e1', borderRadius: 2, border: '1px dashed #ffd54f' }}>
-                                        <Typography variant="body2" sx={{ fontStyle: 'italic', color: '#827717' }}>
+                                    <Box sx={{ p: 2, bgcolor: '#F1F1EF', borderRadius: 2, border: '1px dashed #A3A3A3' }}>
+                                        <Typography variant="body2" sx={{ fontStyle: 'italic', color: '#5E5E5E' }}>
                                             Note: This is not mandatory, but it significantly increases your chances of making the Top 10.
                                         </Typography>
                                     </Box>
@@ -372,7 +370,7 @@ export default function VisionaryChallengePage() {
                                         Email your entry to <strong>careers@vihiitsolutions.com</strong>
                                     </Typography>
                                     <Box sx={{ mb: 3 }}>
-                                        <Typography variant="caption" sx={{ fontWeight: 700, color: '#888', mb: 0.5, display: 'block' }}>SUBJECT LINE</Typography>
+                                        <Typography variant="caption" sx={{ fontWeight: 700, color: '#888', mb: 0.5, display: 'block' }}>Subject line</Typography>
                                         <Typography variant="body2" sx={{ bgcolor: '#f0f0f0', p: 1.5, borderRadius: 1.5, fontFamily: 'monospace', fontSize: '0.85rem', color: '#111', border: '1px solid #ddd' }}>
                                             [Internship Application] - Your Name - Your Track
                                         </Typography>
@@ -433,15 +431,15 @@ export default function VisionaryChallengePage() {
                                 href="mailto:careers@vihiitsolutions.com"
                                 sx={{
                                     bgcolor: theme.palette.primary.main,
-                                    color: '#000',
+                                    color: '#fff',
                                     fontWeight: 700,
                                     px: 6,
                                     py: 2,
                                     borderRadius: '50px',
                                     fontSize: '1.2rem',
                                     textTransform: 'none',
-                                    boxShadow: '0 10px 20px rgba(255, 199, 32, 0.3)',
-                                    '&:hover': { bgcolor: theme.palette.primary.option, transform: 'translateY(-2px)' }
+                                    boxShadow: 'none',
+                                    '&:hover': { bgcolor: theme.palette.primary.option }
                                 }}
                             >
                                 Apply Now

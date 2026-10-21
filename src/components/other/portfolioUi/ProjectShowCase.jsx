@@ -67,7 +67,7 @@ function ProjectShowCase() {
                   height: { xs: 220, sm: 300, md: 420 },
                   borderRadius: 3,
                   overflow: 'hidden',
-                  boxShadow: '0px 4px 12px rgba(0,0,0,0.1)',
+                  boxShadow: 'none',
                 }}
               >
                 <Box

@@ -21,7 +21,9 @@ export default function TeamMembers() {
               sx={{
                 borderRadius: 3,
                 overflow: 'hidden',
-                boxShadow: 3,
+                boxShadow: 'none',
+                outline: '1px solid #DADAD7',
+                outlineOffset: '-1px',
                 bgcolor: '#fafafa',
                 display: 'flex',
                 flexDirection: 'column',
@@ -29,7 +31,7 @@ export default function TeamMembers() {
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
                 '&:hover': {
                   transform: 'translateY(-5px)',
-                  boxShadow: 6,
+                  outlineColor: '#000',
                 },
               }}
             >

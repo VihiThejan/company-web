@@ -146,12 +146,12 @@ export default function HiringProcessAligned() {
                         height: `${CIRCLE_SIZE}px`,
                         borderRadius: '50%',
                         background: theme.palette.primary.main,
-                        color: theme.palette.secondary.main,
+                        color: '#fff',
                         fontWeight: 700,
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        boxShadow: '0 6px 18px rgba(0,0,0,0.12)',
+                        boxShadow: '0 0 0 6px #fff',
                       }}
                     >
                       <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>

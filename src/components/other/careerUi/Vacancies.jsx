@@ -178,9 +178,7 @@ export default function Vacancies() {
                     <ArrowDownwardIcon
                       sx={{
                         fontSize: '1.2rem',
-                        color: isOpen
-                          ? theme.palette.secondary.main
-                          : theme.palette.secondary.main,
+                        color: isOpen ? '#fff' : theme.palette.secondary.main,
                       }}
                     />
                   </motion.div>

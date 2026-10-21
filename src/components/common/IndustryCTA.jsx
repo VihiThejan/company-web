@@ -28,7 +28,7 @@ export default function IndustryCTA() {
         borderRadius: 3,
         textAlign: 'center',
         maxWidth: '100%',
-        boxShadow: 6,
+        boxShadow: 'none',
       }}
     >
       {/* Title */}

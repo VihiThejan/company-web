@@ -3,19 +3,17 @@
    ========================================= */
 
 :root {
-    /* Core Colors - Neutral & Professional */
-    --hover-primary: #ffc720;
-    /* Matching brand primary */
-    --hover-dark: #303030;
-    /* Matching brand secondary */
+    /* Core colours — monochrome, from the logo */
+    --hover-primary: #000000;
+    --hover-dark: #000000;
     --hover-light: #ffffff;
-    --hover-border: rgba(0, 0, 0, 0.08);
+    --hover-border: #dadad7;
 
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
-    --shadow-neon: 0 0 20px rgba(255, 199, 32, 0.4);
+    --shadow-neon: 0 0 0 2px #000000;
 
     /* Transitions */
     --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
@@ -32,15 +30,13 @@
         border-color var(--duration-normal) var(--ease-smooth);
     border: 1px solid var(--hover-border);
     background: var(--hover-light);
-    box-shadow: var(--shadow-sm);
-    will-change: transform, box-shadow;
+    will-change: transform;
 }
 
+/* Hover answers with an ink outline rather than a floating shadow */
 .hover-card:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: var(--shadow-lg);
-    border-color: rgba(0, 0, 0, 0.0);
-    /* Border disappears into shadow or glows */
+    transform: translateY(-3px);
+    border-color: var(--hover-dark);
 }
 
 /* Variant: Card with Border Glow */
@@ -63,7 +59,7 @@
 }
 
 .hover-card-glow:hover::after {
-    box-shadow: inset 0 0 0 2px var(--hover-primary);
+    box-shadow: inset 0 0 0 1.5px var(--hover-primary);
 }
 
 /* =========================================
@@ -93,8 +89,7 @@
 }
 
 .hover-image-container:hover .hover-image {
-    transform: scale(1.05);
-    filter: brightness(1.1);
+    transform: scale(1.04);
 }
 
 /* =========================================
@@ -108,8 +103,7 @@
 }
 
 .hover-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);
 }
 
 /* Slide effect for buttons */
@@ -175,6 +169,6 @@
 }
 
 .hover-lift-shadow:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 1px var(--hover-dark);
 }

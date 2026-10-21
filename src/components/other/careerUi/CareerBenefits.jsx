@@ -124,7 +124,9 @@ export default function CareerBenefits() {
                   borderRadius: 4,
                   p: 4,
                   bgcolor: '#fff',
-                  boxShadow: 3,
+                  boxShadow: 'none',
+                  outline: '1px solid #DADAD7',
+                  outlineOffset: '-1px',
                   height: '350px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -133,7 +135,7 @@ export default function CareerBenefits() {
                   transition: 'all 0.3s ease',
                   '&:hover': {
                     transform: 'translateY(-6px)',
-                    boxShadow: 6,
+                    outlineColor: '#000',
                   },
                 }}
               >
@@ -143,6 +145,8 @@ export default function CareerBenefits() {
                     height: 80,
                     borderRadius: '50%',
                     bgcolor: theme.palette.primary.main,
+                    color: '#fff',
+                    '& svg': { color: '#fff' },
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

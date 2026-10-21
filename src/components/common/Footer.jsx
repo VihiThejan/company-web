@@ -2,21 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  Box,
-  Typography,
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  IconButton,
-} from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
 
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
-import Image from "next/image";
+import { brand } from "@/theme/theme";
+import BrandLogo from "@/components/common/BrandLogo";
 
 const footerSections = [
   {
@@ -53,124 +46,95 @@ const footerSections = [
 ];
 
 export default function Footer() {
+  const socials = [
+    { label: "Facebook", icon: <FacebookIcon fontSize="small" />, href: "https://www.facebook.com" },
+    { label: "YouTube", icon: <YouTubeIcon fontSize="small" />, href: "https://youtube.com" },
+    {
+      label: "LinkedIn",
+      icon: <LinkedInIcon fontSize="small" />,
+      href: "https://www.linkedin.com/company/vihi-it-solutions/",
+    },
+    { label: "Instagram", icon: <InstagramIcon fontSize="small" />, href: "https://instagram.com" },
+  ];
+
   return (
     <Box
       component="footer"
       sx={{
-        backgroundColor: "#fff",
-        color: "#000",
-        py: 6,
-        flexGrow: 1,
-        mx: { xs: 2, md: 4, lg: 8 },
+        backgroundColor: brand.ink,
+        color: brand.paper,
+        mt: { xs: 8, md: 12 },
+        pt: { xs: 7, md: 10 },
+        pb: 4,
+        px: { xs: 3, md: 4, lg: 8 },
       }}
     >
-      {/* ================= LOGO SECTION ================= */}
-      <Box sx={{ mb: 2, textAlign: { xs: "center", lg: "left" } }}>
-        <Image
-          src="/images/Vihi.png"
-          alt="VIHI IT Solutions Logo"
-          width={220}
-          height={60}
-          style={{ objectFit: "contain" }}
-        />
-      </Box>
-
-      {/* ================= OUTER GRID ================= */}
       <Box
         sx={{
-          maxWidth: "100%",
-          mx: "auto",
           display: "grid",
-          gap: 4,
-          gridTemplateColumns: {
-            xs: "1fr",
-            sm: "1fr",
-            md: "1fr",
-            lg: "repeat(5, 1fr)", // 5 columns + social icons column
-          },
+          gap: { xs: 6, lg: 8 },
+          gridTemplateColumns: { xs: "1fr", lg: "minmax(0, 5fr) minmax(0, 7fr)" },
         }}
       >
-        {/* ================= CONTENT (PARAGRAPH) ================= */}
-        <Box
-          sx={{
-            gridColumn: {
-              xs: "1 / -1",
-              sm: "1 / -1",
-              md: "1 / -1",
-              lg: "span 2",
-            },
-            textAlign: { xs: "center", lg: "justify" },
-          }}
-        >
+        {/* ================= BRAND + STORY ================= */}
+        <Box>
+          <Box component={Link} href="/" aria-label="VIHI IT Solutions home" sx={{ display: "inline-flex", color: brand.paper }}>
+            <BrandLogo height={46} />
+          </Box>
           <Typography
             sx={{
-              fontSize: "14px",
-              color: "#555",
-              lineHeight: 1.6,
-              maxWidth: { lg: "90%" }, // careful with width constraint
-              mx: { xs: "auto", lg: 0 },
+              mt: 3,
+              fontSize: "0.95rem",
+              color: brand.ash,
+              lineHeight: 1.7,
+              maxWidth: "52ch",
             }}
           >
             Started as a passionate tech initiative in Sri Lanka back in 2023, Vihi IT Solutions
             emerged with a vision to deliver high-quality, innovative software solutions tailored to
-            real-world needs. What began as a small team with big ideas quickly evolved into a
-            dynamic company offering high-end software services.
-            Driven by creativity, commitment, and client success, Vihi IT Solutions has grown by
-            building systems that are not only powerful but also practical. From inventory
-            management and AI-driven tourism innovations to full-stack web and mobile apps, we
-            strive to create meaningful technology.
-            Today, Vihi IT Solutions continues to expand, aiming to make a lasting impact on the
-            local and international tech landscape.
+            real-world needs. From inventory management and AI-driven tourism innovations to
+            full-stack web and mobile apps, we build systems that are not only powerful but also
+            practical.
           </Typography>
         </Box>
 
-        {/* ================= LINK GROUPS (TABLET + DESKTOP) ================= */}
+        {/* ================= LINK GROUPS ================= */}
         <Box
+          component="nav"
+          aria-label="Footer"
           sx={{
-            display: { xs: "grid", sm: "grid" },
-            gridTemplateColumns: {
-              sm: "1fr 1fr",
-              md: "1fr 1fr",
-              lg: "repeat(4, 1fr)",
-            },
-            gridColumn: {
-              sm: "1 / -2",
-              lg: "span 3",
-            },
-            gap: 4,
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr 1fr", md: "repeat(4, 1fr)" },
+            gap: { xs: 4, md: 3 },
           }}
         >
           {footerSections.map((section) => (
             <Box key={section.title}>
               <Typography
+                component="h2"
                 sx={{
-                  fontWeight: 600,
-                  fontSize: "15px",
-                  mb: 1.5,
-                  color: "#303030",
+                  fontWeight: 700,
+                  fontSize: "0.95rem",
+                  fontStretch: "125%",
+                  mb: 2.5,
+                  color: brand.paper,
                 }}
               >
                 {section.title}
               </Typography>
 
-              <Box
-                sx={{
-                  width: "100%",
-                  display: { xs: "flex" },
-                  flexDirection: { xs: "column" }, // Cleaned up invalid breakpoint
-                  gap: 3,
-                }}
-              >
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1.6 }}>
                 {section.links.map((link) => (
                   <Typography
                     key={link.name}
                     component={Link}
                     href={link.href}
                     sx={{
-                      textDecoration: "none",
-                      fontSize: "14px",
-                      color: "#555",
-                      "&:hover": { color: "#000" },
+                      fontSize: "0.92rem",
+                      color: brand.ash,
+                      width: "fit-content",
+                      transition: "color 0.2s ease",
+                      "&:hover": { color: brand.paper },
                     }}
                   >
                     {link.name}
@@ -182,79 +146,43 @@ export default function Footer() {
         </Box>
       </Box>
 
+      {/* ================= BOTTOM BAR ================= */}
       <Box
         sx={{
-          width: "100%",
-          display: { xs: "block", lg: "flex" },
-          justifyContent: "center",
+          display: "flex",
+          flexDirection: { xs: "column-reverse", md: "row" },
           justifyContent: "space-between",
-          alignItems: "center",
-          mt: 4,
-          borderTop: "2px solid #c3c3c3",
-          pt: 4,
+          alignItems: { xs: "flex-start", md: "center" },
+          gap: 2,
+          mt: { xs: 7, md: 10 },
+          pt: 3,
+          borderTop: `1px solid ${brand.lineDark}`,
         }}
       >
-        {/* ================= COPYRIGHT ================= */}
-        <Typography
-          sx={{
-            fontSize: "14px",
-            color: "#828282",
-            textAlign: "center",
-          }}
-        >
+        <Typography sx={{ fontSize: "0.85rem", color: brand.ash }}>
           © {new Date().getFullYear()} VIHI IT Solutions. All rights reserved.
         </Typography>
-        {/* ================= SOCIAL ICONS ================= */}
-        <Box
-          sx={{
-            gridColumn: {
-              xs: "1 / -1",
-              sm: "1 / -1",
-              lg: "auto", // desktop: right side column
-            },
-            textAlign: { xs: "center", lg: "right" },
-            mt: { xs: 2, lg: 0 },
-          }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: { xs: "center", lg: "flex-end" },
-              gap: 1.5,
-            }}
-          >
-            {[
-              {
-                icon: <FacebookIcon fontSize="medium" />,
-                href: "https://www.facebook.com",
-              },
-              {
-                icon: <YouTubeIcon fontSize="medium" />,
-                href: "https://youtube.com",
-              },
-              {
-                icon: <LinkedInIcon fontSize="medium" />,
-                href: "https://www.linkedin.com/company/vihi-it-solutions/",
-              },
-              {
-                icon: <InstagramIcon fontSize="medium" />,
-                href: "https://instagram.com",
-              },
-            ].map((item, i) => (
-              <IconButton
-                key={i}
-                href={item.href}
-                target="_blank"
-                sx={{
-                  color: "#333",
-                  p: 0.7,
-                  "&:hover": { color: "#ffc720" },
-                }}
-              >
-                {item.icon}
-              </IconButton>
-            ))}
-          </Box>
+
+        <Box sx={{ display: "flex", gap: 1 }}>
+          {socials.map((item) => (
+            <IconButton
+              key={item.label}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={item.label}
+              sx={{
+                color: brand.paper,
+                border: `1px solid ${brand.lineDark}`,
+                width: 40,
+                height: 40,
+                transition: "background-color 0.2s ease, color 0.2s ease",
+                "&:hover": { backgroundColor: brand.paper, color: brand.ink },
+              }}
+            >
+              {item.icon}
+            </IconButton>
+          ))}
         </Box>
       </Box>
     </Box>
