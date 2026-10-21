@@ -97,7 +97,9 @@ export default function HowWeWork() {
                   borderRadius: 4,
                   p: 4,
                   bgcolor: theme.palette.secondary.light,
-                  boxShadow: 3,
+                  boxShadow: 'none',
+                  outline: '1px solid #DADAD7',
+                  outlineOffset: '-1px',
                   height: '450px',
                   display: 'flex',
                   flexDirection: 'column',
@@ -106,7 +108,7 @@ export default function HowWeWork() {
                   transition: 'all 0.3s ease',
                   '&:hover': {
                     transform: 'translateY(-6px)',
-                    boxShadow: 6,
+                    outlineColor: '#000',
                   },
                 }}
               >
@@ -116,6 +118,8 @@ export default function HowWeWork() {
                     height: 50,
                     borderRadius: '50%',
                     bgcolor: theme.palette.primary.main,
+                    color: '#fff',
+                    '& svg': { color: '#fff' },
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -162,6 +166,7 @@ export default function HowWeWork() {
                     variant="body2"
                     sx={{
                       background: theme.palette.primary.main,
+                      color: '#fff',
                       px: 3,
                       py: 2,
                       borderRadius: 50,

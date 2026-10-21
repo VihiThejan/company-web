@@ -88,7 +88,7 @@ export default function NotFound() {
               variant="contained"
               sx={{
                 background: theme.palette.primary.main,
-                color: theme.palette.secondary.option,
+                color: '#fff',
                 px: 4,
                 py: 1.2,
                 borderRadius: '50px',

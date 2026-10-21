@@ -147,7 +147,9 @@ export default function ContactForm() {
           p: { xs: 3, md: 5 },
           borderRadius: 3,
           border: '1px solid #e0e0e0',
-          boxShadow: '2px 20px 20px rgba(49, 49, 49, 0.24)',
+          boxShadow: 'none',
+          outline: '1px solid #DADAD7',
+          outlineOffset: '-1px',
           backgroundColor: '#fff',
         }}
       >
@@ -251,8 +253,9 @@ export default function ContactForm() {
               endIcon={<SendIcon />}
               sx={{
                 backgroundColor: theme.palette.primary.main,
-                color: theme.palette.secondary.main,
-                borderRadius: '30px',
+                color: '#fff',
+                borderRadius: '999px',
+                '&:hover': { backgroundColor: theme.palette.primary.option },
                 px: 4,
                 py: 1.5,
                 textTransform: 'none',
@@ -283,11 +286,11 @@ function AnimatedPopup({ message, type = 'info', duration = 4000 }) {
   const typeStyles = {
     success: {
       bg: '#ffffffff',
-      color: '#303030ff',
+      color: '#000000',
       icon: (
-        <CheckCircle size={28} color='#303030ff' />
+        <CheckCircle size={28} color='#000000' />
       ),
-      bar: '#ffc720',
+      bar: '#000000',
     },
     error: {
       bg: '#ffffffff',
@@ -297,9 +300,9 @@ function AnimatedPopup({ message, type = 'info', duration = 4000 }) {
     },
     info: {
       bg: '#ffffffff',
-      color: '#1565C0',
-      icon: <Info size={28} color="#1565C0" />,
-      bar: '#1E88E5',
+      color: '#000000',
+      icon: <Info size={28} color="#000000" />,
+      bar: '#000000',
     },
   };
 

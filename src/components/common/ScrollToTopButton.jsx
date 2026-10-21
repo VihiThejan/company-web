@@ -30,8 +30,11 @@ const ScrollToTopButton = () => {
           bottom: { xs: 30, md: 140 },
           right: { xs: 16, md: 32 },
           zIndex: 1300,
-          boxShadow: 3,
+          boxShadow: 'none',
+          border: '1px solid rgba(255,255,255,0.35)',
           backgroundColor: theme.palette.primary.main,
+          color: theme.palette.primary.contrastText,
+          '&:hover': { backgroundColor: theme.palette.primary.option },
         }}
         aria-label="Scroll to top"
       >

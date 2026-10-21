@@ -8,14 +8,14 @@ const services = [
     {
         title: 'UI / UX Design',
         description: 'We create intuitive and user-centered designs that enhance usability and deliver meaningful digital experiences. Our UI/UX approach focuses on understanding user behavior and translating it into elegant, functional interfaces.',
-        highlightTitle: 'Key highlights:',
+        highlightTitle: 'Key highlights',
         highlights: [
             'User research and journey mapping',
             'Intuitive interface and interaction design',
             'Accessibility and usability best practices',
             'Data-driven design decisions'
         ],
-        footerTitle: 'Value delivered:',
+        footerTitle: 'Value delivered',
         footerItems: [
             'Improved user engagement',
             'Seamless user experiences',
@@ -26,14 +26,14 @@ const services = [
     {
         title: 'Brand Identity',
         description: 'Build a strong and consistent brand presence that connects with your audience. We design brand identities that communicate your values and leave a lasting impression.',
-        highlightTitle: 'What we offer:',
+        highlightTitle: 'What we offer',
         highlights: [
             'Logo design and visual systems',
             'Color palettes and typography',
             'Brand guidelines and assets',
             'Consistent cross-platform branding'
         ],
-        footerTitle: 'Benefits:',
+        footerTitle: 'Benefits',
         footerItems: [
             'Strong brand recognition',
             'Professional visual consistency',
@@ -44,14 +44,14 @@ const services = [
     {
         title: 'Web & Mobile Design',
         description: 'We design responsive, visually appealing web and mobile experiences optimized for performance and usability across all devices.',
-        highlightTitle: 'Our services include:',
+        highlightTitle: 'Our services include',
         highlights: [
             'Responsive website design',
             'Mobile app UI design (iOS & Android)',
             'Cross-device compatibility',
             'Performance-focused layouts'
         ],
-        footerTitle: 'Outcome:',
+        footerTitle: 'Outcome',
         footerItems: [
             'Modern and engaging designs',
             'Optimized user experiences',
@@ -69,7 +69,7 @@ const services = [
             'User flow and interaction validation',
             'Tools: Figma, Adobe XD'
         ],
-        footerTitle: 'Results:',
+        footerTitle: 'Results',
         footerItems: [
             'Clear product direction',
             'Faster development cycles',
@@ -149,12 +149,12 @@ export default function DesignServices() {
                                     borderRadius: 4,
                                     overflow: 'hidden',
                                     flex: 1,
-                                    boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                                    boxShadow: 'none',
                                 }}
                             >
                                 <Box
                                     component="img"
-                                    className="hover-image"
+                                    className="hover-image mono"
                                     src={service.image}
                                     alt={service.title}
                                     sx={{
@@ -228,7 +228,7 @@ export default function DesignServices() {
                                             >
                                                 <Typography
                                                     sx={{
-                                                        color: '#ffc107',
+                                                        color: '#000',
                                                         fontWeight: 'bold',
                                                         mr: 1.5,
                                                         fontSize: '1.2rem',
@@ -253,11 +253,9 @@ export default function DesignServices() {
                                     {/* Footer Section (Outcome/Value) */}
                                     <Box
                                         sx={{
-                                            backgroundColor: '#f9f9f9',
+                                            backgroundColor: '#F1F1EF',
                                             p: { xs: 3, md: 4 },
                                             borderRadius: 3,
-                                            borderLeft: '5px solid #ffc107',
-                                            boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
                                         }}
                                     >
                                         <Typography
@@ -266,8 +264,6 @@ export default function DesignServices() {
                                                 fontSize: '0.85rem',
                                                 mb: 2,
                                                 color: '#1a1a1a',
-                                                textTransform: 'uppercase',
-                                                letterSpacing: '1px',
                                             }}
                                         >
                                             {service.footerTitle}
@@ -281,7 +277,7 @@ export default function DesignServices() {
                                                                 width: 18,
                                                                 height: 18,
                                                                 borderRadius: '50%',
-                                                                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                                                                backgroundColor: '#000',
                                                                 display: 'flex',
                                                                 alignItems: 'center',
                                                                 justifyContent: 'center',
@@ -290,7 +286,7 @@ export default function DesignServices() {
                                                         >
                                                             <Typography
                                                                 sx={{
-                                                                    color: '#28a745',
+                                                                    color: '#fff',
                                                                     fontWeight: 'bold',
                                                                     fontSize: '0.75rem',
                                                                 }}

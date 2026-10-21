@@ -98,7 +98,7 @@ export default function Technologies() {
           }}
         >
           We deliver reliable, scalable, and secure technology solutions
-          failored to your organization's growth.
+          tailored to your organization's growth.
         </Typography>
       </Box>
 
@@ -120,14 +120,14 @@ export default function Technologies() {
       >
         <Box
           component="img"
-          className="hover-image"
+          className="hover-image mono"
           src="/images/technology-img/tech-hero.png"
           alt="Team collaborating"
           sx={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            filter: 'brightness(0.7)',
+            filter: 'grayscale(1) contrast(1.06) brightness(0.8)',
           }}
         />
       </Box>

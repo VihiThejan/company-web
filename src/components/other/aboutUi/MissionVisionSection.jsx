@@ -34,12 +34,13 @@ const MissionVisionSection = () => {
               aspectRatio: '6 / 4',
               borderRadius: '10px',
               overflow: 'hidden',
-              boxShadow: 4,
+              boxShadow: 'none',
               backgroundColor: theme.palette.secondary.light,
             }}
           >
             <Box
               component="img"
+              className="mono"
               src="/images/about-img/aboutVM.webp"
               alt="our team"
               sx={{

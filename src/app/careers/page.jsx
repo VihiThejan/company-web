@@ -103,6 +103,7 @@ export default function Careers() {
             px: { xs: 3.5, sm: 4.5, md: 5 },
             py: { xs: 1.2, sm: 1.4 },
             backgroundColor: theme.palette.primary.main,
+            color: '#fff',
             fontSize: { xs: '0.85rem', sm: '0.9rem', md: '1rem' },
             borderRadius: '50px',
             textTransform: 'none',
@@ -130,13 +131,14 @@ export default function Careers() {
       >
         <Box
           component="img"
+          className="mono"
           src="/images/career-img/careerHero.webp"
           alt="Team collaborating"
           sx={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            filter: 'brightness(0.7)',
+            filter: 'grayscale(1) contrast(1.06) brightness(0.8)',
           }}
         />
       </Box>

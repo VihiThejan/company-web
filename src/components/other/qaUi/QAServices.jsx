@@ -14,7 +14,7 @@ const services = [
             'CI/CD pipeline integration',
             'Faster regression testing and feedback'
         ],
-        footerTitle: 'Value delivered:',
+        footerTitle: 'Value delivered',
         footerItems: [
             'Reduced testing time',
             'Improved accuracy',
@@ -31,7 +31,7 @@ const services = [
             'Cross-browser and cross-device testing',
             'Test case creation and execution'
         ],
-        footerTitle: 'Outcome:',
+        footerTitle: 'Outcome',
         footerItems: [
             'Bug-free user journeys',
             'Improved usability',
@@ -48,7 +48,7 @@ const services = [
             'Scalability and reliability analysis',
             'Tools: JMeter, LoadRunner'
         ],
-        footerTitle: 'Benefits:',
+        footerTitle: 'Benefits',
         footerItems: [
             'Stable performance under heavy traffic',
             'Faster response times',
@@ -65,7 +65,7 @@ const services = [
             'OWASP Top 10 coverage',
             'SQL injection, XSS, and authentication testing'
         ],
-        footerTitle: 'Results:',
+        footerTitle: 'Results',
         footerItems: [
             'Reduced security threats',
             'Improved compliance',
@@ -145,12 +145,12 @@ export default function QAServices() {
                                     borderRadius: 4,
                                     overflow: 'hidden',
                                     flex: 1,
-                                    boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                                    boxShadow: 'none',
                                 }}
                             >
                                 <Box
                                     component="img"
-                                    className="hover-image"
+                                    className="hover-image mono"
                                     src={service.image}
                                     alt={service.title}
                                     sx={{
@@ -214,7 +214,7 @@ export default function QAServices() {
                                             >
                                                 <Typography
                                                     sx={{
-                                                        color: '#ffc107',
+                                                        color: '#000',
                                                         fontWeight: 'bold',
                                                         mr: 1.5,
                                                         fontSize: '1.2rem',
@@ -239,11 +239,9 @@ export default function QAServices() {
                                     {/* Footer Section (Outcome/Value) */}
                                     <Box
                                         sx={{
-                                            backgroundColor: '#f9f9f9',
+                                            backgroundColor: '#F1F1EF',
                                             p: { xs: 3, md: 4 },
                                             borderRadius: 3,
-                                            borderLeft: '5px solid #ffc107',
-                                            boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
                                         }}
                                     >
                                         <Typography
@@ -252,8 +250,6 @@ export default function QAServices() {
                                                 fontSize: '0.85rem',
                                                 mb: 2,
                                                 color: '#1a1a1a',
-                                                textTransform: 'uppercase',
-                                                letterSpacing: '1px',
                                             }}
                                         >
                                             {service.footerTitle}
@@ -267,7 +263,7 @@ export default function QAServices() {
                                                                 width: 18,
                                                                 height: 18,
                                                                 borderRadius: '50%',
-                                                                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                                                                backgroundColor: '#000',
                                                                 display: 'flex',
                                                                 alignItems: 'center',
                                                                 justifyContent: 'center',
@@ -276,7 +272,7 @@ export default function QAServices() {
                                                         >
                                                             <Typography
                                                                 sx={{
-                                                                    color: '#28a745',
+                                                                    color: '#fff',
                                                                     fontWeight: 'bold',
                                                                     fontSize: '0.75rem',
                                                                 }}

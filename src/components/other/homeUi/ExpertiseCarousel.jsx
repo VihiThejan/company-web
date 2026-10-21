@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Box, Typography } from '@mui/material';
-import theme from '@/theme/theme';
+import theme, { fonts } from '@/theme/theme';
 
 const expertise = [
   {
@@ -63,8 +63,7 @@ const ExpertiseCarousel = () => {
         width: '100%',
         height: `${cardHeight}px`,
         overflow: 'hidden',
-        borderRadius: 3,
-        boxShadow: 3,
+        borderRadius: '20px',
         position: 'relative',
         display: 'flex',
         flexDirection: 'column',
@@ -92,7 +91,7 @@ const ExpertiseCarousel = () => {
           >
             <Box
               component="img"
-              className="hover-image"
+              className="hover-image mono"
               src={item.image}
               alt={item.label}
               sx={{
@@ -110,7 +109,7 @@ const ExpertiseCarousel = () => {
                 position: 'absolute',
                 inset: 0,
                 background:
-                  'linear-gradient(180deg, rgba(0, 0, 0, 0.6) 60%, rgba(0, 0, 0, 0.6) 100%)',
+                  'linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.75) 100%)',
                 zIndex: 2,
               }}
             />
@@ -133,9 +132,12 @@ const ExpertiseCarousel = () => {
               <Box
                 sx={{
                   color: theme.palette.secondary.light,
-                  borderRadius: 50,
-                  fontWeight: 700,
-                  fontSize: { xs: '2.5rem', md: '3.5rem' },
+                  fontWeight: 800,
+                  fontStretch: fonts.displayStretch,
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1.1,
+                  mb: 1.5,
+                  fontSize: { xs: '2.2rem', md: '3.25rem' },
                   display: 'inline-block',
                   width: 'fit-content',
                 }}

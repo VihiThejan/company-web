@@ -6,20 +6,19 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import WorkIcon from '@mui/icons-material/Work';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import theme from '@/theme/theme';
+import theme, { brand, fonts } from '@/theme/theme';
 import Link from 'next/link';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const stats = [
   {
-    icon: <WorkIcon sx={{ fontSize: 32, color: theme.palette.secondary.main }} />,
+    icon: <WorkIcon sx={{ fontSize: 32, color: brand.ink }} />,
     value: 50,
     label: 'We deliver great work always',
   },
   {
     icon: (
       <WorkspacePremiumIcon
-        sx={{ fontSize: 32, color: theme.palette.secondary.main }}
+        sx={{ fontSize: 28, color: brand.ink }}
       />
     ),
     value: 2,
@@ -28,7 +27,7 @@ const stats = [
   {
     icon: (
       <EmojiEventsIcon
-        sx={{ fontSize: 32, color: theme.palette.secondary.main }}
+        sx={{ fontSize: 28, color: brand.ink }}
       />
     ),
     value: 32,
@@ -36,7 +35,7 @@ const stats = [
   },
   {
     icon: (
-      <PeopleAltIcon sx={{ fontSize: 32, color: theme.palette.secondary.main }} />
+      <PeopleAltIcon sx={{ fontSize: 32, color: brand.ink }} />
     ),
     value: 50,
     label: 'We have happy Clients worldwide',
@@ -69,9 +68,12 @@ const AnimatedNumber = ({ targetValue }) => {
     <Typography
       variant="h3"
       sx={{
-        fontWeight: 700,
-
-        color: theme.palette.secondary.main,
+        fontWeight: 800,
+        fontStretch: fonts.displayStretch,
+        fontSize: { xs: '2.2rem', md: '2.8rem' },
+        lineHeight: 1,
+        mb: 1,
+        color: brand.ink,
       }}
     >
       {count}+
@@ -97,23 +99,21 @@ const Intro = () => {
       <Typography
         variant="h2"
         sx={{
-          color: theme.palette.secondary.main,
-          fontWeight: 700,
-          textAlign: 'center',
+          color: brand.ink,
+          fontWeight: 800,
           mb: 2,
-          fontSize: { xs: '2.5rem', md: '3rem' },
+          fontSize: { xs: '2.2rem', md: '3rem' },
         }}
       >
-        Who We Are. Learn About us
+        Who we are
       </Typography>
       <Typography
         variant="body1"
         sx={{
-          textAlign: 'center',
-          mb: { xs: 4 },
-          color: theme.palette.secondary.main,
-          maxWidth: 700,
-          mx: 'auto',
+          mb: { xs: 4, md: 6 },
+          color: brand.steel,
+          fontSize: { xs: '1.05rem', md: '1.15rem' },
+          maxWidth: '52ch',
         }}
       >
         We are a dynamic team of innovators, storytellers, and visionaries
@@ -128,13 +128,12 @@ const Intro = () => {
               sx={{
                 width: '100%',
                 height: { xs: 220, md: '450px' },
-                borderRadius: 3,
+                borderRadius: '20px',
                 overflow: 'hidden',
-                boxShadow: 2,
               }}
             >
               <img
-                className="hover-image"
+                className="hover-image mono"
                 src="/images/home-img/home-about.webp"
                 alt="About Us"
                 style={{
@@ -154,21 +153,25 @@ const Intro = () => {
                   <Box
                     className="hover-lift-shadow"
                     sx={{
-                      borderRadius: 3,
+                      borderRadius: '16px',
                       p: 3,
                       display: 'flex',
-                      alignItems: 'center',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between',
+                      alignItems: 'flex-start',
                       gap: 2,
-                      boxShadow: 2,
-                      height: { xs: 120, md: 170 },
+                      height: { xs: 'auto', md: 205 },
                       width: '100%',
-                      bgcolor: '#fff', // Ensure background is white for shadow effect
+                      bgcolor: brand.stone,
+                      border: `1px solid ${brand.stone}`,
                     }}
                   >
                     {stat.icon}
                     <Box>
                       <AnimatedNumber targetValue={stat.value} />
-                      <Typography variant="body1">{stat.label}</Typography>
+                      <Typography variant="body1" sx={{ color: brand.steel }}>
+                        {stat.label}
+                      </Typography>
                     </Box>
                   </Box>
                 </Grid>
@@ -189,21 +192,20 @@ const Intro = () => {
                 className="hover-btn"
                 // onClick={handleNavClick}
                 sx={{
-                  color: theme.palette.secondary.main,
-                  border: `1px solid ${theme.palette.secondary.main}`,
-                  borderRadius: '50px',
+                  color: brand.ink,
+                  border: `1px solid ${brand.ink}`,
+                  borderRadius: '999px',
                   padding: '10px 25px',
-                  fontWeight: 500,
-                  width: '165px',
-                  transition: 'all 0.4s ease',
+                  fontWeight: 600,
+                  transition: 'all 0.25s ease',
                   '&:hover': {
-                    backgroundColor: theme.palette.primary.main,
-                    border: `1px solid ${theme.palette.primary.main}`,
+                    backgroundColor: brand.ink,
+                    color: brand.paper,
+                    border: `1px solid ${brand.ink}`,
                   },
                 }}
               >
-                Learn More
-                <ArrowRightAltIcon sx={{ ml: 0.5 }} />
+                More about us
               </Button>
             </Box>
           </Grid>

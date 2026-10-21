@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Box, Typography, Avatar, Paper, useMediaQuery, IconButton } from '@mui/material';
-import customTheme from '@/theme/theme';
+import customTheme, { brand } from '@/theme/theme';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
@@ -95,24 +95,26 @@ const ClientTestimonials = () => {
             <Typography
                 variant="h2"
                 sx={{
-                    fontWeight: 700,
+                    fontWeight: 800,
                     textAlign: 'center',
                     mb: 2,
-                    color: customTheme.palette.secondary.main,
-                    fontSize: { xs: '2.5rem', md: '3rem' },
+                    color: brand.ink,
+                    fontSize: { xs: '2.2rem', md: '3rem' },
                 }}
             >
-                What Our Clients Are Saying
+                What our clients say
             </Typography>
             <Typography
                 variant="body1"
                 sx={{
                     textAlign: 'center',
-                    mb: { xs: 5, md: 8 },
-                    maxWidth: 700,
+                    mb: { xs: 5, md: 7 },
+                    maxWidth: '52ch',
                     mx: 'auto',
                     px: 2,
-                    color: '#666'
+                    textAlign: 'center',
+                    fontSize: { xs: '1.05rem', md: '1.15rem' },
+                    color: brand.steel
                 }}
             >
                 Hear directly from our clients about their experiences and the results
@@ -202,18 +204,18 @@ const ClientTestimonials = () => {
                                             elevation={0}
                                             sx={{
                                                 flex: 1,
-                                                borderRadius: 4,
+                                                borderRadius: '20px',
                                                 p: { xs: 3, md: 5 },
-                                                bgcolor: '#f8f9fa', // Light gray background for card
+                                                bgcolor: brand.stone,
+                                                border: `1px solid ${brand.stone}`,
                                                 position: 'relative',
                                                 display: 'flex',
                                                 flexDirection: 'column',
                                                 justifyContent: 'space-between',
                                                 minHeight: 320,
-                                                transition: 'transform 0.3s ease',
+                                                transition: 'border-color 0.25s ease',
                                                 '&:hover': {
-                                                    transform: 'translateY(-5px)',
-                                                    boxShadow: '0 10px 20px rgba(0,0,0,0.05)',
+                                                    borderColor: brand.ink,
                                                 }
                                             }}
                                         >
@@ -225,8 +227,8 @@ const ClientTestimonials = () => {
                                                             key={i}
                                                             component="span"
                                                             sx={{
-                                                                color: '#FFB400', // Star color
-                                                                fontSize: 20,
+                                                                color: brand.ink,
+                                                                fontSize: 18,
                                                             }}
                                                         >
                                                             ★
@@ -238,8 +240,8 @@ const ClientTestimonials = () => {
                                                 <Typography
                                                     variant="body1"
                                                     sx={{
-                                                        color: '#333',
-                                                        fontSize: '1.05rem',
+                                                        color: brand.ink,
+                                                        fontSize: '1.1rem',
                                                         lineHeight: 1.6,
                                                         mb: 4,
                                                         position: 'relative',
@@ -256,15 +258,16 @@ const ClientTestimonials = () => {
                                                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                                                     <Avatar
                                                         src={testimonial.avatar}
-                                                        sx={{ width: 50, height: 50, border: '2px solid #fff' }}
+                                                        className="mono"
+                                                        sx={{ width: 50, height: 50, border: `2px solid ${brand.paper}` }}
                                                     />
                                                     <Box>
-                                                        <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#111', lineHeight: 1.2 }}>
+                                                        <Typography variant="subtitle1" sx={{ fontWeight: 700, color: brand.ink, lineHeight: 1.2 }}>
                                                             {testimonial.name}
                                                         </Typography>
                                                         <Typography
                                                             variant="caption"
-                                                            sx={{ color: '#666', fontSize: '0.85rem' }}
+                                                            sx={{ color: brand.steel, fontSize: '0.85rem' }}
                                                         >
                                                             {testimonial.role}
                                                         </Typography>
@@ -275,7 +278,7 @@ const ClientTestimonials = () => {
                                                 <FormatQuoteIcon
                                                     sx={{
                                                         fontSize: '4rem',
-                                                        color: 'rgba(0,0,0,0.05)',
+                                                        color: 'rgba(0,0,0,0.08)',
                                                         transform: 'rotate(180deg)',
                                                         position: 'absolute',
                                                         right: -10,
@@ -301,7 +304,7 @@ const ClientTestimonials = () => {
                                 width: 10,
                                 height: 10,
                                 borderRadius: '50%',
-                                bgcolor: currentIndex === i ? customTheme.palette.secondary.main : '#ddd',
+                                bgcolor: currentIndex === i ? brand.ink : brand.line,
                                 cursor: 'pointer',
                                 transition: 'all 0.3s ease',
                                 '&:hover': {

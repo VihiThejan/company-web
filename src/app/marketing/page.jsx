@@ -104,13 +104,14 @@ export default function Marketing() {
       >
         <Box
           component="img"
+          className="mono"
           src="/images/marketing-img/mar-hero.png"
           alt="Marketing and Technology Team"
           sx={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            filter: 'brightness(0.8)',
+            filter: 'grayscale(1) contrast(1.06) brightness(0.85)',
           }}
         />
       </Box>

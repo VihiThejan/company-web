@@ -36,12 +36,13 @@ export default function TeamList() {
             aspectRatio: "4 / 5",
             overflow: "hidden",
             borderRadius: 4,
-            boxShadow: 4,
+            boxShadow: 'none',
             backgroundColor: "#f5f5f5",
           }}
         >
           <Box
             component="img"
+            className="mono"
             src={founder.image}
             alt={founder.name}
             sx={{
@@ -141,7 +142,9 @@ export default function TeamList() {
               sx={{
                 borderRadius: 3,
                 overflow: "hidden",
-                boxShadow: 3,
+                boxShadow: 'none',
+                outline: '1px solid #DADAD7',
+                outlineOffset: '-1px',
                 bgcolor: "#fafafa",
                 display: "flex",
                 flexDirection: "column",
@@ -149,7 +152,7 @@ export default function TeamList() {
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
                 "&:hover": {
                   transform: "translateY(-5px)",
-                  boxShadow: 6,
+                  boxShadow: 'none',
                 },
               }}
             >
@@ -165,6 +168,7 @@ export default function TeamList() {
               >
                 <Box
                   component="img"
+                  className="mono"
                   src={member.image}
                   alt={member.name}
                   sx={{

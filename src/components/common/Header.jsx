@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import {
   AppBar,
   Toolbar,
@@ -22,7 +21,8 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import { usePathname } from 'next/navigation';
-import customTheme from '@/theme/theme';
+import { brand } from '@/theme/theme';
+import BrandLogo from '@/components/common/BrandLogo';
 
 function HideOnScroll({ children, isMobile }) {
   const [show, setShow] = useState(true);
@@ -68,8 +68,7 @@ function HideOnScroll({ children, isMobile }) {
           display: 'flex',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          gap: isMobile ? '0' : '15px',
-          width: isMobile ? '90%' : 'auto',
+          width: isMobile ? 'calc(100% - 32px)' : 'auto',
           pointerEvents: 'auto',
         }}
       >
@@ -121,34 +120,14 @@ const Header = (props) => {
 
   return (
     <HideOnScroll {...props} isMobile={isMobile}>
-      {/* Desktop: Separate Logo Section */}
-      {!isMobile && (
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            height: 'fit-content',
-          }}
-        >
-          <Link href="/" onClick={() => setMobileOpen(false)}>
-            <Image
-              src="/images/Vihi.png"
-              alt="Logo"
-              width={135}
-              height={40}
-              style={{ objectFit: 'contain' }}
-            />
-          </Link>
-        </Box>
-      )}
-
       {/* Navigation Section */}
       <Box
         sx={{
-          backgroundColor: '#fff',
-          boxShadow: '0px 3px 6px rgba(0,0,0,0.2)',
-          borderRadius: mobileOpen ? '20px' : '50px',
-          padding: isMobile ? '0px 15px' : '5px 15px',
+          backgroundColor: brand.paper,
+          border: `1px solid ${brand.line}`,
+          boxShadow: '0 10px 30px -18px rgba(0,0,0,0.45)',
+          borderRadius: mobileOpen ? '24px' : '999px',
+          padding: isMobile ? '0px 8px 0 16px' : '4px 6px 4px 22px',
           transition: 'border-radius 0.3s ease',
           width: isMobile ? '100%' : 'auto',
         }}
@@ -163,7 +142,8 @@ const Header = (props) => {
         >
           <Toolbar
             sx={{
-              padding: '10px',
+              padding: isMobile ? '8px 0' : '6px 0',
+              minHeight: 'unset !important',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
@@ -180,41 +160,39 @@ const Header = (props) => {
                 }}
               >
                 {/* Logo (Mobile Only) */}
-                <IconButton
+                <Box
                   component={Link}
                   href="/"
-                  sx={{ p: 0 }}
+                  aria-label="VIHI IT Solutions home"
                   onClick={() => setMobileOpen(false)}
+                  sx={{ color: brand.ink, display: 'flex' }}
                 >
-                  <Image
-                    src="/images/Vihi.png"
-                    alt="Logo"
-                    width={135}
-                    height={40}
-                  />
-                </IconButton>
+                  <BrandLogo height={28} />
+                </Box>
 
                 {/* Toggle Button */}
                 <IconButton
                   onClick={handleDrawerToggle}
                   sx={{
-                    color: customTheme.palette.secondary.main,
-                    padding: 2,
-                    width: 45,
-                    height: 45,
-                    borderRadius: '60px',
-                    border: `1px solid ${customTheme.palette.secondary.main}`,
+                    color: brand.paper,
+                    backgroundColor: brand.ink,
+                    width: 44,
+                    height: 44,
+                    borderRadius: '999px',
+                    '&:hover': { backgroundColor: brand.inkSoft },
                   }}
+                  aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+                  aria-expanded={mobileOpen}
                 >
                   {mobileOpen ? (
-                    <CloseRoundedIcon sx={{ fontSize: 30 }} />
+                    <CloseRoundedIcon sx={{ fontSize: 26 }} />
                   ) : (
-                    <MenuRoundedIcon sx={{ fontSize: 32 }} />
+                    <MenuRoundedIcon sx={{ fontSize: 26 }} />
                   )}
                 </IconButton>
               </Box>
             ) : (
-              // Desktop layout (No Logo here)
+              // Desktop layout: logo, links, contact
               <Box
                 sx={{
                   width: '100%',
@@ -224,7 +202,15 @@ const Header = (props) => {
                   gap: { xs: 3, xl: 5 },
                 }}
               >
-                <Box sx={{ display: 'flex', gap: { xs: 3, xl: 5 }, alignItems: 'center' }}>
+                <Box
+                  component={Link}
+                  href="/"
+                  aria-label="VIHI IT Solutions home"
+                  sx={{ color: brand.ink, display: 'flex', mr: { xs: 1, xl: 2 } }}
+                >
+                  <BrandLogo height={34} />
+                </Box>
+                <Box sx={{ display: 'flex', gap: { xs: 2, lgll: 3.5 }, alignItems: 'center' }}>
                   {navItems.map((item) => (
                     <Box key={item.name} sx={{ position: 'relative', px: 1 }}>
                       <Typography
@@ -232,10 +218,13 @@ const Header = (props) => {
                         href={item.href}
                         variant="body1"
                         sx={{
-                          color: customTheme.palette.secondary.main,
+                          color: pathname === item.href ? brand.ink : brand.steel,
                           textDecoration: 'none',
-                          fontWeight: pathname === item.href ? 500 : 300,
-                          fontSize: '1rem',
+                          fontWeight: pathname === item.href ? 650 : 500,
+                          fontSize: '0.95rem',
+                          whiteSpace: 'nowrap',
+                          transition: 'color 0.2s ease',
+                          '&:hover': { color: brand.ink },
                         }}
                       >
                         {item.name}
@@ -254,15 +243,17 @@ const Header = (props) => {
                             }}
                             style={{
                               position: 'absolute',
-                              left: '45%',
-                              transform: 'translateX(-50%)',
-                              bottom: -16,
+                              left: 0,
+                              right: 0,
+                              display: 'flex',
+                              justifyContent: 'center',
+                              bottom: -12,
                             }}
                           >
                             <FiberManualRecordIcon
                               sx={{
-                                fontSize: 10,
-                                color: customTheme.palette.primary.main,
+                                fontSize: 7,
+                                color: brand.ink,
                               }}
                             />
                           </motion.span>
@@ -277,16 +268,17 @@ const Header = (props) => {
                   component={Link}
                   href="/contactus"
                   sx={{
-                    background: '#ffc720',
-                    color: customTheme.palette.secondary.main,
-                    borderRadius: '50px',
-                    padding: '8px 20px',
-                    fontSize: '1rem',
-                    ml: 2,
-                    '&:hover': { backgroundColor: '#eebf05ff' },
+                    background: brand.ink,
+                    color: brand.paper,
+                    borderRadius: '999px',
+                    padding: '10px 22px',
+                    fontSize: '0.95rem',
+                    whiteSpace: 'nowrap',
+                    ml: 1,
+                    '&:hover': { backgroundColor: brand.inkSoft },
                   }}
                 >
-                  Contact Us
+                  Contact us
                 </Button>
               </Box>
             )}
@@ -302,11 +294,11 @@ const Header = (props) => {
                 exit="hidden"
                 variants={boxVariants}
                 style={{
-                  backgroundColor: '#fff',
+                  backgroundColor: brand.paper,
                   overflow: 'hidden',
                 }}
               >
-                <Box sx={{ py: 3 }}>
+                <Box sx={{ pt: 1, pb: 2, pr: 1, borderTop: `1px solid ${brand.line}` }}>
                   <List>
                     {navItems.map((item) => (
                       <ListItem key={item.name} disablePadding>
@@ -317,25 +309,25 @@ const Header = (props) => {
                           sx={{
                             textAlign: 'left',
                             py: 1.2,
-                            color:
-                              pathname === item.href
-                                ? customTheme.palette.secondary.main
-                                : '#1d1d1dff',
-                            fontWeight: pathname === item.href ? 700 : 500,
+                            color: pathname === item.href ? brand.ink : brand.steel,
+                            borderRadius: '12px',
                             gap: 1,
                           }}
                         >
                           {pathname === item.href && (
                             <FiberManualRecordIcon
                               sx={{
-                                fontSize: 10,
-                                color: customTheme.palette.primary.main,
+                                fontSize: 8,
+                                color: brand.ink,
                               }}
                             />
                           )}
                           <ListItemText
                             primary={item.name}
-                            primaryTypographyProps={{ fontSize: '1.1rem' }}
+                            primaryTypographyProps={{
+                              fontSize: '1.1rem',
+                              fontWeight: pathname === item.href ? 650 : 500,
+                            }}
                           />
                         </ListItemButton>
                       </ListItem>
@@ -349,16 +341,16 @@ const Header = (props) => {
                       href="/contactus"
                       onClick={handleNavClick}
                       sx={{
-                        background: '#ffc720',
-                        color: customTheme.palette.secondary.main,
-                        borderRadius: '50px',
-                        padding: '10px 25px',
-                        fontWeight: 500,
+                        background: brand.ink,
+                        color: brand.paper,
+                        borderRadius: '999px',
+                        padding: '12px 25px',
+                        fontWeight: 600,
                         width: '100%',
-                        '&:hover': { backgroundColor: '#F5A40ECF' },
+                        '&:hover': { backgroundColor: brand.inkSoft },
                       }}
                     >
-                      Contact Us
+                      Contact us
                     </Button>
                   </Box>
                 </Box>

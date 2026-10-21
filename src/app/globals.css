@@ -1,13 +1,23 @@
+/* =========================================
+   VIHI IT Solutions — brand tokens
+   Monochrome, taken straight from the logo.
+   ========================================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --ink: #000000;
+  --ink-soft: #262626;
+  --paper: #ffffff;
+  --stone: #f1f1ef;
+  --steel: #5e5e5e;
+  --ash: #a3a3a3;
+  --line: #dadad7;
+  --line-dark: #2e2e2e;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-brand: 'Archivo Variable', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --stretch-display: 125%;
+
+  /* kept for any legacy references */
+  --background: var(--paper);
+  --foreground: var(--ink);
 }
 
 html,
@@ -18,9 +28,12 @@ body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-brand);
+  color: var(--ink);
+  background: var(--paper);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 * {
@@ -34,8 +47,35 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* Photography is shown in black and white so it sits with the monochrome
+   logo. Remove the `mono` class from an image to show it in colour. */
+.mono {
+  filter: grayscale(1) contrast(1.06);
+}
+
+/* Display type: Archivo at its widest, matching the logo wordmark. */
+.display {
+  font-family: var(--font-brand);
+  font-stretch: var(--stretch-display);
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+@media (prefers-reduced-motion: reduce) {
   html {
-    color-scheme: dark;
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

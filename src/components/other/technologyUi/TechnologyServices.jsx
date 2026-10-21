@@ -9,14 +9,14 @@ const services = [
     title: 'Custom End-to-End Software Development',
     description:
       'We deliver tailored software solutions covering the entire development lifecycle — from concept and design to deployment and support. Our solutions are built to scale with your business needs.',
-    highlightsTitle: 'Key highlights:',
+    highlightsTitle: 'Key highlights',
     highlights: [
       'Requirement analysis and solution design',
       'Frontend and backend development',
       'API integration and system scalability',
       'Ongoing maintenance and support',
     ],
-    valueTitle: 'VALUE DELIVERED:',
+    valueTitle: 'Value delivered',
     values: [
       'Fully customized solutions',
       'Scalable and secure architecture',
@@ -28,14 +28,14 @@ const services = [
     title: 'Enterprise Cloud Architecture & Optimization',
     description:
       'Design, migrate, and optimize cloud infrastructures that drive performance, security, and cost efficiency. We help enterprises maximize the value of their cloud investments.',
-    highlightsTitle: 'What we offer:',
+    highlightsTitle: 'What we offer',
     highlights: [
       'Cloud architecture design and migration',
       'Infrastructure optimization and cost control',
       'High availability and disaster recovery',
       'AWS, Azure, and Google Cloud expertise',
     ],
-    valueTitle: 'BENEFITS:',
+    valueTitle: 'Benefits',
     values: [
       'Optimized cloud performance',
       'Reduced operational costs',
@@ -47,14 +47,14 @@ const services = [
     title: 'Data Engineering, Analytics & Business Intelligence',
     description:
       'Turn complex data into actionable insights with robust data engineering and advanced analytics solutions. We help organizations make informed, data-driven decisions.',
-    highlightsTitle: 'Our services include:',
+    highlightsTitle: 'Our services include',
     highlights: [
       'Data pipelines and ETL processes',
       'Data warehousing and lake solutions',
       'Analytics dashboards and reporting',
       'Tools: Power BI, Tableau, SQL',
     ],
-    valueTitle: 'OUTCOME:',
+    valueTitle: 'Outcome',
     values: [
       'Accurate and timely insights',
       'Improved business decision-making',
@@ -66,14 +66,14 @@ const services = [
     title: 'AI & Machine Learning Integration',
     description:
       'Integrate intelligent AI and ML capabilities into your systems to automate processes and unlock new business opportunities.',
-    highlightsTitle: 'Our capabilities:',
+    highlightsTitle: 'Our capabilities',
     highlights: [
       'Predictive analytics and forecasting',
       'Machine learning model integration',
       'Natural Language Processing (NLP)',
       'Computer vision and intelligent automation',
     ],
-    valueTitle: 'RESULTS:',
+    valueTitle: 'Results',
     values: [
       'Smarter and faster workflows',
       'Innovation-driven solutions',
@@ -123,12 +123,12 @@ export default function TechnologyServices() {
                   height: { xs: 240, sm: 320, md: 480 },
                   borderRadius: 3,
                   overflow: 'hidden',
-                  boxShadow: '0px 8px 25px rgba(0,0,0,0.08)',
+                  boxShadow: 'none',
                 }}
               >
                 <Box
                   component="img"
-                  className="hover-image"
+                  className="hover-image mono"
                   src={service.image}
                   alt={service.title}
                   sx={{
@@ -188,7 +188,7 @@ export default function TechnologyServices() {
                             width: 6,
                             height: 6,
                             borderRadius: '50%',
-                            bgcolor: '#ffc720',
+                            bgcolor: '#000',
                             mr: 2,
                             flexShrink: 0,
                           }}
@@ -208,11 +208,9 @@ export default function TechnologyServices() {
                 {/* Benefits / Outcome Box */}
                 <Box
                   sx={{
-                    bgcolor: '#f8f9fa',
+                    bgcolor: '#F1F1EF',
                     borderRadius: '12px',
                     p: { xs: 3, md: 4 },
-                    borderLeft: '5px solid #ffc720',
-                    boxShadow: '0px 4px 12px rgba(0,0,0,0.03)',
                   }}
                 >
                   <Typography
@@ -233,7 +231,7 @@ export default function TechnologyServices() {
                     {service.values.map((item, i) => (
                       <Grid item xs={12} sm={6} key={i}>
                         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                          <CheckCircleIcon sx={{ fontSize: '18px', color: '#4caf50' }} />
+                          <CheckCircleIcon sx={{ fontSize: '18px', color: '#000' }} />
                           <Typography
                             sx={{
                               fontWeight: 700,

@@ -159,7 +159,7 @@ export default function ProjectDetails({ params }) {
           height: { xs: 240, sm: 360, md: 420 },
           objectFit: 'cover',
           borderRadius: 3,
-          boxShadow: '0px 6px 20px rgba(0,0,0,0.1)',
+          boxShadow: 'none',
           mb: 5,
         }}
       />
