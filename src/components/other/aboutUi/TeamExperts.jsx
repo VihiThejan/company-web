@@ -71,16 +71,16 @@ export default function TeamExperts() {
           href="/team"
           sx={{
             backgroundColor: theme.palette.primary.main,
-            color: theme.palette.secondary.main,
-            borderRadius: "50px",
+            color: "#fff",
+            borderRadius: "999px",
             textTransform: "none",
-            padding: "8px 20px",
-            fontWeight: 400,
+            padding: "10px 22px",
+            fontWeight: 600,
             mt: { xs: 3, lg: 0 },
             "&:hover": { backgroundColor: theme.palette.primary.option },
           }}
         >
-          View All Teams
+          Meet the team
         </Button>
       </Box>
 
@@ -97,7 +97,9 @@ export default function TeamExperts() {
                 sx={{
                   borderRadius: 3,
                   overflow: "hidden",
-                  boxShadow: 3,
+                  boxShadow: 'none',
+                  outline: '1px solid #DADAD7',
+                  outlineOffset: '-1px',
                   bgcolor: theme.palette.secondary.light,
                   display: "flex",
                   flexDirection: "column",
@@ -105,7 +107,7 @@ export default function TeamExperts() {
                   transition: "transform 0.3s ease, box-shadow 0.3s ease",
                   "&:hover": {
                     transform: "translateY(-5px)",
-                    boxShadow: 6,
+                    boxShadow: 'none',
                   },
                 }}
               >

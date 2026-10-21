@@ -51,14 +51,15 @@ export default function ContactInfoCards() {
                 textAlign: 'center',
                 p: 3,
                 height: '240px',
-                borderRadius: 4,
-                background: theme.palette.primary.main,
+                borderRadius: '20px',
+                background: '#F1F1EF',
                 color: theme.palette.secondary.main,
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.22)',
+                border: '1px solid #F1F1EF',
+                boxShadow: 'none',
                 cursor: item.action !== 'none' ? 'pointer' : 'default',
+                transition: 'border-color 0.25s ease',
                 '&:hover': {
-                  transform: item.action !== 'none' ? 'translateY(-5px)' : 'none',
-                  transition: '0.3s',
+                  borderColor: item.action !== 'none' ? '#000' : '#F1F1EF',
                 },
               }}
             >
@@ -77,6 +78,7 @@ export default function ContactInfoCards() {
                       borderRadius: '50px',
                       fontSize: 30,
                       background: theme.palette.secondary.main,
+                      '& svg': { color: '#fff' },
                       p: 1,
                       display: 'flex',
                       justifyContent: 'center',
@@ -103,7 +105,7 @@ export default function ContactInfoCards() {
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
         ContentProps={{
           sx: {
-            backgroundColor: '#333',
+            backgroundColor: '#000',
             color: '#fff',
             borderRadius: 2,
             fontWeight: 500,

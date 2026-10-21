@@ -26,7 +26,7 @@ const StartTalkSection = () => {
         minHeight: 320,
         bgcolor: theme.palette.secondary.main,
         color: '#fff',
-        boxShadow: '0 0 40px rgba(0, 0, 0, 0.07)',
+        boxShadow: 'none',
         position: 'relative',
         overflow: 'hidden',
       }}

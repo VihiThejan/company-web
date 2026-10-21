@@ -4,15 +4,17 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import { Bitcount, Inter, Poppins } from 'next/font/google';
-import theme from '@/theme/theme';
+import { brand, fonts } from '@/theme/theme';
 
-const inter = Inter({ subsets: ['latin'] });
-const bitcount = Bitcount({ subsets: ['latin'], weight: '400' });
-const poppins = Poppins({ subsets: ['latin'], weight: '400' });
+// Headlines use Archivo at its widest setting to echo the logo's wordmark.
+const display = {
+  fontFamily: fonts.family,
+  fontStretch: fonts.displayStretch,
+  color: brand.ink,
+  letterSpacing: '-0.015em',
+};
 
-// Define your custom Material-UI theme here
-const darkTheme = createTheme({
+const appTheme = createTheme({
   breakpoints: {
     values: {
       xs: 0,
@@ -30,51 +32,110 @@ const darkTheme = createTheme({
     },
   },
   palette: {
-    mode: 'dark',
+    mode: 'light',
+    // Mirrors src/theme/theme.js so components reading the palette through
+    // useTheme() and those importing the theme module get the same values.
     primary: {
-      main: '#FFD700',
+      main: brand.ink,
+      dark: brand.inkSoft,
+      option: brand.inkSoft,
+      contrastText: brand.paper,
+    },
+    secondary: {
+      main: brand.ink,
+      option: brand.inkSoft,
+      lowLight: brand.stone,
+      midLight: brand.line,
+      light: brand.paper,
+      contrastText: brand.paper,
     },
     background: {
-      default: '#121212',
-      paper: '#1E1E1E',
+      default: brand.paper,
+      paper: brand.paper,
     },
     text: {
-      primary: '#171717',
-      secondary: '#404040',
+      primary: brand.ink,
+      secondary: brand.steel,
     },
+    divider: brand.line,
   },
   typography: {
-    fontFamily: poppins.style.fontFamily,
-    h1: { fontSize: '3.5rem', fontWeight: 700, color: '#171717' },
-    h2: { fontSize: '3rem', fontWeight: 700, color: '#171717' },
-    h3: { fontSize: '2rem', fontWeight: 600, color: '#171717' },
-    h4: { fontSize: '1.5rem', fontWeight: 600, color: '#171717' },
-    h5: { fontSize: '1.25rem', fontWeight: 500, color: '#171717' },
-    h6: { fontSize: '1.15rem', fontWeight: 500, color: '#171717' },
-    subtitle1: { fontSize: '1.15rem', color: '#171717' },
+    fontFamily: fonts.family,
+    h1: { ...display, fontSize: '3.5rem', fontWeight: 800, lineHeight: 1.08 },
+    h2: { ...display, fontSize: '3rem', fontWeight: 800, lineHeight: 1.12 },
+    h3: { ...display, fontSize: '2rem', fontWeight: 750, lineHeight: 1.18 },
+    h4: { ...display, fontSize: '1.5rem', fontWeight: 700, lineHeight: 1.25 },
+    h5: { fontSize: '1.25rem', fontWeight: 600, color: brand.ink, lineHeight: 1.35 },
+    h6: { fontSize: '1.15rem', fontWeight: 600, color: brand.ink, lineHeight: 1.4 },
+    subtitle1: { fontSize: '1.15rem', color: brand.ink },
     body1: {
       fontSize: '1rem',
-      lineHeight: 1.7,
-      color: '#171717',
+      lineHeight: 1.65,
+      color: brand.ink,
     },
     body2: {
       fontSize: '0.9rem',
       lineHeight: 1.6,
-      color: '#404040',
+      color: brand.steel,
     },
     body3: {
       fontSize: '1rem',
-      lineHeight: 1.7,
-      color: '#404040',
+      lineHeight: 1.65,
+      color: brand.steel,
     },
-    button: { fontSize: '0.95rem', fontWeight: 500, textTransform: 'none' },
-    caption: { fontSize: '0.8rem', color: '#666666' },
+    button: { fontSize: '0.95rem', fontWeight: 600, textTransform: 'none' },
+    caption: { fontSize: '0.8rem', color: brand.steel },
+    overline: { letterSpacing: '0.04em', textTransform: 'none', fontWeight: 600 },
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        body: {
+          fontFamily: fonts.family,
+          backgroundColor: brand.paper,
+          color: brand.ink,
+        },
+        '::selection': { background: brand.ink, color: brand.paper },
+      },
+    },
     MuiButton: {
+      defaultProps: { disableElevation: true },
       styleOverrides: {
         root: {
           textTransform: 'none',
+          borderRadius: 999,
+          fontWeight: 600,
+          '&.Mui-focusVisible': {
+            outline: `2px solid ${brand.ink}`,
+            outlineOffset: 3,
+          },
+        },
+        contained: {
+          backgroundColor: brand.ink,
+          color: brand.paper,
+          '&:hover': { backgroundColor: brand.inkSoft },
+        },
+        outlined: {
+          borderColor: brand.ink,
+          color: brand.ink,
+          '&:hover': { backgroundColor: brand.ink, color: brand.paper, borderColor: brand.ink },
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        root: { backgroundImage: 'none' },
+      },
+    },
+    MuiChip: {
+      styleOverrides: {
+        root: { fontWeight: 600 },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          '&.Mui-focused .MuiOutlinedInput-notchedOutline': { borderColor: brand.ink },
         },
       },
     },
@@ -84,7 +145,7 @@ const darkTheme = createTheme({
 export default function MuiThemeProvider({ children }) {
   return (
     <AppRouterCacheProvider>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={appTheme}>
         <CssBaseline />
         {children}
       </ThemeProvider>

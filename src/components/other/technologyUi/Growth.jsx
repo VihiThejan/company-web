@@ -45,7 +45,9 @@ const Growth = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: 2,
-                    boxShadow: 1,
+                    boxShadow: 'none',
+                    outline: '1px solid #DADAD7',
+                    outlineOffset: '-1px',
                     height: 170,
                   }}
                 >

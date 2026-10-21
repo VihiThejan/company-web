@@ -134,7 +134,7 @@ export default function IndustryDetailPage() {
                         fontSize: { xs: '2rem', md: '2.7rem' },
                     }}
                 >
-                    {industry.title} Services
+                    {industry.title}
                 </Typography>
 
                 <Typography
@@ -169,7 +169,7 @@ export default function IndustryDetailPage() {
                             height: { xs: 240, md: 420 },
                             objectFit: 'cover',
                             borderRadius: 4,
-                            boxShadow: 4,
+                            boxShadow: 'none',
                         }}
                     />
                 </motion.div>
@@ -206,7 +206,9 @@ export default function IndustryDetailPage() {
                                     sx={{
                                         p: 3,
                                         borderRadius: 3,
-                                        boxShadow: 3,
+                                        boxShadow: 'none',
+                                        outline: '1px solid #DADAD7',
+                                        outlineOffset: '-1px',
                                         display: 'flex',
                                         height: { xs: '250px', md: '320px', lg: '250px' },
                                         flexDirection: 'column',
@@ -215,7 +217,7 @@ export default function IndustryDetailPage() {
                                         textAlign: 'center',
                                         gap: 1.5,
                                         '&:hover': {
-                                            boxShadow: 6,
+                                            outlineColor: '#000',
                                             transform: 'translateY(-5px)',
                                         },
                                         transition: '0.3s',
@@ -227,6 +229,8 @@ export default function IndustryDetailPage() {
                                             height: 60,
                                             borderRadius: '50%',
                                             bgcolor: theme.palette.primary.main,
+                                            color: '#fff',
+                                            '& svg': { color: '#fff' },
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
@@ -284,10 +288,12 @@ export default function IndustryDetailPage() {
                                         alignItems: 'center',
                                         textAlign: 'center',
                                         gap: 1.5,
-                                        boxShadow: 2,
+                                        boxShadow: 'none',
+                                        outline: '1px solid #DADAD7',
+                                        outlineOffset: '-1px',
                                         background: '#fff',
                                         '&:hover': {
-                                            boxShadow: 5,
+                                            outlineColor: '#000',
                                             transform: 'translateY(-5px)',
                                         },
                                         transition: '0.3s',
@@ -299,6 +305,8 @@ export default function IndustryDetailPage() {
                                             height: 60,
                                             borderRadius: '50%',
                                             bgcolor: theme.palette.primary.main,
+                                            color: '#fff',
+                                            '& svg': { color: '#fff' },
                                             display: 'flex',
                                             alignItems: 'center',
                                             justifyContent: 'center',
@@ -381,11 +389,10 @@ export default function IndustryDetailPage() {
                     <Grid size={{ xs: 12, md: 6 }}>
                         <Box
                             sx={{
-                                backgroundColor: '#f9f9f9',
+                                backgroundColor: '#F1F1EF',
                                 p: { xs: 3, md: 4 },
                                 borderRadius: 3,
-                                borderLeft: `6px solid ${theme.palette.primary.main}`,
-                                boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
+                                boxShadow: 'none',
                                 height: '100%',
                             }}
                         >
@@ -395,8 +402,6 @@ export default function IndustryDetailPage() {
                                     fontSize: '0.85rem',
                                     mb: 3,
                                     color: '#1a1a1a',
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '1px',
                                 }}
                             >
                                 Value Delivered / Outcome
@@ -409,7 +414,7 @@ export default function IndustryDetailPage() {
                                                 width: 22,
                                                 height: 22,
                                                 borderRadius: '50%',
-                                                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                                                backgroundColor: '#000',
                                                 display: 'flex',
                                                 alignItems: 'center',
                                                 justifyContent: 'center',
@@ -418,7 +423,7 @@ export default function IndustryDetailPage() {
                                         >
                                             <Typography
                                                 sx={{
-                                                    color: '#28a745',
+                                                    color: '#fff',
                                                     fontWeight: 'bold',
                                                     fontSize: '0.8rem',
                                                 }}

@@ -8,14 +8,14 @@ const services = [
   {
     title: 'Full Stack Development',
     description: 'We build scalable, secure, and high-performance applications using modern frontend and backend technologies. Our full stack solutions deliver seamless user experiences and robust system architecture.',
-    highlightTitle: 'Key highlights:',
+    highlightTitle: 'Key highlights',
     highlights: [
       'Frontend: React, Angular, Vue',
       'Backend: Node.js, Java, Python, .NET',
       'RESTful & GraphQL APIs',
       'Database design and integration'
     ],
-    footerTitle: 'Value delivered:',
+    footerTitle: 'Value delivered',
     footerItems: [
       'End-to-end development',
       'Scalable architecture',
@@ -26,14 +26,14 @@ const services = [
   {
     title: 'Cloud Computing',
     description: 'Leverage the power of the cloud to improve scalability, security, and operational efficiency. We design and manage cloud solutions tailored to your business needs.',
-    highlightTitle: 'What we offer:',
+    highlightTitle: 'What we offer',
     highlights: [
       'Cloud migration and deployment',
       'Infrastructure design and optimization',
       'AWS, Azure, and Google Cloud services',
       'DevOps and CI/CD integration'
     ],
-    footerTitle: 'Benefits:',
+    footerTitle: 'Benefits',
     footerItems: [
       'Improved scalability',
       'Reduced infrastructure costs',
@@ -44,14 +44,14 @@ const services = [
   {
     title: 'Data Engineering & Business Intelligence',
     description: 'Transform raw data into actionable insights with our data engineering and BI solutions. We help organizations make data-driven decisions with confidence.',
-    highlightTitle: 'Our services include:',
+    highlightTitle: 'Our services include',
     highlights: [
       'Data pipeline and ETL development',
       'Data warehousing solutions',
       'BI dashboards and reporting',
       'Tools: Power BI, Tableau, SQL'
     ],
-    footerTitle: 'Outcome:',
+    footerTitle: 'Outcome',
     footerItems: [
       'Accurate, real-time insights',
       'Improved decision-making',
@@ -62,14 +62,14 @@ const services = [
   {
     title: 'AI / ML & Data Science',
     description: 'Unlock the value of your data with intelligent AI and machine learning solutions. We develop models that drive automation, prediction, and innovation.',
-    highlightTitle: 'Our capabilities:',
+    highlightTitle: 'Our capabilities',
     highlights: [
       'Predictive analytics and forecasting',
       'Machine learning model development',
       'Natural Language Processing (NLP)',
       'Computer vision and automation'
     ],
-    footerTitle: 'Results:',
+    footerTitle: 'Results',
     footerItems: [
       'Smarter business processes',
       'Data-driven innovation',
@@ -149,7 +149,7 @@ export default function MarketingServices() {
                   borderRadius: 4,
                   overflow: 'hidden',
                   flex: 1,
-                  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                  boxShadow: 'none',
                 }}
               >
                 <Box
@@ -228,7 +228,7 @@ export default function MarketingServices() {
                       >
                         <Typography
                           sx={{
-                            color: '#ffc107',
+                            color: '#000',
                             fontWeight: 'bold',
                             mr: 1.5,
                             fontSize: '1.2rem',
@@ -253,11 +253,9 @@ export default function MarketingServices() {
                   {/* Footer Section (Outcome/Value) */}
                   <Box
                     sx={{
-                      backgroundColor: '#f9f9f9',
+                      backgroundColor: '#F1F1EF',
                       p: { xs: 3, md: 4 },
                       borderRadius: 3,
-                      borderLeft: '5px solid #ffc107',
-                      boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
                     }}
                   >
                     <Typography
@@ -266,8 +264,6 @@ export default function MarketingServices() {
                         fontSize: '0.85rem',
                         mb: 2,
                         color: '#1a1a1a',
-                        textTransform: 'uppercase',
-                        letterSpacing: '1px',
                       }}
                     >
                       {service.footerTitle}
@@ -281,7 +277,7 @@ export default function MarketingServices() {
                                 width: 18,
                                 height: 18,
                                 borderRadius: '50%',
-                                backgroundColor: 'rgba(40, 167, 69, 0.1)',
+                                backgroundColor: '#000',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -290,7 +286,7 @@ export default function MarketingServices() {
                             >
                               <Typography
                                 sx={{
-                                  color: '#28a745',
+                                  color: '#fff',
                                   fontWeight: 'bold',
                                   fontSize: '0.75rem',
                                 }}

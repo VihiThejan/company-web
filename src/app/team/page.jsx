@@ -99,7 +99,7 @@ export default function Technologies() {
           }}
         >
           We deliver reliable, scalable, and secure technology solutions
-          failored to your organization's growth.
+          tailored to your organization's growth.
         </Typography>
       </Box>
 

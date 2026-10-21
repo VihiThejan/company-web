@@ -1,6 +1,7 @@
 'use client';
 
-import theme from '@/theme/theme';
+import theme, { brand, fonts } from '@/theme/theme';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { Box, Typography } from '@mui/material';
 import { useRouter } from 'next/navigation';
 
@@ -17,12 +18,11 @@ const GridCard = ({ title, bgImage, LinkTo }) => {
         // background: bgImage
         //   ? `url(${bgImage}) center/cover, linear-gradient(135deg, #1a237e 60%, #0d133d 100%)`
         //   : 'linear-gradient(135deg, #1a237e 60%, #0d133d 100%)',
-        background: 'linear-gradient(135deg, #1a1a1a 60%, #000000 100%)', // Fallback/Base
-        borderRadius: 3,
-        p: 3,
+        background: brand.ink,
+        borderRadius: '20px',
+        p: { xs: 3, md: 4 },
         minHeight: { xs: 320, sm: 380, md: 460 },
         color: theme.palette.secondary.light,
-        boxShadow: 3,
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
@@ -64,24 +64,49 @@ const GridCard = ({ title, bgImage, LinkTo }) => {
         sx={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%)', // Neutral overlay
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0.35) 100%)',
           zIndex: 1,
           pointerEvents: 'none',
         }}
       />
 
-      <Typography
-        variant="h3"
+      <Box
         sx={{
-          fontWeight: 700,
-          mb: 2,
-          color: theme.palette.secondary.light,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'flex-start',
+          gap: 2,
           zIndex: 2,
           position: 'relative',
         }}
       >
-        {title}
-      </Typography>
+        <Typography
+          variant="h3"
+          sx={{
+            fontWeight: 800,
+            fontStretch: fonts.displayStretch,
+            fontSize: { xs: '1.9rem', md: '2.6rem' },
+            color: brand.paper,
+          }}
+        >
+          {title}
+        </Typography>
+        <Box
+          aria-hidden="true"
+          sx={{
+            width: 48,
+            height: 48,
+            flexShrink: 0,
+            borderRadius: '50%',
+            bgcolor: brand.paper,
+            color: brand.ink,
+            display: 'grid',
+            placeItems: 'center',
+          }}
+        >
+          <ArrowOutwardIcon />
+        </Box>
+      </Box>
 
       {/* Optional: Overlay for effect - Removed as we have a better one above */}
       {/* <Box

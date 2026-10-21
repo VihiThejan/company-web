@@ -81,7 +81,9 @@ export default function IndustriesWeServe() {
                     bgcolor: '#fff',
                     p: 4,
                     borderRadius: 4,
-                    boxShadow: 3,
+                    boxShadow: 'none',
+                    outline: '1px solid #DADAD7',
+                    outlineOffset: '-1px',
                     height: { xs: '380px', sm: '320px', md: '360px', lg: '320px' },
                     width: '100%',
                     display: 'flex',
@@ -89,7 +91,7 @@ export default function IndustriesWeServe() {
                     alignItems: 'center',
                     flexDirection: 'column',
                     transition: '0.3s',
-                    '&:hover': { boxShadow: 6, transform: 'translateY(-5px)' },
+                    '&:hover': { outlineColor: '#000', transform: 'translateY(-3px)' },
                   }}
                 >
                   <Box
@@ -123,10 +125,11 @@ export default function IndustriesWeServe() {
                     variant="contained"
                     sx={{
                       backgroundColor: theme.palette.primary.main,
-                      color: '#1E1E1E',
-                      borderRadius: '25px',
-                      fontWeight: 400,
-                      '&:hover': { backgroundColor: '#ffc02cff' },
+                      color: '#fff',
+                      borderRadius: '999px',
+                      fontWeight: 600,
+                      boxShadow: 'none',
+                      '&:hover': { backgroundColor: theme.palette.primary.option, boxShadow: 'none' },
                     }}
                   >
                     {item.button}

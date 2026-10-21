@@ -71,13 +71,15 @@ export default function OurExpertise() {
                   textAlign: 'center',
                   p: 4,
                   borderRadius: 4,
-                  boxShadow: 3,
+                  boxShadow: 'none',
+                  outline: '1px solid #DADAD7',
+                  outlineOffset: '-1px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
                   alignItems: 'center',
                   transition: '0.3s',
-                  '&:hover': { boxShadow: 6, transform: 'translateY(-5px)' },
+                  '&:hover': { outlineColor: '#000', transform: 'translateY(-3px)' },
                 }}
               >
                 <Box
@@ -86,6 +88,8 @@ export default function OurExpertise() {
                     height: 80,
                     borderRadius: '50%',
                     bgcolor: theme.palette.primary.main,
+                    color: '#fff',
+                    '& svg': { color: '#fff' },
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',

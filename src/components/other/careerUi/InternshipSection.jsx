@@ -44,13 +44,12 @@ export default function InternshipSection() {
                     elevation={0}
                     sx={{
                         p: { xs: 4, md: 8 },
-                        borderRadius: 6,
-                        background: '#fff',
-                        color: '#111',
+                        borderRadius: '24px',
+                        background: '#000',
+                        color: '#fff',
                         position: 'relative',
                         overflow: 'hidden',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.03)',
-                        border: `2px solid ${theme.palette.primary.main}44`, // Subtle yellow border
+                        boxShadow: 'none',
                     }}
                 >
                     {/* Decorative Background Icon */}
@@ -60,9 +59,9 @@ export default function InternshipSection() {
                             right: -20,
                             bottom: -20,
                             fontSize: '200px',
-                            opacity: 0.03, // Even more subtle
+                            opacity: 0.08,
                             transform: 'rotate(-20deg)',
-                            color: theme.palette.primary.main,
+                            color: '#fff',
                         }}
                     />
 
@@ -71,13 +70,13 @@ export default function InternshipSection() {
                             <Typography
                                 variant="overline"
                                 sx={{
-                                    color: theme.palette.primary.main, // Yellow for the overline
-                                    fontWeight: 800,
-                                    letterSpacing: 2,
+                                    color: '#A3A3A3',
+                                    fontWeight: 600,
+                                    letterSpacing: 0,
                                     fontSize: '1rem',
                                 }}
                             >
-                                FEATURED PROGRAM
+                                Featured program
                             </Typography>
                             <Typography
                                 variant="h2"
@@ -86,7 +85,7 @@ export default function InternshipSection() {
                                     fontSize: { xs: '2rem', md: '3.5rem' },
                                     mt: 1,
                                     lineHeight: 1.1,
-                                    color: '#000',
+                                    color: '#fff',
                                 }}
                             >
                                 The Vihi Visionary Challenge 2026
@@ -97,7 +96,7 @@ export default function InternshipSection() {
                             variant="h5"
                             sx={{
                                 fontWeight: 500,
-                                color: '#555',
+                                color: '#A3A3A3',
                                 maxWidth: '700px',
                                 fontSize: { xs: '1.1rem', md: '1.5rem' },
                                 lineHeight: 1.4,
@@ -112,21 +111,21 @@ export default function InternshipSection() {
                             alignItems={{ xs: 'stretch', sm: 'center' }}
                         >
                             <Box>
-                                <Typography variant="body2" sx={{ color: '#888', mb: 0.5, fontWeight: 700 }}>
-                                    APPLICATION PERIOD
+                                <Typography variant="body2" sx={{ color: '#A3A3A3', mb: 0.5, fontWeight: 600 }}>
+                                    Application period
                                 </Typography>
-                                <Typography variant="h6" sx={{ fontWeight: 700, color: '#111' }}>
+                                <Typography variant="h6" sx={{ fontWeight: 700, color: '#fff' }}>
                                     Jan 16 – Jan 30, 2026
                                 </Typography>
                             </Box>
 
-                            <Box sx={{ display: { xs: 'none', sm: 'block' }, width: 2, height: 40, bgcolor: '#f0f0f0' }} />
+                            <Box sx={{ display: { xs: 'none', sm: 'block' }, width: 2, height: 40, bgcolor: '#2E2E2E' }} />
 
                             <Box>
-                                <Typography variant="body2" sx={{ color: '#888', mb: 0.5, fontWeight: 700 }}>
-                                    STATUS
+                                <Typography variant="body2" sx={{ color: '#A3A3A3', mb: 0.5, fontWeight: 600 }}>
+                                    Status
                                 </Typography>
-                                <Typography variant="h6" sx={{ fontWeight: 700, color: '#2e7d32' }}>
+                                <Typography variant="h6" sx={{ fontWeight: 700, color: '#fff' }}>
                                     Open for Pitching
                                 </Typography>
                             </Box>
@@ -140,7 +139,7 @@ export default function InternshipSection() {
                                 size="large"
                                 endIcon={<ArrowForwardIcon />}
                                 sx={{
-                                    bgcolor: theme.palette.primary.main, // Yellow button
+                                    bgcolor: '#fff',
                                     color: '#000',
                                     fontWeight: 700,
                                     px: 5,
@@ -149,9 +148,7 @@ export default function InternshipSection() {
                                     fontSize: '1.1rem',
                                     textTransform: 'none',
                                     '&:hover': {
-                                        bgcolor: theme.palette.primary.option,
-                                        transform: 'translateY(-3px)',
-                                        transition: '0.3s',
+                                        bgcolor: '#F1F1EF',
                                     },
                                 }}
                             >

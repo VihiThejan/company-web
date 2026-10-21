@@ -3,13 +3,14 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Link from 'next/link';
-import theme from '@/theme/theme';
+import theme, { brand, fonts } from '@/theme/theme';
 
-const MotionBox = motion(Box);
+const MotionBox = motion.create(Box);
 
 const Card = ({
   bg,
   color,
+  border,
   label,
   labelBg,
   labelClr,
@@ -30,7 +31,8 @@ const Card = ({
         sx={{
           background: bg,
           color: color,
-          borderRadius: 2,
+          border: border || `1px solid ${bg}`,
+          borderRadius: '20px',
           p: { xs: 3, md: 4 },
           height: { xs: 'auto', md: 280 },
           display: 'flex',
@@ -51,8 +53,8 @@ const Card = ({
               borderRadius: 50,
               px: 1.5,
               py: 0.5,
-              fontSize: '0.95rem',
-              fontWeight: 500,
+              fontSize: '0.9rem',
+              fontWeight: 600,
               display: 'inline-block',
               mb: 2,
             }}
@@ -62,9 +64,11 @@ const Card = ({
           <Typography
             variant="h5"
             sx={{
-              fontWeight: 700,
-              mb: subtitle ? 1 : 2,
-              fontSize: { xs: '1.3rem', md: '2rem' },
+              fontWeight: 800,
+              fontStretch: fonts.displayStretch,
+              letterSpacing: '-0.02em',
+              mb: subtitle ? 1.5 : 2,
+              fontSize: { xs: '1.5rem', md: '2.2rem' },
               color: 'inherit',
             }}
           >
@@ -76,7 +80,8 @@ const Card = ({
               sx={{
                 fontWeight: 400,
                 mb: 1,
-                fontSize: { xs: '1rem', md: '1.15rem' },
+                fontSize: { xs: '1rem', md: '1.1rem' },
+                maxWidth: '44ch',
                 color: subtitleClr,
               }}
             >
@@ -101,9 +106,9 @@ const Card = ({
               minWidth: 10,
               p: 1.2,
               borderRadius: '50%',
-              background: '#fff',
-              color: '#000',
-              boxShadow: 1,
+              background: color,
+              color: bg,
+              boxShadow: 'none',
               transition: 'background 0.2s, color 0.2s',
               pointerEvents: 'none',
             }}
@@ -122,27 +127,28 @@ const CallToActionCards = () => (
       <Grid size={{ xs: 12, md: 6 }}>
         <Card
           label="Careers"
-          title="Meet Your New Team"
+          title="Meet your new team"
           subtitle="Find the next step in your professional journey and collaborate with top industry talent"
           buttonHref="/careers"
-          bg={`${theme.palette.secondary.main}`}
-          color={theme.palette.secondary.light}
-          labelBg={theme.palette.secondary.light}
-          labelClr={theme.palette.secondary.main}
-          subtitleClr={theme.palette.secondary.light}
+          bg={brand.ink}
+          color={brand.paper}
+          labelBg={brand.paper}
+          labelClr={brand.ink}
+          subtitleClr={brand.ash}
         />
       </Grid>
       <Grid size={{ xs: 12, md: 6 }}>
         <Card
           label="Get in touch"
-          title="Consult Our Specialists"
+          title="Consult our specialists"
           subtitle="Book a time to speak directly with an expert and get the guidance you need"
           buttonHref="/contactus"
-          bg={theme.palette.primary.main}
-          color={theme.palette.secondary.main}
-          labelBg={theme.palette.secondary.main}
-          labelClr={theme.palette.secondary.light}
-          subtitleClr={theme.palette.secondary.main}
+          bg={brand.paper}
+          color={brand.ink}
+          border={`1px solid ${brand.ink}`}
+          labelBg={brand.ink}
+          labelClr={brand.paper}
+          subtitleClr={brand.steel}
         />
       </Grid>
     </Grid>
