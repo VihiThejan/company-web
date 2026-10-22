@@ -38,7 +38,7 @@ export const leaders = [
   {
     name: 'Gayan Pathirage',
     role: 'Senior Platform Engineer',
-    image: '/images/career-img/team-members/gayan.png',
+    image: '/images/career-img/team-members/gayan.webp',
     linkedin: 'https://www.linkedin.com/in/gayan98/',
   },
   {
@@ -71,7 +71,7 @@ export const teamMembers = [
   {
     name: 'Gayan Pathirage',
     role: 'Senior Platform Engineer',
-    image: '/images/career-img/team-members/gayan.png',
+    image: '/images/career-img/team-members/gayan.webp',
     linkedin: 'https://www.linkedin.com/in/gayan98/',
   },
   {

@@ -42,11 +42,12 @@ export default function Design() {
                 }}
             >
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ y: 20 }}
+                    animate={{ y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
                     <Typography
+                      component="h1"
                         variant="h2"
                         sx={{
                             fontWeight: 900,
@@ -104,7 +105,7 @@ export default function Design() {
             >
                 <Box
                     component="img"
-                    src="/images/design-img/portfoliomain.png"
+                    src="/images/design-img/portfoliomain.webp"
                     alt="Design Team Collaborating"
                     sx={{
                         width: '100%',

@@ -21,7 +21,7 @@ const services = [
       'Scalable architecture',
       'High-quality, maintainable code'
     ],
-    image: '/images/marketing-img/full-stack.png',
+    image: '/images/marketing-img/full-stack.webp',
   },
   {
     title: 'Cloud Computing',
@@ -57,7 +57,7 @@ const services = [
       'Improved decision-making',
       'Optimized business performance'
     ],
-    image: '/images/marketing-img/data-engineer.jpg',
+    image: '/images/marketing-img/data-engineer.webp',
   },
   {
     title: 'AI / ML & Data Science',
@@ -75,7 +75,7 @@ const services = [
       'Data-driven innovation',
       'Competitive advantage'
     ],
-    image: '/images/marketing-img/ai-bi.jfif',
+    image: '/images/marketing-img/ai-bi.webp',
   },
 ];
 

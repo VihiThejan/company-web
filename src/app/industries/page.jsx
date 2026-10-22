@@ -69,6 +69,7 @@ export default function Industries() {
         }}
       >
         <Typography
+          component="h1"
           variant="h2"
           sx={{
             fontWeight: 700,

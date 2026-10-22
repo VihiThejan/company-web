@@ -27,6 +27,7 @@ export default function ContactUs() {
         }}
       >
         <Typography
+          component="h1"
           sx={{
             fontWeight: 700,
             fontSize: { xs: '2rem', md: '3rem' },

@@ -34,7 +34,6 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import IndustryCTA from '@/components/common/IndustryCTA';
 
-export const runtime = 'edge';
 
 export default function IndustryDetailPage() {
     const { slug } = useParams();
@@ -126,6 +125,7 @@ export default function IndustryDetailPage() {
                 }}
             >
                 <Typography
+                  component="h1"
                     variant="h3"
                     sx={{
                         fontWeight: 700,
@@ -155,10 +155,9 @@ export default function IndustryDetailPage() {
             {/* Industry Image */}
             <Box sx={{ px: { xs: 3, md: 10 }, mb: 8 }}>
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ y: 30 }}
+                    animate={{ y: 0 }}
                     transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
                 >
                     <Box
                         component="img"

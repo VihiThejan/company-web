@@ -61,8 +61,10 @@ const HomePage = () => {
       >
         {/* The mark, used as a window onto the hero video */}
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.92, rotate: -8 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          // Movement only, no fade: the hero is visible from the first paint,
+          // which keeps Google's "largest contentful paint" fast.
+          initial={reduceMotion ? false : { scale: 0.92, rotate: -8 }}
+          animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 1.4, ease }}
           style={{ display: 'flex', justifyContent: 'center' }}
         >
@@ -108,8 +110,8 @@ const HomePage = () => {
         {/* Copy */}
         <Box sx={{ order: { lg: -1 }, mt: { xs: 6, lg: 0 }, maxWidth: 820 }}>
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={reduceMotion ? false : { y: 24 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.9, delay: 0.25, ease }}
           >
             <Typography
@@ -128,8 +130,8 @@ const HomePage = () => {
           </motion.div>
 
           <motion.div
-            initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={reduceMotion ? false : { y: 16 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.9, delay: 0.45, ease }}
           >
             <Typography

@@ -37,7 +37,7 @@ const services = [
             'Improved usability',
             'High customer satisfaction'
         ],
-        image: '/images/qapage-img/manual-functional.png',
+        image: '/images/qapage-img/manual-functional.webp',
     },
     {
         title: 'Performance & Load Testing',
@@ -54,7 +54,7 @@ const services = [
             'Faster response times',
             'Reliable system behavior'
         ],
-        image: '/images/qapage-img/performance-load.png',
+        image: '/images/qapage-img/performance-load.webp',
     },
     {
         title: 'Security & Penetration Testing',

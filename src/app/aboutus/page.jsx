@@ -59,6 +59,7 @@ export default function AboutUs() {
         }}
       >
         <Typography
+          component="h1"
           variant="h2"
           sx={{
             fontWeight: 700,
