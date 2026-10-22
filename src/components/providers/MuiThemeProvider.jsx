@@ -88,6 +88,28 @@ const appTheme = createTheme({
     overline: { letterSpacing: '0.04em', textTransform: 'none', fontWeight: 600 },
   },
   components: {
+    // Only h1–h4 styles produce heading tags. The smaller title styles are
+    // used all over the site for subtitles, names, dates and labels, so they
+    // render as plain blocks; otherwise every page's heading outline is full
+    // of H5/H6 "headings" that search engines read as broken structure.
+    // A real heading can still use them with an explicit component="h3" etc.
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          h1: 'h1',
+          h2: 'h2',
+          h3: 'h3',
+          h4: 'h4',
+          h5: 'div',
+          h6: 'div',
+          subtitle1: 'div',
+          subtitle2: 'div',
+          body1: 'p',
+          body2: 'p',
+          inherit: 'p',
+        },
+      },
+    },
     MuiCssBaseline: {
       styleOverrides: {
         body: {

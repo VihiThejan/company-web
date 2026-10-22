@@ -1,0 +1,17 @@
+# Cloudflare Pages: browser caching for static files.
+# Images, logos and video don't change names when they're updated, so they're
+# cached for 30 days. When you replace one of these files, give the new file a
+# new name so visitors don't keep seeing the old one.
+
+/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/brand/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+/videos/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=604800
+
+# The self-hosted Archivo font never changes.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

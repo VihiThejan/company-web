@@ -8,8 +8,18 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import XIcon from "@mui/icons-material/X";
 import { brand } from "@/theme/theme";
 import BrandLogo from "@/components/common/BrandLogo";
+import { SOCIAL_PROFILES } from "@/lib/seo";
+
+const SOCIAL_ICONS = {
+  Facebook: <FacebookIcon fontSize="small" />,
+  LinkedIn: <LinkedInIcon fontSize="small" />,
+  Instagram: <InstagramIcon fontSize="small" />,
+  YouTube: <YouTubeIcon fontSize="small" />,
+  X: <XIcon fontSize="small" />,
+};
 
 const footerSections = [
   {
@@ -45,16 +55,12 @@ const footerSections = [
 ];
 
 export default function Footer() {
-  const socials = [
-    { label: "Facebook", icon: <FacebookIcon fontSize="small" />, href: "https://www.facebook.com/vihiitsolutions" },
-    { label: "YouTube", icon: <YouTubeIcon fontSize="small" />, href: "https://youtube.com" },
-    {
-      label: "LinkedIn",
-      icon: <LinkedInIcon fontSize="small" />,
-      href: "https://www.linkedin.com/company/vihi-it-solutions/",
-    },
-    { label: "Instagram", icon: <InstagramIcon fontSize="small" />, href: "https://instagram.com" },
-  ];
+  // Only real company profiles are shown; the list lives in src/lib/seo.js.
+  const socials = SOCIAL_PROFILES.map((profile) => ({
+    label: profile.label,
+    href: profile.url,
+    icon: SOCIAL_ICONS[profile.label],
+  }));
 
   return (
     <Box
@@ -110,7 +116,7 @@ export default function Footer() {
           {footerSections.map((section) => (
             <Box key={section.title}>
               <Typography
-                component="h2"
+                component="p"
                 sx={{
                   fontWeight: 700,
                   fontSize: "0.95rem",

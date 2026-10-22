@@ -60,48 +60,73 @@ export function clampDescription(text, max = 160) {
   return `${cut.slice(0, cut.lastIndexOf(' '))}…`;
 }
 
-// Company details for Google's knowledge panel and local results.
-// Everything here already appears on the site's contact page.
-export const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'Organization',
-      '@id': `${SITE_URL}/#organization`,
-      name: SITE_NAME,
-      url: SITE_URL,
-      logo: `${SITE_URL}/brand/vihi-logo-512.png`,
-      description: DEFAULT_DESCRIPTION,
-      foundingDate: '2023',
-      email: 'info@vihiitsolutions.com',
-      telephone: '+94724444082',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '239/9, Uduwana Temple Road, Uduwana',
-        addressLocality: 'Homagama',
-        addressCountry: 'LK',
-      },
-      contactPoint: [
-        {
-          '@type': 'ContactPoint',
-          contactType: 'customer service',
-          email: 'info@vihiitsolutions.com',
-          telephone: '+94724444082',
-          areaServed: 'Worldwide',
-          availableLanguage: ['English'],
-        },
-      ],
-      sameAs: [
-        'https://www.linkedin.com/company/vihi-it-solutions/',
-        'https://www.facebook.com/vihiitsolutions',
-      ],
-    },
-    {
-      '@type': 'WebSite',
-      '@id': `${SITE_URL}/#website`,
-      name: SITE_NAME,
-      url: SITE_URL,
-      publisher: { '@id': `${SITE_URL}/#organization` },
-    },
-  ],
+// The company's social profiles. Used for the footer icons and for the
+// structured data below. Add Instagram, YouTube or X here once those
+// accounts exist; nothing else needs changing.
+export const SOCIAL_PROFILES = [
+  { label: 'LinkedIn', url: 'https://www.linkedin.com/company/vihi-it-solutions/' },
+  { label: 'Facebook', url: 'https://www.facebook.com/vihiitsolutions' },
+];
+
+const ORG_ID = `${SITE_URL}/#organization`;
+const LOGO = `${SITE_URL}/brand/vihi-logo-512.png`;
+const EMAIL = 'info@vihiitsolutions.com';
+const PHONE = '+94724444082';
+const ADDRESS = {
+  '@type': 'PostalAddress',
+  streetAddress: '239/9, Uduwana Temple Road, Uduwana',
+  addressLocality: 'Homagama',
+  addressRegion: 'Western Province',
+  postalCode: '10200',
+  addressCountry: 'LK',
 };
+
+// Company details for Google's knowledge panel and local results, using only
+// details that already appear on the contact page. Each entity is its own
+// JSON-LD block (rather than one @graph) because many SEO checkers cannot read
+// @graph and report it as an error. The Organization and ProfessionalService
+// blocks share one @id, so Google treats them as the same company.
+export const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': ORG_ID,
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: LOGO,
+    description: DEFAULT_DESCRIPTION,
+    foundingDate: '2023',
+    email: EMAIL,
+    telephone: PHONE,
+    address: ADDRESS,
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      email: EMAIL,
+      telephone: PHONE,
+      availableLanguage: 'English',
+    },
+    sameAs: SOCIAL_PROFILES.map((profile) => profile.url),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': ORG_ID,
+    name: SITE_NAME,
+    url: SITE_URL,
+    image: LOGO,
+    email: EMAIL,
+    telephone: PHONE,
+    address: ADDRESS,
+    areaServed: 'Worldwide',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
+    name: SITE_NAME,
+    url: SITE_URL,
+    inLanguage: 'en',
+    publisher: { '@id': ORG_ID },
+  },
+];

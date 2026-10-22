@@ -1,5 +1,5 @@
-// Archivo is self-hosted (via Fontsource) so builds never depend on Google Fonts.
-import '@fontsource-variable/archivo/wdth.css';
+// The Archivo font is self-hosted from /public/fonts (see globals.css), so
+// builds never depend on Google Fonts.
 import './globals.css';
 import './hover-effects.css';
 import Header from '@/components/common/Header';
@@ -12,7 +12,7 @@ import {
   SITE_NAME,
   DEFAULT_TITLE,
   DEFAULT_DESCRIPTION,
-  organizationJsonLd,
+  structuredData,
 } from '@/lib/seo';
 
 export const metadata = {
@@ -47,12 +47,25 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        {/* Start downloading the main font straight away */}
+        <link
+          rel="preload"
+          href="/fonts/archivo/archivo-latin-wdth.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body style={{ margin: 0 }} suppressHydrationWarning={true}>
         {/* Company details for Google (structured data) */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        {structuredData.map((entity) => (
+          <script
+            key={entity['@type']}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(entity) }}
+          />
+        ))}
         <MuiThemeProvider>
           <Box
             sx={{

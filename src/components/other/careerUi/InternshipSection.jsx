@@ -22,6 +22,7 @@ export default function InternshipSection() {
     return (
         <Box sx={{ py: 10, px: { xs: 2, md: 4 }, bgcolor: '#fff', width: '100%' }}>
             <Typography
+              component="h2"
                 variant="h3"
                 sx={{
                     fontWeight: 700,
@@ -79,6 +80,7 @@ export default function InternshipSection() {
                                 Featured program
                             </Typography>
                             <Typography
+                              component="h3"
                                 variant="h2"
                                 sx={{
                                     fontWeight: 800,

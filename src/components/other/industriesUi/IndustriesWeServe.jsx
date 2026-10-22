@@ -51,6 +51,7 @@ export default function IndustriesWeServe() {
   return (
     <Box sx={{ py: { xs: 10 }, px: { xs: 3 } }}>
       <Typography
+        component="h2"
         variant="h3"
         textAlign="center"
         sx={{
@@ -104,6 +105,7 @@ export default function IndustriesWeServe() {
                     <Box sx={{ mr: 2 }}>{item.icon}</Box>
                     <Box>
                       <Typography
+                        component="h3"
                         variant="h6"
                         sx={{
                           fontWeight: 700,

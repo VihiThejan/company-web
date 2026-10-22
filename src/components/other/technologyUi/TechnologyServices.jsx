@@ -148,6 +148,7 @@ export default function TechnologyServices() {
                 }}
               >
                 <Typography
+                  component="h2"
                   variant="h3"
                   sx={{
                     fontWeight: 700,
@@ -175,6 +176,7 @@ export default function TechnologyServices() {
 
                 <Box sx={{ mb: 4 }}>
                   <Typography
+                    component="h3"
                     variant="h6"
                     sx={{ fontWeight: 700, mb: 2, color: '#000', fontSize: '1.2rem' }}
                   >

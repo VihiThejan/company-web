@@ -178,6 +178,7 @@ export default function IndustryDetailPage() {
             <Box sx={{ px: { xs: 3, md: 10 } }}>
                 {/* Key Challenges Section */}
                 <Typography
+                  component="h2"
                     variant="h5"
                     sx={{
                         fontWeight: 700,
@@ -259,6 +260,7 @@ export default function IndustryDetailPage() {
 
                 {/* Solutions & Services Section */}
                 <Typography
+                  component="h2"
                     variant="h5"
                     sx={{
                         fontWeight: 700,
@@ -341,6 +343,7 @@ export default function IndustryDetailPage() {
                 <Grid container spacing={5} sx={{ mt: 4, mb: 10 }}>
                     <Grid size={{ xs: 12, md: 6 }}>
                         <Typography
+                          component="h2"
                             variant="h5"
                             sx={{
                                 fontWeight: 700,

@@ -162,7 +162,7 @@ export default function TermsPage() {
         <Box sx={{ mt: 4 }}>
           {/* Intro article anchor */}
           <article id="intro" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               Introductory Notes
             </Typography>
             <Typography variant="body2" sx={{ mb: 1.5, color: '#444', textAlign: 'justify' }}>
@@ -174,7 +174,7 @@ export default function TermsPage() {
 
           {/* 1. Access */}
           <article id="access" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               1. Access
             </Typography>
             <Typography variant="body2" sx={{ mb: 1.25, color: '#444', textAlign: 'justify' }}>
@@ -186,7 +186,7 @@ export default function TermsPage() {
 
           {/* 2. Disclaimer & Modifications */}
           <article id="disclaimer" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               2. Disclaimer & Modifications
             </Typography>
 
@@ -211,7 +211,7 @@ export default function TermsPage() {
 
           {/* 3. Availability & Service Commitment */}
           <article id="availability" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               3. Availability & Service Commitment
             </Typography>
 
@@ -224,7 +224,7 @@ export default function TermsPage() {
 
           {/* 4. Restrictions (User Obligations / Prohibited Conduct) */}
           <article id="restrictions" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               4. Restrictions (User Obligations / Prohibited Conduct)
             </Typography>
 
@@ -264,7 +264,7 @@ export default function TermsPage() {
 
           {/* 5. Indemnity */}
           <article id="indemnity" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               5. Indemnity
             </Typography>
 
@@ -298,7 +298,7 @@ export default function TermsPage() {
 
           {/* 6. Limitation of Liability */}
           <article id="limitation" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               6. Limitation of Liability
             </Typography>
 
@@ -319,46 +319,46 @@ export default function TermsPage() {
 
           {/* 7. Other Provisions */}
           <article id="other" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               7. Other Provisions
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
               Governing Law & Dispute Resolution
             </Typography>
             <Typography variant="body2" sx={{ mb: 1.25, color: '#444', textAlign: 'justify' }}>
               These Terms are governed by the laws of {GOVERNING_JURISDICTION}. Disputes shall be resolved in the courts or arbitration forums located in {GOVERNING_LOCATION}.
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
               Severability & Waiver
             </Typography>
             <Typography variant="body2" sx={{ mb: 1.25, color: '#444', textAlign: 'justify' }}>
               If a provision is held invalid or unenforceable, the remainder shall remain in effect. Failure to enforce a right is not a waiver of future rights.
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
               Termination
             </Typography>
             <Typography variant="body2" sx={{ mb: 1.25, color: '#444', textAlign: 'justify' }}>
               The Provider may suspend or terminate your access, in whole or part, at any time without notice. On termination, your rights to use the Services immediately cease. Surviving sections (e.g. indemnity, limitation of liability, intellectual property) continue in full force.
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
               Assignment
             </Typography>
             <Typography variant="body2" sx={{ mb: 1.25, color: '#444', textAlign: 'justify' }}>
               You may not assign your rights or obligations under these Terms without prior written consent. The Provider may assign freely.
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
               Entire Agreement
             </Typography>
             <Typography variant="body2" sx={{ mb: 1.25, color: '#444', textAlign: 'justify' }}>
               These Terms, along with the Privacy Policy and any other incorporated policies, form the entire agreement between you and us.
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ fontWeight: 700, mb: 1 }}>
               Force Majeure
             </Typography>
             <Typography variant="body2" sx={{ mb: 1.25, color: '#444', textAlign: 'justify' }}>
@@ -370,7 +370,7 @@ export default function TermsPage() {
 
           {/* Contact */}
           <article id="contact" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               Contact
             </Typography>
 

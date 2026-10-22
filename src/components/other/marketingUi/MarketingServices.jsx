@@ -179,6 +179,7 @@ export default function MarketingServices() {
               >
                 <Box sx={{ p: { xs: 1, sm: 2, md: 0 } }}>
                   <Typography
+                    component="h2"
                     variant="h4"
                     sx={{
                       fontWeight: 800,

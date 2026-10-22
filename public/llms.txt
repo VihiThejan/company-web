@@ -1,0 +1,29 @@
+# VIHI IT Solutions
+
+> VIHI IT Solutions is a software company founded in Sri Lanka in 2023. It builds custom software, web and mobile apps, cloud systems, and offers UI/UX design, quality assurance and digital marketing for businesses in Sri Lanka and beyond.
+
+Contact: info@vihiitsolutions.com · +94 72 444 4082 · 239/9, Uduwana Temple Road, Uduwana, Homagama, Sri Lanka
+
+## Services
+
+- [Software development & cloud](https://vihiitsolutions.com/technology): custom end-to-end software, enterprise cloud architecture, data engineering and business intelligence, AI/ML integration
+- [Full-stack, cloud, data & AI](https://vihiitsolutions.com/marketing): full-stack development, cloud computing, data engineering, AI/ML and data science
+- [UI/UX & brand design](https://vihiitsolutions.com/design): UI/UX design, brand identity, web and mobile design, prototyping and wireframing
+- [QA & software testing](https://vihiitsolutions.com/qa-services): test automation, manual and functional testing, performance and load testing, security and penetration testing
+
+## Industries
+
+- [Finance](https://vihiitsolutions.com/industries/finance)
+- [Tourism](https://vihiitsolutions.com/industries/tourism)
+- [Government](https://vihiitsolutions.com/industries/government)
+
+## Work
+
+- [Portfolio](https://vihiitsolutions.com/portfolio): projects including insurance data automation, the UniHub e-learning platform, an AI-driven bicycle tourism system, a data centre inventory system, mobile apps and websites
+
+## Company
+
+- [About us](https://vihiitsolutions.com/aboutus)
+- [Our team](https://vihiitsolutions.com/team)
+- [Careers](https://vihiitsolutions.com/careers)
+- [Contact](https://vihiitsolutions.com/contactus)

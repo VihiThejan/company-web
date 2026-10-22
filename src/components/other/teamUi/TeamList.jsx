@@ -61,6 +61,7 @@ export default function TeamList() {
         {/* Founder Text */}
         <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" } }}>
           <Typography
+            component="h2"
             variant="h4"
             sx={{
               fontWeight: 700,
@@ -122,6 +123,7 @@ export default function TeamList() {
 
       {/* === Team Members Section === */}
       <Typography
+        component="h2"
         variant="h3"
         align="center"
         gutterBottom
@@ -196,6 +198,7 @@ export default function TeamList() {
                 >
                   <Box>
                     <Typography
+                      component="h3"
                       variant="h6"
                       sx={{
                         fontWeight: 600,

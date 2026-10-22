@@ -130,6 +130,7 @@ export default function HowWeWork() {
                 </Box>
 
                 <Typography
+                  component="h3"
                   variant="h6"
                   sx={{
                     fontWeight: 700,

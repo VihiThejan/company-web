@@ -44,6 +44,7 @@ export default function TeamExperts() {
       >
         <Box textAlign="left">
           <Typography
+            component="h2"
             variant="h3"
             sx={{
               fontWeight: 700,
@@ -152,6 +153,7 @@ export default function TeamExperts() {
                   >
                     <Box>
                       <Typography
+                        component="h3"
                         variant="h6"
                         sx={{
                           fontWeight: 600,

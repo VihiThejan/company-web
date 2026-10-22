@@ -118,7 +118,7 @@ export default function VisionaryChallengePage() {
                 {/* About the Program */}
                 <motion.div {...fadeInUp}>
                     <Paper elevation={0} sx={{ p: { xs: 3, md: 6 }, bgcolor: '#F1F1EF', borderRadius: 4, mb: 8 }}>
-                        <Typography variant="h4" sx={{ mb: 3, fontWeight: 700 }}>About the Program</Typography>
+                        <Typography component="h2" variant="h4" sx={{ mb: 3, fontWeight: 700 }}>About the Program</Typography>
                         <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.8, color: '#444' }}>
                             Welcome to The Vihi Visionary Challenge—an internship program unlike any other. At Vihi IT
                             Solutions, we believe the best way to learn is by building.
@@ -135,7 +135,7 @@ export default function VisionaryChallengePage() {
                 <Grid container spacing={6} sx={{ mb: 15, justifyContent: 'space-between' }}>
                     {/* Left Side: Internship Tracks */}
                     <Grid item xs={12} lg={8}>
-                        <Typography variant="h4" sx={{ mb: 4, fontWeight: 800, color: '#000' }}>
+                        <Typography component="h2" variant="h4" sx={{ mb: 4, fontWeight: 800, color: '#000' }}>
                             Internship Tracks
                         </Typography>
                         <Grid container spacing={3}>
@@ -158,7 +158,7 @@ export default function VisionaryChallengePage() {
                                                 }
                                             }}
                                         >
-                                            <Typography variant="h5" sx={{ mb: 2, fontWeight: 700, color: theme.palette.primary.main }}>
+                                            <Typography component="h3" variant="h5" sx={{ mb: 2, fontWeight: 700, color: theme.palette.primary.main }}>
                                                 {track.category}
                                             </Typography>
                                             <List dense>
@@ -183,7 +183,7 @@ export default function VisionaryChallengePage() {
 
                     {/* Right Side: Advanced Timeline */}
                     <Grid item xs={12} lg={4}>
-                        <Typography variant="h4" sx={{ mb: 6, fontWeight: 800, color: '#000' }}>
+                        <Typography component="h2" variant="h4" sx={{ mb: 6, fontWeight: 800, color: '#000' }}>
                             The Timeline
                         </Typography>
                         <Box sx={{ position: 'relative', pl: 2 }}>
@@ -283,7 +283,7 @@ export default function VisionaryChallengePage() {
 
                 {/* How to Enter */}
                 <Box sx={{ mb: 10 }}>
-                    <Typography variant="h4" sx={{ mb: 8, fontWeight: 800, textAlign: 'center', color: '#000' }}>
+                    <Typography component="h2" variant="h4" sx={{ mb: 8, fontWeight: 800, textAlign: 'center', color: '#000' }}>
                         How to Enter (Step-by-Step)
                     </Typography>
                     <Grid container spacing={4}>
@@ -292,7 +292,7 @@ export default function VisionaryChallengePage() {
                             <motion.div {...fadeInUp} style={{ height: '100%' }}>
                                 <Paper sx={{ p: 4, borderRadius: 4, height: '100%', bgcolor: '#fff', border: `2px solid ${theme.palette.primary.main}33`, transition: '0.3s', '&:hover': { borderColor: theme.palette.primary.main, boxShadow: '0 10px 30px rgba(0,0,0,0.05)' } }} elevation={0}>
                                     <Typography variant="h6" sx={{ mb: 1, fontWeight: 700, color: theme.palette.primary.main }}>Step 1</Typography>
-                                    <Typography variant="h5" sx={{ mb: 1, fontWeight: 700 }}>The Brand Ambassador Task</Typography>
+                                    <Typography component="h3" variant="h5" sx={{ mb: 1, fontWeight: 700 }}>The Brand Ambassador Task</Typography>
                                     <Typography variant="caption" sx={{ display: 'block', mb: 2, color: '#000', fontWeight: 700 }}>Mandatory</Typography>
                                     <Typography variant="body2" sx={{ mb: 2, color: '#666' }}>Before you apply, show us your engagement:</Typography>
                                     <List dense sx={{ mb: 3 }}>
@@ -321,7 +321,7 @@ export default function VisionaryChallengePage() {
                             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} style={{ height: '100%' }}>
                                 <Paper sx={{ p: 4, borderRadius: 4, height: '100%', bgcolor: '#fff', border: `2px solid ${theme.palette.primary.main}33`, transition: '0.3s', '&:hover': { borderColor: theme.palette.primary.main, boxShadow: '0 10px 30px rgba(0,0,0,0.05)' } }} elevation={0}>
                                     <Typography variant="h6" sx={{ mb: 1, fontWeight: 700, color: theme.palette.primary.main }}>Step 2</Typography>
-                                    <Typography variant="h5" sx={{ mb: 1, fontWeight: 700 }}>Prepare Your Proposal</Typography>
+                                    <Typography component="h3" variant="h5" sx={{ mb: 1, fontWeight: 700 }}>Prepare Your Proposal</Typography>
                                     <Typography variant="body2" sx={{ mb: 2, color: '#444' }}>
                                         Create a Project Plan for an innovative business idea or IT product that you believe Vihi IT Solutions<br></br>  should build.
                                     </Typography>
@@ -346,7 +346,7 @@ export default function VisionaryChallengePage() {
                             <motion.div {...fadeInUp} transition={{ delay: 0.2 }} style={{ height: '100%' }}>
                                 <Paper sx={{ p: 4, borderRadius: 4, height: '100%', bgcolor: '#fff', border: `2px solid ${theme.palette.primary.main}33`, transition: '0.3s', '&:hover': { borderColor: theme.palette.primary.main, boxShadow: '0 10px 30px rgba(0,0,0,0.05)' } }} elevation={0}>
                                     <Typography variant="h6" sx={{ mb: 1, fontWeight: 700, color: theme.palette.primary.main }}>Step 3</Typography>
-                                    <Typography variant="h5" sx={{ mb: 1, fontWeight: 700 }}>The "Visionary" Bonus</Typography>
+                                    <Typography component="h3" variant="h5" sx={{ mb: 1, fontWeight: 700 }}>The "Visionary" Bonus</Typography>
                                     <Typography variant="caption" sx={{ display: 'block', mb: 2, color: '#5E5E5E', fontWeight: 700 }}>Optional</Typography>
                                     <Typography variant="body2" sx={{ mb: 3, color: '#444' }}>
                                         Record a short video (1–2 minutes) introducing yourself and explaining your idea.
@@ -365,7 +365,7 @@ export default function VisionaryChallengePage() {
                             <motion.div {...fadeInUp} transition={{ delay: 0.3 }} style={{ height: '100%' }}>
                                 <Paper sx={{ p: 4, borderRadius: 4, height: '100%', bgcolor: '#fff', border: `2px solid ${theme.palette.primary.main}33`, transition: '0.3s', '&:hover': { borderColor: theme.palette.primary.main, boxShadow: '0 10px 30px rgba(0,0,0,0.05)' } }} elevation={0}>
                                     <Typography variant="h6" sx={{ mb: 1, fontWeight: 700, color: theme.palette.primary.main }}>Step 4</Typography>
-                                    <Typography variant="h5" sx={{ mb: 1, fontWeight: 700 }}>Submit Your Application</Typography>
+                                    <Typography component="h3" variant="h5" sx={{ mb: 1, fontWeight: 700 }}>Submit Your Application</Typography>
                                     <Typography variant="body2" sx={{ mb: 2, color: '#444' }}>
                                         Email your entry to <strong>careers@vihiitsolutions.com</strong>
                                     </Typography>
@@ -392,7 +392,7 @@ export default function VisionaryChallengePage() {
                 {/* Selection Process */}
                 <motion.div {...fadeInUp}>
                     <Box sx={{ mt: 8, mb: 12, textAlign: 'center' }}>
-                        <Typography variant="h4" sx={{ mb: 3, fontWeight: 700 }}>Selection Process: The Pitch Day</Typography>
+                        <Typography component="h2" variant="h4" sx={{ mb: 3, fontWeight: 700 }}>Selection Process: The Pitch Day</Typography>
                         <Typography variant="body1" sx={{ maxWidth: '800px', mx: 'auto', color: '#555', lineHeight: 1.8 }}>
                             After reviewing all entries, we will select the Top 10 Project Ideas. These finalists will be invited
                             to an exclusive event—The Pitch Day—where they will present their concepts to the Vihi IT Solutions
@@ -420,7 +420,7 @@ export default function VisionaryChallengePage() {
                         <Box sx={{ position: 'absolute', top: -100, right: -100, width: 300, height: 300, borderRadius: '50%', bgcolor: `${theme.palette.primary.main}11`, zIndex: 0 }} />
 
                         <Box sx={{ position: 'relative', zIndex: 1 }}>
-                            <Typography variant="h3" sx={{ mb: 2, fontWeight: 800, fontSize: { xs: '2rem', md: '3rem' }, color: '#000' }}>Ready to build your future?</Typography>
+                            <Typography component="h2" variant="h3" sx={{ mb: 2, fontWeight: 800, fontSize: { xs: '2rem', md: '3rem' }, color: '#000' }}>Ready to build your future?</Typography>
                             <Typography variant="body1" sx={{ mb: 4, color: '#444', maxWidth: '600px', mx: 'auto' }}>
                                 Take the first step towards becoming a tech visionary. Join the challenge today.
                             </Typography>

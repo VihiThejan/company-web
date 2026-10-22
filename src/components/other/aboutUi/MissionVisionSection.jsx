@@ -61,6 +61,7 @@ const MissionVisionSection = () => {
             {/* Mission */}
             <Box sx={{ mb: 6 }}>
               <Typography
+                component="h2"
                 variant="h4"
                 fontWeight={700}
                 sx={{ color: theme.palette.secondary.main, mb: 1 }}
@@ -118,6 +119,7 @@ const MissionVisionSection = () => {
             {/* Vision */}
             <Box>
               <Typography
+                component="h2"
                 variant="h4"
                 fontWeight={700}
                 sx={{ color: theme.palette.secondary.main, mb: 1 }}

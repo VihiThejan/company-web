@@ -14,7 +14,7 @@ export default function ContactMap() {
         textAlign: 'center',
       }}
     >
-      <Typography variant="h6" fontWeight={600} mb={2}>
+      <Typography component="h2" variant="h6" fontWeight={600} mb={2}>
         Find Us on the Map
       </Typography>
       <Box

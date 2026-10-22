@@ -33,6 +33,7 @@ export default function IndustryCTA() {
     >
       {/* Title */}
       <Typography
+        component="h2"
         variant="h4"
         sx={{
           fontWeight: 700,

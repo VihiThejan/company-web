@@ -1,5 +1,6 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import { useInView, useReducedMotion } from 'framer-motion';
 import { Box, Button, Grid, Typography, useMediaQuery } from '@mui/material';
 
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
@@ -43,9 +44,16 @@ const stats = [
 ];
 
 const AnimatedNumber = ({ targetValue }) => {
-  const [count, setCount] = useState(0);
+  // Start at the real value so the page HTML (what search engines and
+  // no-JavaScript visitors see) shows "50+", not "0+". The count-up runs
+  // once, when the number scrolls into view.
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.6 });
+  const reduceMotion = useReducedMotion();
+  const [count, setCount] = useState(targetValue);
 
   useEffect(() => {
+    if (!inView || reduceMotion) return undefined;
     let start = 0;
     const duration = 1500; // total time (ms)
     const incrementTime = 20; // frame time
@@ -62,10 +70,12 @@ const AnimatedNumber = ({ targetValue }) => {
     }, incrementTime);
 
     return () => clearInterval(counter);
-  }, [targetValue]);
+  }, [inView, reduceMotion, targetValue]);
 
   return (
     <Typography
+      ref={ref}
+      component="p"
       variant="h3"
       sx={{
         fontWeight: 800,

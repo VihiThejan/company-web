@@ -75,6 +75,7 @@ export default function HiringProcessAligned() {
         >
           <Box sx={{ width: '100%' }}>
             <Typography
+              component="h2"
               variant="h3"
               sx={{
                 fontWeight: 700,
@@ -162,7 +163,7 @@ export default function HiringProcessAligned() {
 
                   {/* RIGHT: content */}
                   <Box sx={{ flex: 1 }}>
-                    <Typography variant="h6" sx={{ mb: 0.5 }}>
+                    <Typography component="h3" variant="h6" sx={{ mb: 0.5 }}>
                       {step.title}
                     </Typography>
                     <Typography

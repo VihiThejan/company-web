@@ -45,6 +45,7 @@ export default function OurExpertise() {
   return (
     <Box sx={{ pt: { xs: 2 }, pb: 1, px: { xs: 3 }, bgcolor: '#fff' }}>
       <Typography
+        component="h2"
         variant="h3"
         textAlign="center"
         sx={{
@@ -99,6 +100,7 @@ export default function OurExpertise() {
                   {item.icon}
                 </Box>
                 <Typography
+                  component="h3"
                   variant="h6"
                   sx={{ fontWeight: 700, mb: 1, color: '#111' }}
                 >

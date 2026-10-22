@@ -176,11 +176,11 @@ export default function PrivacyPolicy() {
         <Box sx={{ mt: 4 }}>
           {/* 1. Definitions */}
           <article id="definitions" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               1. Definitions
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
               Personal Data / Personal Information
             </Typography>
             <Typography
@@ -192,7 +192,7 @@ export default function PrivacyPolicy() {
               address, etc.
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
               Usage Data / Technical Data
             </Typography>
             <Typography
@@ -204,7 +204,7 @@ export default function PrivacyPolicy() {
               visited, etc.
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
+            <Typography component="h3" variant="subtitle2" sx={{ fontWeight: 600, mb: 1 }}>
               Data Controller
             </Typography>
             <Typography
@@ -220,11 +220,11 @@ export default function PrivacyPolicy() {
 
           {/* 2. What We Collect */}
           <article id="what-we-collect" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               2. What Information We Collect
             </Typography>
 
-            <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+            <Typography component="h3" variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
               2.1 Information You Provide
             </Typography>
             <Typography
@@ -239,7 +239,7 @@ export default function PrivacyPolicy() {
               via third-party processor).
             </Typography>
 
-            <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+            <Typography component="h3" variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
               2.2 Automatically Collected / Technical Information
             </Typography>
             <Typography
@@ -254,7 +254,7 @@ export default function PrivacyPolicy() {
               identifiers; Other diagnostic and usage metrics.
             </Typography>
 
-            <Typography variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
+            <Typography component="h3" variant="subtitle1" sx={{ fontWeight: 600, mb: 1 }}>
               2.3 Cookies & Tracking Technologies
             </Typography>
             <Typography
@@ -275,7 +275,7 @@ export default function PrivacyPolicy() {
 
           {/* 3. How We Use */}
           <article id="how-we-use" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               3. How We Use Your Information
             </Typography>
 
@@ -306,7 +306,7 @@ export default function PrivacyPolicy() {
 
           {/* 4. With Whom We Share */}
           <article id="share" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               4. With Whom We Share Your Information
             </Typography>
 
@@ -344,7 +344,7 @@ export default function PrivacyPolicy() {
 
           {/* 5. Retention */}
           <article id="retention" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               5. Retention of Data
             </Typography>
 
@@ -364,7 +364,7 @@ export default function PrivacyPolicy() {
 
           {/* 6. Security */}
           <article id="security" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               6. Security & Protection
             </Typography>
 
@@ -384,7 +384,7 @@ export default function PrivacyPolicy() {
 
           {/* 7. Minors */}
           <article id="minors" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               7. Minors
             </Typography>
 
@@ -404,7 +404,7 @@ export default function PrivacyPolicy() {
 
           {/* 8. Your Rights */}
           <article id="rights" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               8. Your Rights
             </Typography>
 
@@ -429,7 +429,7 @@ export default function PrivacyPolicy() {
 
           {/* 9. International Transfers */}
           <article id="transfers" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               9. International Transfers
             </Typography>
 
@@ -447,7 +447,7 @@ export default function PrivacyPolicy() {
 
           {/* 10. Changes */}
           <article id="changes" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               10. Changes to This Policy
             </Typography>
 
@@ -468,7 +468,7 @@ export default function PrivacyPolicy() {
 
           {/* 11. Contact */}
           <article id="contact" style={{ scrollMarginTop: 120 }}>
-            <Typography variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
+            <Typography component="h2" variant="h5" sx={{ fontWeight: 700, mb: 1.5 }}>
               11. Contact Us
             </Typography>
 

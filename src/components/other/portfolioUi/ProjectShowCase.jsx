@@ -105,6 +105,7 @@ function ProjectShowCase() {
                   </Box>
                 )}
                 <Typography
+                  component="h2"
                   variant="h5"
                   sx={{
                     fontWeight: 700,

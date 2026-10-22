@@ -67,6 +67,7 @@ export default function Vacancies() {
       {/* Header */}
       <Box sx={{ textAlign: 'center', mb: 8 }}>
         <Typography
+          component="h2"
           variant="h3"
           sx={{
             fontWeight: 700,
@@ -134,6 +135,7 @@ export default function Vacancies() {
 
                     <Box sx={{ flexGrow: 1 }}>
                       <Typography
+                        component="h3"
                         variant="h5"
                         sx={{
                           fontWeight: 500,
@@ -206,6 +208,7 @@ export default function Vacancies() {
 
                         <Box sx={{ mb: 3 }}>
                           <Typography
+                            component="h4"
                             variant="h6"
                             sx={{ fontWeight: 600, mb: 2, color: '#222' }}
                           >
@@ -230,6 +233,7 @@ export default function Vacancies() {
 
                         <Box>
                           <Typography
+                            component="h4"
                             variant="h6"
                             sx={{ fontWeight: 600, mb: 2, color: '#222' }}
                           >

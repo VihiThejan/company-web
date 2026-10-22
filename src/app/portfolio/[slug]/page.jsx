@@ -189,6 +189,7 @@ function Section({ title, content }) {
   return (
     <Box>
       <Typography
+        component="h2"
         variant="h6"
         sx={{
           fontWeight: 700,

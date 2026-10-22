@@ -83,6 +83,7 @@ export default function CareerBenefits() {
       }}
     >
       <Typography
+        component="h2"
         variant="h3"
         sx={{
           fontWeight: 700,
@@ -157,6 +158,7 @@ export default function CareerBenefits() {
                 </Box>
 
                 <Typography
+                  component="h3"
                   variant="h6"
                   sx={{
                     fontWeight: 700,
