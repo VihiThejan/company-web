@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import CallToActionCards from '@/components/other/homeUi/CallToActionCards';
 import TeamCard from '@/components/common/TeamCard';
 import ProjectShowCase from '@/components/other/portfolioUi/ProjectShowCase';
+import PageIntro from '@/components/common/PageIntro';
 
 export default function Portfolio() {
   return (
@@ -20,7 +21,12 @@ export default function Portfolio() {
         background: '#fff',
       }}
     >
-      <Box className="hover-section" sx={{ mb: '50px', pt: { xs: 15, sm: 18, md: 20 } }}>
+      <Box sx={{ width: '100%', pt: { xs: 15, sm: 18, md: 20 } }}>
+        <PageIntro title="Our Portfolio">
+          Software platforms, mobile apps and websites we have designed and built for our clients.
+        </PageIntro>
+      </Box>
+      <Box className="hover-section" sx={{ mb: '50px', pt: { xs: 2, md: 4 } }}>
         <ProjectShowCase />
       </Box>
       <Box

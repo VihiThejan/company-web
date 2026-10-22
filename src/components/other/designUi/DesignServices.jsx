@@ -75,7 +75,7 @@ const services = [
             'Faster development cycles',
             'Reduced rework and cost'
         ],
-        image: '/images/design-img/prototyping.jfif',
+        image: '/images/design-img/prototyping.webp',
     },
 ];
 

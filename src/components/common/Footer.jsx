@@ -32,7 +32,6 @@ const footerSections = [
   {
     title: "Resources",
     links: [
-      { name: "Blog", href: "/blog" },
       { name: "Contact Us", href: "/contactus" },
     ],
   },
@@ -47,7 +46,7 @@ const footerSections = [
 
 export default function Footer() {
   const socials = [
-    { label: "Facebook", icon: <FacebookIcon fontSize="small" />, href: "https://www.facebook.com" },
+    { label: "Facebook", icon: <FacebookIcon fontSize="small" />, href: "https://www.facebook.com/vihiitsolutions" },
     { label: "YouTube", icon: <YouTubeIcon fontSize="small" />, href: "https://youtube.com" },
     {
       label: "LinkedIn",

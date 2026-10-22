@@ -62,6 +62,7 @@ export default function Technologies() {
         }}
       >
         <Typography
+          component="h1"
           variant="h2"
           sx={{
             fontWeight: 700,
@@ -121,7 +122,7 @@ export default function Technologies() {
         <Box
           component="img"
           className="hover-image"
-          src="/images/technology-img/tech-hero.png"
+          src="/images/technology-img/tech-hero-1248w.webp"
           alt="Team collaborating"
           sx={{
             width: '100%',

@@ -189,8 +189,9 @@ function ProjectShowCase() {
                     },
                   }}
                 >
-                  Read More
-                  <ArrowForwardIcon sx={{ fontSize: 20 }} />
+                  View project
+                  <span className="visually-hidden">: {project.title}</span>
+                  <ArrowForwardIcon sx={{ fontSize: 20 }} aria-hidden="true" />
                 </Box>
               </Box>
             </Grid>

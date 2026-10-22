@@ -56,6 +56,7 @@ export default function PrivacyPolicy() {
         <Grid container spacing={4} alignItems="flex-start">
           <Grid item xs={12} md={8}>
             <Typography
+              component="h1"
               variant="h3"
               sx={{
                 fontWeight: 700,

@@ -17,7 +17,6 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { projectData } from '@/lib/projectData';
 import theme from '@/theme/theme';
 
-export const runtime = 'edge';
 
 export default function ProjectDetails({ params }) {
   const cusTheme = useTheme();
@@ -128,6 +127,7 @@ export default function ProjectDetails({ params }) {
           </Box>
         )}
         <Typography
+          component="h1"
           variant="h4"
           sx={{
             fontWeight: 700,

@@ -8,8 +8,6 @@ import {
   Box,
   Button,
   Typography,
-  useTheme,
-  useMediaQuery,
   IconButton,
   List,
   ListItem,
@@ -24,7 +22,14 @@ import { usePathname } from 'next/navigation';
 import { brand } from '@/theme/theme';
 import BrandLogo from '@/components/common/BrandLogo';
 
-function HideOnScroll({ children, isMobile }) {
+// Phones and small tablets get the compact bar with a menu button; wider
+// screens get the full link bar. Both are in the server-rendered HTML (so
+// search engines see the navigation) and CSS decides which one shows.
+const DESKTOP = 'mdll';
+const showOnMobile = { xs: 'flex', [DESKTOP]: 'none' };
+const showOnDesktop = { xs: 'none', [DESKTOP]: 'flex' };
+
+function HideOnScroll({ children }) {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -52,7 +57,8 @@ function HideOnScroll({ children, isMobile }) {
         pointerEvents: 'none',
       }}
     >
-      <motion.header
+      <Box
+        component={motion.header}
         initial={{ y: 0 }}
         animate={
           show
@@ -63,25 +69,22 @@ function HideOnScroll({ children, isMobile }) {
             : { y: '-140%' }
         }
         transition={{ duration: 0.5, ease: 'easeInOut' }}
-        style={{
+        sx={{
           zIndex: 1100,
           display: 'flex',
           alignItems: 'flex-start',
           justifyContent: 'center',
-          width: isMobile ? 'calc(100% - 32px)' : 'auto',
+          width: { xs: 'calc(100% - 32px)', [DESKTOP]: 'auto' },
           pointerEvents: 'auto',
         }}
       >
         {children}
-      </motion.header>
+      </Box>
     </Box>
   );
 }
 
 const Header = (props) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('mdll'), { noSsr: true });
-  const [hydrated, setHydrated] = useState(false);
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -98,12 +101,6 @@ const Header = (props) => {
     { name: 'QA Services', href: '/qa-services' },
   ];
 
-  useEffect(() => {
-    setHydrated(true);
-  }, []);
-
-  if (!hydrated) return null;
-
   // Smooth expand animation (box size only matches content height)
   const boxVariants = {
     hidden: {
@@ -119,7 +116,7 @@ const Header = (props) => {
   };
 
   return (
-    <HideOnScroll {...props} isMobile={isMobile}>
+    <HideOnScroll {...props}>
       {/* Navigation Section */}
       <Box
         sx={{
@@ -127,9 +124,9 @@ const Header = (props) => {
           border: `1px solid ${brand.line}`,
           boxShadow: '0 10px 30px -18px rgba(0,0,0,0.45)',
           borderRadius: mobileOpen ? '24px' : '999px',
-          padding: isMobile ? '0px 8px 0 16px' : '4px 6px 4px 22px',
+          padding: { xs: '0px 8px 0 16px', [DESKTOP]: '4px 6px 4px 22px' },
           transition: 'border-radius 0.3s ease',
-          width: isMobile ? '100%' : 'auto',
+          width: { xs: '100%', [DESKTOP]: 'auto' },
         }}
       >
         <AppBar
@@ -142,7 +139,7 @@ const Header = (props) => {
         >
           <Toolbar
             sx={{
-              padding: isMobile ? '8px 0' : '6px 0',
+              padding: { xs: '8px 0', [DESKTOP]: '6px 0' },
               minHeight: 'unset !important',
               display: 'flex',
               justifyContent: 'center',
@@ -150,138 +147,137 @@ const Header = (props) => {
               gap: '20px',
             }}
           >
-            {isMobile ? (
+            {/* Mobile: logo and menu button */}
+            <Box
+              sx={{
+                width: '100%',
+                display: showOnMobile,
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              {/* Logo (Mobile Only) */}
               <Box
+                component={Link}
+                href="/"
+                aria-label="VIHI IT Solutions home"
+                onClick={() => setMobileOpen(false)}
+                sx={{ color: brand.ink, display: 'flex' }}
+              >
+                <BrandLogo height={28} />
+              </Box>
+
+              {/* Toggle Button */}
+              <IconButton
+                onClick={handleDrawerToggle}
                 sx={{
-                  width: '100%',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
+                  color: brand.paper,
+                  backgroundColor: brand.ink,
+                  width: 44,
+                  height: 44,
+                  borderRadius: '999px',
+                  '&:hover': { backgroundColor: brand.inkSoft },
+                }}
+                aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={mobileOpen}
+              >
+                {mobileOpen ? (
+                  <CloseRoundedIcon sx={{ fontSize: 26 }} />
+                ) : (
+                  <MenuRoundedIcon sx={{ fontSize: 26 }} />
+                )}
+              </IconButton>
+            </Box>
+
+            {/* Desktop: logo, links, contact */}
+            <Box
+              sx={{
+                width: '100%',
+                display: showOnDesktop,
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                gap: { xs: 3, xl: 5 },
+              }}
+            >
+              <Box
+                component={Link}
+                href="/"
+                aria-label="VIHI IT Solutions home"
+                sx={{ color: brand.ink, display: 'flex', mr: { xs: 1, xl: 2 } }}
+              >
+                <BrandLogo height={34} />
+              </Box>
+              <Box sx={{ display: 'flex', gap: { xs: 2, lgll: 3.5 }, alignItems: 'center' }}>
+                {navItems.map((item) => (
+                  <Box key={item.name} sx={{ position: 'relative', px: 1 }}>
+                    <Typography
+                      component={Link}
+                      href={item.href}
+                      variant="body1"
+                      sx={{
+                        color: pathname === item.href ? brand.ink : brand.steel,
+                        textDecoration: 'none',
+                        fontWeight: pathname === item.href ? 650 : 500,
+                        fontSize: '0.95rem',
+                        whiteSpace: 'nowrap',
+                        transition: 'color 0.2s ease',
+                        '&:hover': { color: brand.ink },
+                      }}
+                    >
+                      {item.name}
+                    </Typography>
+                    <AnimatePresence>
+                      {pathname === item.href && (
+                        <motion.span
+                          layoutId="nav-dot"
+                          initial={{ opacity: 0, y: 8 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 8 }}
+                          transition={{
+                            type: 'spring',
+                            stiffness: 500,
+                            damping: 50,
+                          }}
+                          style={{
+                            position: 'absolute',
+                            left: 0,
+                            right: 0,
+                            display: 'flex',
+                            justifyContent: 'center',
+                            bottom: -12,
+                          }}
+                        >
+                          <FiberManualRecordIcon
+                            sx={{
+                              fontSize: 7,
+                              color: brand.ink,
+                            }}
+                          />
+                        </motion.span>
+                      )}
+                    </AnimatePresence>
+                  </Box>
+                ))}
+              </Box>
+
+              <Button
+                variant="contained"
+                component={Link}
+                href="/contactus"
+                sx={{
+                  background: brand.ink,
+                  color: brand.paper,
+                  borderRadius: '999px',
+                  padding: '10px 22px',
+                  fontSize: '0.95rem',
+                  whiteSpace: 'nowrap',
+                  ml: 1,
+                  '&:hover': { backgroundColor: brand.inkSoft },
                 }}
               >
-                {/* Logo (Mobile Only) */}
-                <Box
-                  component={Link}
-                  href="/"
-                  aria-label="VIHI IT Solutions home"
-                  onClick={() => setMobileOpen(false)}
-                  sx={{ color: brand.ink, display: 'flex' }}
-                >
-                  <BrandLogo height={28} />
-                </Box>
-
-                {/* Toggle Button */}
-                <IconButton
-                  onClick={handleDrawerToggle}
-                  sx={{
-                    color: brand.paper,
-                    backgroundColor: brand.ink,
-                    width: 44,
-                    height: 44,
-                    borderRadius: '999px',
-                    '&:hover': { backgroundColor: brand.inkSoft },
-                  }}
-                  aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-                  aria-expanded={mobileOpen}
-                >
-                  {mobileOpen ? (
-                    <CloseRoundedIcon sx={{ fontSize: 26 }} />
-                  ) : (
-                    <MenuRoundedIcon sx={{ fontSize: 26 }} />
-                  )}
-                </IconButton>
-              </Box>
-            ) : (
-              // Desktop layout: logo, links, contact
-              <Box
-                sx={{
-                  width: '100%',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  gap: { xs: 3, xl: 5 },
-                }}
-              >
-                <Box
-                  component={Link}
-                  href="/"
-                  aria-label="VIHI IT Solutions home"
-                  sx={{ color: brand.ink, display: 'flex', mr: { xs: 1, xl: 2 } }}
-                >
-                  <BrandLogo height={34} />
-                </Box>
-                <Box sx={{ display: 'flex', gap: { xs: 2, lgll: 3.5 }, alignItems: 'center' }}>
-                  {navItems.map((item) => (
-                    <Box key={item.name} sx={{ position: 'relative', px: 1 }}>
-                      <Typography
-                        component={Link}
-                        href={item.href}
-                        variant="body1"
-                        sx={{
-                          color: pathname === item.href ? brand.ink : brand.steel,
-                          textDecoration: 'none',
-                          fontWeight: pathname === item.href ? 650 : 500,
-                          fontSize: '0.95rem',
-                          whiteSpace: 'nowrap',
-                          transition: 'color 0.2s ease',
-                          '&:hover': { color: brand.ink },
-                        }}
-                      >
-                        {item.name}
-                      </Typography>
-                      <AnimatePresence>
-                        {pathname === item.href && (
-                          <motion.span
-                            layoutId="nav-dot"
-                            initial={{ opacity: 0, y: 8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: 8 }}
-                            transition={{
-                              type: 'spring',
-                              stiffness: 500,
-                              damping: 50,
-                            }}
-                            style={{
-                              position: 'absolute',
-                              left: 0,
-                              right: 0,
-                              display: 'flex',
-                              justifyContent: 'center',
-                              bottom: -12,
-                            }}
-                          >
-                            <FiberManualRecordIcon
-                              sx={{
-                                fontSize: 7,
-                                color: brand.ink,
-                              }}
-                            />
-                          </motion.span>
-                        )}
-                      </AnimatePresence>
-                    </Box>
-                  ))}
-                </Box>
-
-                <Button
-                  variant="contained"
-                  component={Link}
-                  href="/contactus"
-                  sx={{
-                    background: brand.ink,
-                    color: brand.paper,
-                    borderRadius: '999px',
-                    padding: '10px 22px',
-                    fontSize: '0.95rem',
-                    whiteSpace: 'nowrap',
-                    ml: 1,
-                    '&:hover': { backgroundColor: brand.inkSoft },
-                  }}
-                >
-                  Contact us
-                </Button>
-              </Box>
-            )}
+                Contact us
+              </Button>
+            </Box>
           </Toolbar>
 
           {/* Mobile Expanding Box Navigation */}
@@ -298,7 +294,15 @@ const Header = (props) => {
                   overflow: 'hidden',
                 }}
               >
-                <Box sx={{ pt: 1, pb: 2, pr: 1, borderTop: `1px solid ${brand.line}` }}>
+                <Box
+                  sx={{
+                    display: { xs: 'block', [DESKTOP]: 'none' },
+                    pt: 1,
+                    pb: 2,
+                    pr: 1,
+                    borderTop: `1px solid ${brand.line}`,
+                  }}
+                >
                   <List>
                     {navItems.map((item) => (
                       <ListItem key={item.name} disablePadding>

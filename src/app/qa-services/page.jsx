@@ -6,6 +6,7 @@ import QAServices from '@/components/other/qaUi/QAServices';
 import CallToActionCards from '@/components/other/homeUi/CallToActionCards';
 import TeamCard from '@/components/common/TeamCard';
 import { motion } from 'framer-motion';
+import PageIntro from '@/components/common/PageIntro';
 
 export default function QAServicesPage() {
     return (
@@ -21,7 +22,12 @@ export default function QAServicesPage() {
                 background: '#fff',
             }}
         >
-            <Box className="hover-section" sx={{ pt: { xs: 15, sm: 18, md: 20 }, px: { xs: 2, sm: 4, md: 8 }, width: '100%' }}>
+            <Box sx={{ width: '100%', pt: { xs: 15, sm: 18, md: 20 } }}>
+                <PageIntro title="Quality Assurance & Software Testing">
+                    Automated, manual, performance and security testing that catches problems before your users do.
+                </PageIntro>
+            </Box>
+            <Box className="hover-section" sx={{ pt: { xs: 2, md: 4 }, px: { xs: 2, sm: 4, md: 8 }, width: '100%' }}>
                 <QAServices />
             </Box>
 

@@ -1,6 +1,11 @@
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import HomePage from '@/components/ui/HomePage';
+import { pageMetadata, DEFAULT_DESCRIPTION } from '@/lib/seo';
+
+export const metadata = pageMetadata({
+  description: DEFAULT_DESCRIPTION,
+  path: '/',
+});
 
 export default function Home() {
   return (
@@ -9,8 +14,7 @@ export default function Home() {
         minHeight: 'calc(100vh - 100px)', // Adjust based on header/footer height if needed
       }}
     >
-      <HomePage/>
-      
+      <HomePage />
     </Box>
   );
 }

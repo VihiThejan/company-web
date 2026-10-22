@@ -42,11 +42,12 @@ export default function Marketing() {
         }}
       >
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <Typography
+            component="h1"
             variant="h2"
             sx={{
               fontWeight: 900,
@@ -104,7 +105,7 @@ export default function Marketing() {
       >
         <Box
           component="img"
-          src="/images/marketing-img/mar-hero.png"
+          src="/images/marketing-img/mar-hero.webp"
           alt="Marketing and Technology Team"
           sx={{
             width: '100%',

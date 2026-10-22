@@ -7,15 +7,36 @@ import Footer from '@/components/common/Footer';
 import Box from '@mui/material/Box';
 import MuiThemeProvider from '@/components/providers/MuiThemeProvider';
 import ScrollToTopButton from '@/components/common/ScrollToTopButton';
+import {
+  SITE_URL,
+  SITE_NAME,
+  DEFAULT_TITLE,
+  DEFAULT_DESCRIPTION,
+  organizationJsonLd,
+} from '@/lib/seo';
 
 export const metadata = {
-  title: 'VIHI IT Solutions',
-  description:
-    'Software, cloud, design and digital marketing from VIHI IT Solutions, Sri Lanka.',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: DEFAULT_TITLE,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: DEFAULT_DESCRIPTION,
+  applicationName: SITE_NAME,
   openGraph: {
-    title: 'VIHI IT Solutions',
-    description:
-      'Software, cloud, design and digital marketing from VIHI IT Solutions, Sri Lanka.',
+    type: 'website',
+    siteName: SITE_NAME,
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: DEFAULT_TITLE,
+    description: DEFAULT_DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -27,6 +48,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body style={{ margin: 0 }} suppressHydrationWarning={true}>
+        {/* Company details for Google (structured data) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         <MuiThemeProvider>
           <Box
             sx={{
