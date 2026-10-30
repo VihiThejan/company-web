@@ -96,6 +96,7 @@ export default function TeamList() {
                 href={founder.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${founder.name}'s LinkedIn profile`}
                 sx={{
                   color: theme.palette.primary.option,
                   "&:hover": { color: theme.palette.secondary.main },
@@ -223,6 +224,7 @@ export default function TeamList() {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`${member.name}'s LinkedIn profile`}
                       sx={{
                         color: theme.palette.primary.option,
                         p: 0.5,
