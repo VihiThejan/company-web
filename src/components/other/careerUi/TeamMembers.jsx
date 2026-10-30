@@ -102,6 +102,7 @@ export default function TeamMembers() {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`${member.name}'s LinkedIn profile`}
                       sx={{
                         color: theme.palette.primary.option,
                         p: 1,

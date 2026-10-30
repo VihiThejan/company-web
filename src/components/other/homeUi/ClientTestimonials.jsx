@@ -136,6 +136,7 @@ const ClientTestimonials = () => {
                     <>
                         <IconButton
                             onClick={prevSlide}
+                            aria-label="Previous testimonial"
                             sx={{
                                 position: 'absolute',
                                 left: 0,
@@ -150,6 +151,7 @@ const ClientTestimonials = () => {
                         </IconButton>
                         <IconButton
                             onClick={nextSlide}
+                            aria-label="Next testimonial"
                             sx={{
                                 position: 'absolute',
                                 right: 0,
