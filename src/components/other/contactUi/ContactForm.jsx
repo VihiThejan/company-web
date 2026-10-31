@@ -9,6 +9,7 @@ import {
   Checkbox,
   FormControlLabel,
   Typography,
+  CircularProgress,
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 import CustomTheme from '@/theme/theme';
@@ -30,6 +31,7 @@ export default function ContactForm() {
   const [popup, setPopup] = useState(null);
 
   const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // ✅ Validate Form
   const validateForm = () => {
@@ -77,6 +79,7 @@ export default function ContactForm() {
       return;
     }
 
+    setIsSubmitting(true);
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -113,6 +116,8 @@ export default function ContactForm() {
         'error',
         'Something went wrong. Please try again later or contact us at info@vihiit.com.'
       );
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -250,18 +255,20 @@ export default function ContactForm() {
             <Button
               type="submit"
               variant="contained"
-              endIcon={<SendIcon />}
+              disabled={isSubmitting}
+              endIcon={isSubmitting ? <CircularProgress size={20} color="inherit" /> : <SendIcon />}
               sx={{
                 backgroundColor: theme.palette.primary.main,
                 color: '#fff',
                 borderRadius: '999px',
                 '&:hover': { backgroundColor: theme.palette.primary.option },
+                '&.Mui-disabled': { backgroundColor: '#bdbdbd', color: '#fff' },
                 px: 4,
                 py: 1.5,
                 textTransform: 'none',
               }}
             >
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>
           </Grid>
         </Grid>
