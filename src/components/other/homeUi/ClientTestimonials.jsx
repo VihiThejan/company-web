@@ -301,7 +301,16 @@ const ClientTestimonials = () => {
                     {Array.from({ length: maxIndex + 1 }).map((_, i) => (
                         <Box
                             key={i}
+                            role="button"
+                            tabIndex={0}
+                            aria-label={`Go to slide ${i + 1}`}
                             onClick={() => goToSlide(i)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault();
+                                    goToSlide(i);
+                                }
+                            }}
                             sx={{
                                 width: 10,
                                 height: 10,
