@@ -1,10 +1,9 @@
-import { Box, Grid } from '@mui/system';
+import { Box, Typography, Grid } from '@mui/material';
 import React from 'react';
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import WorkIcon from '@mui/icons-material/Work';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import { Typography } from '@mui/material';
 
 const stats = [
   {
