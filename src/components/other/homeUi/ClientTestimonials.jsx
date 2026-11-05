@@ -297,23 +297,21 @@ const ClientTestimonials = () => {
                 </Box>
 
                 {/* Dots Pagination */}
-                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, gap: 1 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, gap: 1 }} role="tablist" aria-label="Testimonial slides">
                     {Array.from({ length: maxIndex + 1 }).map((_, i) => (
                         <Box
                             key={i}
-                            role="button"
-                            tabIndex={0}
-                            aria-label={`Go to slide ${i + 1}`}
+                            component="button"
                             onClick={() => goToSlide(i)}
-                            onKeyDown={(e) => {
-                                if (e.key === 'Enter' || e.key === ' ') {
-                                    e.preventDefault();
-                                    goToSlide(i);
-                                }
-                            }}
+                            aria-label={`Go to slide ${i + 1}`}
+                            aria-current={currentIndex === i ? 'true' : 'false'}
+                            role="tab"
+                            aria-selected={currentIndex === i}
                             sx={{
                                 width: 10,
                                 height: 10,
+                                p: 0,
+                                border: 'none',
                                 borderRadius: '50%',
                                 bgcolor: currentIndex === i ? brand.ink : brand.line,
                                 cursor: 'pointer',
@@ -321,6 +319,10 @@ const ClientTestimonials = () => {
                                 '&:hover': {
                                     bgcolor: customTheme.palette.secondary.main,
                                     transform: 'scale(1.2)'
+                                },
+                                '&:focus-visible': {
+                                    outline: `2px solid ${customTheme.palette.primary.main}`,
+                                    outlineOffset: '2px',
                                 }
                             }}
                         />
