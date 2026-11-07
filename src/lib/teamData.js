@@ -44,7 +44,7 @@ export const leaders = [
   {
     name: 'Kavindu Kaveesha',
     role: 'Marketing Director',
-    image: '/images/career-img/team-members/dumindu.webp',
+    image: '/',
     linkedin: 'https://www.linkedin.com/in/kavindu-kaveesha-7296101a4/',
   },
 ];
@@ -77,7 +77,7 @@ export const teamMembers = [
   {
     name: 'Kavindu Kaveesha',
     role: 'Marketing Director',
-    image: '/images/career-img/team-members/dumindu.webp',
+    image: '/',
     linkedin: 'https://www.linkedin.com/in/kavindu-kaveesha-7296101a4/',
   },
 ];
