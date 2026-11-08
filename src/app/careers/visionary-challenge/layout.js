@@ -3,7 +3,7 @@ import { pageMetadata } from '@/lib/seo';
 export const metadata = pageMetadata({
   title: "Vihi Visionary Challenge Internship",
   description:
-    "Don't just intern. Innovate. Pitch your product idea to VIHI IT Solutions; the top 10 finalists present at Pitch Day for a chance to build it with us.",
+    "Pitch your product idea to VIHI IT Solutions any time of year. If your idea is strong, we'll offer you an internship to build it with our team.",
   path: '/careers/visionary-challenge',
 });
 
