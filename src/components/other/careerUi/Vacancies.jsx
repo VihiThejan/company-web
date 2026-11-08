@@ -62,6 +62,13 @@ export default function Vacancies() {
     setOpenJob(openJob === id ? null : id);
   };
 
+  const handleKeyDown = (e, id) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      setOpenJob(openJob === id ? null : id);
+    }
+  };
+
   return (
     <Box sx={{ py: 0, px: { xs: 2, md: 4 }, bgcolor: '#fff', width: '100%' }}>
       {/* Header */}
@@ -89,12 +96,17 @@ export default function Vacancies() {
           return (
             <motion.div
               key={job.id}
+              role="button"
+              tabIndex={0}
+              aria-expanded={isOpen}
+              aria-controls={`job-details-${job.id}`}
               onMouseEnter={() => handleHover(job.id)}
               onMouseLeave={() => handleLeave(job.id)}
               onClick={() => handleClickMobile(job.id)}
+              onKeyDown={(e) => handleKeyDown(e, job.id)}
               style={{
                 width: '100%',
-                cursor: isMobile ? 'pointer' : 'default',
+                cursor: 'pointer',
               }}
             >
               <Card
@@ -190,6 +202,7 @@ export default function Vacancies() {
                 <AnimatePresence>
                   {isOpen && (
                     <motion.div
+                      id={`job-details-${job.id}`}
                       initial="closed"
                       animate="open"
                       exit="closed"
