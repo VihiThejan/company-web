@@ -145,9 +145,13 @@ function ProjectShowCase() {
                   </Typography>
                   {shouldTruncate && (
                     <Typography
-                      component="span"
+                      component="button"
                       onClick={() => toggleExpand(index)}
+                      aria-expanded={isExpanded}
                       sx={{
+                        background: 'none',
+                        border: 'none',
+                        padding: 0,
                         color: 'primary.main',
                         fontWeight: 600,
                         cursor: 'pointer',
