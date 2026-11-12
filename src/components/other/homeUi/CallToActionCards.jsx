@@ -25,6 +25,8 @@ const Card = ({
     <Link
       href={buttonHref}
       style={{ textDecoration: 'none', display: 'block', height: '100%' }}
+      onFocus={() => setHovered(true)}
+      onBlur={() => setHovered(false)}
     >
       <MotionBox
         className="hover-lift-shadow"
