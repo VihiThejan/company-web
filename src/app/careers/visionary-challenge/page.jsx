@@ -16,7 +16,6 @@ import {
     IconButton,
 } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import DateRangeIcon from '@mui/icons-material/DateRange';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import WorkIcon from '@mui/icons-material/Work';
 import LightbulbIcon from '@mui/icons-material/Lightbulb';
@@ -36,12 +35,23 @@ export default function VisionaryChallengePage() {
         transition: { duration: 0.6 }
     };
 
+    // The hero is visible from the first paint (movement only, no fade-in).
+    const heroIn = {
+        initial: { y: 20 },
+        animate: { y: 0 },
+        transition: { duration: 0.6 }
+    };
+
+    // Applications run all year, every year: no dates, no deadline.
+    const applyMailto =
+        'mailto:careers@vihiitsolutions.com?subject=' +
+        encodeURIComponent('[Internship Application] - Your Name - Your Track');
+
     const timelineSteps = [
-        { date: 'January 16', label: 'Applications Open', icon: <RocketLaunchIcon sx={{ fontSize: '1.5rem' }} /> },
-        { date: 'January 30', label: 'Applications Close (Submission Deadline)', icon: <DateRangeIcon sx={{ fontSize: '1.5rem' }} /> },
-        { date: 'February 09', label: 'Top 10 Finalists Announced', icon: <CheckCircleOutlineIcon sx={{ fontSize: '1.5rem' }} /> },
-        { date: 'February (Date TBD)', label: 'The Pitch Day Event (Finalist Presentations)', icon: <LightbulbIcon sx={{ fontSize: '1.5rem' }} /> },
-        { date: 'Post-Event', label: 'Internship Offers & Project Kick-off', icon: <WorkIcon sx={{ fontSize: '1.5rem' }} /> },
+        { tag: 'Any time', label: 'Send us your idea. There is no deadline.', icon: <RocketLaunchIcon sx={{ fontSize: '1.5rem' }} /> },
+        { tag: 'Review', label: 'Our team reviews every proposal we receive.', icon: <CheckCircleOutlineIcon sx={{ fontSize: '1.5rem' }} /> },
+        { tag: 'Shortlist', label: 'If your idea stands out, we get in touch to talk it through.', icon: <LightbulbIcon sx={{ fontSize: '1.5rem' }} /> },
+        { tag: 'Internship', label: 'Strong ideas earn an internship to build them with our team.', icon: <WorkIcon sx={{ fontSize: '1.5rem' }} /> },
     ];
 
     const tracks = [
@@ -76,13 +86,13 @@ export default function VisionaryChallengePage() {
                 </Box>
 
                 {/* Hero Section */}
-                <motion.div {...fadeInUp}>
+                <motion.div {...heroIn}>
                     <Box sx={{ textAlign: 'center', mb: 8 }}>
                         <Typography
                             variant="overline"
                             sx={{ color: '#5E5E5E', fontWeight: 600, letterSpacing: 0, fontSize: '1rem' }}
                         >
-                            Internship Program 2026
+                            Year-Round Internship Program
                         </Typography>
                         <Typography
                             variant="h1"
@@ -109,7 +119,7 @@ export default function VisionaryChallengePage() {
                             }}
                         >
                             <Typography variant="body1" sx={{ fontWeight: 600 }}>
-                                Status: <span style={{ color: 'green' }}>Open</span> | Application Period: Jan 16 – Jan 30, 2026
+                                Status: <span style={{ color: 'green' }}>Open all year</span> | Apply any time, every year
                             </Typography>
                         </Box>
                     </Box>
@@ -124,9 +134,12 @@ export default function VisionaryChallengePage() {
                             Solutions, we believe the best way to learn is by building.
                             <br /><br />
                             We are looking for the next generation of tech leaders, creative thinkers, and problem solvers.
-                            Instead of a standard interview, we are asking you to pitch us an idea. If selected, you won’t
-                            just work for us; you will work with our industry experts to turn your proposed project into a
-                            real-world product during your internship.
+                            Instead of a standard interview, we are asking you to pitch us an idea. If your idea is strong,
+                            we will offer you an internship, and you won’t just work for us; you will work with our industry
+                            experts to turn your proposed project into a real-world product.
+                            <br /><br />
+                            The challenge runs all year, every year. There are no application dates or deadlines: send us
+                            your idea whenever it is ready.
                         </Typography>
                     </Paper>
                 </motion.div>
@@ -184,7 +197,7 @@ export default function VisionaryChallengePage() {
                     {/* Right Side: Advanced Timeline */}
                     <Grid item xs={12} lg={4}>
                         <Typography component="h2" variant="h4" sx={{ mb: 6, fontWeight: 800, color: '#000' }}>
-                            The Timeline
+                            How It Works
                         </Typography>
                         <Box sx={{ position: 'relative', pl: 2 }}>
                             {/* Main vertical line with gradient effect */}
@@ -268,7 +281,7 @@ export default function VisionaryChallengePage() {
                                                     mb: 0.5
                                                 }}
                                             >
-                                                {step.date}
+                                                {step.tag}
                                             </Typography>
                                             <Typography variant="body1" sx={{ fontWeight: 700, color: '#111', fontSize: '1.05rem' }}>
                                                 {step.label}
@@ -317,7 +330,7 @@ export default function VisionaryChallengePage() {
                         </Grid>
 
                         {/* Step 2 */}
-                        <Grid item xs={10} md={6}>
+                        <Grid item xs={12} md={6}>
                             <motion.div {...fadeInUp} transition={{ delay: 0.1 }} style={{ height: '100%' }}>
                                 <Paper sx={{ p: 4, borderRadius: 4, height: '100%', bgcolor: '#fff', border: `2px solid ${theme.palette.primary.main}33`, transition: '0.3s', '&:hover': { borderColor: theme.palette.primary.main, boxShadow: '0 10px 30px rgba(0,0,0,0.05)' } }} elevation={0}>
                                     <Typography variant="h6" sx={{ mb: 1, fontWeight: 700, color: theme.palette.primary.main }}>Step 2</Typography>
@@ -353,7 +366,7 @@ export default function VisionaryChallengePage() {
                                     </Typography>
                                     <Box sx={{ p: 2, bgcolor: '#F1F1EF', borderRadius: 2, border: '1px dashed #A3A3A3' }}>
                                         <Typography variant="body2" sx={{ fontStyle: 'italic', color: '#5E5E5E' }}>
-                                            Note: This is not mandatory, but it significantly increases your chances of making the Top 10.
+                                            Note: This is not mandatory, but it significantly increases your chances of being shortlisted.
                                         </Typography>
                                     </Box>
                                 </Paper>
@@ -392,11 +405,11 @@ export default function VisionaryChallengePage() {
                 {/* Selection Process */}
                 <motion.div {...fadeInUp}>
                     <Box sx={{ mt: 8, mb: 12, textAlign: 'center' }}>
-                        <Typography component="h2" variant="h4" sx={{ mb: 3, fontWeight: 700 }}>Selection Process: The Pitch Day</Typography>
+                        <Typography component="h2" variant="h4" sx={{ mb: 3, fontWeight: 700 }}>Selection Process</Typography>
                         <Typography variant="body1" sx={{ maxWidth: '800px', mx: 'auto', color: '#555', lineHeight: 1.8 }}>
-                            After reviewing all entries, we will select the Top 10 Project Ideas. These finalists will be invited
-                            to an exclusive event—The Pitch Day—where they will present their concepts to the Vihi IT Solutions
-                            leadership team. The winners will be offered an internship position to bring their vision to life.
+                            There is no fixed intake or closing date. We review every proposal on its own merits: the problem
+                            you have found, the solution you propose and your plan for building it. If your idea is good, we
+                            will offer you an internship to bring it to life with the Vihi IT Solutions team.
                         </Typography>
                     </Box>
                 </motion.div>
@@ -422,13 +435,13 @@ export default function VisionaryChallengePage() {
                         <Box sx={{ position: 'relative', zIndex: 1 }}>
                             <Typography component="h2" variant="h3" sx={{ mb: 2, fontWeight: 800, fontSize: { xs: '2rem', md: '3rem' }, color: '#000' }}>Ready to build your future?</Typography>
                             <Typography variant="body1" sx={{ mb: 4, color: '#444', maxWidth: '600px', mx: 'auto' }}>
-                                Take the first step towards becoming a tech visionary. Join the challenge today.
+                                The challenge is open all year, every year. Send us your idea whenever you are ready.
                             </Typography>
                             <Button
                                 variant="contained"
                                 size="large"
                                 startIcon={<SendIcon />}
-                                href="mailto:careers@vihiitsolutions.com"
+                                href={applyMailto}
                                 sx={{
                                     bgcolor: theme.palette.primary.main,
                                     color: '#fff',

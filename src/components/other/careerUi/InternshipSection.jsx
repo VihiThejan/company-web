@@ -90,7 +90,7 @@ export default function InternshipSection() {
                                     color: '#fff',
                                 }}
                             >
-                                The Vihi Visionary Challenge 2026
+                                The Vihi Visionary Challenge
                             </Typography>
                         </Box>
 
@@ -104,7 +104,8 @@ export default function InternshipSection() {
                                 lineHeight: 1.4,
                             }}
                         >
-                            Don’t Just Intern. Innovate. Pitch us your idea and build it with our experts.
+                            Don’t Just Intern. Innovate. Pitch us your idea any time of year. If it’s strong, we’ll offer you an
+                            internship to build it with our experts.
                         </Typography>
 
                         <Stack
@@ -114,10 +115,10 @@ export default function InternshipSection() {
                         >
                             <Box>
                                 <Typography variant="body2" sx={{ color: '#A3A3A3', mb: 0.5, fontWeight: 600 }}>
-                                    Application period
+                                    When to apply
                                 </Typography>
                                 <Typography variant="h6" sx={{ fontWeight: 700, color: '#fff' }}>
-                                    Jan 16 – Jan 30, 2026
+                                    Any time, every year
                                 </Typography>
                             </Box>
 
